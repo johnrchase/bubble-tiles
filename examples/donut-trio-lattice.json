@@ -1,0 +1,80 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#000000",
+  "latticeCopyOpacity": 1,
+  "tiles": [
+    {
+      "id": "tile7",
+      "tileType": "B2B",
+      "x": 333.445,
+      "y": 261.796,
+      "rotation": 30,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "donut",
+      "fillOpacity": 1,
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 5
+    },
+    {
+      "id": "tile8",
+      "tileType": "B4A",
+      "x": 453.445,
+      "y": 331.078,
+      "rotation": 150,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "donutChocolate",
+      "fillOpacity": 1,
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 5
+    },
+    {
+      "id": "tile9",
+      "tileType": "B3A",
+      "x": 333.445,
+      "y": 400.36,
+      "rotation": -90,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "donutGlazed",
+      "fillOpacity": 1,
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 5
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile7",
+        "tile8",
+        "tile9"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile7",
+        "tile8",
+        "tile9"
+      ],
+      "vectorA": {
+        "x": 120,
+        "y": -207.846
+      },
+      "vectorB": {
+        "x": 240,
+        "y": 0
+      }
+    }
+  ]
+}
