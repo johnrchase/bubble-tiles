@@ -1,0 +1,77 @@
+{
+  "version": 3,
+  "canvasBackgroundColor": "#fafafa",
+  "tiles": [
+    {
+      "id": "tile30",
+      "tileType": "PQ1",
+      "x": 791.913,
+      "y": 699.925,
+      "rotation": 90,
+      "flipX": 1,
+      "flipY": -1,
+      "fillColor": null,
+      "strokeColor": null,
+      "fillPattern": "solid",
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile31",
+      "tileType": "PQ4",
+      "x": 871.913,
+      "y": 699.925,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "strokeColor": null,
+      "fillPattern": "solid",
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile32",
+      "tileType": "PQ1",
+      "x": 951.913,
+      "y": 699.925,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "strokeColor": null,
+      "fillPattern": "solid",
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    }
+  ],
+  "groups": [
+    {
+      "id": "group4",
+      "children": [
+        "tile30",
+        "tile31",
+        "tile32"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile30",
+        "tile31",
+        "tile32"
+      ],
+      "vectorA": {
+        "x": 240,
+        "y": 0
+      },
+      "vectorB": {
+        "x": -80,
+        "y": -80
+      }
+    }
+  ],
+  "latticeCopyOpacity": 0.62
+}

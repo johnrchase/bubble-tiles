@@ -3271,3 +3271,100 @@ body:not(.lattice-highlight-source) .lattice-copy {
 .example-card [class*="tag"] {
   display: none !important;
 }
+
+
+/* Ensure invisible tile hit areas never render a visible outline. */
+.tile .tile-hit-area {
+  stroke: none !important;
+  stroke-width: 0 !important;
+  stroke-dasharray: none !important;
+  filter: none !important;
+  fill: #ffffff !important;
+  fill-opacity: 0.001 !important;
+  pointer-events: all !important;
+}
+
+
+/* Style toolbar preview grids */
+.style-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  padding: 4px 5px 8px;
+}
+
+.stroke-preview-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.style-preview-button {
+  width: 30px;
+  height: 28px;
+  border: 1px solid #c5ced8;
+  border-radius: 7px;
+  background: #f8fafc;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.style-preview-button:hover,
+.style-preview-button.is-active {
+  border-color: #1f75cb;
+  box-shadow: 0 0 0 2px rgba(31,117,203,0.18);
+}
+
+.fill-preview,
+.stroke-preview {
+  width: 23px;
+  height: 19px;
+  border-radius: 5px;
+  border: 1.4px solid var(--preview-stroke, #222);
+  background-color: var(--preview-fill, #f5eecf);
+  display: block;
+  overflow: hidden;
+}
+
+.fill-preview-solid { background: var(--preview-fill, #f5eecf); }
+.fill-preview-dots { background: radial-gradient(var(--preview-stroke, #222) 1.5px, transparent 1.8px) 0 0 / 9px 9px, var(--preview-fill, #f5eecf); }
+.fill-preview-dense-dots { background: radial-gradient(var(--preview-stroke, #222) 1.2px, transparent 1.5px) 0 0 / 5px 5px, var(--preview-fill, #f5eecf); }
+.fill-preview-crosshatch { background: repeating-linear-gradient(45deg, transparent 0 5px, var(--preview-stroke, #222) 5px 6.5px), repeating-linear-gradient(-45deg, transparent 0 5px, var(--preview-stroke, #222) 5px 6.5px), var(--preview-fill, #f5eecf); }
+.fill-preview-lines { background: repeating-linear-gradient(0deg, var(--preview-fill, #f5eecf) 0 5px, var(--preview-stroke, #222) 5px 6.5px); }
+.fill-preview-dense-lines { background: repeating-linear-gradient(0deg, var(--preview-fill, #f5eecf) 0 3px, var(--preview-stroke, #222) 3px 4px); }
+.fill-preview-brick { background: linear-gradient(var(--preview-stroke, #222) 1px, transparent 1px) 0 0 / 14px 7px, linear-gradient(90deg, var(--preview-stroke, #222) 1px, transparent 1px) 0 0 / 14px 7px, var(--preview-fill, #f5eecf); }
+.fill-preview-herringbone { background: repeating-linear-gradient(45deg, transparent 0 6px, var(--preview-stroke, #222) 6px 7.5px, transparent 7.5px 12px), repeating-linear-gradient(-45deg, transparent 0 6px, var(--preview-stroke, #222) 6px 7.5px, transparent 7.5px 12px), var(--preview-fill, #f5eecf); }
+.fill-preview-cookie { background-image: url("assets/food-cookie.jpg"); background-size: cover; background-position: center; }
+.fill-preview-oreo { background-image: url("assets/food-oreo.jpg"); background-size: cover; background-position: center; }
+.fill-preview-donut { background-image: url("assets/food-donut-sprinkle.png"); background-size: cover; background-position: center; }
+.fill-preview-donut-chocolate { background-image: url("assets/food-donut-chocolate.png"); background-size: cover; background-position: center; background-color: #e7d7c5; }
+.fill-preview-donut-glazed { background-image: url("assets/food-donut-glazed.png"); background-size: cover; background-position: center; background-color: #e7d7c5; }
+.fill-preview-clouds { background-image: url("assets/texture-clouds.jpg"); background-size: cover; background-position: center; }
+.fill-preview-white-marble { background-image: url("assets/texture-white-marble.jpg"); background-size: cover; background-position: center; }
+.fill-preview-green-marble { background-image: url("assets/texture-green-marble.jpg"); background-size: cover; background-position: center; }
+.fill-preview-light-wood { background-image: url("assets/texture-light-wood.jpg"); background-size: cover; background-position: center; }
+.fill-preview-dark-wood { background-image: url("assets/texture-dark-wood.jpg"); background-size: cover; background-position: center; }
+
+.stroke-preview {
+  background: #fff;
+  border-width: 3px;
+}
+.stroke-preview-solid { border-style: solid; }
+.stroke-preview-dashed { border-style: dashed; }
+.stroke-preview-dotted { border-style: dotted; }
+.stroke-preview-none { border-style: none; position: relative; background: linear-gradient(135deg, transparent 0 44%, #b43333 45% 55%, transparent 56% 100%), #fff; }
+
+
+/* Preview-only style popovers: keep the selects as hidden state controls, but remove the old text-only dropdowns from the visible UI. */
+.style-popover-hidden-select {
+  display: none !important;
+}
+
+.style-preview-grid {
+  margin-top: 2px;
+}
+
+.style-preview-button {
+  cursor: pointer;
+}

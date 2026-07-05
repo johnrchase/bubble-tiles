@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Bubble Tiles 1.0</title>
+<title>Bubble Tiles 1.1</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&amp;display=swap" rel="stylesheet"/>
@@ -14,7 +14,7 @@
 <div id="toolbar">
 <div class="brand">
 <img alt="" class="brand-logo-image" src="assets/logo-two-tiles.png"/>
-<span class="brand-wordmark">Bubble Tiles 1.0</span>
+<span class="brand-wordmark">Bubble Tiles 1.1</span>
 </div>
 <div class="menu-strip">
 <details class="toolbar-menu" id="fileMenu">
@@ -115,14 +115,22 @@
 <select id="menuFillPatternPicker">
 <option value="solid">solid</option>
 <option value="dots">dots</option>
-<option value="diagonal">diagonal</option>
+<option value="denseDots">dense dots</option>
 <option value="crosshatch">crosshatch</option>
 <option value="horizontal">lines</option>
+<option value="denseHorizontal">dense lines</option>
+<option value="brick">brick</option>
+<option value="herringbone">herringbone</option>
 <option value="cookie">Chocolate chip cookie</option>
 <option value="oreo">Oreo</option>
 <option value="donut">Donut (sprinkles)</option>
 <option value="donutChocolate">Donut (chocolate)</option>
 <option value="donutGlazed">Donut (glazed)</option>
+<option value="clouds">clouds</option>
+<option value="whiteMarble">white marble</option>
+<option value="greenMarble">green marble</option>
+<option value="lightWood">light wood</option>
+<option value="darkWood">dark wood</option>
 </select>
 </label>
 <label class="menu-control" title="Set selected tile opacity"><span><svg aria-hidden="true" class="menu-svg-icon eye-icon" viewbox="0 0 28 28"><path d="M3.5 14 C6.2 8.7 10 6 14 6 C18 6 21.8 8.7 24.5 14 C21.8 19.3 18 22 14 22 C10 22 6.2 19.3 3.5 14 Z"></path><circle cx="14" cy="14" r="3.8"></circle></svg><span>Opacity</span></span><input id="menuFillOpacityPicker" max="1" min="0.05" step="0.05" type="range" value="1"/></label>
@@ -249,21 +257,49 @@
 <span>Fill color</span>
 <input id="fillColorPicker" type="color" value="#ffd21f"/>
 </label>
-<label class="style-popover-control" title="Set selected tile fill pattern">
+<label class="style-popover-control style-popover-hidden-select" title="Set selected tile fill pattern" aria-hidden="true">
 <span>Pattern</span>
-<select id="fillPatternPicker">
+<select id="fillPatternPicker" tabindex="-1">
 <option value="solid">solid</option>
 <option value="dots">dots</option>
-<option value="diagonal">diagonal</option>
+<option value="denseDots">dense dots</option>
 <option value="crosshatch">crosshatch</option>
 <option value="horizontal">lines</option>
+<option value="denseHorizontal">dense lines</option>
+<option value="brick">brick</option>
+<option value="herringbone">herringbone</option>
 <option value="cookie">Chocolate chip cookie</option>
 <option value="oreo">Oreo</option>
 <option value="donut">Donut (sprinkles)</option>
 <option value="donutChocolate">Donut (chocolate)</option>
 <option value="donutGlazed">Donut (glazed)</option>
+<option value="clouds">clouds</option>
+<option value="whiteMarble">white marble</option>
+<option value="greenMarble">green marble</option>
+<option value="lightWood">light wood</option>
+<option value="darkWood">dark wood</option>
 </select>
 </label>
+<div class="style-preview-grid fill-preview-grid" id="fillPatternPreviewGrid" aria-label="Fill style previews">
+<button type="button" class="style-preview-button" data-fill-pattern="solid" aria-label="solid" title="solid"><span class="fill-preview fill-preview-solid"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="dots" aria-label="dots" title="dots"><span class="fill-preview fill-preview-dots"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="denseDots" aria-label="dense dots" title="dense dots"><span class="fill-preview fill-preview-dense-dots"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="crosshatch" aria-label="crosshatch" title="crosshatch"><span class="fill-preview fill-preview-crosshatch"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="horizontal" aria-label="lines" title="lines"><span class="fill-preview fill-preview-lines"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="denseHorizontal" aria-label="dense lines" title="dense lines"><span class="fill-preview fill-preview-dense-lines"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="brick" aria-label="brick" title="brick"><span class="fill-preview fill-preview-brick"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="herringbone" aria-label="herringbone" title="herringbone"><span class="fill-preview fill-preview-herringbone"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="cookie" aria-label="Chocolate chip cookie" title="Chocolate chip cookie"><span class="fill-preview fill-preview-cookie"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="oreo" aria-label="Oreo" title="Oreo"><span class="fill-preview fill-preview-oreo"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="donut" aria-label="Donut (sprinkles)" title="Donut (sprinkles)"><span class="fill-preview fill-preview-donut"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="donutChocolate" aria-label="Donut (chocolate)" title="Donut (chocolate)"><span class="fill-preview fill-preview-donut-chocolate"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="donutGlazed" aria-label="Donut (glazed)" title="Donut (glazed)"><span class="fill-preview fill-preview-donut-glazed"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="clouds" aria-label="clouds" title="clouds"><span class="fill-preview fill-preview-clouds"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="whiteMarble" aria-label="white marble" title="white marble"><span class="fill-preview fill-preview-white-marble"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="greenMarble" aria-label="green marble" title="green marble"><span class="fill-preview fill-preview-green-marble"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="lightWood" aria-label="light wood" title="light wood"><span class="fill-preview fill-preview-light-wood"></span></button>
+<button type="button" class="style-preview-button" data-fill-pattern="darkWood" aria-label="dark wood" title="dark wood"><span class="fill-preview fill-preview-dark-wood"></span></button>
+</div>
 <label class="style-popover-control" title="Set selected tile opacity">
 <span>Opacity</span>
 <input id="fillOpacityPicker" max="1" min="0.05" step="0.05" type="range" value="1"/>
@@ -280,15 +316,21 @@
 <span>Stroke color</span>
 <input id="strokeColorPicker" type="color" value="#222222"/>
 </label>
-<label class="style-popover-control" title="Set selected tile stroke style">
+<label class="style-popover-control style-popover-hidden-select" title="Set selected tile stroke style" aria-hidden="true">
 <span>Style</span>
-<select id="strokeStylePicker">
+<select id="strokeStylePicker" tabindex="-1">
 <option value="solid">solid</option>
 <option value="dashed">dashed</option>
 <option value="dotted">dotted</option>
 <option value="none">none</option>
 </select>
 </label>
+<div class="style-preview-grid stroke-preview-grid" id="strokeStylePreviewGrid" aria-label="Outline style previews">
+<button type="button" class="style-preview-button" data-stroke-style="solid" aria-label="solid" title="solid"><span class="stroke-preview stroke-preview-solid"></span></button>
+<button type="button" class="style-preview-button" data-stroke-style="dashed" aria-label="dashed" title="dashed"><span class="stroke-preview stroke-preview-dashed"></span></button>
+<button type="button" class="style-preview-button" data-stroke-style="dotted" aria-label="dotted" title="dotted"><span class="stroke-preview stroke-preview-dotted"></span></button>
+<button type="button" class="style-preview-button" data-stroke-style="none" aria-label="none" title="none"><span class="stroke-preview stroke-preview-none"></span></button>
+</div>
 <label class="style-popover-control" title="Set selected tile stroke thickness">
 <span>Width</span>
 <input class="degree-input stroke-width-input" id="strokeWidthPicker" max="14" min="0" step="0.5" type="number" value="3"/>
@@ -356,9 +398,14 @@
 <button class="icon-button" id="closeVersionHistory" title="Close Version History">✕</button>
 </div>
 <div class="about-body">
+<p><strong>Bubble Tiles 1.1</strong></p>
+<p>
+          Version 1.1 adds preview-only Fill and Outline style popovers with hover tooltips, improved image/texture fills,
+          export fixes for food and texture fills, cleaner border handling, refined cloud/marble/wood textures, and additional example tilings.
+        </p>
 <p><strong>Bubble Tiles 1.0</strong></p>
 <p>
-          This is the first full public-facing version of the Bubble Tiles app: tile tray, snapping, grouping,
+          The first full public-facing version of the Bubble Tiles app: tile tray, snapping, grouping,
           lattice fill, examples, export, style controls, share links, and guided help. Feedback is warmly welcome.
         </p>
 </div>
@@ -379,7 +426,7 @@
 <div class="modal-backdrop" hidden="" id="helpModal">
 <div aria-labelledby="helpTitle" aria-modal="true" class="about-dialog help-dialog" role="dialog">
 <div class="about-header">
-<h2 id="helpTitle">Bubble Tiles 1.0 Help</h2>
+<h2 id="helpTitle">Bubble Tiles 1.1 Help</h2>
 <button class="icon-button" id="closeHelp" title="Close Help">✕</button>
 </div>
 <div class="about-body help-body">
@@ -472,7 +519,7 @@
 <div class="help-section-title">Style and export</div>
 <div class="help-tool">
 <span class="help-icon">🎨</span>
-<div><strong>Style.</strong> Use Shape Fill for selected tile fill color/pattern, Shape Outline for stroke color/style/width, or Canvas for the background color. Fill and canvas update instantly; stroke and pattern changes also update immediately while preserving selection and overlap highlights.</div>
+<div><strong>Style.</strong> Use Fill for selected tile fill color, opacity, and pattern previews; use Outline for stroke color, width, and outline-style previews. Hover over any preview swatch for its name, then click to apply it. Canvas changes the background color. Fill, outline, and canvas changes update immediately while preserving selection and overlap highlights.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🖼</span>

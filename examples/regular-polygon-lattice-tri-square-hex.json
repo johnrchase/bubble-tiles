@@ -1,0 +1,125 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "tiles": [
+    {
+      "id": "tile1",
+      "tileType": "HEX",
+      "x": 573.967,
+      "y": 429.523,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#9db5fb",
+      "fillPattern": "solid",
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 3.5
+    },
+    {
+      "id": "tile2",
+      "tileType": "SQUARE",
+      "x": 519.326,
+      "y": 334.882,
+      "rotation": -30,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#9ffb9d",
+      "fillPattern": "solid",
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 3.5
+    },
+    {
+      "id": "tile3",
+      "tileType": "TRI",
+      "x": 573.967,
+      "y": 303.335,
+      "rotation": 60,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#fea9fb",
+      "fillPattern": "solid",
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 3.5
+    },
+    {
+      "id": "tile7",
+      "tileType": "TRI",
+      "x": 683.249,
+      "y": 366.429,
+      "rotation": 120,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#fea9fb",
+      "fillPattern": "solid",
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 3.5
+    },
+    {
+      "id": "tile8",
+      "tileType": "SQUARE",
+      "x": 628.608,
+      "y": 334.882,
+      "rotation": -60,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#9ffb9d",
+      "fillPattern": "solid",
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 3.5
+    },
+    {
+      "id": "tile9",
+      "tileType": "SQUARE",
+      "x": 683.249,
+      "y": 429.523,
+      "rotation": -90,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#9ffb9d",
+      "fillPattern": "solid",
+      "strokeColor": "#000000",
+      "strokeStyle": "solid",
+      "strokeWidth": 3.5
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile1",
+        "tile2",
+        "tile3",
+        "tile7",
+        "tile8",
+        "tile9"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile1",
+        "tile2",
+        "tile3",
+        "tile7",
+        "tile8",
+        "tile9"
+      ],
+      "vectorA": {
+        "x": 218.564,
+        "y": 0
+      },
+      "vectorB": {
+        "x": 109.282,
+        "y": 189.282
+      }
+    }
+  ]
+}

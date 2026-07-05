@@ -1,0 +1,61 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "tiles": [
+    {
+      "id": "tile27",
+      "tileType": "B1",
+      "x": 602.171,
+      "y": 498.507,
+      "rotation": -30,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile28",
+      "tileType": "B5",
+      "x": 722.171,
+      "y": 429.225,
+      "rotation": 30,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    }
+  ],
+  "groups": [
+    {
+      "id": "group13",
+      "children": [
+        "tile27",
+        "tile28"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile27",
+        "tile28"
+      ],
+      "vectorA": {
+        "x": 240,
+        "y": -138.564
+      },
+      "vectorB": {
+        "x": 0,
+        "y": -138.564
+      }
+    }
+  ]
+}

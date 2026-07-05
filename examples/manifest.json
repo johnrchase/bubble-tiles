@@ -1,0 +1,113 @@
+[
+  {
+    "id": "one-of-each-frame-solution",
+    "title": "One-of-Each Frame Solution",
+    "description": "A one-of-each solution for the 13 Tile Frame. This is one of 1500 solutions.",
+    "file": "one-of-each-frame-solution.json",
+    "tags": [
+      "frames",
+      "hexagonal bubble tiles"
+    ]
+  },
+  {
+    "id": "mixed-bubble-tile-lattice-h4b-t1",
+    "title": "Mixed Bubble Tile Lattice H4B/T1",
+    "description": "A lattice-fill example combining H4B with triangular T1 bubble tiles.",
+    "file": "mixed-bubble-tile-lattice-h4b-t1.json",
+    "tags": [
+      "lattice",
+      "mixed bubble tiles"
+    ]
+  },
+  {
+    "id": "square-bubble-tile-lattice-s3-s0",
+    "title": "Square Bubble Tile Lattice S3/S0",
+    "description": "A compact square bubble tile lattice using the S3/S0 pairing.",
+    "file": "square-bubble-tile-lattice-s3-s0.json",
+    "tags": [
+      "lattice",
+      "square bubble tiles"
+    ]
+  },
+  {
+    "id": "hex-puzzle-spiral-h1-h5",
+    "title": "Hex Puzzle Spiral H1/H5",
+    "description": "A large spiral patch built from hexagonal puzzle tiles H1 and H5.",
+    "file": "hex-puzzle-spiral-h1-h5.json",
+    "tags": [
+      "hexagonal puzzle tiles",
+      "spiral"
+    ]
+  },
+  {
+    "id": "spectre-cluster",
+    "title": "Spectre Cluster",
+    "description": "A starter cluster made with Spectre monotiles.",
+    "file": "spectre-cluster.json",
+    "tags": [
+      "monotiles",
+      "spectre"
+    ]
+  },
+  {
+    "id": "mixed-bubble-tile-lattice-full-set",
+    "title": "Mixed Bubble Tile Lattice Full Set",
+    "description": "A large lattice using the full hexagonal bubble family together with triangular bubble tiles.",
+    "file": "mixed-bubble-tile-lattice-full-set.json",
+    "tags": [
+      "lattice",
+      "mixed bubble tiles"
+    ]
+  },
+  {
+    "id": "hex-bubble-tile-lattice-h0-h4c",
+    "title": "Hex Bubble Tile Lattice H0/H4C",
+    "description": "A four-tile lattice seed using one H0 tile and three H4C tiles.",
+    "file": "hex-bubble-tile-lattice-h0-h4c.json",
+    "tags": [
+      "lattice",
+      "hexagonal bubble tiles"
+    ]
+  },
+  {
+    "id": "hex-bubble-tile-lattice-h1-h5",
+    "title": "Hex Bubble Tile Lattice H1/H5",
+    "description": "A two-tile lattice seed using the dual pair H1 and H5.",
+    "file": "hex-bubble-tile-lattice-h1-h5.json",
+    "tags": [
+      "lattice",
+      "hexagonal bubble tiles"
+    ]
+  },
+  {
+    "id": "regular-polygon-lattice-tri-square-hex",
+    "title": "Regular Polygon Lattice",
+    "description": "A colored lattice made from regular triangles, squares, and hexagons.",
+    "file": "regular-polygon-lattice-tri-square-hex.json",
+    "tags": [
+      "lattice",
+      "regular polygons"
+    ]
+  },
+  {
+    "id": "large-frame-styled-design",
+    "title": "Large Frame Styled Design",
+    "description": "A styled large-frame design with a dark background, thicker strokes, and patterned fills.",
+    "file": "large-frame-styled-design.json",
+    "tags": [
+      "frames",
+      "style",
+      "hexagonal bubble tiles"
+    ]
+  },
+  {
+    "id": "triangular-puzzle-tile-lattice",
+    "title": "Triangular Puzzle Tile Lattice",
+    "description": "A lattice-fill example using all four triangular puzzle tile types.",
+    "file": "triangular-puzzle-tile-lattice.json",
+    "tags": [
+      "lattice",
+      "triangular puzzle tiles"
+    ]
+  }
+]

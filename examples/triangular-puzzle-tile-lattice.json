@@ -1,0 +1,169 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "tiles": [
+    {
+      "id": "tile5",
+      "tileType": "PT0",
+      "x": 170.918,
+      "y": -136.028,
+      "rotation": -60,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile6",
+      "tileType": "PT1",
+      "x": 130.918,
+      "y": -112.934,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile7",
+      "tileType": "PT2",
+      "x": 170.918,
+      "y": -182.216,
+      "rotation": 120,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile8",
+      "tileType": "PT3",
+      "x": 210.918,
+      "y": -112.934,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile13",
+      "tileType": "PT0",
+      "x": 90.918,
+      "y": -182.216,
+      "rotation": 120,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile14",
+      "tileType": "PT1",
+      "x": 130.918,
+      "y": -205.31,
+      "rotation": -180,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile15",
+      "tileType": "PT2",
+      "x": 90.918,
+      "y": -136.028,
+      "rotation": -60,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    },
+    {
+      "id": "tile16",
+      "tileType": "PT3",
+      "x": 50.918,
+      "y": -205.31,
+      "rotation": -180,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3
+    }
+  ],
+  "groups": [
+    {
+      "id": "group3",
+      "children": [
+        "tile5",
+        "tile6",
+        "tile7",
+        "tile8"
+      ]
+    },
+    {
+      "id": "group4",
+      "children": [
+        "tile13",
+        "tile14",
+        "tile15",
+        "tile16"
+      ]
+    },
+    {
+      "id": "group6",
+      "children": [
+        "group3",
+        "group4"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile5",
+        "tile6",
+        "tile7",
+        "tile8",
+        "tile13",
+        "tile14",
+        "tile15",
+        "tile16"
+      ],
+      "vectorA": {
+        "x": 160,
+        "y": 0
+      },
+      "vectorB": {
+        "x": -80,
+        "y": -138.564
+      }
+    }
+  ]
+}
