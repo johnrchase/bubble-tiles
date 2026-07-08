@@ -1,0 +1,105 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "tiles": [
+    {
+      "id": "tile1",
+      "tileType": "RB1",
+      "x": 272.151,
+      "y": 187.753,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile2",
+      "tileType": "RB2A",
+      "x": 312.151,
+      "y": 257.035,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile4",
+      "tileType": "RB3A",
+      "x": 392.151,
+      "y": 257.035,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile8",
+      "tileType": "RB2B",
+      "x": 352.151,
+      "y": 187.753,
+      "rotation": 60,
+      "flipX": -1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile1",
+        "tile2",
+        "tile4",
+        "tile8"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile1",
+        "tile2",
+        "tile4",
+        "tile8"
+      ],
+      "vectorA": {
+        "x": 160,
+        "y": 0
+      },
+      "vectorB": {
+        "x": -80,
+        "y": -138.564
+      }
+    }
+  ]
+}

@@ -3,18 +3,19 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Bubble Tiles 1.1</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<title>Bubble Tiles 1.2</title>
+<link href="assets/logo-two-tiles.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&amp;display=swap" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
 <script defer="" src="app.js"></script>
-</head>
+</link></head>
 <body>
 <div id="toolbar">
 <div class="brand">
 <img alt="" class="brand-logo-image" src="assets/logo-two-tiles.png"/>
-<span class="brand-wordmark">Bubble Tiles 1.1</span>
+<span class="brand-wordmark">Bubble Tiles 1.2</span>
 </div>
 <div class="menu-strip">
 <details class="toolbar-menu" id="fileMenu">
@@ -42,14 +43,14 @@
 <button class="icon-button" id="resetView" title="Reset view"><span aria-hidden="true" class="menu-item-icon">🏠</span><span>Home / Reset View</span></button>
 <button class="icon-button" id="fullScreen" title="Enter or exit full screen"><span aria-hidden="true" class="menu-item-icon">⛶</span><span>Full Screen</span></button>
 <div class="menu-separator"></div>
-<label class="menu-check" title="Turn snapping on or off">
+<label class="menu-check has-menu-shortcut" title="Turn snapping on or off (S)">
 <input checked="" id="menuSnapToggle" type="checkbox"/>
-<span class="menu-item-icon">🧲</span><span>Snap</span>
-</label>
-<label class="menu-check" title="Overlap is off by default. Turn on to highlight collisions. This may slow very large designs.">
+<span class="menu-item-icon">🧲</span><span class="menu-label">Snap</span>
+<span class="menu-shortcut">S</span></label>
+<label class="menu-check has-menu-shortcut" title="Overlap is off by default. Turn on to highlight collisions (O). This may slow very large designs.">
 <input id="menuOverlapToggle" type="checkbox"/>
-<span class="menu-item-icon">⚠</span><span>Overlap detector</span>
-</label>
+<span class="menu-item-icon">⚠</span><span class="menu-label">Overlap detector</span>
+<span class="menu-shortcut">O</span></label>
 <div class="menu-separator"></div>
 <div class="menu-separator"></div>
 <details class="toolbar-submenu">
@@ -59,6 +60,7 @@
 <label class="menu-check" title="Show or hide the Edit icon toolbar"><input checked="" data-toolbar-toggle="editToolbar" type="checkbox"/><span class="menu-item-icon">↶</span><span>Edit</span></label>
 <label class="menu-check" title="Show or hide the Selection icon toolbar"><input checked="" data-toolbar-toggle="selectionToolbar" type="checkbox"/><span class="menu-item-icon">☑</span><span>Selection</span></label>
 <label class="menu-check" title="Show or hide the Transform icon toolbar"><input checked="" data-toolbar-toggle="transformToolbar" type="checkbox"/><span class="menu-item-icon">⟳</span><span>Transform</span></label>
+<label class="menu-check" title="Show or hide the Bubble toolbar"><input checked="" data-toolbar-toggle="bubbleToolbar" type="checkbox"/><span class="menu-item-icon">◐</span><span>Bubble</span></label>
 <label class="menu-check" title="Show or hide the Lattice icon toolbar"><input checked="" data-toolbar-toggle="latticeToolbar" type="checkbox"/><span class="menu-item-icon">▦</span><span>Lattice</span></label>
 <label class="menu-check" title="Show or hide the Style toolbar"><input checked="" data-toolbar-toggle="styleToolbar" type="checkbox"/><span class="menu-item-icon">🎨</span><span>Style</span></label>
 <label class="menu-check" title="Show or hide the Snap/Overlap toggle toolbar"><input checked="" data-toolbar-toggle="togglesToolbar" type="checkbox"/><span class="menu-item-icon">🧲</span><span>Toggles</span></label>
@@ -69,17 +71,17 @@
 <details class="toolbar-menu" id="editMenu">
 <summary title="Edit tools">Edit ▾</summary>
 <div class="menu-panel">
-<button class="icon-button" id="undo" title="Undo (Ctrl/Cmd+Z)"><span aria-hidden="true" class="menu-item-icon">↶</span><span>Undo</span></button>
-<button class="icon-button" id="redo" title="Redo (Ctrl/Cmd+Y or Ctrl/Cmd+Shift+Z)"><span aria-hidden="true" class="menu-item-icon">↷</span><span>Redo</span></button>
-<button class="icon-button" id="copySelected" title="Copy selected tiles or group (Ctrl/Cmd+C)"><svg aria-hidden="true" class="toolbar-svg-icon clipboard-copy-icon" viewbox="0 0 48 48"><rect class="copy-sheet-back" height="25" rx="3" width="21" x="13" y="11"></rect><rect class="copy-sheet-front" height="25" rx="3" width="21" x="9" y="15"></rect><rect class="copy-clip" height="5" rx="2" width="9" x="15" y="8"></rect></svg><span>Copy</span></button>
-<button class="icon-button" id="pasteClipboard" title="Paste copied tiles or group (Ctrl/Cmd+V)"><svg aria-hidden="true" class="toolbar-svg-icon clipboard-paste-icon" viewbox="0 0 48 48"><rect class="paste-board" height="30" rx="4" width="26" x="11" y="9"></rect><rect class="paste-paper" height="20" rx="2" width="16" x="16" y="14"></rect><rect class="paste-clip" height="6" rx="2" width="12" x="18" y="7"></rect><path class="paste-arrow" d="M24 18 V30 M19 25 L24 30 L29 25"></path></svg><span>Paste</span></button>
-<button class="icon-button" id="duplicate" title="Duplicate selected (D)"><span aria-hidden="true" class="menu-item-icon">⧉</span><span>Duplicate</span></button>
-<button class="icon-button danger-button" id="deleteSelected" title="Delete selected (Delete/Backspace)"><svg aria-hidden="true" class="toolbar-svg-icon trash-icon" viewbox="0 0 48 48"><path d="M16 15 H32 L30.4 39 H17.6 Z"></path><path d="M18 12 H30"></path><path d="M21 9 H27"></path><path d="M21 20 V33"></path><path d="M27 20 V33"></path></svg><span>Delete</span></button>
+<button class="icon-button" id="undo" title="Undo (Ctrl/Cmd+Z)"><span aria-hidden="true" class="menu-item-icon">↶</span><span class="menu-label">Undo</span><span class="menu-shortcut">Ctrl/Cmd+Z</span></button>
+<button class="icon-button" id="redo" title="Redo (Ctrl/Cmd+Y or Ctrl/Cmd+Shift+Z)"><span aria-hidden="true" class="menu-item-icon">↷</span><span class="menu-label">Redo</span><span class="menu-shortcut">Ctrl/Cmd+Y</span></button>
+<button class="icon-button" id="copySelected" title="Copy selected tiles or group (Ctrl/Cmd+C)"><svg aria-hidden="true" class="toolbar-svg-icon clipboard-copy-icon" viewbox="0 0 48 48"><rect class="copy-sheet-back" height="25" rx="3" width="21" x="13" y="11"></rect><rect class="copy-sheet-front" height="25" rx="3" width="21" x="9" y="15"></rect><rect class="copy-clip" height="5" rx="2" width="9" x="15" y="8"></rect></svg><span class="menu-label">Copy</span><span class="menu-shortcut">Ctrl/Cmd+C</span></button>
+<button class="icon-button" id="pasteClipboard" title="Paste copied tiles or group (Ctrl/Cmd+V)"><svg aria-hidden="true" class="toolbar-svg-icon clipboard-paste-icon" viewbox="0 0 48 48"><rect class="paste-board" height="30" rx="4" width="26" x="11" y="9"></rect><rect class="paste-paper" height="20" rx="2" width="16" x="16" y="14"></rect><rect class="paste-clip" height="6" rx="2" width="12" x="18" y="7"></rect><path class="paste-arrow" d="M24 18 V30 M19 25 L24 30 L29 25"></path></svg><span class="menu-label">Paste</span><span class="menu-shortcut">Ctrl/Cmd+V</span></button>
+<button class="icon-button" id="duplicate" title="Duplicate selected (D)"><span aria-hidden="true" class="menu-item-icon">⧉</span><span class="menu-label">Duplicate</span><span class="menu-shortcut">D</span></button>
+<button class="icon-button danger-button" id="deleteSelected" title="Delete selected (Delete/Backspace)"><svg aria-hidden="true" class="toolbar-svg-icon trash-icon" viewbox="0 0 48 48"><path d="M16 15 H32 L30.4 39 H17.6 Z"></path><path d="M18 12 H30"></path><path d="M21 9 H27"></path><path d="M21 20 V33"></path><path d="M27 20 V33"></path></svg><span class="menu-label">Delete</span><span class="menu-shortcut">Delete</span></button>
 <button class="icon-button danger-button" id="reset" title="Clear canvas"><span aria-hidden="true" class="menu-item-icon">🧹</span><span>Clear Canvas</span></button>
 <div class="menu-separator"></div>
-<button data-command="selectAll" title="Select all tiles (Ctrl/Cmd+A)"><span aria-hidden="true" class="menu-item-icon">☑</span><span>Select All</span></button>
-<button data-command="groupSelected" title="Group selected tiles (G)"><svg aria-hidden="true" class="menu-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-frame" height="32" rx="3" width="32" x="8" y="8"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="35"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="35"></rect><rect class="group-small" height="11" rx="2" width="17" x="16" y="21"></rect><rect class="group-small" height="11" rx="2" width="17" x="21" y="15"></rect></svg><span>Group</span></button>
-<button data-command="ungroupSelected" title="Ungroup selected group one level (U)"><svg aria-hidden="true" class="menu-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-small" height="11" rx="2" width="19" x="9" y="27"></rect><rect class="group-small" height="11" rx="2" width="17" x="22" y="10"></rect></svg><span>Ungroup</span></button>
+<button data-command="selectAll" title="Select all tiles (Ctrl/Cmd+A)"><span aria-hidden="true" class="menu-item-icon">☑</span><span class="menu-label">Select All</span><span class="menu-shortcut">Ctrl/Cmd+A</span></button>
+<button data-command="groupSelected" title="Group selected tiles (G)"><svg aria-hidden="true" class="menu-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-frame" height="32" rx="3" width="32" x="8" y="8"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="35"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="35"></rect><rect class="group-small" height="11" rx="2" width="17" x="16" y="21"></rect><rect class="group-small" height="11" rx="2" width="17" x="21" y="15"></rect></svg><span class="menu-label">Group</span><span class="menu-shortcut">G</span></button>
+<button data-command="ungroupSelected" title="Ungroup selected group one level (U)"><svg aria-hidden="true" class="menu-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-small" height="11" rx="2" width="19" x="9" y="27"></rect><rect class="group-small" height="11" rx="2" width="17" x="22" y="10"></rect></svg><span class="menu-label">Ungroup</span><span class="menu-shortcut">U</span></button>
 <div class="menu-separator"></div>
 <button data-command="bringToTop" title="Bring selected tiles to top"><span aria-hidden="true" class="menu-item-icon">⇧</span><span>Bring to Top</span></button>
 <button data-command="moveUp" title="Move selected tiles up one layer"><span aria-hidden="true" class="menu-item-icon">↑</span><span>Move Up</span></button>
@@ -91,17 +93,29 @@
 <summary title="Transform tools">Transform ▾</summary>
 <div class="menu-panel">
 <label class="menu-control custom-angle-control" title="Rotation step in degrees for Q/E and rotate buttons"><span>Custom angle</span><input aria-label="Custom angle in degrees" id="menuRotateDegrees" inputmode="numeric" spellcheck="false" type="text" value="15°"/></label>
-<button data-command="rotateLeft" title="Rotate selected counterclockwise by the degree amount (Q)"><span aria-hidden="true" class="menu-item-icon">⟲</span><span>Rotate CCW</span></button>
-<button data-command="rotateRight" title="Rotate selected clockwise by the degree amount (E)"><span aria-hidden="true" class="menu-item-icon">⟳</span><span>Rotate CW</span></button>
-<button data-command="reflectHorizontal" title="Flip horizontally: mirror left/right across a vertical mirror line"><svg aria-hidden="true" class="menu-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M10 12 L24 24 L10 36 Z"></path><line class="reflect-mirror" x1="32" x2="32" y1="8" y2="40"></line><path class="reflect-shape dark" d="M54 12 L40 24 L54 36 Z"></path></svg><span>Flip Horizontal</span></button>
-<button data-command="reflectVertical" title="Flip vertically: mirror up/down across a horizontal mirror line"><svg aria-hidden="true" class="menu-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M20 10 L32 22 L44 10 Z"></path><line class="reflect-mirror" x1="8" x2="56" y1="24" y2="24"></line><path class="reflect-shape dark" d="M20 38 L32 26 L44 38 Z"></path></svg><span>Flip Vertical</span></button>
-<button data-command="arcDual" title="Arc Dual: swap every in arc and out arc for selected bubble/puzzle tiles"><span aria-hidden="true" class="menu-item-icon">◐</span><span>Arc Dual</span></button>
+<button data-command="rotateLeft" title="Rotate selected counterclockwise by the degree amount (Q)"><span aria-hidden="true" class="menu-item-icon">⟲</span><span class="menu-label">Rotate CCW</span><span class="menu-shortcut">Q</span></button>
+<button data-command="rotateRight" title="Rotate selected clockwise by the degree amount (E)"><span aria-hidden="true" class="menu-item-icon">⟳</span><span class="menu-label">Rotate CW</span><span class="menu-shortcut">E</span></button>
+<button data-command="reflectHorizontal" title="Flip horizontally (H): mirror left/right across a vertical mirror line"><svg aria-hidden="true" class="menu-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M10 12 L24 24 L10 36 Z"></path><line class="reflect-mirror" x1="32" x2="32" y1="8" y2="40"></line><path class="reflect-shape dark" d="M54 12 L40 24 L54 36 Z"></path></svg><span class="menu-label">Flip Horizontal</span><span class="menu-shortcut">H</span></button>
+<button data-command="reflectVertical" title="Flip vertically (V): mirror up/down across a horizontal mirror line"><svg aria-hidden="true" class="menu-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M20 10 L32 22 L44 10 Z"></path><line class="reflect-mirror" x1="8" x2="56" y1="24" y2="24"></line><path class="reflect-shape dark" d="M20 38 L32 26 L44 38 Z"></path></svg><span class="menu-label">Flip Vertical</span><span class="menu-shortcut">V</span></button>
+</div>
+</details>
+<details class="toolbar-menu" id="bubbleMenu">
+<summary title="Bubble tools">Bubble ▾</summary>
+<div class="menu-panel">
+<button data-command="arcDual" title="Arc Dual (A): swap every in arc and out arc for selected bubble/puzzle tiles"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-dual-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.png"/><span class="menu-label">Arc Dual</span><span class="menu-shortcut">A</span></button>
+<button data-command="reverseSingleArc" title="Reverse individual arcs/edge profiles on selected bubble or puzzle-edge tiles. Black dots mark vertices; hover near an edge to see a blue glow, then click to reverse it. Press Enter or click away to finish."><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-reverse-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.png"/><span>Reverse One Arc</span></button>
+<button data-command="polygonToBubble" title="Convert selected compatible polygon tiles into all-out-arc bubble tiles; Einstein-family, soft, and lens tiles are excluded"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-bubble-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/><span>To Bubble Tile</span></button>
+<button data-command="bubbleToPolygon" title="Convert selected bubble-edge tiles back to straight polygon edges"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-polygon-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/><span>To Polygon</span></button>
+<div class="menu-separator"></div>
+<button data-command="bubbleStyleArc60" title="Bubble Style: 60-degree arc profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-arc60.png"/><span>Bubble Style: 60° Arc</span></button>
+<button data-command="bubbleStylePuzzle" title="Bubble Style: puzzle edge profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-puzzle.png"/><span>Bubble Style: Puzzle</span></button>
+<button data-command="bubbleStyleSpike" title="Bubble Style: compact triangular spike edge profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-spike.png"/><span>Bubble Style: Spike</span></button>
 </div>
 </details>
 <details class="toolbar-menu" id="latticeMenu">
 <summary title="Lattice tools">Lattice ▾</summary>
 <div class="menu-panel">
-<button data-command="latticeFill" title="Lattice Fill: define two translation vectors from the selected motif"><span aria-hidden="true" class="menu-item-icon">▦</span><span>Lattice Fill</span></button>
+<button data-command="latticeFill" title="Lattice Fill (L): define two translation vectors from the selected motif"><span aria-hidden="true" class="menu-item-icon">▦</span><span class="menu-label">Tiling Fill</span><span class="menu-shortcut">L</span></button>
 <button data-command="clearLattice" title="Clear generated lattice fills"><span aria-hidden="true" class="menu-item-icon">▦×</span><span>Clear Lattice</span></button>
 <button data-command="locateLatticeParents" title="Center the view on the parent/source tiles for lattice fills"><svg aria-hidden="true" class="menu-svg-icon locate-icon" viewbox="0 0 28 28"><circle cx="14" cy="14" r="6.2"></circle><circle cx="14" cy="14" r="1.8"></circle><line x1="14" x2="14" y1="3.2" y2="7.2"></line><line x1="14" x2="14" y1="20.8" y2="24.8"></line><line x1="3.2" x2="7.2" y1="14" y2="14"></line><line x1="20.8" x2="24.8" y1="14" y2="14"></line></svg><span>Locate</span></button>
 <label class="menu-control" title="Adjust the opacity of virtual lattice copies"><span><svg aria-hidden="true" class="menu-svg-icon eye-icon" viewbox="0 0 28 28"><path d="M3.5 14 C6.2 8.7 10 6 14 6 C18 6 21.8 8.7 24.5 14 C21.8 19.3 18 22 14 22 C10 22 6.2 19.3 3.5 14 Z"></path><circle cx="14" cy="14" r="3.8"></circle></svg><span>Opacity</span></span><input id="menuLatticeOpacity" max="1.00" min="0.10" step="0.05" type="range" value="0.62"/></label>
@@ -110,7 +124,7 @@
 <details class="toolbar-menu" id="styleMenu">
 <summary title="Style tools">Style ▾</summary>
 <div class="menu-panel style-menu-panel">
-<label class="menu-control" title="Set selected tile fill color"><span><img alt="" class="menu-icon-image" src="assets/icon-fill-bucket.png"/><span>Fill</span></span><input id="menuFillColorPicker" type="color" value="#ffd21f"/></label>
+<label class="menu-control" title="Set selected tile fill color"><span><img alt="" class="menu-icon-image" src="assets/icon-fill-bucket.png"><span>Fill</span></img></span><input id="menuFillColorPicker" type="color" value="#ffd21f"/></label>
 <label class="menu-control" title="Set selected tile fill pattern"><span><span class="menu-item-icon">▧</span>Pattern</span>
 <select id="menuFillPatternPicker">
 <option value="solid">solid</option>
@@ -134,7 +148,7 @@
 </select>
 </label>
 <label class="menu-control" title="Set selected tile opacity"><span><svg aria-hidden="true" class="menu-svg-icon eye-icon" viewbox="0 0 28 28"><path d="M3.5 14 C6.2 8.7 10 6 14 6 C18 6 21.8 8.7 24.5 14 C21.8 19.3 18 22 14 22 C10 22 6.2 19.3 3.5 14 Z"></path><circle cx="14" cy="14" r="3.8"></circle></svg><span>Opacity</span></span><input id="menuFillOpacityPicker" max="1" min="0.05" step="0.05" type="range" value="1"/></label>
-<label class="menu-control" title="Set selected tile stroke color"><span><img alt="" class="menu-icon-image outline-menu-image" src="assets/icon-outline-pencil.png"/><span>Outline</span></span><input id="menuStrokeColorPicker" type="color" value="#222222"/></label>
+<label class="menu-control" title="Set selected tile stroke color"><span><img alt="" class="menu-icon-image outline-menu-image" src="assets/icon-outline-pencil.png"><span>Outline</span></img></span><input id="menuStrokeColorPicker" type="color" value="#222222"/></label>
 <label class="menu-control" title="Set selected tile stroke style"><span><span class="menu-item-icon">┄</span>Stroke style</span>
 <select id="menuStrokeStylePicker">
 <option value="solid">solid</option>
@@ -215,16 +229,35 @@
 </label>
 <button class="icon-button rotate-symbol-button" id="rotateLeft" title="Rotate selected counterclockwise by the degree amount (Q)">⟲</button>
 <button class="icon-button rotate-symbol-button" id="rotateRight" title="Rotate selected clockwise by the degree amount (E)">⟳</button>
-<button class="reflect-button" id="reflectHorizontal" title="Flip horizontally: mirror left/right across a vertical mirror line">
+<button class="reflect-button" id="reflectHorizontal" title="Flip horizontally (H): mirror left/right across a vertical mirror line">
 <svg aria-hidden="true" class="toolbar-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M10 12 L24 24 L10 36 Z"></path><line class="reflect-mirror" x1="32" x2="32" y1="8" y2="40"></line><path class="reflect-shape dark" d="M54 12 L40 24 L54 36 Z"></path></svg>
 </button>
-<button class="reflect-button" id="reflectVertical" title="Flip vertically: mirror up/down across a horizontal mirror line">
+<button class="reflect-button" id="reflectVertical" title="Flip vertically (V): mirror up/down across a horizontal mirror line">
 <svg aria-hidden="true" class="toolbar-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M20 10 L32 22 L44 10 Z"></path><line class="reflect-mirror" x1="8" x2="56" y1="24" y2="24"></line><path class="reflect-shape dark" d="M20 38 L32 26 L44 38 Z"></path></svg>
 </button>
-<button aria-label="Arc Dual" class="icon-button" id="arcDual" title="Arc Dual: swap every in arc and out arc for selected bubble/puzzle tiles">◐</button>
+</div>
+<!-- Locked Bubble toolbar icons: do not change these raster icon assets unless John explicitly asks. -->
+<div class="toolbar-section" data-toolbar-section="bubble" id="bubbleToolbar">
+<button aria-label="Arc Dual" class="icon-button arc-dual-tool-button" id="arcDual" title="Arc Dual (A): swap every in arc and out arc for selected bubble/puzzle tiles"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-dual-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.png"/></button>
+<button aria-label="Reverse one arc" class="icon-button arc-reverse-tool-button" id="reverseSingleArc" title="Reverse One Arc: select one or more bubble or puzzle-edge tiles, then click near individual edges. Vertices show as black dots and the hovered edge gets a blue glow. Press Enter or click away to finish."><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-reverse-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.png"/></button>
+<button aria-label="To Bubble Tile" class="icon-button to-bubble-tool-button" id="polygonToBubble" title="To Bubble Tile: convert selected compatible polygon tiles into all-out-arc bubble tiles; Einstein-family, soft, and lens tiles are excluded"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-bubble-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/></button>
+<button aria-label="To Polygon" class="icon-button to-polygon-tool-button" id="bubbleToPolygon" title="To Polygon: convert selected bubble-edge tiles back to straight polygon edges"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-polygon-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/></button>
+<div class="style-dropdown-wrap">
+<button aria-label="Bubble Style: change selected bubble-tile edge profiles" class="office-style-button toolbar-icon-only" data-bubble-style-button="true" id="edgeDecorationButton" title="Bubble Style: choose 60-degree arc, puzzle-piece, or triangular spike edge profile for selected bubble tiles" type="button">
+<img alt="" aria-hidden="true" class="office-style-icon edge-decoration-tool-icon bubble-style-menu-icon" src="assets/bubble-icons/bubble-style-menu.png"/>
+<span class="dropdown-caret">▾</span>
+</button>
+<div class="style-popover edge-decoration-popover" hidden="" id="edgeDecorationPanel">
+<div aria-label="Bubble Style previews" class="style-preview-grid edge-decoration-preview-grid" id="edgeDecorationPreviewGrid">
+<button aria-label="60-degree arc edge profile" class="style-preview-button" data-edge-decoration="arc60" title="60-degree arc edge profile" type="button"><img alt="" aria-hidden="true" class="edge-decoration-preview-image" src="assets/bubble-icons/bubble-style-arc60.png"/></button>
+<button aria-label="Puzzle-piece edge profile" class="style-preview-button" data-edge-decoration="puzzle" title="Puzzle-piece edge profile" type="button"><img alt="" aria-hidden="true" class="edge-decoration-preview-image" src="assets/bubble-icons/bubble-style-puzzle.png"/></button>
+<button aria-label="Compact triangular spike edge profile" class="style-preview-button" data-edge-decoration="spike" title="Compact triangular spike edge profile" type="button"><img alt="" aria-hidden="true" class="edge-decoration-preview-image" src="assets/bubble-icons/bubble-style-spike.png"/></button>
+</div>
+</div>
+</div>
 </div>
 <div class="toolbar-section" data-toolbar-section="lattice" id="latticeToolbar">
-<button aria-label="Lattice Fill" class="icon-button lattice-icon-button" id="latticeFill" title="Lattice Fill: define two translation vectors from the selected motif">▦</button>
+<button aria-label="Lattice Fill" class="icon-button lattice-icon-button" id="latticeFill" title="Lattice Fill (L): define two translation vectors from the selected motif">▦</button>
 <button aria-label="Clear Lattice" class="icon-button clear-lattice-button lattice-icon-button" id="clearLattice" title="Clear generated lattice fills">
 <span class="lattice-clear-icon"><span class="lattice-mini">▦</span><span class="lattice-x">×</span></span>
 </button>
@@ -249,15 +282,15 @@
 <div class="toolbar-section" data-toolbar-section="style" id="styleToolbar">
 <div class="style-dropdown-wrap">
 <button aria-label="Fill: set selected tile fill color, pattern, and opacity" class="office-style-button toolbar-icon-only" id="shapeFillButton" title="Fill: set selected tile fill color, pattern, and opacity" type="button">
-<img alt="" class="office-style-icon fill-tool-image" src="assets/icon-fill-bucket.png"/>
+<img alt="" class="office-style-icon fill-tool-image" src="assets/icon-fill-bucket.png">
 <span class="dropdown-caret">▾</span>
-</button>
+</img></button>
 <div class="style-popover" hidden="" id="shapeFillPanel">
 <label class="style-popover-control" title="Set selected tile fill color">
 <span>Fill color</span>
 <input id="fillColorPicker" type="color" value="#ffd21f"/>
 </label>
-<label class="style-popover-control style-popover-hidden-select" title="Set selected tile fill pattern" aria-hidden="true">
+<label aria-hidden="true" class="style-popover-control style-popover-hidden-select" title="Set selected tile fill pattern">
 <span>Pattern</span>
 <select id="fillPatternPicker" tabindex="-1">
 <option value="solid">solid</option>
@@ -280,25 +313,25 @@
 <option value="darkWood">dark wood</option>
 </select>
 </label>
-<div class="style-preview-grid fill-preview-grid" id="fillPatternPreviewGrid" aria-label="Fill style previews">
-<button type="button" class="style-preview-button" data-fill-pattern="solid" aria-label="solid" title="solid"><span class="fill-preview fill-preview-solid"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="dots" aria-label="dots" title="dots"><span class="fill-preview fill-preview-dots"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="denseDots" aria-label="dense dots" title="dense dots"><span class="fill-preview fill-preview-dense-dots"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="crosshatch" aria-label="crosshatch" title="crosshatch"><span class="fill-preview fill-preview-crosshatch"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="horizontal" aria-label="lines" title="lines"><span class="fill-preview fill-preview-lines"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="denseHorizontal" aria-label="dense lines" title="dense lines"><span class="fill-preview fill-preview-dense-lines"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="brick" aria-label="brick" title="brick"><span class="fill-preview fill-preview-brick"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="herringbone" aria-label="herringbone" title="herringbone"><span class="fill-preview fill-preview-herringbone"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="cookie" aria-label="Chocolate chip cookie" title="Chocolate chip cookie"><span class="fill-preview fill-preview-cookie"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="oreo" aria-label="Oreo" title="Oreo"><span class="fill-preview fill-preview-oreo"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="donut" aria-label="Donut (sprinkles)" title="Donut (sprinkles)"><span class="fill-preview fill-preview-donut"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="donutChocolate" aria-label="Donut (chocolate)" title="Donut (chocolate)"><span class="fill-preview fill-preview-donut-chocolate"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="donutGlazed" aria-label="Donut (glazed)" title="Donut (glazed)"><span class="fill-preview fill-preview-donut-glazed"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="clouds" aria-label="clouds" title="clouds"><span class="fill-preview fill-preview-clouds"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="whiteMarble" aria-label="white marble" title="white marble"><span class="fill-preview fill-preview-white-marble"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="greenMarble" aria-label="green marble" title="green marble"><span class="fill-preview fill-preview-green-marble"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="lightWood" aria-label="light wood" title="light wood"><span class="fill-preview fill-preview-light-wood"></span></button>
-<button type="button" class="style-preview-button" data-fill-pattern="darkWood" aria-label="dark wood" title="dark wood"><span class="fill-preview fill-preview-dark-wood"></span></button>
+<div aria-label="Fill style previews" class="style-preview-grid fill-preview-grid" id="fillPatternPreviewGrid">
+<button aria-label="solid" class="style-preview-button" data-fill-pattern="solid" title="solid" type="button"><span class="fill-preview fill-preview-solid"></span></button>
+<button aria-label="dots" class="style-preview-button" data-fill-pattern="dots" title="dots" type="button"><span class="fill-preview fill-preview-dots"></span></button>
+<button aria-label="dense dots" class="style-preview-button" data-fill-pattern="denseDots" title="dense dots" type="button"><span class="fill-preview fill-preview-dense-dots"></span></button>
+<button aria-label="crosshatch" class="style-preview-button" data-fill-pattern="crosshatch" title="crosshatch" type="button"><span class="fill-preview fill-preview-crosshatch"></span></button>
+<button aria-label="lines" class="style-preview-button" data-fill-pattern="horizontal" title="lines" type="button"><span class="fill-preview fill-preview-lines"></span></button>
+<button aria-label="dense lines" class="style-preview-button" data-fill-pattern="denseHorizontal" title="dense lines" type="button"><span class="fill-preview fill-preview-dense-lines"></span></button>
+<button aria-label="brick" class="style-preview-button" data-fill-pattern="brick" title="brick" type="button"><span class="fill-preview fill-preview-brick"></span></button>
+<button aria-label="herringbone" class="style-preview-button" data-fill-pattern="herringbone" title="herringbone" type="button"><span class="fill-preview fill-preview-herringbone"></span></button>
+<button aria-label="Chocolate chip cookie" class="style-preview-button" data-fill-pattern="cookie" title="Chocolate chip cookie" type="button"><span class="fill-preview fill-preview-cookie"></span></button>
+<button aria-label="Oreo" class="style-preview-button" data-fill-pattern="oreo" title="Oreo" type="button"><span class="fill-preview fill-preview-oreo"></span></button>
+<button aria-label="Donut (sprinkles)" class="style-preview-button" data-fill-pattern="donut" title="Donut (sprinkles)" type="button"><span class="fill-preview fill-preview-donut"></span></button>
+<button aria-label="Donut (chocolate)" class="style-preview-button" data-fill-pattern="donutChocolate" title="Donut (chocolate)" type="button"><span class="fill-preview fill-preview-donut-chocolate"></span></button>
+<button aria-label="Donut (glazed)" class="style-preview-button" data-fill-pattern="donutGlazed" title="Donut (glazed)" type="button"><span class="fill-preview fill-preview-donut-glazed"></span></button>
+<button aria-label="clouds" class="style-preview-button" data-fill-pattern="clouds" title="clouds" type="button"><span class="fill-preview fill-preview-clouds"></span></button>
+<button aria-label="white marble" class="style-preview-button" data-fill-pattern="whiteMarble" title="white marble" type="button"><span class="fill-preview fill-preview-white-marble"></span></button>
+<button aria-label="green marble" class="style-preview-button" data-fill-pattern="greenMarble" title="green marble" type="button"><span class="fill-preview fill-preview-green-marble"></span></button>
+<button aria-label="light wood" class="style-preview-button" data-fill-pattern="lightWood" title="light wood" type="button"><span class="fill-preview fill-preview-light-wood"></span></button>
+<button aria-label="dark wood" class="style-preview-button" data-fill-pattern="darkWood" title="dark wood" type="button"><span class="fill-preview fill-preview-dark-wood"></span></button>
 </div>
 <label class="style-popover-control" title="Set selected tile opacity">
 <span>Opacity</span>
@@ -308,15 +341,15 @@
 </div>
 <div class="style-dropdown-wrap">
 <button aria-label="Outline: set selected tile stroke color, style, and width" class="office-style-button toolbar-icon-only" id="shapeOutlineButton" title="Outline: set selected tile stroke color, style, and width" type="button">
-<img alt="" class="office-style-icon outline-tool-image" src="assets/icon-outline-pencil.png"/>
+<img alt="" class="office-style-icon outline-tool-image" src="assets/icon-outline-pencil.png">
 <span class="dropdown-caret">▾</span>
-</button>
+</img></button>
 <div class="style-popover" hidden="" id="shapeOutlinePanel">
 <label class="style-popover-control" title="Set selected tile stroke color">
 <span>Stroke color</span>
 <input id="strokeColorPicker" type="color" value="#222222"/>
 </label>
-<label class="style-popover-control style-popover-hidden-select" title="Set selected tile stroke style" aria-hidden="true">
+<label aria-hidden="true" class="style-popover-control style-popover-hidden-select" title="Set selected tile stroke style">
 <span>Style</span>
 <select id="strokeStylePicker" tabindex="-1">
 <option value="solid">solid</option>
@@ -325,11 +358,11 @@
 <option value="none">none</option>
 </select>
 </label>
-<div class="style-preview-grid stroke-preview-grid" id="strokeStylePreviewGrid" aria-label="Outline style previews">
-<button type="button" class="style-preview-button" data-stroke-style="solid" aria-label="solid" title="solid"><span class="stroke-preview stroke-preview-solid"></span></button>
-<button type="button" class="style-preview-button" data-stroke-style="dashed" aria-label="dashed" title="dashed"><span class="stroke-preview stroke-preview-dashed"></span></button>
-<button type="button" class="style-preview-button" data-stroke-style="dotted" aria-label="dotted" title="dotted"><span class="stroke-preview stroke-preview-dotted"></span></button>
-<button type="button" class="style-preview-button" data-stroke-style="none" aria-label="none" title="none"><span class="stroke-preview stroke-preview-none"></span></button>
+<div aria-label="Outline style previews" class="style-preview-grid stroke-preview-grid" id="strokeStylePreviewGrid">
+<button aria-label="solid" class="style-preview-button" data-stroke-style="solid" title="solid" type="button"><span class="stroke-preview stroke-preview-solid"></span></button>
+<button aria-label="dashed" class="style-preview-button" data-stroke-style="dashed" title="dashed" type="button"><span class="stroke-preview stroke-preview-dashed"></span></button>
+<button aria-label="dotted" class="style-preview-button" data-stroke-style="dotted" title="dotted" type="button"><span class="stroke-preview stroke-preview-dotted"></span></button>
+<button aria-label="none" class="style-preview-button" data-stroke-style="none" title="none" type="button"><span class="stroke-preview stroke-preview-none"></span></button>
 </div>
 <label class="style-popover-control" title="Set selected tile stroke thickness">
 <span>Width</span>
@@ -343,14 +376,14 @@
 </label>
 </div>
 <div class="toolbar-section quick-toggles" data-toolbar-section="toggles" id="togglesToolbar">
-<label aria-label="Turn snapping on or off" class="toggle icon-toggle" title="Turn snapping on or off">
-<input checked="" id="snapToggle" type="checkbox">
+<label aria-label="Turn snapping on or off" class="toggle icon-toggle" title="Turn snapping on or off (S)">
+<input checked="" id="snapToggle" type="checkbox"/>
 <span aria-hidden="true" class="toolbar-glyph">🧲</span>
-</input></label>
+</label>
 <label aria-label="Turn overlap detector on or off" class="toggle icon-toggle" title="Overlap is off by default. Turn on to highlight collisions.">
-<input id="overlapToggle" type="checkbox">
+<input id="overlapToggle" type="checkbox"/>
 <span aria-hidden="true" class="overlap-toolbar-icon"><span class="overlap-box overlap-box-a"></span><span class="overlap-box overlap-box-b"></span></span>
-</input></label>
+</label>
 </div>
 <div class="toolbar-section help-section" data-toolbar-section="shortcuts" id="shortcutsToolbar">
 <span class="shortcut-help" id="helpText">
@@ -398,10 +431,12 @@
 <button class="icon-button" id="closeVersionHistory" title="Close Version History">✕</button>
 </div>
 <div class="about-body">
+<p><strong>Bubble Tiles 1.2</strong></p>
+<p>Version 1.2 is a major geometry and interface upgrade: new bubble and other tile families, a new five-sided trapezoid-based bubble family, soft tiles, Penrose rhombs, Pac-Man and Squiggle shapes, restored Hat/Turtle/Spectre monotiles as polygon-only tiles, the n-gon tool, JSON drag-and-drop import, improved snapping and overlap checking, H/V flip tools, cleaner right-aligned menu shortcuts, Arc Dual, one-arc reverse editing, Bubble Style profiles including puzzle and spike edges, restored ordered soft-tile tray plus slightly expanded soft-tile add-all spacing, refreshed icons, export fixes, improved examples including Heesch Number 1, protected compact Spike geometry, and more consistent Help/Tutorial coverage.</p>
 <p><strong>Bubble Tiles 1.1</strong></p>
 <p>
-          Version 1.1 adds preview-only Fill and Outline style popovers with hover tooltips, improved image/texture fills,
-          export fixes for food and texture fills, cleaner border handling, refined cloud/marble/wood textures, and additional example tilings.
+          Version 1.1 added preview-only Fill and Outline style popovers with hover tooltips, image/texture fills,
+          export fixes for food and texture fills, cleaner border handling, refined cloud/marble/wood textures, and example tilings.
         </p>
 <p><strong>Bubble Tiles 1.0</strong></p>
 <p>
@@ -426,7 +461,7 @@
 <div class="modal-backdrop" hidden="" id="helpModal">
 <div aria-labelledby="helpTitle" aria-modal="true" class="about-dialog help-dialog" role="dialog">
 <div class="about-header">
-<h2 id="helpTitle">Bubble Tiles 1.1 Help</h2>
+<h2 id="helpTitle">Bubble Tiles 1.2 Help</h2>
 <button class="icon-button" id="closeHelp" title="Close Help">✕</button>
 </div>
 <div class="about-body help-body">
@@ -435,25 +470,25 @@
 <span class="help-icon">🖱</span>
 <div><strong>Pan.</strong> Drag blank canvas, hold Space and drag, or Ctrl/Cmd-drag anywhere. Ctrl/Cmd-drag is useful when the canvas is full of tiles.</div>
 </div>
-<div class="help-tool">
-<span class="help-icon zoom-help-icon">⌕</span>
+<div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon zoom-icon" viewbox="0 0 48 48"><circle cx="21" cy="21" r="13"></circle><line x1="31" x2="42" y1="31" y2="42"></line><line x1="21" x2="21" y1="14" y2="28"></line><line x1="14" x2="28" y1="21" y2="21"></line></svg>
+
 <div><strong>Zoom.</strong> Use the mouse wheel or View → Zoom In / Zoom Out. View → Home / Reset View returns to the starting view. View → Full Screen enters or exits full-screen mode.</div>
 </div>
 <div class="help-section-title">Adding and arranging tiles</div>
 <div class="help-tool">
 <span class="help-icon">▣</span>
-<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a tile family, then click a tile to add it or drag it onto the canvas. “Add all” places the whole family. The Examples tab loads or inserts saved canvases. The Hat, Turtle, and Spectre monotiles are included; Penrose, assorted-shape, and polyomino drawers are still turned off until their geometry is polished. Top menus duplicate the toolbar commands; Edit includes selection/layer commands, View includes Snap, Overlap, and Show toolbar controls, and About contains Help, Guided Tutorial, Version History, and app credits. View and Edit icon toolbars are shown by default. View → View/Hide Toolbars opens the full toolbar visibility list. When the tile panel is collapsed, the side rail shows the tiles from the most recently used tile family for quick adding.</div>
+<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a family, then click a tile or drag it onto the canvas. “Add all” places the whole family in a reference arrangement; the Five-sided set uses the trapezoid-based arrangement from the submitted JSON. The Examples tab loads or inserts saved canvases, including the Heesch Number 1 example; you can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">💡</span>
-<div><strong>Context hints.</strong> The app sometimes shows a yellow note for mathematically important tiles, such as the 13-tile frame or the chiral 3A / 3A* pair.</div>
+<div><strong>Context hints.</strong> The app sometimes shows a yellow note for mathematically important tiles, such as the 13-tile frame, its over 1500+ hex-bubble solutions, or the chiral 3A / 3A* pair.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🧲</span>
-<div><strong>Snap.</strong> Snap is on by default. Drag or rotate tiles near compatible edges to see a gray preview; release to commit the snap. The first 3A or 3A* chiral tile placed in a session shows a reminder that the two are mirror partners.</div>
+<div><strong>Snap.</strong> Snap is on by default. Drag or rotate tiles near compatible edges to see a gray preview; release to commit the snap. Snapping checks both the matched edge and which side the tile interior is on, so concave pieces are less likely to snap into overlapping positions. The first 3A or 3A* chiral tile placed in a session shows a reminder that the two are mirror partners.</div>
 </div>
-<div class="help-tool">
-<span class="help-icon">⚠</span>
+<div class="help-tool"><span aria-hidden="true" class="help-icon help-overlap-icon"><span class="overlap-toolbar-icon"><span class="overlap-box overlap-box-a"></span><span class="overlap-box overlap-box-b"></span></span></span>
+
 <div><strong>Overlap.</strong> Overlap is off by default. Turn it on to highlight likely collisions in red. Large layouts use focused checking so the app stays responsive.</div>
 </div>
 <div class="help-section-title">Selection</div>
@@ -461,8 +496,8 @@
 <span class="help-icon">☑</span>
 <div><strong>Select.</strong> Click selects one tile or group. Ctrl/Cmd-click or Shift-click toggles multiple selection. Shift-drag draws a box selection. Selection → All or Ctrl/Cmd+A selects all editable tiles.</div>
 </div>
-<div class="help-tool">
-<span class="help-icon">▦</span>
+<div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-frame" height="32" rx="3" width="32" x="8" y="8"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="35"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="35"></rect><rect class="group-small" height="11" rx="2" width="17" x="16" y="21"></rect><rect class="group-small" height="11" rx="2" width="17" x="21" y="15"></rect></svg>
+
 <div><strong>Group / Ungroup.</strong> Group selected tiles with Selection → Group or G. Ungroup one level with Selection → Ungroup or U. Groups can be nested and can be used as supertiles.</div>
 </div>
 <div class="help-section-title">Edit</div>
@@ -483,14 +518,32 @@
 <span class="help-icon">⟲</span>
 <div><strong>Rotate.</strong> Set the degree amount in the Transform toolbar. Rotate CCW/CW uses that amount; Q and E use the same amount. The default is 15°.</div>
 </div>
+<div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M10 12 L24 24 L10 36 Z"></path><line class="reflect-mirror" x1="32" x2="32" y1="8" y2="40"></line><path class="reflect-shape dark" d="M54 12 L40 24 L54 36 Z"></path></svg>
+
+<div><strong>Flip.</strong> Press H to flip horizontally or V to flip vertically. Flip H mirrors left/right across a vertical mirror line; Flip V mirrors up/down across a horizontal mirror line. These work on selected tiles, groups, and motifs.</div>
+</div>
+<div class="help-section-title">Bubble</div>
 <div class="help-tool">
-<span class="help-icon">↔</span>
-<div><strong>Flip.</strong> Flip H mirrors left/right across a vertical mirror line. Flip V mirrors up/down across a horizontal mirror line. These work on selected tiles, groups, and motifs.</div>
+<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.png"/>
+<div><strong>Arc Dual.</strong> Bubble → Arc Dual swaps every inward arc with an outward arc on selected bubble and puzzle-edge tiles. It also works on polygon-to-bubble tiles and custom arc variants.</div>
 </div>
 <div class="help-tool">
-<span class="help-icon">◐</span>
-<div><strong>Arc Dual.</strong> For selected bubble tiles and puzzle tiles, Arc Dual swaps every inward arc with an outward arc and changes the tile to the corresponding dual tile/color. Non-bubble tiles are ignored.</div>
+<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.png"/>
+<div><strong>Reverse One Arc.</strong> Select one or more editable bubble or puzzle-edge tiles, click Bubble → Reverse One Arc, then click near any edge to flip that side. Black dots show vertices, the hovered edge glows blue, and matching shared edges in the current selection flip together. Press Enter or click away to finish.</div>
 </div>
+<div class="help-tool">
+<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/>
+<div><strong>To Bubble Tile.</strong> Bubble → To Bubble Tile converts compatible polygon tiles into 60° arc-edge bubble tiles with all arcs initially pointing outward. The Einstein-family monotiles — Hat, Turtle, and Spectre — stay polygon-only because their mixed edge lengths do not belong to the ordinary unit-edge bubble-tile system. Arc Lens is also excluded.</div>
+</div>
+<div class="help-tool">
+<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/>
+<div><strong>To Polygon.</strong> Bubble → To Polygon returns selected converted bubble or puzzle-edge tiles to straight polygon edges when possible.</div>
+</div>
+<div class="help-tool"><img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon help-bubble-style-menu-icon" src="assets/bubble-icons/bubble-style-menu.png"/>
+
+<div><strong>Bubble Style.</strong> Bubble → Bubble Style choices are available directly in the Bubble menu and in the Bubble toolbar dropdown. They change selected compatible bubble-tile outlines to 60° bubble arcs, the same puzzle-piece profile used by the puzzle tiles, or a compact triangular spike profile. The Spike icon uses the exact exported Bubble Tiles artwork, and the compact spike geometry is protected by named constants to avoid the old oversized-spike regression. Normal polygons must first be converted with To Bubble Tile. Arc Lens, soft tiles, and the Einstein-family monotiles are excluded from Bubble Style. Reverse One Arc can flip individual compact spike edges inward or outward.</div>
+</div>
+<div class="help-section-title">Arrange / Nudge</div>
 <div class="help-tool">
 <span class="help-icon">⇅</span>
 <div><strong>Layer order.</strong> Use Send to Bottom, Move Down, Move Up, and Bring to Top to control which selected tiles appear above or below others. The same options are available in the right-click menu.</div>
@@ -502,18 +555,18 @@
 <div class="help-section-title">Lattice</div>
 <div class="help-tool">
 <span class="help-icon">▦</span>
-<div><strong>Lattice Fill.</strong> Select a motif, click Lattice Fill, drag a ghost copy to define vector A, then drag another ghost copy to define vector B. Press Esc to cancel while defining vectors. Copies are virtual and redraw as you pan and zoom. Use the Opacity slider to make virtual copies lighter or darker.</div>
+<div><strong>Tiling Fill.</strong> Select a motif, click Tiling Fill, drag a ghost copy to define vector A, then drag another ghost copy to define vector B. Press Esc to cancel while defining vectors. Copies are virtual and redraw as you pan and zoom. Use the Opacity slider to make virtual copies lighter or darker.</div>
 </div>
-<div class="help-tool">
-<span class="help-icon">▦×</span>
+<div class="help-tool"><span aria-hidden="true" class="help-icon help-lattice-clear-icon"><span class="lattice-clear-icon"><span class="lattice-mini">▦</span><span class="lattice-x">×</span></span></span>
+
 <div><strong>Clear Lattice.</strong> Removes virtual lattice repeats while keeping the editable source tiles.</div>
 </div>
-<div class="help-tool">
-<span class="help-icon">⌖</span>
+<div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon locate-icon" viewbox="0 0 28 28"><circle cx="14" cy="14" r="6.2"></circle><circle cx="14" cy="14" r="1.8"></circle><line x1="14" x2="14" y1="3.2" y2="7.2"></line><line x1="14" x2="14" y1="20.8" y2="24.8"></line><line x1="3.2" x2="7.2" y1="14" y2="14"></line><line x1="20.8" x2="24.8" y1="14" y2="14"></line></svg>
+
 <div><strong>Locate.</strong> Centers the view on the editable parent/source tiles for existing lattice fills and flashes those parent tiles briefly.</div>
 </div>
-<div class="help-tool">
-<span class="help-icon">◎</span>
+<div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon eye-icon" viewbox="0 0 28 28"><path d="M3.5 14 C6.2 8.7 10 6 14 6 C18 6 21.8 8.7 24.5 14 C21.8 19.3 18 22 14 22 C10 22 6.2 19.3 3.5 14 Z"></path><circle cx="14" cy="14" r="3.8"></circle></svg>
+
 <div><strong>Lattice opacity.</strong> The editable source motif stays full strength. Use the Opacity slider to control how light or dark the virtual lattice copies appear.</div>
 </div>
 <div class="help-section-title">Style and export</div>
@@ -527,7 +580,7 @@
 </div>
 <div class="help-tool">
 <span class="help-icon">💾</span>
-<div><strong>Save / Load.</strong> File → Save to Browser stores the current layout locally. File → Load from Browser restores it. JSON export/import is for archiving editable layouts.</div>
+<div><strong>Save / Load.</strong> File → Save to Browser stores the current layout locally. File → Load from Browser restores it. JSON export/import is for archiving editable layouts; you can also drag a layout JSON file directly onto the canvas to open it.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🔗</span>
@@ -535,7 +588,6 @@
 </div>
 </div></div>
 </div>
-
 <div class="modal-backdrop" hidden="" id="exportPictureModal">
 <div aria-labelledby="exportPictureTitle" aria-modal="true" class="about-dialog export-dialog" role="dialog">
 <div class="about-header">
@@ -740,118 +792,63 @@
 </button>
 </div>
 </details>
-<details class="tray-section" data-tray-set="hexPuzzle">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="PH5"></span><span>Hexagonal Puzzle</span></summary>
-<button class="add-all-button" data-add-collection="hexPuzzle">Add all 14 Hexagonal Puzzle</button>
+<details class="tray-section" data-tray-set="fiveSided">
+<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="FV3B"></span><span>Pentagonal</span></summary>
+<button class="add-all-button" data-add-collection="fiveSided">Add all 14 Pentagonal</button>
 <div class="bubble-grid">
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH0" title="Add hexagonal puzzle tile 0">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH0"></span>
-<span class="palette-text"><strong>0</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH1" title="Add hexagonal puzzle tile 1">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH1"></span>
-<span class="palette-text"><strong>1</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH2A" title="Add hexagonal puzzle tile 2A">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH2A"></span>
-<span class="palette-text"><strong>2A</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH2B" title="Add hexagonal puzzle tile 2B">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH2B"></span>
-<span class="palette-text"><strong>2B</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH2C" title="Add hexagonal puzzle tile 2C">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH2C"></span>
-<span class="palette-text"><strong>2C</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH3A" title="Add hexagonal puzzle tile 3A">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH3A"></span>
-<span class="palette-text"><strong>3A</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH3ASTAR" title="Add hexagonal puzzle tile 3A*">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH3ASTAR"></span>
-<span class="palette-text"><strong>3A*</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH3B" title="Add hexagonal puzzle tile 3B">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH3B"></span>
-<span class="palette-text"><strong>3B</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH3C" title="Add hexagonal puzzle tile 3C">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH3C"></span>
-<span class="palette-text"><strong>3C</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH4A" title="Add hexagonal puzzle tile 4A">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH4A"></span>
-<span class="palette-text"><strong>4A</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH4B" title="Add hexagonal puzzle tile 4B">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH4B"></span>
-<span class="palette-text"><strong>4B</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH4C" title="Add hexagonal puzzle tile 4C">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH4C"></span>
-<span class="palette-text"><strong>4C</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH5" title="Add hexagonal puzzle tile 5">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH5"></span>
-<span class="palette-text"><strong>5</strong><small>hexagonal puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PH6" title="Add hexagonal puzzle tile 6">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PH6"></span>
-<span class="palette-text"><strong>6</strong><small>hexagonal puzzle tile</small></span>
-</button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV0" title="Add pentagonal bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV0"></span><span class="palette-text"><strong>0</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV1" title="Add pentagonal bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV1"></span><span class="palette-text"><strong>1</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV2A" title="Add pentagonal bubble tile 2A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV2A"></span><span class="palette-text"><strong>2A</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV2B" title="Add pentagonal bubble tile 2B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV2B"></span><span class="palette-text"><strong>2B</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV2C" title="Add pentagonal bubble tile 2C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV2C"></span><span class="palette-text"><strong>2C</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV3A" title="Add pentagonal bubble tile 3A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3A"></span><span class="palette-text"><strong>3A</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV3B" title="Add pentagonal bubble tile 3B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3B"></span><span class="palette-text"><strong>3B</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV3C" title="Add pentagonal bubble tile 3C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3C"></span><span class="palette-text"><strong>3C</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV3D" title="Add pentagonal bubble tile 3D"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3D"></span><span class="palette-text"><strong>3D</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV3E" title="Add pentagonal bubble tile 3E"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3E"></span><span class="palette-text"><strong>3E</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV4A" title="Add pentagonal bubble tile 4A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV4A"></span><span class="palette-text"><strong>4A</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV4B" title="Add pentagonal bubble tile 4B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV4B"></span><span class="palette-text"><strong>4B</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV4C" title="Add pentagonal bubble tile 4C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV4C"></span><span class="palette-text"><strong>4C</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV5" title="Add pentagonal bubble tile 5"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV5"></span><span class="palette-text"><strong>5</strong><small>pentagonal bubble tile</small></span></button>
 </div>
 </details>
-<details class="tray-section" data-tray-set="triPuzzle">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="PT3"></span><span>Triangular Puzzle</span></summary>
-<button class="add-all-button" data-add-collection="triPuzzle">Add all 4 Triangular Puzzle</button>
+<details class="tray-section" data-tray-set="fourSided">
+<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span>Four-sided</span></summary>
+<button class="add-all-button" data-add-collection="fourSided">Add all 7 Four-sided</button>
 <div class="bubble-grid">
-<button class="palette-tile bubble-palette-tile" data-tile-type="PT0" title="Add triangular puzzle tile 0">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PT0"></span>
-<span class="palette-text"><strong>0</strong><small>triangular puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PT1" title="Add triangular puzzle tile 1">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PT1"></span>
-<span class="palette-text"><strong>1</strong><small>triangular puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PT2" title="Add triangular puzzle tile 2">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PT2"></span>
-<span class="palette-text"><strong>2</strong><small>triangular puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PT3" title="Add triangular puzzle tile 3">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PT3"></span>
-<span class="palette-text"><strong>3</strong><small>triangular puzzle tile</small></span>
-</button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB0" title="Add four-sided bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB0"></span><span class="palette-text"><strong>0</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB1" title="Add four-sided bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB1"></span><span class="palette-text"><strong>1</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB2A" title="Add four-sided bubble tile 2A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2A"></span><span class="palette-text"><strong>2A</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB2B" title="Add four-sided bubble tile 2B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2B"></span><span class="palette-text"><strong>2B</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB3A" title="Add four-sided bubble tile 3A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span class="palette-text"><strong>3A</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB3B" title="Add four-sided bubble tile 3B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3B"></span><span class="palette-text"><strong>3B</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB4" title="Add four-sided bubble tile 4"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB4"></span><span class="palette-text"><strong>4</strong><small>rhombic bubble tile</small></span></button>
 </div>
 </details>
-<details class="tray-section" data-tray-set="squarePuzzle">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="PQ4"></span><span>Square Puzzle</span></summary>
-<button class="add-all-button" data-add-collection="squarePuzzle">Add all 6 Square Puzzle</button>
+<details class="tray-section" data-tray-set="fiveSidedTrapezoid">
+<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11111"></span><span>Five-sided</span></summary>
+<button class="add-all-button" data-add-collection="fiveSidedTrapezoid">Add all 20 Five-sided</button>
 <div class="bubble-grid">
-<button class="palette-tile bubble-palette-tile" data-tile-type="PQ0" title="Add square puzzle tile 0">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PQ0"></span>
-<span class="palette-text"><strong>0</strong><small>square puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PQ1" title="Add square puzzle tile 1">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PQ1"></span>
-<span class="palette-text"><strong>1</strong><small>square puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PQ2A" title="Add square puzzle tile 2A">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PQ2A"></span>
-<span class="palette-text"><strong>2A</strong><small>square puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PQ2B" title="Add square puzzle tile 2B">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PQ2B"></span>
-<span class="palette-text"><strong>2B</strong><small>square puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PQ3" title="Add square puzzle tile 3">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PQ3"></span>
-<span class="palette-text"><strong>3</strong><small>square puzzle tile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="PQ4" title="Add square puzzle tile 4">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="PQ4"></span>
-<span class="palette-text"><strong>4</strong><small>square puzzle tile</small></span>
-</button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11111" title="Add five-sided trapezoid bubble tile 11111"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11111"></span><span class="palette-text"><strong>11111</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11011" title="Add five-sided trapezoid bubble tile 11011"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11011"></span><span class="palette-text"><strong>11011</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_01111" title="Add five-sided trapezoid bubble tile 01111"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_01111"></span><span class="palette-text"><strong>01111</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11101" title="Add five-sided trapezoid bubble tile 11101"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11101"></span><span class="palette-text"><strong>11101</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11010" title="Add five-sided trapezoid bubble tile 11010"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11010"></span><span class="palette-text"><strong>11010</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11001" title="Add five-sided trapezoid bubble tile 11001"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11001"></span><span class="palette-text"><strong>11001</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_01011" title="Add five-sided trapezoid bubble tile 01011"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_01011"></span><span class="palette-text"><strong>01011</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_10011" title="Add five-sided trapezoid bubble tile 10011"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_10011"></span><span class="palette-text"><strong>10011</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_10101" title="Add five-sided trapezoid bubble tile 10101"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_10101"></span><span class="palette-text"><strong>10101</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_00111" title="Add five-sided trapezoid bubble tile 00111"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_00111"></span><span class="palette-text"><strong>00111</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_00000" title="Add five-sided trapezoid bubble tile 00000"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_00000"></span><span class="palette-text"><strong>00000</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_00100" title="Add five-sided trapezoid bubble tile 00100"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_00100"></span><span class="palette-text"><strong>00100</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_10000" title="Add five-sided trapezoid bubble tile 10000"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_10000"></span><span class="palette-text"><strong>10000</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_00010" title="Add five-sided trapezoid bubble tile 00010"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_00010"></span><span class="palette-text"><strong>00010</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_00101" title="Add five-sided trapezoid bubble tile 00101"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_00101"></span><span class="palette-text"><strong>00101</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_00110" title="Add five-sided trapezoid bubble tile 00110"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_00110"></span><span class="palette-text"><strong>00110</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_10100" title="Add five-sided trapezoid bubble tile 10100"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_10100"></span><span class="palette-text"><strong>10100</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_01100" title="Add five-sided trapezoid bubble tile 01100"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_01100"></span><span class="palette-text"><strong>01100</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_01010" title="Add five-sided trapezoid bubble tile 01010"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_01010"></span><span class="palette-text"><strong>01010</strong><small>five-sided trapezoid bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11000" title="Add five-sided trapezoid bubble tile 11000"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11000"></span><span class="palette-text"><strong>11000</strong><small>five-sided trapezoid bubble tile</small></span></button>
 </div>
 </details>
 <details class="tray-section" data-tray-set="frames">
@@ -872,69 +869,55 @@
 </div>
 </details>
 <div class="tray-family-heading tray-family-plain">OTHER TILES</div>
-<details class="tray-section" data-tray-set="monotiles">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="SPECTRE"></span><span>Einstein / Spectre tiles</span></summary>
-<button class="add-all-button" data-add-collection="monotiles">Add Hat, Turtle, and Spectre</button>
-<div class="bubble-grid">
-<button class="palette-tile bubble-palette-tile" data-tile-type="HAT" title="Add Hat / Einstein monotile">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="HAT"></span>
-<span class="palette-text"><strong>Hat</strong><small>Einstein monotile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="TURTLE" title="Add Turtle monotile">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="TURTLE"></span>
-<span class="palette-text"><strong>Turtle</strong><small>monotile</small></span>
-</button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="SPECTRE" title="Add Spectre monotile">
-<span class="shape-icon bubble-icon-slot" data-bubble-icon="SPECTRE"></span>
-<span class="palette-text"><strong>Spectre</strong><small>monotile</small></span>
-</button>
-</div>
+<details class="tray-section" data-tray-set="soft">
+<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="SF3B"></span><span>Soft Tiles</span></summary>
+<button class="add-all-button" data-add-collection="soft">Add all 14 Soft tiles</button>
+<div class="bubble-grid soft-bubble-grid"><button class="palette-tile bubble-palette-tile" data-tile-type="SF0" title="Add soft bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF0"></span><span class="palette-text"><strong>0</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF1" title="Add soft bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF1"></span><span class="palette-text"><strong>1</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF2A" title="Add soft bubble tile 2A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF2A"></span><span class="palette-text"><strong>2A</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF2B" title="Add soft bubble tile 2B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF2B"></span><span class="palette-text"><strong>2B</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF2C" title="Add soft bubble tile 2C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF2C"></span><span class="palette-text"><strong>2C</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF3A" title="Add soft bubble tile 3A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF3A"></span><span class="palette-text"><strong>3A</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF3ASTAR" title="Add soft bubble tile 3A*"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF3ASTAR"></span><span class="palette-text"><strong>3A*</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF3B" title="Add soft bubble tile 3B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF3B"></span><span class="palette-text"><strong>3B</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF3C" title="Add soft bubble tile 3C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF3C"></span><span class="palette-text"><strong>3C</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF4A" title="Add soft bubble tile 4A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF4A"></span><span class="palette-text"><strong>4A</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF4B" title="Add soft bubble tile 4B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF4B"></span><span class="palette-text"><strong>4B</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF4C" title="Add soft bubble tile 4C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF4C"></span><span class="palette-text"><strong>4C</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF5" title="Add soft bubble tile 5"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF5"></span><span class="palette-text"><strong>5</strong><small>soft bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SF6" title="Add soft bubble tile 6"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF6"></span><span class="palette-text"><strong>6</strong><small>soft bubble tile</small></span></button></div>
 </details>
 <details class="tray-section" data-tray-set="regular">
 <summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="PENT"></span><span>Regular polygons</span></summary>
 <button class="add-all-button" data-add-collection="regular">Add all 6 regular polygons</button>
-<button class="palette-tile" data-tile-type="TRI" title="Add triangle">
-<span class="shape-icon triangle tri"></span>
-<span class="palette-text">
-<strong>Triangle</strong>
-<small>3 sides</small>
-</span>
-</button>
-<button class="palette-tile" data-tile-type="SQUARE" title="Add square">
-<span class="shape-icon square square-color"></span>
-<span class="palette-text">
-<strong>Square</strong>
-<small>4 sides</small>
-</span>
-</button>
-<button class="palette-tile" data-tile-type="PENT" title="Add pentagon">
-<span class="shape-icon pentagon pent"></span>
-<span class="palette-text">
-<strong>Pentagon</strong>
-<small>5 sides</small>
-</span>
-</button>
-<button class="palette-tile" data-tile-type="HEX" title="Add hexagon">
-<span class="shape-icon hex hex-color"></span>
-<span class="palette-text">
-<strong>Hexagon</strong>
-<small>6 sides</small>
-</span>
-</button>
-<button class="palette-tile" data-tile-type="HEPT" title="Add heptagon">
-<span class="shape-icon heptagon hept"></span>
-<span class="palette-text">
-<strong>Heptagon</strong>
-<small>7 sides</small>
-</span>
-</button>
-<button class="palette-tile" data-tile-type="OCT" title="Add octagon">
-<span class="shape-icon octagon oct"></span>
-<span class="palette-text">
-<strong>Octagon</strong>
-<small>8 sides</small>
-</span>
-</button>
+<div class="bubble-grid">
+<button class="palette-tile bubble-palette-tile" data-tile-type="TRI" title="Add triangle"><span class="shape-icon bubble-icon-slot" data-bubble-icon="TRI"></span><span class="palette-text"><strong>Triangle</strong><small>3 sides</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SQUARE" title="Add square"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SQUARE"></span><span class="palette-text"><strong>Square</strong><small>4 sides</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="PENT" title="Add pentagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="PENT"></span><span class="palette-text"><strong>Pentagon</strong><small>5 sides</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="HEX" title="Add hexagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="HEX"></span><span class="palette-text"><strong>Hexagon</strong><small>6 sides</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OCT" title="Add octagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OCT"></span><span class="palette-text"><strong>Octagon</strong><small>8 sides</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-ngon-button="true" title="Add custom regular n-gon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="NGON"></span><span class="palette-text"><strong>n-gon</strong><small>choose sides</small></span></button>
+</div>
+</details>
+<details class="tray-section" data-tray-set="otherPolygons">
+<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN"></span><span>Other</span></summary>
+<button class="add-all-button" data-add-collection="otherPolygons">Add all 14 Other tiles</button>
+<div class="bubble-grid">
+<button class="palette-tile bubble-palette-tile" data-tile-type="BVLENS" title="Add arc lens tile"><span class="shape-icon bubble-icon-slot" data-bubble-icon="BVLENS"></span><span class="palette-text"><strong>Arc Lens</strong><small>curved lens tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_RECT" title="Add 2×1 rectangle"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_RECT"></span><span class="palette-text"><strong>2×1 Rectangle</strong><small>unit sides compatible</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_TRAP" title="Add 1-1-1-2 trapezoid"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_TRAP"></span><span class="palette-text"><strong>1-1-1-2 Trapezoid</strong><small>three unit sides</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_RHOMBUS" title="Add 60° rhombus"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_RHOMBUS"></span><span class="palette-text"><strong>60° Rhombus</strong><small>two equilateral triangles</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="PRTHICK" title="Add Penrose thick rhomb"><span class="shape-icon bubble-icon-slot" data-bubble-icon="PRTHICK"></span><span class="palette-text"><strong>Penrose Thick Rhomb</strong><small>72° / 108°</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="PRTHIN" title="Add Penrose thin rhomb"><span class="shape-icon bubble-icon-slot" data-bubble-icon="PRTHIN"></span><span class="palette-text"><strong>Penrose Thin Rhomb</strong><small>36° / 144°</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN" title="Add Pac-Man hexagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN"></span><span class="palette-text"><strong>Pac-Man Hexagon</strong><small>equilateral nonconvex</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN_PENT" title="Add Pac-Man pentagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN_PENT"></span><span class="palette-text"><strong>Pac-Man Pentagon</strong><small>regular-pentagon base</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN_OCT2" title="Add Pac-Man Octagon 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN_OCT2"></span><span class="palette-text"><strong>Pac-Man Octagon 1</strong><small>two-edge mouth</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN_OCT3" title="Add Pac-Man Octagon 2"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN_OCT3"></span><span class="palette-text"><strong>Pac-Man Octagon 2</strong><small>three-edge mouth</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_SQUIGGLE_OCT" title="Add Squiggle Octagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_SQUIGGLE_OCT"></span><span class="palette-text"><strong>Squiggle Octagon</strong><small>equilateral nonconvex</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="HAT" title="Add Hat / Einstein"><span class="shape-icon bubble-icon-slot" data-bubble-icon="HAT"></span><span class="palette-text"><strong>Hat / Einstein</strong><small>aperiodic monotile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="TURTLE" title="Add Turtle"><span class="shape-icon bubble-icon-slot" data-bubble-icon="TURTLE"></span><span class="palette-text"><strong>Turtle</strong><small>Einstein relative</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="SPECTRE" title="Add Spectre"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SPECTRE"></span><span class="palette-text"><strong>Spectre</strong><small>aperiodic monotile</small></span></button>
+</div>
 </details>
 </div>
 <div aria-labelledby="trayExamplesTab" class="tray-content tray-panel examples-panel" hidden="" id="examplesPanel" role="tabpanel">

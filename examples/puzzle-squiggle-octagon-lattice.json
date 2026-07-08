@@ -1,0 +1,86 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 0.3,
+  "tiles": [
+    {
+      "id": "tile4",
+      "tileType": "ARCV_BUBBLE_OP_SQUIGGLE_OCT_10011001",
+      "x": -19.756,
+      "y": 484.086,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "puzzle"
+    },
+    {
+      "id": "tile6",
+      "tileType": "ARCV_BUBBLE_OP_SQUIGGLE_OCT_10011001",
+      "x": 100.244,
+      "y": 484.086,
+      "rotation": -120,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "puzzle"
+    },
+    {
+      "id": "tile7",
+      "tileType": "ARCV_BUBBLE_OP_SQUIGGLE_OCT_10011001",
+      "x": 40.244,
+      "y": 380.163,
+      "rotation": -60,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "puzzle"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile4",
+        "tile6",
+        "tile7"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile4",
+        "tile6",
+        "tile7"
+      ],
+      "vectorA": {
+        "x": 240,
+        "y": 0
+      },
+      "vectorB": {
+        "x": 120,
+        "y": -207.846
+      }
+    }
+  ]
+}

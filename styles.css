@@ -1733,16 +1733,17 @@ body:not(.lattice-highlight-source) .lattice-copy {
   filter: drop-shadow(0 0 2.5px #0066cc) drop-shadow(0 0 1px #0066cc);
 }
 
-/* Overlap warning still overrides every ordinary stroke style. */
+/* Overlap warning still overrides every ordinary stroke style, including
+   tile-level stroke variables and selected-tile glow. */
 .tile.overlapping polygon,
 .tile.overlapping path,
 .tile.selected.overlapping polygon,
 .tile.selected.overlapping path {
-  stroke: #d00000;
-  stroke-width: 7;
-  stroke-dasharray: none;
-  stroke-linecap: butt;
-  filter: none;
+  stroke: #d00000 !important;
+  stroke-width: 7 !important;
+  stroke-dasharray: none !important;
+  stroke-linecap: butt !important;
+  filter: none !important;
 }
 
 
@@ -2368,6 +2369,7 @@ body:not(.lattice-highlight-source) .lattice-copy {
 #editToolbar,
 #selectionToolbar,
 #transformToolbar,
+#bubbleToolbar,
 #latticeToolbar,
 #styleToolbar,
 #togglesToolbar {
@@ -3367,4 +3369,832 @@ body:not(.lattice-highlight-source) .lattice-copy {
 
 .style-preview-button {
   cursor: pointer;
+}
+
+
+.arc-reverse-overlay .arc-reverse-hit-arc {
+  vector-effect: non-scaling-stroke;
+  pointer-events: stroke;
+}
+
+.arc-reverse-overlay .arc-reverse-hit-arc:hover {
+  opacity: 0.72;
+}
+
+
+/* Reverse-one-arc tool icon and arc-hover affordance. */
+.arc-reverse-tool-button {
+  padding: 4px;
+}
+
+.arc-reverse-tool-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  overflow: visible;
+}
+
+.menu-svg-icon.arc-reverse-tool-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.arc-reverse-tool-icon .arc-dots {
+  fill: none;
+  stroke: #1463ff;
+  stroke-width: 4.2;
+  stroke-linecap: round;
+  stroke-dasharray: 1 11;
+}
+
+.arc-reverse-tool-icon .arc-dot {
+  fill: #1463ff;
+}
+
+.arc-reverse-tool-icon .arc-arrow,
+.arc-reverse-tool-icon .arc-arrow-head {
+  fill: none;
+  stroke: #e0262e;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arc-reverse-overlay .arc-reverse-hit-arc {
+  vector-effect: non-scaling-stroke;
+  pointer-events: stroke;
+  transition: opacity 120ms ease, stroke 120ms ease, filter 120ms ease;
+}
+
+.arc-reverse-overlay .arc-reverse-hit-arc:hover {
+  stroke: #ffd21f !important;
+  opacity: 0.92 !important;
+  filter: drop-shadow(0 0 5px rgba(255, 210, 31, 0.95));
+}
+
+
+/* Reverse One Arc: larger sketch-style icon, vertex dots, and true hover glow. */
+.arc-reverse-tool-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  overflow: visible;
+}
+
+.menu-svg-icon.arc-reverse-tool-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.arc-reverse-tool-icon .arc-dots {
+  fill: none;
+  stroke: #1463ff;
+  stroke-width: 4.8;
+  stroke-linecap: round;
+  stroke-dasharray: 0.5 11;
+}
+
+.arc-reverse-tool-icon .arc-dot {
+  fill: #1463ff;
+  stroke: none;
+}
+
+.arc-reverse-tool-icon .arc-arrow,
+.arc-reverse-tool-icon .arc-arrow-head {
+  fill: none;
+  stroke: #e0262e;
+  stroke-width: 5.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arc-reverse-overlay .arc-reverse-hit-arc {
+  vector-effect: non-scaling-stroke;
+  pointer-events: stroke;
+}
+
+.arc-reverse-overlay .arc-reverse-glow-arc {
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 5px rgba(255, 210, 31, 0.95)) drop-shadow(0 0 11px rgba(255, 210, 31, 0.65));
+  transition: opacity 100ms ease;
+}
+
+.arc-reverse-overlay .arc-reverse-vertex-dot {
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.9));
+}
+
+
+
+/* Reverse One Arc icon cleanup: mirrored arcs, one dotted and one solid. */
+.arc-reverse-tool-icon .arc-solid {
+  fill: none;
+  stroke: #1463ff;
+  stroke-width: 4.8;
+  stroke-linecap: round;
+}
+.arc-reverse-tool-icon .arc-dots {
+  fill: none;
+  stroke: #1463ff;
+  stroke-width: 4.8;
+  stroke-linecap: round;
+  stroke-dasharray: 0.5 10;
+}
+.arc-reverse-tool-icon .arc-dot { display: none; }
+.arc-reverse-tool-icon .arc-arrow,
+.arc-reverse-tool-icon .arc-arrow-head {
+  fill: none;
+  stroke: #e0262e;
+  stroke-width: 5.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Reverse One Arc hover: only a glow, not a replacement stroke color. */
+.arc-reverse-overlay .arc-reverse-hit-arc,
+.arc-reverse-overlay .arc-reverse-hit-arc:hover {
+  opacity: 0 !important;
+  stroke: #000000 !important;
+  filter: none !important;
+  vector-effect: non-scaling-stroke;
+  pointer-events: stroke;
+}
+.arc-reverse-overlay .arc-reverse-glow-arc {
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 4px rgba(255, 218, 40, 0.95)) drop-shadow(0 0 12px rgba(255, 218, 40, 0.75));
+  transition: opacity 80ms ease;
+}
+.arc-reverse-overlay .arc-reverse-edge-cover {
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+/* Edge decoration toolbar and rendered edge motifs. */
+.edge-decoration-tool-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.edge-decoration-icon-edge {
+  fill: none;
+  stroke: #222;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+}
+.edge-decoration-icon-arc {
+  fill: none;
+  stroke: #2477d4;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+}
+.edge-decoration-icon-node {
+  fill: #222;
+}
+.edge-decoration-preview-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.edge-decoration-preview {
+  width: 36px;
+  height: 28px;
+  display: block;
+  position: relative;
+}
+.edge-decoration-preview::before,
+.edge-decoration-preview::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+}
+.edge-decoration-preview-none::before {
+  top: 14px;
+  border-top: 3px solid #222;
+}
+.edge-decoration-preview-none::after {
+  top: 4px;
+  bottom: 4px;
+  left: 16px;
+  right: auto;
+  width: 3px;
+  background: #b43333;
+  transform: rotate(45deg);
+}
+.edge-decoration-preview-arc60::before {
+  top: 15px;
+  border-top: 3px solid #222;
+}
+.edge-decoration-preview-arc60::after {
+  left: 6px;
+  right: 6px;
+  top: 4px;
+  height: 18px;
+  border-top: 4px solid #2477d4;
+  border-radius: 50% 50% 0 0;
+}
+.edge-decoration-preview-puzzle::before {
+  top: 15px;
+  border-top: 3px solid #222;
+}
+.edge-decoration-preview-puzzle::after {
+  left: 12px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #9b5aa5;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+}
+.edge-decoration-mark {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+}
+.edge-decoration-arc60 {
+  stroke: #2477d4;
+  stroke-width: 3.6;
+}
+.edge-decoration-puzzle {
+  stroke: #9b5aa5;
+  stroke-width: 3.4;
+}
+
+/* Arc Dual icon: curved triangular bubble shape with outward swap arrows. */
+.arc-dual-tool-button {
+  padding: 3px;
+}
+
+.arc-dual-tool-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  overflow: visible;
+}
+
+.menu-svg-icon.arc-dual-tool-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.arc-dual-tool-icon .arc-dual-outer {
+  fill: #f6f1e5;
+  stroke: #222222;
+  stroke-width: 4.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arc-dual-tool-icon .arc-dual-inner {
+  fill: #b28baa;
+  stroke: #222222;
+  stroke-width: 4.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arc-dual-tool-icon .arc-dual-arrow {
+  fill: none;
+  stroke: #e0262e;
+  stroke-width: 4.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arc-dual-tool-icon .arc-dual-arrow-head {
+  fill: #e0262e;
+  stroke: none;
+}
+
+
+/* Bubble menu and toolbar icons. */
+#bubbleToolbar {
+  gap: 5px;
+}
+
+.bubble-reverse-tool-icon,
+.to-bubble-tool-icon,
+.to-polygon-tool-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  overflow: visible;
+}
+
+.menu-svg-icon.bubble-reverse-tool-icon,
+.menu-svg-icon.to-bubble-tool-icon,
+.menu-svg-icon.to-polygon-tool-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.bubble-tool-outer,
+.to-bubble-shape {
+  fill: #f6b6be;
+  stroke: #222222;
+  stroke-width: 4.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.bubble-tool-outer {
+  fill: #f6f1e5;
+}
+
+.bubble-tool-inner {
+  fill: #b28baa;
+  stroke: #222222;
+  stroke-width: 4.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.bubble-tool-arrow {
+  fill: none;
+  stroke: #e0262e;
+  stroke-width: 4.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bubble-tool-arrow-head {
+  fill: #e0262e;
+  stroke: none;
+}
+
+.to-polygon-shape {
+  fill: #f27d86;
+  stroke: #222222;
+  stroke-width: 4.4;
+  stroke-linejoin: round;
+}
+
+.to-bubble-tool-button,
+.to-polygon-tool-button {
+  padding: 3px;
+}
+
+#bubbleToolbar .style-dropdown-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+#bubbleToolbar .office-style-button {
+  height: 34px;
+}
+
+
+/* Clearer Bubble Style toolbar/menu icon and preview swatches. */
+.edge-decoration-tool-icon .bubble-style-icon-polygon,
+.edge-decoration-tool-icon .bubble-style-icon-arc,
+.edge-decoration-tool-icon .bubble-style-icon-puzzle {
+  fill: none;
+  stroke: #202529;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.edge-decoration-tool-icon .bubble-style-icon-arc {
+  stroke: #2477d4;
+}
+.edge-decoration-tool-icon .bubble-style-icon-puzzle {
+  stroke: #8e54d6;
+}
+.edge-decoration-preview-svg {
+  width: 44px;
+  height: 30px;
+  display: block;
+}
+.edge-decoration-preview-svg path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.edge-preview-straight,
+.edge-preview-chord {
+  stroke: #202529;
+  stroke-width: 3.5;
+}
+.edge-preview-slash {
+  stroke: #c1121f;
+  stroke-width: 3.2;
+}
+.edge-preview-arc {
+  stroke: #2477d4;
+  stroke-width: 4.2;
+}
+.edge-preview-puzzle {
+  stroke: #8e54d6;
+  stroke-width: 4.2;
+}
+
+
+/* Bubble toolbar reference-image icons. */
+.bubble-toolbar-raster-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.menu-bubble-raster-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Help uses the same locked Bubble toolbar raster icons as the Bubble menu/toolbar. */
+.help-bubble-raster-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex: 0 0 30px;
+  border-radius: 6px;
+}
+
+/* Locked Bubble toolbar icons: preserve these raster-image icons unless John explicitly requests a change. */
+
+
+/* Bubble Style menu/toolbar preview images. Main Bubble toolbar raster icons are locked; do not modify unless John asks. */
+.bubble-style-raster-icon,
+.edge-decoration-preview-image {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.style-preview-button .edge-decoration-preview-image {
+  width: 42px;
+  height: 42px;
+}
+
+
+/* Bubble Style options: two image-only choices, using John's provided icon images without stretching/cropping. */
+.edge-decoration-preview-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.edge-decoration-preview-grid .style-preview-button {
+  width: 52px;
+  height: 52px;
+  padding: 3px;
+}
+.edge-decoration-preview-grid .edge-decoration-preview-image {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  display: block;
+}
+.menu-bubble-raster-icon.bubble-style-raster-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+
+/* Bubble Style icon hotfix: show John's supplied PNG icons exactly, centered and uncropped. */
+.edge-decoration-preview-grid {
+  grid-template-columns: repeat(2, 72px) !important;
+  gap: 12px !important;
+  padding: 10px 12px 12px !important;
+  justify-content: center;
+}
+
+.edge-decoration-preview-grid .style-preview-button {
+  width: 72px !important;
+  height: 72px !important;
+  padding: 9px !important;
+  overflow: visible !important;
+}
+
+.edge-decoration-preview-grid .edge-decoration-preview-image {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 54px !important;
+  max-height: 54px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+.menu-bubble-raster-icon.bubble-style-raster-icon {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+
+/* Narrow Bubble Style icon hotfix: use the supplied PNG files as-is, but display them at normal toolbar/menu size. */
+.edge-decoration-preview-grid {
+  grid-template-columns: repeat(2, 44px) !important;
+  gap: 8px !important;
+  padding: 8px !important;
+  justify-content: center !important;
+}
+.edge-decoration-preview-grid .style-preview-button {
+  width: 44px !important;
+  height: 44px !important;
+  padding: 4px !important;
+  overflow: hidden !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.edge-decoration-preview-grid .edge-decoration-preview-image {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+}
+.menu-bubble-raster-icon.bubble-style-raster-icon {
+  width: 22px !important;
+  height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+
+/* Final Bubble Style icon lock: these two assets are John's supplied images. Display them as normal icons, not stretched preview art. */
+.edge-decoration-preview-grid {
+  grid-template-columns: repeat(2, 46px) !important;
+  gap: 8px !important;
+  padding: 8px !important;
+  justify-content: center !important;
+}
+.edge-decoration-preview-grid .style-preview-button {
+  width: 46px !important;
+  height: 46px !important;
+  padding: 5px !important;
+  overflow: hidden !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.edge-decoration-preview-grid .edge-decoration-preview-image,
+.menu-bubble-raster-icon.bubble-style-raster-icon {
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+}
+.edge-decoration-preview-grid .edge-decoration-preview-image {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+}
+.menu-bubble-raster-icon.bubble-style-raster-icon {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+}
+
+/* Bubble Style Spike option: keep John's existing Arc/Puzzle icons locked and add a matching third option. */
+.edge-decoration-preview-grid {
+  grid-template-columns: repeat(3, 46px) !important;
+  gap: 8px !important;
+  padding: 8px !important;
+  justify-content: center !important;
+}
+.edge-decoration-preview-grid .style-preview-button {
+  width: 46px !important;
+  height: 46px !important;
+  padding: 5px !important;
+}
+.edge-decoration-preview-grid .edge-decoration-preview-image {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+.menu-bubble-raster-icon.bubble-style-raster-icon {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+/* Release refinement: Chrome-style right-aligned keyboard shortcuts in dropdown menus. */
+.menu-panel {
+  min-width: 255px !important;
+}
+
+.menu-panel > button {
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: 28px minmax(110px, 1fr) max-content !important;
+  align-items: center !important;
+  column-gap: 8px !important;
+  width: 100% !important;
+}
+
+.menu-panel > button > svg:first-child,
+.menu-panel > button > img:first-child,
+.menu-panel > button > .menu-item-icon:first-child {
+  grid-column: 1 !important;
+  justify-self: center !important;
+  margin-right: 0 !important;
+}
+
+.menu-panel > button > .menu-label,
+.menu-panel > button > span:not(.menu-item-icon):not(.menu-shortcut):not(.menu-label) {
+  grid-column: 2 !important;
+  justify-self: start !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+}
+
+.menu-panel > button > .menu-shortcut,
+.menu-panel > label.menu-check.has-menu-shortcut > .menu-shortcut {
+  grid-column: 3 !important;
+  justify-self: end !important;
+  color: #667085 !important;
+  font-size: 10px !important;
+  font-weight: 650 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  margin-left: 18px !important;
+}
+
+.menu-panel > label.menu-check.has-menu-shortcut {
+  display: grid !important;
+  grid-template-columns: 18px 28px minmax(110px, 1fr) max-content !important;
+  align-items: center !important;
+  column-gap: 8px !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.menu-panel > label.menu-check.has-menu-shortcut > input[type="checkbox"] {
+  grid-column: 1 !important;
+}
+
+.menu-panel > label.menu-check.has-menu-shortcut > .menu-item-icon:first-of-type {
+  grid-column: 2 !important;
+  justify-self: center !important;
+  margin-right: 0 !important;
+}
+
+.menu-panel > label.menu-check.has-menu-shortcut > .menu-label {
+  grid-column: 3 !important;
+  justify-self: start !important;
+  white-space: nowrap !important;
+}
+
+/* Help icon alignment: use the same toolbar/menu artwork without changing the toolbar icons. */
+.help-toolbar-svg-icon,
+.help-overlap-icon,
+.help-lattice-clear-icon {
+  width: 30px !important;
+  height: 30px !important;
+  box-sizing: border-box !important;
+  padding: 4px !important;
+  border-radius: 9px !important;
+  background: #f4f7fb !important;
+  border: 1px solid #d9e2ef !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 30px !important;
+}
+
+.help-toolbar-svg-icon.zoom-icon {
+  padding: 3px !important;
+}
+
+.help-toolbar-svg-icon.group-icon {
+  padding: 2px !important;
+}
+
+.help-toolbar-svg-icon.reflect-icon {
+  padding: 3px 2px !important;
+}
+
+.help-toolbar-svg-icon.eye-icon,
+.help-toolbar-svg-icon.locate-icon {
+  padding: 5px !important;
+}
+
+.help-overlap-icon .overlap-toolbar-icon,
+.help-lattice-clear-icon .lattice-clear-icon {
+  margin: 0 !important;
+}
+
+.help-bubble-style-menu-icon {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+
+/* Final narrow patch: soft tile tray spacing, robust shortcut alignment, and exact Spike icon display. */
+.tray-section[data-tray-set="soft"] .soft-bubble-grid {
+  gap: 11px 9px !important;
+  padding: 9px !important;
+}
+
+.tray-section[data-tray-set="soft"] .soft-bubble-grid .palette-tile {
+  min-height: 72px !important;
+}
+
+/* Keep keyboard shortcuts right-justified in menu rows without changing the shortcut keys themselves. */
+#toolbar .menu-panel {
+  min-width: 292px !important;
+}
+
+#toolbar .menu-panel > button {
+  display: grid !important;
+  grid-template-columns: 28px minmax(0, 1fr) max-content !important;
+  align-items: center !important;
+  column-gap: 8px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+#toolbar .menu-panel > button > svg:first-child,
+#toolbar .menu-panel > button > img:first-child,
+#toolbar .menu-panel > button > .menu-item-icon:first-child {
+  grid-column: 1 !important;
+  justify-self: center !important;
+  margin-right: 0 !important;
+}
+
+#toolbar .menu-panel > button > .menu-label,
+#toolbar .menu-panel > button > span:not(.menu-item-icon):not(.menu-shortcut):not(.menu-label) {
+  grid-column: 2 !important;
+  justify-self: start !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+#toolbar .menu-panel > button > .menu-shortcut {
+  grid-column: 3 !important;
+  justify-self: end !important;
+  margin-left: 20px !important;
+  color: #667085 !important;
+  font-size: 10px !important;
+  font-weight: 650 !important;
+  white-space: nowrap !important;
+}
+
+#toolbar .menu-panel > label.menu-check.has-menu-shortcut {
+  display: grid !important;
+  grid-template-columns: 18px 28px minmax(0, 1fr) max-content !important;
+  align-items: center !important;
+  column-gap: 8px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+#toolbar .menu-panel > label.menu-check.has-menu-shortcut > input[type="checkbox"] {
+  grid-column: 1 !important;
+  justify-self: center !important;
+  margin: 0 !important;
+}
+
+#toolbar .menu-panel > label.menu-check.has-menu-shortcut > .menu-item-icon:first-of-type {
+  grid-column: 2 !important;
+  justify-self: center !important;
+  margin-right: 0 !important;
+}
+
+#toolbar .menu-panel > label.menu-check.has-menu-shortcut > .menu-label {
+  grid-column: 3 !important;
+  justify-self: start !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+#toolbar .menu-panel > label.menu-check.has-menu-shortcut > .menu-shortcut {
+  grid-column: 4 !important;
+  justify-self: end !important;
+  margin-left: 20px !important;
+  color: #667085 !important;
+  font-size: 10px !important;
+  font-weight: 650 !important;
+  white-space: nowrap !important;
+}
+
+/* The Spike Bubble Style icon is now the user's exact exported PNG. Do not regenerate it. */
+.edge-decoration-preview-image[src$="bubble-style-spike.png"],
+.menu-bubble-raster-icon.bubble-style-raster-icon[src$="bubble-style-spike.png"] {
+  object-fit: contain !important;
+  object-position: center center !important;
 }

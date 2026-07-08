@@ -11,21 +11,21 @@
   },
   {
     "id": "mixed-bubble-tile-lattice-h4b-t1",
-    "title": "Mixed Bubble Tile Lattice H4B/T1",
-    "description": "A lattice-fill example combining H4B with triangular T1 bubble tiles.",
+    "title": "Mixed Bubble Tiling H4B/T1",
+    "description": "A tiling example combining H4B with triangular T1 bubble tiles.",
     "file": "mixed-bubble-tile-lattice-h4b-t1.json",
     "tags": [
-      "lattice",
+      "tiling",
       "mixed bubble tiles"
     ]
   },
   {
     "id": "square-bubble-tile-lattice-s3-s0",
-    "title": "Square Bubble Tile Lattice S3/S0",
-    "description": "A compact square bubble tile lattice using the S3/S0 pairing.",
+    "title": "Square Bubble Tiling S3/S0",
+    "description": "A compact square bubble tiling using the S3/S0 pairing.",
     "file": "square-bubble-tile-lattice-s3-s0.json",
     "tags": [
-      "lattice",
+      "tiling",
       "square bubble tiles"
     ]
   },
@@ -51,41 +51,41 @@
   },
   {
     "id": "mixed-bubble-tile-lattice-full-set",
-    "title": "Mixed Bubble Tile Lattice Full Set",
-    "description": "A large lattice using the full hexagonal bubble family together with triangular bubble tiles.",
+    "title": "Mixed Bubble Tiling Full Set",
+    "description": "A large tiling using the full hexagonal bubble family together with triangular bubble tiles.",
     "file": "mixed-bubble-tile-lattice-full-set.json",
     "tags": [
-      "lattice",
+      "tiling",
       "mixed bubble tiles"
     ]
   },
   {
     "id": "hex-bubble-tile-lattice-h0-h4c",
-    "title": "Hex Bubble Tile Lattice H0/H4C",
-    "description": "A four-tile lattice seed using one H0 tile and three H4C tiles.",
+    "title": "Hex Bubble Tiling H0/H4C",
+    "description": "A four-tile tiling seed using one H0 tile and three H4C tiles.",
     "file": "hex-bubble-tile-lattice-h0-h4c.json",
     "tags": [
-      "lattice",
+      "tiling",
       "hexagonal bubble tiles"
     ]
   },
   {
     "id": "hex-bubble-tile-lattice-h1-h5",
-    "title": "Hex Bubble Tile Lattice H1/H5",
-    "description": "A two-tile lattice seed using the dual pair H1 and H5.",
+    "title": "Hex Bubble Tiling H1/H5",
+    "description": "A two-tile tiling seed using the dual pair H1 and H5.",
     "file": "hex-bubble-tile-lattice-h1-h5.json",
     "tags": [
-      "lattice",
+      "tiling",
       "hexagonal bubble tiles"
     ]
   },
   {
     "id": "regular-polygon-lattice-tri-square-hex",
-    "title": "Regular Polygon Lattice",
-    "description": "A colored lattice made from regular triangles, squares, and hexagons.",
+    "title": "Regular Polygon Tiling",
+    "description": "A colored tiling made from regular triangles, squares, and hexagons.",
     "file": "regular-polygon-lattice-tri-square-hex.json",
     "tags": [
-      "lattice",
+      "tiling",
       "regular polygons"
     ]
   },
@@ -102,12 +102,99 @@
   },
   {
     "id": "triangular-puzzle-tile-lattice",
-    "title": "Triangular Puzzle Tile Lattice",
-    "description": "A lattice-fill example using all four triangular puzzle tile types.",
+    "title": "Triangular Puzzle Tile Tiling",
+    "description": "A tiling example using all four triangular puzzle tile types.",
     "file": "triangular-puzzle-tile-lattice.json",
     "tags": [
-      "lattice",
+      "tiling",
       "triangular puzzle tiles"
+    ]
+  },
+  {
+    "id": "soft-sf1-sf3b-lattice",
+    "title": "Soft Tile Tiling SF1/SF3B",
+    "description": "A tiling example using soft tiles SF1 and SF3B.",
+    "file": "soft-sf1-sf3b-lattice.json",
+    "tags": [
+      "tiling",
+      "soft tiles"
+    ]
+  },
+  {
+    "id": "cloud-soft-sf2b-lattice",
+    "title": "Cloud Soft Tile Tiling SF2B",
+    "description": "A single soft SF2B tile with a cloud texture repeated by tiling fill.",
+    "file": "cloud-soft-sf2b-lattice.json",
+    "tags": [
+      "tiling",
+      "soft tiles",
+      "textures"
+    ]
+  },
+  {
+    "id": "pacman-octagon-tessellation",
+    "title": "Pac-Man Octagon Tiling",
+    "description": "A large tiling patch using the Pac-Man Octagon 1 shape.",
+    "file": "pacman-octagon-tessellation.json",
+    "tags": [
+      "other shapes",
+      "pac-man octagon",
+      "tiling"
+    ]
+  },
+  {
+    "id": "rhombic-bubble-lattice-rb1-rb2-rb3",
+    "title": "Rhombic Bubble Tiling",
+    "description": "A four-tile tiling seed using rhombic bubble tiles RB1, RB2A/RB2B, and RB3A.",
+    "file": "rhombic-bubble-lattice-rb1-rb2-rb3.json",
+    "tags": [
+      "tiling",
+      "rhombic bubble tiles"
+    ]
+  },
+  {
+    "id": "pacman-pentagon-tessellation",
+    "title": "Pac-Man Pentagon Tiling",
+    "description": "A large tiling built from Pac-Man Pentagon tiles.",
+    "file": "pacman-pentagon-tessellation.json",
+    "tags": [
+      "other shapes",
+      "pac-man pentagon",
+      "tiling"
+    ]
+  },
+  {
+    "id": "puzzle-squiggle-octagon-lattice",
+    "title": "Puzzle Squiggle Octagon Tiling",
+    "description": "A three-tile tiling seed using puzzle-styled Squiggle Octagon bubble tiles.",
+    "file": "puzzle-squiggle-octagon-lattice.json",
+    "tags": [
+      "tiling",
+      "squiggle octagon",
+      "puzzle edge"
+    ]
+  },
+  {
+    "id": "spike-bubble-style-lattice",
+    "title": "Spike Style Tiling H3C/H3A",
+    "description": "A tiling example using the compact Spike Bubble Style on H3C/H3A triangular bubble tiles.",
+    "file": "spike-bubble-style-lattice.json",
+    "tags": [
+      "tiling",
+      "bubble style",
+      "spike edge"
+    ]
+  },
+  {
+    "id": "heesch-number-1",
+    "title": "Heesch Number 1",
+    "description": "A Heesch-number-one example layout using soft, hexagonal bubble, and five-sided trapezoid-based tiles.",
+    "file": "heesch-number-1.json",
+    "tags": [
+      "Heesch number",
+      "examples",
+      "soft tiles",
+      "five-sided"
     ]
   }
 ]
