@@ -1,0 +1,59 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "tiles": [
+    {
+      "id": "tile2",
+      "tileType": "ARCV_BUBBLE_OP_TRAP_10101",
+      "x": 176.687,
+      "y": -17.088,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#1fb4ff",
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "zigzag"
+    },
+    {
+      "id": "tile5",
+      "tileType": "ARCV_BUBBLE_OP_TRAP_01010",
+      "x": 296.687,
+      "y": -30.944,
+      "rotation": -180,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#1fffb4",
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "zigzag"
+    }
+  ],
+  "groups": [],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile2",
+        "tile5"
+      ],
+      "vectorA": {
+        "x": 240,
+        "y": 0
+      },
+      "vectorB": {
+        "x": 40,
+        "y": -69.282
+      }
+    }
+  ]
+}

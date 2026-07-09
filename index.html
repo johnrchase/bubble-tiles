@@ -3,8 +3,8 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Bubble Tiles 1.2</title>
-<link href="assets/logo-two-tiles.png" rel="icon" type="image/png"/>
+<title>Bubble Tiles 1.3</title>
+<link href="assets/logo-two-tiles-favicon.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&amp;display=swap" rel="stylesheet"/>
@@ -15,7 +15,7 @@
 <div id="toolbar">
 <div class="brand">
 <img alt="" class="brand-logo-image" src="assets/logo-two-tiles.png"/>
-<span class="brand-wordmark">Bubble Tiles 1.2</span>
+<span class="brand-wordmark">Bubble Tiles 1.3</span>
 </div>
 <div class="menu-strip">
 <details class="toolbar-menu" id="fileMenu">
@@ -110,6 +110,7 @@
 <button data-command="bubbleStyleArc60" title="Bubble Style: 60-degree arc profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-arc60.png"/><span>Bubble Style: 60° Arc</span></button>
 <button data-command="bubbleStylePuzzle" title="Bubble Style: puzzle edge profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-puzzle.png"/><span>Bubble Style: Puzzle</span></button>
 <button data-command="bubbleStyleSpike" title="Bubble Style: compact triangular spike edge profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-spike.png"/><span>Bubble Style: Spike</span></button>
+<button data-command="bubbleStyleZigzag" title="Bubble Style: square-tooth edge profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-zigzag.png"/><span>Bubble Style: Square Tooth</span></button>
 </div>
 </details>
 <details class="toolbar-menu" id="latticeMenu">
@@ -243,7 +244,7 @@
 <button aria-label="To Bubble Tile" class="icon-button to-bubble-tool-button" id="polygonToBubble" title="To Bubble Tile: convert selected compatible polygon tiles into all-out-arc bubble tiles; Einstein-family, soft, and lens tiles are excluded"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-bubble-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/></button>
 <button aria-label="To Polygon" class="icon-button to-polygon-tool-button" id="bubbleToPolygon" title="To Polygon: convert selected bubble-edge tiles back to straight polygon edges"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-polygon-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/></button>
 <div class="style-dropdown-wrap">
-<button aria-label="Bubble Style: change selected bubble-tile edge profiles" class="office-style-button toolbar-icon-only" data-bubble-style-button="true" id="edgeDecorationButton" title="Bubble Style: choose 60-degree arc, puzzle-piece, or triangular spike edge profile for selected bubble tiles" type="button">
+<button aria-label="Bubble Style: change selected bubble-tile edge profiles" class="office-style-button toolbar-icon-only" data-bubble-style-button="true" id="edgeDecorationButton" title="Bubble Style: choose 60-degree arc, puzzle-piece, compact spike, or square-tooth edge profile for selected bubble tiles" type="button">
 <img alt="" aria-hidden="true" class="office-style-icon edge-decoration-tool-icon bubble-style-menu-icon" src="assets/bubble-icons/bubble-style-menu.png"/>
 <span class="dropdown-caret">▾</span>
 </button>
@@ -252,6 +253,7 @@
 <button aria-label="60-degree arc edge profile" class="style-preview-button" data-edge-decoration="arc60" title="60-degree arc edge profile" type="button"><img alt="" aria-hidden="true" class="edge-decoration-preview-image" src="assets/bubble-icons/bubble-style-arc60.png"/></button>
 <button aria-label="Puzzle-piece edge profile" class="style-preview-button" data-edge-decoration="puzzle" title="Puzzle-piece edge profile" type="button"><img alt="" aria-hidden="true" class="edge-decoration-preview-image" src="assets/bubble-icons/bubble-style-puzzle.png"/></button>
 <button aria-label="Compact triangular spike edge profile" class="style-preview-button" data-edge-decoration="spike" title="Compact triangular spike edge profile" type="button"><img alt="" aria-hidden="true" class="edge-decoration-preview-image" src="assets/bubble-icons/bubble-style-spike.png"/></button>
+<button aria-label="Square-tooth edge profile" class="style-preview-button" data-edge-decoration="zigzag" title="Square-tooth edge profile" type="button"><img alt="" aria-hidden="true" class="edge-decoration-preview-image" src="assets/bubble-icons/bubble-style-zigzag.png"/></button>
 </div>
 </div>
 </div>
@@ -431,8 +433,10 @@
 <button class="icon-button" id="closeVersionHistory" title="Close Version History">✕</button>
 </div>
 <div class="about-body">
+<p><strong>Bubble Tiles 1.3</strong></p>
+<p>Version 1.3 begins the next geometry refinement cycle: a corrected 8-tile Pentagonal family with updated labels, colors, tray entries, and Add All layout; compact Four-sided Add All placement; restored chiral context hints for Four-sided and Five-sided families; snap previews that preserve active Bubble Style outlines; a refined Frames tray with One-of-each, Small, Large, Small flower, Large flower, and Wide flower frames; frame-thumbnail tray icons; frame sockets for snapping; a Wide flower challenge hint; updated guided tutorial wording for all four Bubble Styles including Square Tooth; and additional example layouts including the arc-style Squiggle Octagon lattice.</p>
 <p><strong>Bubble Tiles 1.2</strong></p>
-<p>Version 1.2 is a major geometry and interface upgrade: new bubble and other tile families, a new five-sided trapezoid-based bubble family, soft tiles, Penrose rhombs, Pac-Man and Squiggle shapes, restored Hat/Turtle/Spectre monotiles as polygon-only tiles, the n-gon tool, JSON drag-and-drop import, improved snapping and overlap checking, H/V flip tools, cleaner right-aligned menu shortcuts, Arc Dual, one-arc reverse editing, Bubble Style profiles including puzzle and spike edges, restored ordered soft-tile tray plus slightly expanded soft-tile add-all spacing, refreshed icons, export fixes, improved examples including Heesch Number 1, protected compact Spike geometry, and more consistent Help/Tutorial coverage.</p>
+<p>Version 1.2 is a major geometry and interface upgrade: new bubble and other tile families, a new five-sided trapezoid-based bubble family, soft tiles, Penrose rhombs, Pac-Man and Squiggle shapes, restored Hat/Turtle/Spectre monotiles as polygon-only tiles, the n-gon tool, JSON drag-and-drop import, improved snapping and overlap checking, H/V flip tools, cleaner right-aligned menu shortcuts, Arc Dual, one-arc reverse editing, Bubble Style profiles including puzzle, spike, and compact rectangular square-tooth edges, restored ordered soft-tile tray plus slightly expanded soft-tile add-all spacing, refreshed icons, export fixes, snap previews that reflect active Bubble Style profiles, improved examples including Heesch Number 1, protected compact Spike and Square Tooth geometry, a square browser-tab favicon, and more consistent Help/Tutorial coverage.</p>
 <p><strong>Bubble Tiles 1.1</strong></p>
 <p>
           Version 1.1 added preview-only Fill and Outline style popovers with hover tooltips, image/texture fills,
@@ -461,7 +465,7 @@
 <div class="modal-backdrop" hidden="" id="helpModal">
 <div aria-labelledby="helpTitle" aria-modal="true" class="about-dialog help-dialog" role="dialog">
 <div class="about-header">
-<h2 id="helpTitle">Bubble Tiles 1.2 Help</h2>
+<h2 id="helpTitle">Bubble Tiles 1.3 Help</h2>
 <button class="icon-button" id="closeHelp" title="Close Help">✕</button>
 </div>
 <div class="about-body help-body">
@@ -477,11 +481,11 @@
 <div class="help-section-title">Adding and arranging tiles</div>
 <div class="help-tool">
 <span class="help-icon">▣</span>
-<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a family, then click a tile or drag it onto the canvas. “Add all” places the whole family in a reference arrangement; the Five-sided set uses the trapezoid-based arrangement from the submitted JSON. The Examples tab loads or inserts saved canvases, including the Heesch Number 1 example; you can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
+<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a family, then click a tile or drag it onto the canvas. “Add all” places a whole family in a reference arrangement. The Examples tab loads or inserts saved canvases, including Heesch Number 1, the arc-style Squiggle Octagon lattice, and the Square Tooth trapezoid lattice example; you can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">💡</span>
-<div><strong>Context hints.</strong> The app sometimes shows a yellow note for mathematically important tiles, such as the 13-tile frame, its over 1500+ hex-bubble solutions, or the chiral 3A / 3A* pair.</div>
+<div><strong>Context hints.</strong> The app sometimes shows a yellow note for mathematically important placements, including the One-of-each frame, the chiral 3A / 3A* pair, and the Wide flower challenge.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🧲</span>
@@ -533,7 +537,7 @@
 </div>
 <div class="help-tool">
 <img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/>
-<div><strong>To Bubble Tile.</strong> Bubble → To Bubble Tile converts compatible polygon tiles into 60° arc-edge bubble tiles with all arcs initially pointing outward. The Einstein-family monotiles — Hat, Turtle, and Spectre — stay polygon-only because their mixed edge lengths do not belong to the ordinary unit-edge bubble-tile system. Arc Lens is also excluded.</div>
+<div><strong>To Bubble Tile.</strong> Bubble → To Bubble Tile converts compatible polygon tiles into 60° arc-edge bubble tiles with all arcs initially pointing outward. Frames, Arc Lens, and the Einstein-family monotiles — Hat, Turtle, and Spectre — are excluded.</div>
 </div>
 <div class="help-tool">
 <img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/>
@@ -541,7 +545,7 @@
 </div>
 <div class="help-tool"><img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon help-bubble-style-menu-icon" src="assets/bubble-icons/bubble-style-menu.png"/>
 
-<div><strong>Bubble Style.</strong> Bubble → Bubble Style choices are available directly in the Bubble menu and in the Bubble toolbar dropdown. They change selected compatible bubble-tile outlines to 60° bubble arcs, the same puzzle-piece profile used by the puzzle tiles, or a compact triangular spike profile. The Spike icon uses the exact exported Bubble Tiles artwork, and the compact spike geometry is protected by named constants to avoid the old oversized-spike regression. Normal polygons must first be converted with To Bubble Tile. Arc Lens, soft tiles, and the Einstein-family monotiles are excluded from Bubble Style. Reverse One Arc can flip individual compact spike edges inward or outward.</div>
+<div><strong>Bubble Style.</strong> Choose 60° arc, puzzle, spike, or square-tooth edge profiles from Bubble → Bubble Style or the Bubble toolbar dropdown. It works on compatible bubble tiles; convert normal polygons first with To Bubble Tile. Arc Lens, soft tiles, and Hat/Turtle/Spectre are excluded. Reverse One Arc can flip individual styled edges inward or outward.</div>
 </div>
 <div class="help-section-title">Arrange / Nudge</div>
 <div class="help-tool">
@@ -793,22 +797,16 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="fiveSided">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="FV3B"></span><span>Pentagonal</span></summary>
-<button class="add-all-button" data-add-collection="fiveSided">Add all 14 Pentagonal</button>
+<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="FV3D"></span><span>Pentagonal</span></summary>
+<button class="add-all-button" data-add-collection="fiveSided">Add all 8 Pentagonal</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="FV0" title="Add pentagonal bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV0"></span><span class="palette-text"><strong>0</strong><small>pentagonal bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="FV1" title="Add pentagonal bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV1"></span><span class="palette-text"><strong>1</strong><small>pentagonal bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="FV2A" title="Add pentagonal bubble tile 2A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV2A"></span><span class="palette-text"><strong>2A</strong><small>pentagonal bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="FV2B" title="Add pentagonal bubble tile 2B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV2B"></span><span class="palette-text"><strong>2B</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV2C" title="Add pentagonal bubble tile 2C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV2C"></span><span class="palette-text"><strong>2C</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV3A" title="Add pentagonal bubble tile 3A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3A"></span><span class="palette-text"><strong>3A</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV3B" title="Add pentagonal bubble tile 3B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3B"></span><span class="palette-text"><strong>3B</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV3C" title="Add pentagonal bubble tile 3C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3C"></span><span class="palette-text"><strong>3C</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV3D" title="Add pentagonal bubble tile 3D"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3D"></span><span class="palette-text"><strong>3D</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV3E" title="Add pentagonal bubble tile 3E"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3E"></span><span class="palette-text"><strong>3E</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV4A" title="Add pentagonal bubble tile 4A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV4A"></span><span class="palette-text"><strong>4A</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV4B" title="Add pentagonal bubble tile 4B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV4B"></span><span class="palette-text"><strong>4B</strong><small>pentagonal bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="FV4C" title="Add pentagonal bubble tile 4C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV4C"></span><span class="palette-text"><strong>4C</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV3D" title="Add pentagonal bubble tile 3A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV3D"></span><span class="palette-text"><strong>3A</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_FV2B_01011" title="Add pentagonal bubble tile 3B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_FV2B_01011"></span><span class="palette-text"><strong>3B</strong><small>pentagonal bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="FV4C" title="Add pentagonal bubble tile 4"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV4C"></span><span class="palette-text"><strong>4</strong><small>pentagonal bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="FV5" title="Add pentagonal bubble tile 5"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV5"></span><span class="palette-text"><strong>5</strong><small>pentagonal bubble tile</small></span></button>
 </div>
 </details>
@@ -818,10 +816,10 @@
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB0" title="Add four-sided bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB0"></span><span class="palette-text"><strong>0</strong><small>rhombic bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB1" title="Add four-sided bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB1"></span><span class="palette-text"><strong>1</strong><small>rhombic bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="RB2A" title="Add four-sided bubble tile 2A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2A"></span><span class="palette-text"><strong>2A</strong><small>rhombic bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="RB2B" title="Add four-sided bubble tile 2B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2B"></span><span class="palette-text"><strong>2B</strong><small>rhombic bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="RB3A" title="Add four-sided bubble tile 3A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span class="palette-text"><strong>3A</strong><small>rhombic bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="RB3B" title="Add four-sided bubble tile 3B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3B"></span><span class="palette-text"><strong>3B</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB3B" title="Add four-sided bubble tile 2A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3B"></span><span class="palette-text"><strong>2A</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB2A" title="Add four-sided bubble tile 2B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2A"></span><span class="palette-text"><strong>2B</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB2B" title="Add four-sided bubble tile 2C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2B"></span><span class="palette-text"><strong>2C</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB3A" title="Add four-sided bubble tile 3"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span class="palette-text"><strong>3</strong><small>rhombic bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB4" title="Add four-sided bubble tile 4"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB4"></span><span class="palette-text"><strong>4</strong><small>rhombic bubble tile</small></span></button>
 </div>
 </details>
@@ -854,17 +852,29 @@
 <details class="tray-section" data-tray-set="frames">
 <summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="FMINI"></span><span>Frames</span></summary>
 <div class="frame-list">
-<button class="palette-tile" data-tile-type="F13" title="Add 13 Tile Frame">
+<button class="palette-tile" data-tile-type="F13" title="Add One-of-each">
 <span class="shape-icon frame-icon-slot" data-bubble-icon="F13"></span>
-<span class="palette-text"><strong>13 Tile Frame</strong><small>MathHappens style</small></span>
+<span class="palette-text"><strong>One-of-each</strong></span>
 </button>
-<button class="palette-tile" data-tile-type="FMINI" title="Add Mini Frame">
+<button class="palette-tile" data-tile-type="FMINI" title="Add Small">
 <span class="shape-icon frame-icon-slot" data-bubble-icon="FMINI"></span>
-<span class="palette-text"><strong>Mini Frame</strong><small>7-tile guide</small></span>
+<span class="palette-text"><strong>Small</strong></span>
 </button>
-<button class="palette-tile" data-tile-type="FLARGE" title="Add Large Frame">
+<button class="palette-tile" data-tile-type="FLARGE" title="Add Large">
 <span class="shape-icon frame-icon-slot" data-bubble-icon="FLARGE"></span>
-<span class="palette-text"><strong>Large Frame</strong><small>symmetric guide</small></span>
+<span class="palette-text"><strong>Large</strong></span>
+</button>
+<button class="palette-tile" data-tile-type="FHEXFLOW" title="Add Small flower">
+<span class="shape-icon frame-icon-slot" data-bubble-icon="FHEXFLOW"></span>
+<span class="palette-text"><strong>Small flower</strong></span>
+</button>
+<button class="palette-tile" data-tile-type="FLARGEHEX" title="Add Large flower">
+<span class="shape-icon frame-icon-slot" data-bubble-icon="FLARGEHEX"></span>
+<span class="palette-text"><strong>Large flower</strong></span>
+</button>
+<button class="palette-tile" data-tile-type="FFLOWWIDE" title="Add Wide flower">
+<span class="shape-icon frame-icon-slot" data-bubble-icon="FFLOWWIDE"></span>
+<span class="palette-text"><strong>Wide flower</strong></span>
 </button>
 </div>
 </details>

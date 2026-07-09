@@ -175,6 +175,28 @@
     ]
   },
   {
+    "id": "arc-squiggle-octagon-lattice",
+    "title": "Arc Squiggle Octagon Tiling",
+    "description": "A three-tile Squiggle Octagon tiling seed using the 60\u00b0 arc Bubble Style.",
+    "file": "arc-squiggle-octagon-lattice.json",
+    "tags": [
+      "tiling",
+      "squiggle octagon",
+      "60\u00b0 arc"
+    ]
+  },
+  {
+    "id": "square-tooth-trapezoid-lattice",
+    "title": "Square Tooth Trapezoid Tiling",
+    "description": "A two-tile five-sided trapezoid tiling seed using the Square Tooth Bubble Style.",
+    "file": "square-tooth-trapezoid-lattice.json",
+    "tags": [
+      "tiling",
+      "five-sided",
+      "Square Tooth"
+    ]
+  },
+  {
     "id": "spike-bubble-style-lattice",
     "title": "Spike Style Tiling H3C/H3A",
     "description": "A tiling example using the compact Spike Bubble Style on H3C/H3A triangular bubble tiles.",

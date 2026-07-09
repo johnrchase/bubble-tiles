@@ -818,30 +818,28 @@ body.space-pan-mode svg.panning {
 }
 
 .frame-icon-slot {
-  width: 42px;
-  height: 32px;
+  width: 52px;
+  height: 38px;
   border: 0;
   clip-path: none;
   flex: 0 0 auto;
-}
-
-.frame-icon-slot svg {
-  width: 42px;
-  height: 32px;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
 }
 
-.frame-icon-slot path {
-  stroke: #222222;
-  stroke-width: 5;
-  fill-rule: evenodd;
+.frame-icon-slot svg {
+  width: 52px;
+  height: 38px;
+  display: block;
+  background: transparent;
+  overflow: visible;
 }
 
-
 .frame-icon-slot .bubble-icon-svg {
-  width: 42px;
-  height: 32px;
+  width: 52px;
+  height: 38px;
 }
 
 
@@ -853,7 +851,11 @@ body.space-pan-mode svg.panning {
 
 
 .frame-icon-slot .bubble-icon-svg path {
-  stroke-width: 4;
+  fill: var(--tile-fill, #c7aa72);
+  stroke: var(--tile-stroke, #6f5736);
+  stroke-width: max(2.2px, var(--tile-stroke-width, 2.2));
+  vector-effect: non-scaling-stroke;
+  paint-order: stroke fill;
 }
 
 
@@ -4197,4 +4199,31 @@ body:not(.lattice-highlight-source) .lattice-copy {
 .menu-bubble-raster-icon.bubble-style-raster-icon[src$="bubble-style-spike.png"] {
   object-fit: contain !important;
   object-position: center center !important;
+}
+
+
+/* Final Bubble Style popover layout: keep all four style buttons in one row. */
+.edge-decoration-preview-grid {
+  grid-template-columns: repeat(4, 46px) !important;
+  gap: 8px !important;
+  padding: 8px 10px !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.edge-decoration-preview-grid .style-preview-button {
+  width: 46px !important;
+  height: 46px !important;
+  padding: 5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.edge-decoration-preview-grid .edge-decoration-preview-image {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
 }

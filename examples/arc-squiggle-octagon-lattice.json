@@ -1,0 +1,86 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "tiles": [
+    {
+      "id": "tile4",
+      "tileType": "ARCV_BUBBLE_OP_SQUIGGLE_OCT_10011001",
+      "x": -16.448,
+      "y": 482.763,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#00bdb0",
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": "#ffffff",
+      "strokeStyle": "dotted",
+      "strokeWidth": 3,
+      "edgeDecoration": "arc60"
+    },
+    {
+      "id": "tile6",
+      "tileType": "ARCV_BUBBLE_OP_SQUIGGLE_OCT_10011001",
+      "x": 103.552,
+      "y": 482.763,
+      "rotation": -120,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#00bdb0",
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": "#ffffff",
+      "strokeStyle": "dotted",
+      "strokeWidth": 3,
+      "edgeDecoration": "arc60"
+    },
+    {
+      "id": "tile7",
+      "tileType": "ARCV_BUBBLE_OP_SQUIGGLE_OCT_10011001",
+      "x": 43.552,
+      "y": 378.84,
+      "rotation": -60,
+      "flipX": 1,
+      "flipY": 1,
+      "fillColor": "#00bdb0",
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": "#ffffff",
+      "strokeStyle": "dotted",
+      "strokeWidth": 3,
+      "edgeDecoration": "arc60"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile4",
+        "tile6",
+        "tile7"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile4",
+        "tile6",
+        "tile7"
+      ],
+      "vectorA": {
+        "x": 240,
+        "y": 0
+      },
+      "vectorB": {
+        "x": 120,
+        "y": -207.846
+      }
+    }
+  ]
+}
