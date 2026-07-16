@@ -21,12 +21,13 @@
   },
   {
     "id": "square-bubble-tile-lattice-s3-s0",
-    "title": "Square Bubble Tiling S3/S0",
-    "description": "A compact square bubble tiling using the S3/S0 pairing.",
+    "title": "Square Puzzle Tiling S0/S1",
+    "description": "A three-tile periodic lattice using yellow and purple square bubble tiles with the Puzzle edge style.",
     "file": "square-bubble-tile-lattice-s3-s0.json",
     "tags": [
       "tiling",
-      "square bubble tiles"
+      "square bubble tiles",
+      "puzzle edge"
     ]
   },
   {
@@ -121,6 +122,17 @@
     ]
   },
   {
+    "id": "soft-sf0-sf3c-lattice",
+    "title": "Soft Tile Tiling SF0/SF3C",
+    "description": "A periodic tiling using one SF0 and two SF3C soft tiles.",
+    "file": "soft-sf0-sf3c-lattice.json",
+    "tags": [
+      "tiling",
+      "soft tiles",
+      "lattice"
+    ]
+  },
+  {
     "id": "cloud-soft-sf2b-lattice",
     "title": "Cloud Soft Tile Tiling SF2B",
     "description": "A single soft SF2B tile with a cloud texture repeated by tiling fill.",
@@ -208,6 +220,16 @@
     ]
   },
   {
+    "id": "small-flower-frame-triangular-fill",
+    "title": "Small Flower with Triangular Tiles",
+    "description": "A Small flower frame layout filled with triangular bubble tiles.",
+    "file": "small-flower-frame-triangular-fill.json",
+    "tags": [
+      "frames",
+      "triangular bubble tiles"
+    ]
+  },
+  {
     "id": "heesch-number-1",
     "title": "Heesch Number 1",
     "description": "A Heesch-number-one example layout using soft, hexagonal bubble, and five-sided trapezoid-based tiles.",
@@ -217,6 +239,83 @@
       "examples",
       "soft tiles",
       "five-sided"
+    ]
+  },
+  {
+    "id": "infinite-soft-tiling",
+    "title": "Infinite Soft Tiling",
+    "description": "A large soft-tile periodic lattice using a virtual lattice fill.",
+    "file": "infinite-soft-tiling.json",
+    "tags": [
+      "tiling",
+      "soft tiles",
+      "lattice"
+    ]
+  },
+  {
+    "id": "square-tooth-dodecagon-lattice",
+    "title": "Square Tooth Dodecagon Tiling",
+    "description": "A six-tile lattice using a dodecagon seed with hexagonal and square bubble tiles in the Square Tooth edge style.",
+    "file": "square-tooth-dodecagon-lattice.json",
+    "tags": [
+      "tiling",
+      "dodecagon",
+      "Square Tooth"
+    ]
+  },
+  {
+    "id": "cookie-and-oreo-lattice",
+    "title": "Cookie and Oreo Tiling H4B/H1",
+    "description": "A cookie-and-oreo image-fill lattice using hexagonal bubble tiles.",
+    "file": "cookie-and-oreo-lattice.json",
+    "tags": [
+      "tiling",
+      "food textures",
+      "hexagonal bubble tiles"
+    ]
+  },
+  {
+    "id": "donut-trio-lattice",
+    "title": "Donut Trio Tiling H2B/H4A/3A",
+    "description": "A three-donut image-fill lattice using hexagonal bubble tiles.",
+    "file": "donut-trio-lattice.json",
+    "tags": [
+      "tiling",
+      "food textures",
+      "hexagonal bubble tiles"
+    ]
+  },
+  {
+    "id": "hexagonal-bubble-pinwheel-lattice",
+    "title": "Hexagonal Tiling H2C/H3B/H4B",
+    "description": "A twelve-tile periodic design using H2C, H3B, and H4B hexagonal bubble tiles.",
+    "file": "hexagonal-bubble-pinwheel-lattice.json",
+    "tags": [
+      "tiling",
+      "hexagonal bubble tiles",
+      "lattice"
+    ]
+  },
+  {
+    "id": "hexagonal-bubble-trio-lattice",
+    "title": "Bubble Trio Tiling H0/H6/H3C",
+    "description": "A three-tile periodic design using H0, H3C, and H6 hexagonal bubble tiles.",
+    "file": "hexagonal-bubble-trio-lattice.json",
+    "tags": [
+      "tiling",
+      "hexagonal bubble tiles",
+      "lattice"
+    ]
+  },
+  {
+    "id": "beautiful-penrose-flower",
+    "title": "Beautiful Penrose Flower",
+    "description": "A large flower construction made from bubble-converted thin Penrose rhombs.",
+    "file": "beautiful-penrose-flower.json",
+    "tags": [
+      "Penrose rhombs",
+      "flower",
+      "bubble tiles"
     ]
   }
 ]

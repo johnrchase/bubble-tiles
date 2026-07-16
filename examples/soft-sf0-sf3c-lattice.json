@@ -1,0 +1,95 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "viewBox": {
+    "x": -453.897,
+    "y": -163.281,
+    "width": 1950.047,
+    "height": 1365.032
+  },
+  "tiles": [
+    {
+      "id": "tile4",
+      "tileType": "SF0",
+      "x": 169.138,
+      "y": 395.633,
+      "rotation": 30,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile6",
+      "tileType": "SF3C",
+      "x": 329.138,
+      "y": 395.633,
+      "rotation": 30,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile9",
+      "tileType": "SF3C",
+      "x": 489.138,
+      "y": 395.633,
+      "rotation": 90,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile4",
+        "tile6",
+        "tile9"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile4",
+        "tile6",
+        "tile9"
+      ],
+      "vectorA": {
+        "x": 480,
+        "y": 0
+      },
+      "vectorB": {
+        "x": 240,
+        "y": 138.564
+      }
+    }
+  ]
+}

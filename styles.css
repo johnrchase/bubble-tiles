@@ -57,6 +57,157 @@ body {
   border: 1px solid #dddddd;
   border-radius: 10px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+/* Keep every toolbar group self-contained; no final control should protrude past its rounded panel. */
+#toolbar .toolbar-section {
+  box-sizing: border-box !important;
+  flex: 0 0 auto !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+  overflow: visible !important;
+}
+
+#toolbar .toolbar-section > :not(.style-popover) {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.scale-tool-button {
+  font-weight: 700;
+  justify-content: center;
+}
+
+.scale-tool-button { padding: 5px !important; }
+.reset-scale-glyph { font-size: 11px; font-weight: 700; }
+
+.scale-expand-icon {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: #25313c;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.scale-toolbar-control {
+  gap: 5px;
+  min-height: 34px;
+  height: 34px;
+  padding: 0 3px;
+}
+
+.scale-slider-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 92px;
+  height: 20px;
+}
+
+.scale-slider-wrap input[type="range"] {
+  width: 92px;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.scale-slider-wrap input[type="range"]::-webkit-slider-runnable-track {
+  height: 5px;
+  border: 1px solid #aeb8c2;
+  border-radius: 999px;
+  background: #dfe4e8;
+}
+
+.scale-slider-wrap input[type="range"]::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  border: 2px solid #667482;
+  border-radius: 50%;
+  background: #ffffff;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.scale-slider-wrap input[type="range"]::-moz-range-track {
+  height: 5px;
+  border: 1px solid #aeb8c2;
+  border-radius: 999px;
+  background: #dfe4e8;
+  box-sizing: border-box;
+}
+
+.scale-slider-wrap input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #667482;
+  border-radius: 50%;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.scale-one-marker {
+  position: absolute;
+  left: calc(23.08% + 3.77px);
+  top: calc(50% + 1px);
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.scale-one-marker::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 2px solid #aeb8c2;
+  border-radius: 50%;
+  background: #dfe4e8;
+  transform: translate(-50%, -50%);
+}
+
+.scale-toolbar-control.scale-at-one .scale-one-marker,
+.menu-scale-control.scale-at-one .scale-one-marker {
+  opacity: 0;
+}
+
+.scale-toolbar-control.scale-at-one .scale-slider-wrap input[type="range"]::-webkit-slider-thumb,
+.menu-scale-control.scale-at-one .scale-slider-wrap input[type="range"]::-webkit-slider-thumb {
+  background: #0877d1;
+  border-color: #0877d1;
+}
+
+.scale-toolbar-control.scale-at-one .scale-slider-wrap input[type="range"]::-moz-range-thumb,
+.menu-scale-control.scale-at-one .scale-slider-wrap input[type="range"]::-moz-range-thumb {
+  background: #0877d1;
+  border-color: #0877d1;
+}
+
+#toolbar .scale-factor-input {
+  width: 54px;
+  min-width: 54px;
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .section-label {
@@ -483,6 +634,8 @@ svg.panning {
 .tile path {
   stroke: #222;
   stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
 }
 
 .tile.selected polygon,
@@ -721,6 +874,34 @@ text {
   font-weight: 700;
 }
 
+.device-warning-dialog {
+  width: min(480px, 100%);
+}
+
+.device-warning-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.device-warning-actions button {
+  padding: 9px 14px;
+  border: 1px solid #1667a8;
+  border-radius: 9px;
+  background: #1976bd;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.device-warning-actions button:hover,
+.device-warning-actions button:focus-visible {
+  background: #125f99;
+  outline: 2px solid #0d4f82;
+  outline-offset: 2px;
+}
+
 
 .palette-tile {
   user-select: none;
@@ -902,7 +1083,11 @@ body.space-pan-mode svg.panning {
   border: 1px solid #cfcfcf;
   border-radius: 12px;
   box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-  z-index: 30;
+  z-index: 10010;
+}
+
+.toolbar-menu[open] .menu-panel {
+  z-index: 10010;
 }
 
 .menu-panel button {
@@ -1088,7 +1273,7 @@ body.space-pan-mode svg.panning {
   transform: translateX(-50%);
   max-width: min(760px, calc(100% - 40px));
   box-sizing: border-box;
-  padding: 9px 14px;
+  padding: 9px 38px 9px 14px;
   background: #fff3b0;
   border: 1px solid #d7b84f;
   border-radius: 12px;
@@ -1098,7 +1283,39 @@ body.space-pan-mode svg.panning {
   line-height: 1.35;
   font-weight: 600;
   z-index: 8;
-  pointer-events: none;
+  pointer-events: auto;
+}
+
+.lattice-hint-content a {
+  color: #715600;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.lattice-hint-close {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: 1px solid rgba(95, 74, 0, 0.4);
+  border-radius: 7px;
+  background: #fff3b0;
+  color: #3f3300;
+  font: 800 19px/1 Arial, sans-serif;
+  cursor: pointer;
+}
+
+.lattice-hint-close:hover,
+.lattice-hint-close:focus-visible {
+  background: #ffe98a;
+  outline: 2px solid #715600;
+  outline-offset: 1px;
 }
 
 .lattice-hint[hidden] {
@@ -1936,6 +2153,20 @@ body:not(.lattice-highlight-source) .lattice-copy {
   background: #ffffff;
   font-size: 13px;
   text-align: left;
+  gap: 8px;
+}
+
+.context-menu-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+.office-duplicate-plus {
+  fill: none;
+  stroke: #1565c0;
+  stroke-width: 3.4;
+  stroke-linecap: round;
 }
 
 .context-menu button:hover {
@@ -2018,6 +2249,31 @@ body:not(.lattice-highlight-source) .lattice-copy {
 
 .menu-control input[type="range"] {
   width: 110px;
+}
+
+.menu-scale-control {
+  display: grid;
+  grid-template-columns: auto 110px 54px;
+  gap: 8px;
+  padding: 7px;
+}
+
+.menu-scale-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+}
+
+.menu-scale-slider-wrap,
+.menu-scale-slider-wrap input[type="range"] {
+  width: 110px;
+}
+
+.menu-scale-factor-input {
+  width: 54px !important;
+  min-width: 54px;
+  text-align: center;
 }
 
 .menu-control select {
@@ -2244,8 +2500,130 @@ body:not(.lattice-highlight-source) .lattice-copy {
 }
 
 .compact-canvas-control {
+  width: 42px;
+  min-width: 42px;
   min-height: 34px;
   height: 34px;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.compact-canvas-control:hover,
+.compact-canvas-control:focus-within {
+  border-color: #8db9e8;
+  background: #eef5ff;
+}
+
+#toolbar .compact-canvas-control input[type="color"] {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+#toolbar .compact-canvas-control input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+#toolbar .compact-canvas-control input[type="color"]::-webkit-color-swatch,
+#toolbar .compact-canvas-control input[type="color"]::-moz-color-swatch {
+  border: 1px solid #8a8a8a;
+  border-radius: 3px;
+}
+
+.format-painter-icon {
+  width: 21px;
+  height: 21px;
+  overflow: visible;
+}
+
+.format-painter-roller {
+  fill: #f4c542;
+  stroke: #263645;
+  stroke-width: 1.6;
+}
+
+.format-painter-frame {
+  fill: none;
+  stroke: #263645;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.format-painter-handle {
+  fill: #263645;
+}
+
+.help-style-tool-image {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.help-format-painter-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.help-canvas-swatch {
+  width: 20px;
+  height: 18px;
+  box-sizing: border-box;
+  border: 1px solid #8a8a8a;
+  border-radius: 4px;
+  background: #fafafa;
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.format-painter-button.is-active {
+  border-color: #1f75cb;
+  background: #dceeff;
+  box-shadow: 0 0 0 2px rgba(31, 117, 203, 0.2);
+}
+
+body.format-painter-mode #canvas {
+  cursor: copy;
+}
+
+/* Bubble-tile outlines are split into edges so matching shared boundaries can
+   be rendered once instead of stacking joins from both neighboring tiles. */
+#tilesLayer .per-edge-border-fill,
+#latticeLayer .per-edge-border-fill {
+  stroke: none !important;
+}
+
+#tilesLayer .tile .tile-border-edge,
+#latticeLayer .lattice-copy .tile-border-edge {
+  fill: none;
+  stroke: var(--edge-stroke) !important;
+  stroke-width: var(--edge-width) !important;
+  stroke-dasharray: var(--edge-dash) !important;
+  stroke-linecap: var(--edge-cap) !important;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+  pointer-events: none;
+}
+
+#tilesLayer .tile.selected .tile-border-edge {
+  filter: drop-shadow(0 0 2px #0066cc);
+}
+
+#tilesLayer .tile.overlapping .tile-border-edge {
+  stroke: #d00000 !important;
+  stroke-width: 7 !important;
+  filter: none;
 }
 
 /* Guided tutorial */
@@ -2281,6 +2659,73 @@ body:not(.lattice-highlight-source) .lattice-copy {
   color: #3f3a22;
   line-height: 1.4;
   font-size: 13px;
+}
+
+.guided-choice {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.guided-choice[hidden],
+.guided-task-status[hidden],
+.guided-exit-actions[hidden] {
+  display: none;
+}
+
+.guided-choice button {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  text-align: left;
+  border-color: #d5aa22;
+  background: #fffdf1;
+}
+
+.guided-choice button span {
+  color: #675d37;
+  font-size: 12px;
+}
+
+.guided-choice .guided-recommendation {
+  margin: 0 0 2px;
+  color: #5d4700;
+}
+
+.guided-choice button.recommended-tour {
+  border-color: #d79f00;
+  background: #fff0a8;
+  box-shadow: inset 0 0 0 2px rgba(215, 159, 0, 0.34);
+}
+
+.guided-task-status {
+  margin: 8px 0;
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: rgba(224, 177, 26, 0.16);
+  color: #715900;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.guided-task-status.is-complete {
+  background: #dff3df;
+  color: #245f2b;
+}
+
+.guided-exit-actions {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(128, 90, 0, 0.25);
+}
+
+.guided-exit-actions p {
+  margin-bottom: 7px;
+  font-weight: 700;
+}
+
+.guided-exit-actions button {
+  margin: 3px 4px 0 0;
 }
 
 .guided-progress {
@@ -2413,10 +2858,6 @@ body:not(.lattice-highlight-source) .lattice-copy {
 
 .icon-only-color-control input[type="color"] {
   width: 30px;
-}
-
-.canvas-glyph {
-  font-size: 17px;
 }
 
 .icon-toggle {
@@ -2934,21 +3375,56 @@ body:not(.lattice-highlight-source) .lattice-copy {
 #toolbar .icon-button > img {
   margin-right: 0;
 }
-.clipboard-copy-icon .copy-sheet-back,
-.clipboard-copy-icon .copy-sheet-front,
-.clipboard-paste-icon .paste-board,
-.clipboard-paste-icon .paste-paper {
-  stroke: #222;
+.office-page,
+.office-clipboard,
+.office-paper,
+.office-clip {
+  stroke: #263442;
   stroke-width: 2.2;
   stroke-linejoin: round;
 }
-.clipboard-copy-icon .copy-sheet-back { fill: #d7e3f5; }
-.clipboard-copy-icon .copy-sheet-front { fill: #ffffff; }
-.clipboard-copy-icon .copy-clip { fill: #b7bcc3; stroke: #222; stroke-width: 1.8; }
-.clipboard-paste-icon .paste-board { fill: #d7e3f5; }
-.clipboard-paste-icon .paste-paper { fill: #ffffff; }
-.clipboard-paste-icon .paste-clip { fill: #b7bcc3; stroke: #222; stroke-width: 1.8; }
-.clipboard-paste-icon .paste-arrow { fill: none; stroke: #2c5b88; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.office-page.back { fill: #b8d3f0; }
+.office-page.front,
+.office-paper { fill: #ffffff; }
+.office-clipboard { fill: #d5e6f8; }
+.office-clip { fill: #7faee0; }
+.office-page-line { fill: none; stroke: #4d78a4; stroke-width: 2; stroke-linecap: round; }
+
+.layer-stack-icon .layer-sheet {
+  stroke: #304253;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+.layer-sheet-back { fill: #b8c9d9; }
+.layer-sheet-mid { fill: #d8e4ef; }
+.layer-sheet-front { fill: #ffffff; }
+.layer-stack-icon .layer-arrow,
+.layer-stack-icon .layer-stop {
+  fill: none;
+  stroke: #1769aa;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lattice-vectors-icon .lattice-seed {
+  fill: #ffffff;
+  stroke: #25394c;
+  stroke-width: 2;
+}
+.lattice-vectors-icon .lattice-ghost {
+  fill: #bcd8f3;
+  stroke: #4b7398;
+  stroke-width: 1.6;
+  stroke-dasharray: 2 2;
+}
+.lattice-vectors-icon .lattice-vector {
+  fill: none;
+  stroke: #1769aa;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .menu-panel button,
 .menu-panel .menu-control > span:first-child {
   display: flex;
@@ -3077,8 +3553,14 @@ body:not(.lattice-highlight-source) .lattice-copy {
 
 /* Roll the Outline icon back from the oversized pass. */
 #shapeOutlineButton .outline-tool-image {
-  width: 24px !important;
-  height: 24px !important;
+  width: 26px !important;
+  height: 26px !important;
+  object-fit: contain !important;
+}
+
+#shapeFillButton .fill-tool-image {
+  width: 16px !important;
+  height: 16px !important;
   object-fit: contain !important;
 }
 
@@ -3881,6 +4363,7 @@ body:not(.lattice-highlight-source) .lattice-copy {
   display: block !important;
 }
 
+
 .menu-bubble-raster-icon.bubble-style-raster-icon {
   width: 30px !important;
   height: 30px !important;
@@ -4226,4 +4709,31 @@ body:not(.lattice-highlight-source) .lattice-copy {
   object-fit: contain !important;
   object-position: center center !important;
   display: block !important;
+}
+
+/* Final toolbar layout: remove legacy negative offsets and give flex rows real separation. */
+#toolbar {
+  row-gap: 6px !important;
+  column-gap: 7px !important;
+  padding-top: 4px !important;
+  padding-bottom: 5px !important;
+  align-items: flex-start !important;
+  align-content: flex-start !important;
+}
+
+#toolbar .menu-strip {
+  margin-bottom: 0 !important;
+}
+
+/* The toolbar pseudo-element already creates the menu/toolbar row break. */
+.toolbar-row-break {
+  display: none !important;
+  margin: 0 !important;
+}
+
+#toolbar .toolbar-section,
+#toolbar .toolbar-section.help-section,
+#shortcutsToolbar {
+  margin: 0 !important;
+  transform: none !important;
 }

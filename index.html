@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Bubble Tiles 1.3</title>
+<title>Bubble Tiles 1.4</title>
 <link href="assets/logo-two-tiles-favicon.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -15,7 +15,7 @@
 <div id="toolbar">
 <div class="brand">
 <img alt="" class="brand-logo-image" src="assets/logo-two-tiles.png"/>
-<span class="brand-wordmark">Bubble Tiles 1.3</span>
+<span class="brand-wordmark">Bubble Tiles 1.4</span>
 </div>
 <div class="menu-strip">
 <details class="toolbar-menu" id="fileMenu">
@@ -73,8 +73,8 @@
 <div class="menu-panel">
 <button class="icon-button" id="undo" title="Undo (Ctrl/Cmd+Z)"><span aria-hidden="true" class="menu-item-icon">↶</span><span class="menu-label">Undo</span><span class="menu-shortcut">Ctrl/Cmd+Z</span></button>
 <button class="icon-button" id="redo" title="Redo (Ctrl/Cmd+Y or Ctrl/Cmd+Shift+Z)"><span aria-hidden="true" class="menu-item-icon">↷</span><span class="menu-label">Redo</span><span class="menu-shortcut">Ctrl/Cmd+Y</span></button>
-<button class="icon-button" id="copySelected" title="Copy selected tiles or group (Ctrl/Cmd+C)"><svg aria-hidden="true" class="toolbar-svg-icon clipboard-copy-icon" viewbox="0 0 48 48"><rect class="copy-sheet-back" height="25" rx="3" width="21" x="13" y="11"></rect><rect class="copy-sheet-front" height="25" rx="3" width="21" x="9" y="15"></rect><rect class="copy-clip" height="5" rx="2" width="9" x="15" y="8"></rect></svg><span class="menu-label">Copy</span><span class="menu-shortcut">Ctrl/Cmd+C</span></button>
-<button class="icon-button" id="pasteClipboard" title="Paste copied tiles or group (Ctrl/Cmd+V)"><svg aria-hidden="true" class="toolbar-svg-icon clipboard-paste-icon" viewbox="0 0 48 48"><rect class="paste-board" height="30" rx="4" width="26" x="11" y="9"></rect><rect class="paste-paper" height="20" rx="2" width="16" x="16" y="14"></rect><rect class="paste-clip" height="6" rx="2" width="12" x="18" y="7"></rect><path class="paste-arrow" d="M24 18 V30 M19 25 L24 30 L29 25"></path></svg><span class="menu-label">Paste</span><span class="menu-shortcut">Ctrl/Cmd+V</span></button>
+<button class="icon-button" id="copySelected" title="Copy selected tiles or group (Ctrl/Cmd+C)"><svg aria-hidden="true" class="toolbar-svg-icon office-copy-icon" viewbox="0 0 48 48"><rect class="office-page back" x="15" y="8" width="24" height="29" rx="3"></rect><rect class="office-page front" x="8" y="15" width="24" height="25" rx="3"></rect><path class="office-page-line" d="M14 23h12 M14 29h12 M14 35h8"></path></svg><span class="menu-label">Copy</span><span class="menu-shortcut">Ctrl/Cmd+C</span></button>
+<button class="icon-button" id="pasteClipboard" title="Paste copied tiles or group (Ctrl/Cmd+V)"><svg aria-hidden="true" class="toolbar-svg-icon office-paste-icon" viewbox="0 0 48 48"><path class="office-clipboard" d="M11 12h26v29H11z"></path><path class="office-paper" d="M17 18h17v18H17z"></path><rect class="office-clip" x="17" y="7" width="14" height="8" rx="3"></rect><path class="office-page-line" d="M21 24h9 M21 29h9"></path></svg><span class="menu-label">Paste</span><span class="menu-shortcut">Ctrl/Cmd+V</span></button>
 <button class="icon-button" id="duplicate" title="Duplicate selected (D)"><span aria-hidden="true" class="menu-item-icon">⧉</span><span class="menu-label">Duplicate</span><span class="menu-shortcut">D</span></button>
 <button class="icon-button danger-button" id="deleteSelected" title="Delete selected (Delete/Backspace)"><svg aria-hidden="true" class="toolbar-svg-icon trash-icon" viewbox="0 0 48 48"><path d="M16 15 H32 L30.4 39 H17.6 Z"></path><path d="M18 12 H30"></path><path d="M21 9 H27"></path><path d="M21 20 V33"></path><path d="M27 20 V33"></path></svg><span class="menu-label">Delete</span><span class="menu-shortcut">Delete</span></button>
 <button class="icon-button danger-button" id="reset" title="Clear canvas"><span aria-hidden="true" class="menu-item-icon">🧹</span><span>Clear Canvas</span></button>
@@ -83,10 +83,10 @@
 <button data-command="groupSelected" title="Group selected tiles (G)"><svg aria-hidden="true" class="menu-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-frame" height="32" rx="3" width="32" x="8" y="8"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="35"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="35"></rect><rect class="group-small" height="11" rx="2" width="17" x="16" y="21"></rect><rect class="group-small" height="11" rx="2" width="17" x="21" y="15"></rect></svg><span class="menu-label">Group</span><span class="menu-shortcut">G</span></button>
 <button data-command="ungroupSelected" title="Ungroup selected group one level (U)"><svg aria-hidden="true" class="menu-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-small" height="11" rx="2" width="19" x="9" y="27"></rect><rect class="group-small" height="11" rx="2" width="17" x="22" y="10"></rect></svg><span class="menu-label">Ungroup</span><span class="menu-shortcut">U</span></button>
 <div class="menu-separator"></div>
-<button data-command="bringToTop" title="Bring selected tiles to top"><span aria-hidden="true" class="menu-item-icon">⇧</span><span>Bring to Top</span></button>
-<button data-command="moveUp" title="Move selected tiles up one layer"><span aria-hidden="true" class="menu-item-icon">↑</span><span>Move Up</span></button>
-<button data-command="moveDown" title="Move selected tiles down one layer"><span aria-hidden="true" class="menu-item-icon">↓</span><span>Move Down</span></button>
-<button data-command="sendToBottom" title="Send selected tiles to bottom"><span aria-hidden="true" class="menu-item-icon">⇩</span><span>Send to Bottom</span></button>
+<button data-command="bringToTop" title="Bring selected tiles to top"><svg aria-hidden="true" class="menu-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 33V13 M30 19l6-6 6 6"></path><path class="layer-stop" d="M29 9h14"></path></svg><span>Bring to Top</span></button>
+<button data-command="moveUp" title="Move selected tiles up one layer"><svg aria-hidden="true" class="menu-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 34V16 M30 22l6-6 6 6"></path></svg><span>Move Up</span></button>
+<button data-command="moveDown" title="Move selected tiles down one layer"><svg aria-hidden="true" class="menu-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 14v18 M30 26l6 6 6-6"></path></svg><span>Move Down</span></button>
+<button data-command="sendToBottom" title="Send selected tiles to bottom"><svg aria-hidden="true" class="menu-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 13v20 M30 27l6 6 6-6"></path><path class="layer-stop" d="M29 37h14"></path></svg><span>Send to Bottom</span></button>
 </div>
 </details>
 <details class="toolbar-menu" id="transformMenu">
@@ -97,6 +97,12 @@
 <button data-command="rotateRight" title="Rotate selected clockwise by the degree amount (E)"><span aria-hidden="true" class="menu-item-icon">⟳</span><span class="menu-label">Rotate CW</span><span class="menu-shortcut">E</span></button>
 <button data-command="reflectHorizontal" title="Flip horizontally (H): mirror left/right across a vertical mirror line"><svg aria-hidden="true" class="menu-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M10 12 L24 24 L10 36 Z"></path><line class="reflect-mirror" x1="32" x2="32" y1="8" y2="40"></line><path class="reflect-shape dark" d="M54 12 L40 24 L54 36 Z"></path></svg><span class="menu-label">Flip Horizontal</span><span class="menu-shortcut">H</span></button>
 <button data-command="reflectVertical" title="Flip vertically (V): mirror up/down across a horizontal mirror line"><svg aria-hidden="true" class="menu-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M20 10 L32 22 L44 10 Z"></path><line class="reflect-mirror" x1="8" x2="56" y1="24" y2="24"></line><path class="reflect-shape dark" d="M20 38 L32 26 L44 38 Z"></path></svg><span class="menu-label">Flip Vertical</span><span class="menu-shortcut">V</span></button>
+<label class="menu-control menu-scale-control" id="menuScaleSelected" title="Scale selected tiles. Type a decimal, fraction, percentage, or sqrt() expression, such as sqrt(2)/2.">
+<span class="menu-scale-heading"><svg aria-hidden="true" class="menu-svg-icon scale-expand-icon" viewbox="0 0 24 24"><path d="M9 5H5v4 M5 5l5.5 5.5 M15 19h4v-4 M19 19l-5.5-5.5"></path></svg><span>Scale</span></span>
+<span class="scale-slider-wrap menu-scale-slider-wrap"><input aria-label="Scale factor slider" id="menuScaleFactorSlider" max="4" min="0.1" step="0.1" type="range" value="1"/><span aria-hidden="true" class="scale-one-marker"></span></span>
+<input aria-label="Custom scale factor" autocomplete="off" class="degree-input compact-degree-input scale-factor-input menu-scale-factor-input" id="menuScaleFactorInput" inputmode="text" spellcheck="false" type="text" value="1"/>
+</label>
+<button data-command="resetScale" title="Reset selected tiles to their original 1× scale"><span aria-hidden="true" class="menu-item-icon reset-scale-glyph">1×</span><span class="menu-label">Reset Scale</span></button>
 </div>
 </details>
 <details class="toolbar-menu" id="bubbleMenu">
@@ -116,7 +122,7 @@
 <details class="toolbar-menu" id="latticeMenu">
 <summary title="Lattice tools">Lattice ▾</summary>
 <div class="menu-panel">
-<button data-command="latticeFill" title="Lattice Fill (L): define two translation vectors from the selected motif"><span aria-hidden="true" class="menu-item-icon">▦</span><span class="menu-label">Tiling Fill</span><span class="menu-shortcut">L</span></button>
+<button data-command="latticeFill" title="Tiling Fill (L): define two translation vectors from the selected motif"><svg aria-hidden="true" class="menu-svg-icon lattice-vectors-icon" viewbox="0 0 48 48"><rect class="lattice-seed" x="9" y="27" width="10" height="10" rx="2"></rect><path class="lattice-vector vector-a" d="M20 32H39 M33 26l6 6-6 6"></path><path class="lattice-vector vector-b" d="M14 26V8 M8 14l6-6 6 6"></path><rect class="lattice-ghost ghost-a" x="32" y="27" width="8" height="8" rx="1.5"></rect><rect class="lattice-ghost ghost-b" x="10" y="7" width="8" height="8" rx="1.5"></rect></svg><span class="menu-label">Tiling Fill</span><span class="menu-shortcut">L</span></button>
 <button data-command="clearLattice" title="Clear generated lattice fills"><span aria-hidden="true" class="menu-item-icon">▦×</span><span>Clear Lattice</span></button>
 <button data-command="locateLatticeParents" title="Center the view on the parent/source tiles for lattice fills"><svg aria-hidden="true" class="menu-svg-icon locate-icon" viewbox="0 0 28 28"><circle cx="14" cy="14" r="6.2"></circle><circle cx="14" cy="14" r="1.8"></circle><line x1="14" x2="14" y1="3.2" y2="7.2"></line><line x1="14" x2="14" y1="20.8" y2="24.8"></line><line x1="3.2" x2="7.2" y1="14" y2="14"></line><line x1="20.8" x2="24.8" y1="14" y2="14"></line></svg><span>Locate</span></button>
 <label class="menu-control" title="Adjust the opacity of virtual lattice copies"><span><svg aria-hidden="true" class="menu-svg-icon eye-icon" viewbox="0 0 28 28"><path d="M3.5 14 C6.2 8.7 10 6 14 6 C18 6 21.8 8.7 24.5 14 C21.8 19.3 18 22 14 22 C10 22 6.2 19.3 3.5 14 Z"></path><circle cx="14" cy="14" r="3.8"></circle></svg><span>Opacity</span></span><input id="menuLatticeOpacity" max="1.00" min="0.10" step="0.05" type="range" value="0.62"/></label>
@@ -166,7 +172,7 @@
 <summary title="Help and app information">About ▾</summary>
 <div class="menu-panel">
 <button id="guidedTutorialButton" title="Start the guided tutorial"><span aria-hidden="true" class="menu-item-icon">🧭</span><span>Guided Tutorial</span></button>
-<button id="helpButton" title="Open tutorial and tool guide"><span aria-hidden="true" class="menu-item-icon">❔</span><span>Help / Tutorial</span></button>
+<button id="helpButton" title="Open Help"><span aria-hidden="true" class="menu-item-icon">❔</span><span>Help</span></button>
 <button id="versionHistoryButton" title="View version history"><span aria-hidden="true" class="menu-item-icon">📝</span><span>Version History</span></button>
 <button id="aboutButton" title="About Bubble Tiles"><span aria-hidden="true" class="menu-item-icon">ⓘ</span><span>About Bubble Tiles</span></button>
 </div>
@@ -191,9 +197,9 @@
 <div class="toolbar-section optional-toolbar" data-toolbar-section="edit" id="editToolbar">
 <button aria-label="Undo" class="icon-button" data-command="undo" title="Undo (Ctrl/Cmd+Z)">↶</button>
 <button aria-label="Redo" class="icon-button" data-command="redo" title="Redo (Ctrl/Cmd+Y or Ctrl/Cmd+Shift+Z)">↷</button>
-<button aria-label="Copy" class="icon-button" data-command="copySelected" title="Copy selected tiles or group (Ctrl/Cmd+C)"><svg aria-hidden="true" class="toolbar-svg-icon clipboard-copy-icon" viewbox="0 0 48 48"><rect class="copy-sheet-back" height="25" rx="3" width="21" x="13" y="11"></rect><rect class="copy-sheet-front" height="25" rx="3" width="21" x="9" y="15"></rect><rect class="copy-clip" height="5" rx="2" width="9" x="15" y="8"></rect></svg></button>
-<button aria-label="Paste" class="icon-button" data-command="pasteClipboard" title="Paste copied tiles or group (Ctrl/Cmd+V)"><svg aria-hidden="true" class="toolbar-svg-icon clipboard-paste-icon" viewbox="0 0 48 48"><rect class="paste-board" height="30" rx="4" width="26" x="11" y="9"></rect><rect class="paste-paper" height="20" rx="2" width="16" x="16" y="14"></rect><rect class="paste-clip" height="6" rx="2" width="12" x="18" y="7"></rect><path class="paste-arrow" d="M24 18 V30 M19 25 L24 30 L29 25"></path></svg></button>
-<button aria-label="Duplicate" class="icon-button" data-command="duplicateSelected" title="Duplicate selected (D)">⧉</button>
+<button aria-label="Copy" class="icon-button" data-command="copySelected" title="Copy selected tiles or group (Ctrl/Cmd+C)"><svg aria-hidden="true" class="toolbar-svg-icon office-copy-icon" viewbox="0 0 48 48"><rect class="office-page back" x="15" y="8" width="24" height="29" rx="3"></rect><rect class="office-page front" x="8" y="15" width="24" height="25" rx="3"></rect><path class="office-page-line" d="M14 23h12 M14 29h12 M14 35h8"></path></svg></button>
+<button aria-label="Paste" class="icon-button" data-command="pasteClipboard" title="Paste copied tiles or group (Ctrl/Cmd+V)"><svg aria-hidden="true" class="toolbar-svg-icon office-paste-icon" viewbox="0 0 48 48"><path class="office-clipboard" d="M11 12h26v29H11z"></path><path class="office-paper" d="M17 18h17v18H17z"></path><rect class="office-clip" x="17" y="7" width="14" height="8" rx="3"></rect><path class="office-page-line" d="M21 24h9 M21 29h9"></path></svg></button>
+<button aria-label="Duplicate" class="icon-button" data-command="duplicateSelected" title="Duplicate selected (D)"><svg aria-hidden="true" class="toolbar-svg-icon office-duplicate-icon" viewbox="0 0 48 48"><rect class="office-page back" x="15" y="8" width="24" height="29" rx="3"></rect><rect class="office-page front" x="8" y="15" width="24" height="25" rx="3"></rect><path class="office-duplicate-plus" d="M20 22v12 M14 28h12"></path></svg></button>
 <button aria-label="Delete" class="icon-button neutral-delete-button" data-command="deleteSelected" title="Delete selected (Delete/Backspace)">
 <svg aria-hidden="true" class="toolbar-svg-icon trash-icon" viewbox="0 0 48 48"><path d="M16 15 H32 L30.4 39 H17.6 Z"></path><path d="M18 12 H30"></path><path d="M21 9 H27"></path><path d="M21 20 V33"></path><path d="M27 20 V33"></path></svg>
 </button>
@@ -219,10 +225,10 @@
 </svg>
 </button>
 <span aria-hidden="true" class="toolbar-divider"></span>
-<button aria-label="Send selected tiles to bottom" class="icon-button layer-button" id="sendToBottom" title="Send selected tiles to bottom">⇩</button>
-<button aria-label="Move selected tiles down one layer" class="icon-button layer-button" id="moveDown" title="Move selected tiles down one layer">↓</button>
-<button aria-label="Move selected tiles up one layer" class="icon-button layer-button" id="moveUp" title="Move selected tiles up one layer">↑</button>
-<button aria-label="Bring selected tiles to top" class="icon-button layer-button" id="bringToTop" title="Bring selected tiles to top">⇧</button>
+<button aria-label="Send selected tiles to bottom" class="icon-button layer-button" id="sendToBottom" title="Send selected tiles to bottom"><svg aria-hidden="true" class="toolbar-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 13v20 M30 27l6 6 6-6"></path><path class="layer-stop" d="M29 37h14"></path></svg></button>
+<button aria-label="Move selected tiles down one layer" class="icon-button layer-button" id="moveDown" title="Move selected tiles down one layer"><svg aria-hidden="true" class="toolbar-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 14v18 M30 26l6 6 6-6"></path></svg></button>
+<button aria-label="Move selected tiles up one layer" class="icon-button layer-button" id="moveUp" title="Move selected tiles up one layer"><svg aria-hidden="true" class="toolbar-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 34V16 M30 22l6-6 6 6"></path></svg></button>
+<button aria-label="Bring selected tiles to top" class="icon-button layer-button" id="bringToTop" title="Bring selected tiles to top"><svg aria-hidden="true" class="toolbar-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 33V13 M30 19l6-6 6 6"></path><path class="layer-stop" d="M29 9h14"></path></svg></button>
 </div>
 <div class="toolbar-section" data-toolbar-section="transform" id="transformToolbar">
 <label class="toolbar-inline-label" title="Rotation step in degrees for Q/E and rotate buttons">
@@ -236,6 +242,11 @@
 <button class="reflect-button" id="reflectVertical" title="Flip vertically (V): mirror up/down across a horizontal mirror line">
 <svg aria-hidden="true" class="toolbar-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M20 10 L32 22 L44 10 Z"></path><line class="reflect-mirror" x1="8" x2="56" y1="24" y2="24"></line><path class="reflect-shape dark" d="M20 38 L32 26 L44 38 Z"></path></svg>
 </button>
+<label class="toolbar-inline-label scale-toolbar-control" id="scaleSelected" title="Scale selected tiles. Type a decimal, fraction, percentage, or sqrt() expression, such as sqrt(2)/2.">
+<svg aria-hidden="true" class="toolbar-svg-icon scale-expand-icon" viewbox="0 0 24 24"><path d="M9 5H5v4 M5 5l5.5 5.5 M15 19h4v-4 M19 19l-5.5-5.5"></path></svg>
+<span class="scale-slider-wrap"><input aria-label="Scale factor slider" id="scaleFactorSlider" max="4" min="0.1" step="0.1" type="range" value="1"/><span aria-hidden="true" class="scale-one-marker"></span></span>
+<input aria-label="Custom scale factor" autocomplete="off" class="degree-input compact-degree-input scale-factor-input" id="scaleFactorInput" inputmode="text" spellcheck="false" type="text" value="1"/>
+</label>
 </div>
 <!-- Locked Bubble toolbar icons: do not change these raster icon assets unless John explicitly asks. -->
 <div class="toolbar-section" data-toolbar-section="bubble" id="bubbleToolbar">
@@ -259,7 +270,7 @@
 </div>
 </div>
 <div class="toolbar-section" data-toolbar-section="lattice" id="latticeToolbar">
-<button aria-label="Lattice Fill" class="icon-button lattice-icon-button" id="latticeFill" title="Lattice Fill (L): define two translation vectors from the selected motif">▦</button>
+<button aria-label="Tiling Fill" class="icon-button lattice-icon-button" id="latticeFill" title="Tiling Fill (L): define two translation vectors from the selected motif"><svg aria-hidden="true" class="toolbar-svg-icon lattice-vectors-icon" viewbox="0 0 48 48"><rect class="lattice-seed" x="9" y="27" width="10" height="10" rx="2"></rect><path class="lattice-vector vector-a" d="M20 32H39 M33 26l6 6-6 6"></path><path class="lattice-vector vector-b" d="M14 26V8 M8 14l6-6 6 6"></path><rect class="lattice-ghost ghost-a" x="32" y="27" width="8" height="8" rx="1.5"></rect><rect class="lattice-ghost ghost-b" x="10" y="7" width="8" height="8" rx="1.5"></rect></svg></button>
 <button aria-label="Clear Lattice" class="icon-button clear-lattice-button lattice-icon-button" id="clearLattice" title="Clear generated lattice fills">
 <span class="lattice-clear-icon"><span class="lattice-mini">▦</span><span class="lattice-x">×</span></span>
 </button>
@@ -372,8 +383,8 @@
 </label>
 </div>
 </div>
-<label aria-label="Set canvas background color" class="color-control compact-canvas-control icon-only-color-control" title="Set canvas background color">
-<span aria-hidden="true" class="toolbar-glyph canvas-glyph">▣</span>
+<button aria-label="Format Painter: copy fill and outline styling from the selected tile to another tile" aria-pressed="false" class="office-style-button toolbar-icon-only format-painter-button" id="formatPainterButton" title="Format Painter: select one tile, activate this tool, then click another tile" type="button"><svg aria-hidden="true" class="format-painter-icon" viewBox="0 0 24 24"><rect class="format-painter-roller" height="6" rx="1" width="13" x="2" y="3"></rect><path class="format-painter-frame" d="M15 6h3.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H12v3"></path><rect class="format-painter-handle" height="6" rx="1" width="5" x="9.5" y="15.5"></rect></svg></button>
+<label aria-label="Set canvas background color" class="color-control compact-canvas-control toolbar-icon-only" title="Set canvas background color">
 <input id="canvasColorPicker" type="color" value="#fafafa"/>
 </label>
 </div>
@@ -399,6 +410,18 @@
 </div>
 </div>
 <input accept=".json,application/json" hidden="" id="importJsonFile" type="file"/>
+<div class="modal-backdrop" hidden="" id="deviceWarningModal">
+<div aria-labelledby="deviceWarningTitle" aria-modal="true" class="about-dialog device-warning-dialog" role="dialog">
+<div class="about-header">
+<h2 id="deviceWarningTitle">Desktop recommended</h2>
+<button aria-label="Close device warning" class="icon-button" id="closeDeviceWarning" title="Close">✕</button>
+</div>
+<div class="about-body">
+<p>Bubble Tiles works best on a desktop or laptop computer. You can continue on this phone or tablet, but some tools and precise tile movements may be easier with a larger screen, mouse, and keyboard.</p>
+<div class="device-warning-actions"><button id="continueOnDevice" type="button">Continue anyway</button></div>
+</div>
+</div>
+</div>
 <div class="modal-backdrop" hidden="" id="aboutModal">
 <div aria-labelledby="aboutTitle" aria-modal="true" class="about-dialog" role="dialog">
 <div class="about-header">
@@ -417,6 +440,9 @@
           <a href="mailto:john.chase@mcpsmd.net">john.chase@mcpsmd.net</a>.
         </p>
 <p>
+          Open the public app at <a href="https://johnrchase.github.io/bubble-tiles/" rel="noopener" target="_blank">johnrchase.github.io/bubble-tiles</a>.
+        </p>
+<p>
           Physical bubble-tile materials and outreach inspiration are credited to Lauren Siegel and MathHappens Foundation.
           Visit <a href="https://www.mathhappens.org/" rel="noopener" target="_blank">MathHappens.org</a>.
         </p>
@@ -433,6 +459,8 @@
 <button class="icon-button" id="closeVersionHistory" title="Close Version History">✕</button>
 </div>
 <div class="about-body">
+<p><strong>Bubble Tiles 1.4</strong></p>
+<p>Version 1.4 adds an interactive Explore tutorial for finite and infinite tilings; live Scale controls; Format Painter; improved snapping, shared borders, Arc Dual behavior, and style controls; Tile(1,1) and the Stegosaurus Spectre with sourced background notes; Rhombic and Trapezoidal tile families; view-preserving JSON layouts; more reliable image export; and a substantially expanded example gallery featuring bubble, puzzle, soft-tile, Penrose, and image-filled tilings.</p>
 <p><strong>Bubble Tiles 1.3</strong></p>
 <p>Version 1.3 begins the next geometry refinement cycle: a corrected 8-tile Pentagonal family with updated labels, colors, tray entries, and Add All layout; compact Four-sided Add All placement; restored chiral context hints for Four-sided and Five-sided families; snap previews that preserve active Bubble Style outlines; a refined Frames tray with One-of-each, Small, Large, Small flower, Large flower, and Wide flower frames; frame-thumbnail tray icons; frame sockets for snapping; a Wide flower challenge hint; updated guided tutorial wording for all four Bubble Styles including Square Tooth; and additional example layouts including the arc-style Squiggle Octagon lattice.</p>
 <p><strong>Bubble Tiles 1.2</strong></p>
@@ -454,22 +482,42 @@
 <div class="guided-eyebrow">Guided Tutorial</div>
 <h3 id="guidedTutorialTitle">Welcome</h3>
 <p id="guidedTutorialText"></p>
+<div class="guided-choice" hidden="" id="guidedTutorialChoice">
+<p class="guided-recommendation"><strong>The Explore tour is recommended.</strong></p>
+<button id="guidedQuickTour" type="button"><strong>Quick Tool Tour</strong><span>Learn the main controls.</span></button>
+<button class="recommended-tour" id="guidedExploreTour" type="button"><strong>Explore Bubble Tiles</strong><span>Investigate finite and infinite tilings.</span></button>
+</div>
+<div class="guided-task-status" hidden="" id="guidedTutorialTaskStatus"></div>
 <div class="guided-progress" id="guidedTutorialProgress"></div>
 <div class="guided-actions">
 <button id="guidedBack" type="button">Back</button>
+<button hidden="" id="guidedSkip" type="button">Skip</button>
 <button id="guidedNext" type="button">Next</button>
-<button id="guidedDone" type="button">Done</button>
+<button id="guidedDone" type="button">Exit</button>
+</div>
+<div class="guided-exit-actions" hidden="" id="guidedExitActions">
+<p>What should happen to your tutorial canvas?</p>
+<button id="guidedKeepWork" type="button">Keep Tutorial Work</button>
+<button id="guidedRestoreCanvas" type="button">Restore Previous Canvas</button>
 </div>
 </div>
 <div aria-hidden="true" id="trayDragGhost"></div>
 <div class="modal-backdrop" hidden="" id="helpModal">
 <div aria-labelledby="helpTitle" aria-modal="true" class="about-dialog help-dialog" role="dialog">
 <div class="about-header">
-<h2 id="helpTitle">Bubble Tiles 1.3 Help</h2>
+<h2 id="helpTitle">Bubble Tiles 1.4 Help</h2>
 <button class="icon-button" id="closeHelp" title="Close Help">✕</button>
 </div>
 <div class="about-body help-body">
 <div class="help-section-title">Getting around</div>
+<div class="help-tool">
+<span class="help-icon">🧭</span>
+<div><strong>Guided Tutorial.</strong> About → Guided Tutorial offers two paths. Quick Tool Tour spotlights the main controls. Explore Bubble Tiles is an event-driven investigation that begins with a finite frame-filling challenge, moves to infinite periodic tilings with Tiling Fill, and then explores Arc Dual, Reverse One Arc, polygon-to-bubble conversion, and sharing. Action steps unlock when you complete the task, but each can be skipped. The exploration saves your current canvas before opening a fresh workspace; when you leave, choose whether to keep the tutorial work or restore your previous canvas.</div>
+</div>
+<div class="help-tool">
+<span class="help-icon">🖥</span>
+<div><strong>Recommended device.</strong> Bubble Tiles works best on a desktop or laptop with a larger screen, mouse, and keyboard. Phone and tablet visitors receive a dismissible reminder when the app opens.</div>
+</div>
 <div class="help-tool">
 <span class="help-icon">🖱</span>
 <div><strong>Pan.</strong> Drag blank canvas, hold Space and drag, or Ctrl/Cmd-drag anywhere. Ctrl/Cmd-drag is useful when the canvas is full of tiles.</div>
@@ -481,11 +529,11 @@
 <div class="help-section-title">Adding and arranging tiles</div>
 <div class="help-tool">
 <span class="help-icon">▣</span>
-<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a family, then click a tile or drag it onto the canvas. “Add all” places a whole family in a reference arrangement. The Examples tab loads or inserts saved canvases, including Heesch Number 1, the arc-style Squiggle Octagon lattice, and the Square Tooth trapezoid lattice example; you can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
+<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a family, then click a tile or drag it onto the canvas. “Add all” places a whole family in a reference arrangement. The Examples tab loads or inserts saved canvases, including Heesch Number 1, Small Flower with Triangular Tiles, Infinite Soft Tiling, Soft Tile Tiling SF0/SF3C, Beautiful Penrose Flower, Hexagonal Tiling H2C/H3B/H4B, Bubble Trio Tiling H0/H6/H3C, the updated Square Puzzle Tiling S0/S1, and Square Tooth examples; you can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">💡</span>
-<div><strong>Context hints.</strong> The app sometimes shows a yellow note for mathematically important placements, including the One-of-each frame, the chiral 3A / 3A* pair, and the Wide flower challenge.</div>
+<div><strong>Context hints.</strong> The app sometimes shows a yellow note for mathematically important placements, including the Einstein-family monotiles, the One-of-each frame, the chiral 3A / 3A* pair, and the Wide flower challenge. Add all suppresses individual tile notes while preserving notes about the collection as a whole. Every yellow note can be dismissed with its X button.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🧲</span>
@@ -511,7 +559,7 @@
 </div>
 <div class="help-tool">
 <span class="help-icon">📋</span>
-<div><strong>Copy / Paste / Duplicate.</strong> Use Edit → Copy/Paste or Ctrl/Cmd+C and Ctrl/Cmd+V. Edit → Duplicate or D makes a nearby copy of the selected object.</div>
+<div><strong>Copy / Paste / Duplicate.</strong> Use Edit → Copy/Paste or Ctrl/Cmd+C and Ctrl/Cmd+V. Edit → Duplicate or D makes a nearby copy of the selected object. These commands are also available by right-clicking a selected tile. Copies retain the original tile's scale, geometry, fill, and outline settings.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🗑</span>
@@ -526,6 +574,10 @@
 
 <div><strong>Flip.</strong> Press H to flip horizontally or V to flip vertically. Flip H mirrors left/right across a vertical mirror line; Flip V mirrors up/down across a horizontal mirror line. These work on selected tiles, groups, and motifs.</div>
 </div>
+<div class="help-tool">
+<span class="help-icon"><svg aria-hidden="true" class="scale-expand-icon" viewbox="0 0 24 24"><path d="M9 5H5v4 M5 5l5.5 5.5 M15 19h4v-4 M19 19l-5.5-5.5"></path></svg></span>
+<div><strong>Scale / Reset Scale.</strong> Select one or more tiles, then use the synchronized slider in either the Transform dropdown or Transform toolbar to set an absolute scale in 0.1 increments; it applies immediately and snaps around the 1× marker, where the moving thumb turns blue. For a custom value, type <code>1.5</code>, <code>150%</code>, <code>3/2</code>, <code>sqrt(2)</code>, or <code>sqrt(2)/2</code>, then press Enter or leave the field. Multiple tiles scale around the selection center. Transform → Reset Scale returns each selected tile to 1×. Snapping requires edges to have the same effective scaled length; Format Painter does not copy scale. When a complete lattice source motif is scaled together, its translation vectors scale with it.</div>
+</div>
 <div class="help-section-title">Bubble</div>
 <div class="help-tool">
 <img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.png"/>
@@ -537,7 +589,7 @@
 </div>
 <div class="help-tool">
 <img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/>
-<div><strong>To Bubble Tile.</strong> Bubble → To Bubble Tile converts compatible polygon tiles into 60° arc-edge bubble tiles with all arcs initially pointing outward. Frames, Arc Lens, and the Einstein-family monotiles — Hat, Turtle, and Spectre — are excluded.</div>
+<div><strong>To Bubble Tile.</strong> Bubble → To Bubble Tile converts compatible polygon tiles into 60° arc-edge bubble tiles with all arcs initially pointing outward. Frames, Arc Lens, and the Einstein-family monotiles — Hat, Turtle, Spectre, Tile(1,1), and Stegosaurus Spectre — are excluded.</div>
 </div>
 <div class="help-tool">
 <img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/>
@@ -545,11 +597,11 @@
 </div>
 <div class="help-tool"><img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon help-bubble-style-menu-icon" src="assets/bubble-icons/bubble-style-menu.png"/>
 
-<div><strong>Bubble Style.</strong> Choose 60° arc, puzzle, spike, or square-tooth edge profiles from Bubble → Bubble Style or the Bubble toolbar dropdown. It works on compatible bubble tiles; convert normal polygons first with To Bubble Tile. Arc Lens, soft tiles, and Hat/Turtle/Spectre are excluded. Reverse One Arc can flip individual styled edges inward or outward.</div>
+<div><strong>Bubble Style.</strong> Choose 60° arc, puzzle, spike, or square-tooth edge profiles from Bubble → Bubble Style or the Bubble toolbar dropdown. It works on compatible bubble tiles; convert normal polygons first with To Bubble Tile. Arc Lens, soft tiles, and the Einstein-family monotiles are excluded. Reverse One Arc can flip individual styled edges inward or outward.</div>
 </div>
 <div class="help-section-title">Arrange / Nudge</div>
 <div class="help-tool">
-<span class="help-icon">⇅</span>
+<svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 34V14 M30 20l6-6 6 6"></path></svg>
 <div><strong>Layer order.</strong> Use Send to Bottom, Move Down, Move Up, and Bring to Top to control which selected tiles appear above or below others. The same options are available in the right-click menu.</div>
 </div>
 <div class="help-tool">
@@ -558,7 +610,7 @@
 </div>
 <div class="help-section-title">Lattice</div>
 <div class="help-tool">
-<span class="help-icon">▦</span>
+<svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon lattice-vectors-icon" viewbox="0 0 48 48"><rect class="lattice-seed" x="9" y="27" width="10" height="10" rx="2"></rect><path class="lattice-vector vector-a" d="M20 32H39 M33 26l6 6-6 6"></path><path class="lattice-vector vector-b" d="M14 26V8 M8 14l6-6 6 6"></path><rect class="lattice-ghost ghost-a" x="32" y="27" width="8" height="8" rx="1.5"></rect><rect class="lattice-ghost ghost-b" x="10" y="7" width="8" height="8" rx="1.5"></rect></svg>
 <div><strong>Tiling Fill.</strong> Select a motif, click Tiling Fill, drag a ghost copy to define vector A, then drag another ghost copy to define vector B. Press Esc to cancel while defining vectors. Copies are virtual and redraw as you pan and zoom. Use the Opacity slider to make virtual copies lighter or darker.</div>
 </div>
 <div class="help-tool"><span aria-hidden="true" class="help-icon help-lattice-clear-icon"><span class="lattice-clear-icon"><span class="lattice-mini">▦</span><span class="lattice-x">×</span></span></span>
@@ -571,20 +623,33 @@
 </div>
 <div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon eye-icon" viewbox="0 0 28 28"><path d="M3.5 14 C6.2 8.7 10 6 14 6 C18 6 21.8 8.7 24.5 14 C21.8 19.3 18 22 14 22 C10 22 6.2 19.3 3.5 14 Z"></path><circle cx="14" cy="14" r="3.8"></circle></svg>
 
-<div><strong>Lattice opacity.</strong> The editable source motif stays full strength. Use the Opacity slider to control how light or dark the virtual lattice copies appear.</div>
+<div><strong>Lattice opacity.</strong> The editable source motif stays full strength. Use the Opacity slider to control how light or dark the virtual lattice copies appear. Matching shared bubble-tile borders are also deduplicated between visible lattice copies and against the editable source tiles.</div>
 </div>
-<div class="help-section-title">Style and export</div>
+<div class="help-section-title">Style</div>
 <div class="help-tool">
-<span class="help-icon">🎨</span>
-<div><strong>Style.</strong> Use Fill for selected tile fill color, opacity, and pattern previews; use Outline for stroke color, width, and outline-style previews. Hover over any preview swatch for its name, then click to apply it. Canvas changes the background color. Fill, outline, and canvas changes update immediately while preserving selection and overlap highlights.</div>
+<span class="help-icon"><img alt="" aria-hidden="true" class="help-style-tool-image" src="assets/icon-fill-bucket.png"/></span>
+<div><strong>Fill.</strong> Sets the selected tile's fill color, opacity, and pattern. When one tile is selected, the controls and highlighted pattern preview reflect its current fill. Hover over a preview swatch for its name, then click to apply it.</div>
 </div>
+<div class="help-tool">
+<span class="help-icon"><img alt="" aria-hidden="true" class="help-style-tool-image" src="assets/icon-outline-pencil.png"/></span>
+<div><strong>Outline.</strong> Sets the selected tile's border color, width, and line style. When one tile is selected, the controls and highlighted style preview reflect its current outline. Border joins are rounded, and matching shared bubble-tile borders are drawn only once to keep neighboring corners clean, including with thicker outlines. The topmost tile supplies the visible shared border so layer changes cannot hide it. Neighbors with conflicting outline styles retain their separate borders.</div>
+</div>
+<div class="help-tool">
+<span class="help-icon"><svg aria-hidden="true" class="help-format-painter-icon" viewBox="0 0 24 24"><rect class="format-painter-roller" height="6" rx="1" width="13" x="2" y="3"></rect><path class="format-painter-frame" d="M15 6h3.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H12v3"></path><rect class="format-painter-handle" height="6" rx="1" width="5" x="9.5" y="15.5"></rect></svg></span>
+<div><strong>Format Painter.</strong> Select one source tile, activate Format Painter, then click another tile to copy the source tile's fill and outline settings. Press Escape or click the active Format Painter button again to cancel.</div>
+</div>
+<div class="help-tool">
+<span class="help-icon"><span aria-hidden="true" class="help-canvas-swatch"></span></span>
+<div><strong>Canvas.</strong> Changes the canvas background color. Fill, Outline, and Canvas changes update immediately while preserving selection and overlap highlights.</div>
+</div>
+<div class="help-section-title">Export and saving</div>
 <div class="help-tool">
 <span class="help-icon">🖼</span>
 <div><strong>Export Picture.</strong> File → Export Picture lets you drag a custom export rectangle, choose Free/Square/4:3/16:9 proportions, and export SVG, PNG, JPG, or PDF/print.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">💾</span>
-<div><strong>Save / Load.</strong> File → Save to Browser stores the current layout locally. File → Load from Browser restores it. JSON export/import is for archiving editable layouts; you can also drag a layout JSON file directly onto the canvas to open it.</div>
+<div><strong>Save / Load.</strong> File → Save to Browser stores the current layout locally. File → Load from Browser restores it. JSON export/import is for archiving editable layouts and now preserves the current view/zoom location; you can also drag a layout JSON file directly onto the canvas to open it.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🔗</span>
@@ -811,8 +876,8 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="fourSided">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span>Four-sided</span></summary>
-<button class="add-all-button" data-add-collection="fourSided">Add all 7 Four-sided</button>
+<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span>Rhombic</span></summary>
+<button class="add-all-button" data-add-collection="fourSided">Add all 7 Rhombic</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB0" title="Add four-sided bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB0"></span><span class="palette-text"><strong>0</strong><small>rhombic bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB1" title="Add four-sided bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB1"></span><span class="palette-text"><strong>1</strong><small>rhombic bubble tile</small></span></button>
@@ -824,8 +889,8 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="fiveSidedTrapezoid">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11111"></span><span>Five-sided</span></summary>
-<button class="add-all-button" data-add-collection="fiveSidedTrapezoid">Add all 20 Five-sided</button>
+<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11111"></span><span>Trapezoidal</span></summary>
+<button class="add-all-button" data-add-collection="fiveSidedTrapezoid">Add all 20 Trapezoidal</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11111" title="Add five-sided trapezoid bubble tile 11111"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11111"></span><span class="palette-text"><strong>11111</strong><small>five-sided trapezoid bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11011" title="Add five-sided trapezoid bubble tile 11011"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11011"></span><span class="palette-text"><strong>11011</strong><small>five-sided trapezoid bubble tile</small></span></button>
@@ -911,7 +976,7 @@
 </details>
 <details class="tray-section" data-tray-set="otherPolygons">
 <summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN"></span><span>Other</span></summary>
-<button class="add-all-button" data-add-collection="otherPolygons">Add all 14 Other tiles</button>
+<button class="add-all-button" data-add-collection="otherPolygons">Add all 16 Other tiles</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="BVLENS" title="Add arc lens tile"><span class="shape-icon bubble-icon-slot" data-bubble-icon="BVLENS"></span><span class="palette-text"><strong>Arc Lens</strong><small>curved lens tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_RECT" title="Add 2×1 rectangle"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_RECT"></span><span class="palette-text"><strong>2×1 Rectangle</strong><small>unit sides compatible</small></span></button>
@@ -924,9 +989,11 @@
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN_OCT2" title="Add Pac-Man Octagon 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN_OCT2"></span><span class="palette-text"><strong>Pac-Man Octagon 1</strong><small>two-edge mouth</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN_OCT3" title="Add Pac-Man Octagon 2"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN_OCT3"></span><span class="palette-text"><strong>Pac-Man Octagon 2</strong><small>three-edge mouth</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_SQUIGGLE_OCT" title="Add Squiggle Octagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_SQUIGGLE_OCT"></span><span class="palette-text"><strong>Squiggle Octagon</strong><small>equilateral nonconvex</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="HAT" title="Add Hat / Einstein"><span class="shape-icon bubble-icon-slot" data-bubble-icon="HAT"></span><span class="palette-text"><strong>Hat / Einstein</strong><small>aperiodic monotile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="HAT" title="Add Hat"><span class="shape-icon bubble-icon-slot" data-bubble-icon="HAT"></span><span class="palette-text"><strong>Hat</strong><small>aperiodic monotile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="TURTLE" title="Add Turtle"><span class="shape-icon bubble-icon-slot" data-bubble-icon="TURTLE"></span><span class="palette-text"><strong>Turtle</strong><small>Einstein relative</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="SPECTRE" title="Add Spectre"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SPECTRE"></span><span class="palette-text"><strong>Spectre</strong><small>aperiodic monotile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="EQUILATERAL_EINSTEIN" title="Add Tile(1,1)"><span class="shape-icon bubble-icon-slot" data-bubble-icon="EQUILATERAL_EINSTEIN"></span><span class="palette-text"><strong>Tile(1,1)</strong><small>weakly chiral monotile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="STEGOSAURUS_SPECTRE" title="Add Stegosaurus Spectre"><span class="shape-icon bubble-icon-slot" data-bubble-icon="STEGOSAURUS_SPECTRE"></span><span class="palette-text"><strong>Stegosaurus Spectre</strong><small>zig-zag spectre</small></span></button>
 </div>
 </details>
 </div>
@@ -937,7 +1004,7 @@
 </div>
 </aside>
 <main id="workspace">
-<div class="lattice-hint" hidden="" id="latticeHint"></div>
+<div aria-live="polite" class="lattice-hint" hidden="" id="latticeHint" role="note"></div>
 <svg id="canvas" viewbox="0 0 1000 700">
 <g class="lattice-layer" id="latticeLayer"></g>
 <g class="lattice-preview" id="latticePreview"></g>
@@ -952,15 +1019,15 @@
 </main>
 </div>
 <div class="context-menu" hidden="" id="contextMenu">
-<button data-context-action="copy" type="button">📋 Copy</button>
-<button data-context-action="paste" type="button">📋 Paste</button>
-<button data-context-action="duplicate" type="button">⧉ Duplicate</button>
-<button class="context-danger" data-context-action="delete" type="button">🗑 Delete</button>
+<button data-context-action="copy" type="button"><svg aria-hidden="true" class="context-menu-icon office-copy-icon" viewbox="0 0 48 48"><rect class="office-page back" x="15" y="8" width="24" height="29" rx="3"></rect><rect class="office-page front" x="8" y="15" width="24" height="25" rx="3"></rect><path class="office-page-line" d="M14 23h12 M14 29h12 M14 35h8"></path></svg><span>Copy</span></button>
+<button data-context-action="paste" type="button"><svg aria-hidden="true" class="context-menu-icon office-paste-icon" viewbox="0 0 48 48"><path class="office-clipboard" d="M11 12h26v29H11z"></path><path class="office-paper" d="M17 18h17v18H17z"></path><rect class="office-clip" x="17" y="7" width="14" height="8" rx="3"></rect><path class="office-page-line" d="M21 24h9 M21 29h9"></path></svg><span>Paste</span></button>
+<button data-context-action="duplicate" type="button"><svg aria-hidden="true" class="context-menu-icon office-duplicate-icon" viewbox="0 0 48 48"><rect class="office-page back" x="15" y="8" width="24" height="29" rx="3"></rect><rect class="office-page front" x="8" y="15" width="24" height="25" rx="3"></rect><path class="office-duplicate-plus" d="M20 22v12 M14 28h12"></path></svg><span>Duplicate</span></button>
+<button class="context-danger" data-context-action="delete" type="button"><svg aria-hidden="true" class="context-menu-icon trash-icon" viewbox="0 0 48 48"><path d="M16 15 H32 L30.4 39 H17.6 Z"></path><path d="M18 12 H30"></path><path d="M21 9 H27"></path><path d="M21 20 V33"></path><path d="M27 20 V33"></path></svg><span>Delete</span></button>
 <div aria-hidden="true" class="context-menu-separator"></div>
-<button data-context-action="bringToTop" type="button">⇧ Bring to Top</button>
-<button data-context-action="moveUp" type="button">↑ Move Up</button>
-<button data-context-action="moveDown" type="button">↓ Move Down</button>
-<button data-context-action="sendToBottom" type="button">⇩ Send to Bottom</button>
+<button data-context-action="bringToTop" type="button"><svg aria-hidden="true" class="context-menu-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 33V13 M30 19l6-6 6 6"></path><path class="layer-stop" d="M29 9h14"></path></svg><span>Bring to Top</span></button>
+<button data-context-action="moveUp" type="button"><svg aria-hidden="true" class="context-menu-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 34V16 M30 22l6-6 6 6"></path></svg><span>Move Up</span></button>
+<button data-context-action="moveDown" type="button"><svg aria-hidden="true" class="context-menu-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 14v18 M30 26l6 6 6-6"></path></svg><span>Move Down</span></button>
+<button data-context-action="sendToBottom" type="button"><svg aria-hidden="true" class="context-menu-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 13v20 M30 27l6 6 6-6"></path><path class="layer-stop" d="M29 37h14"></path></svg><span>Send to Bottom</span></button>
 </div>
 <div id="statusBar">
 <span id="copyrightNotice">Copyright © John Chase 2026</span>
