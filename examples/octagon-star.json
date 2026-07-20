@@ -1,0 +1,121 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "viewBox": {
+    "x": -320.073,
+    "y": -449.85,
+    "width": 1948.717,
+    "height": 1364.102
+  },
+  "tiles": [
+    {
+      "id": "tile1",
+      "tileType": "OP_RHOMBUS45",
+      "x": 376.771,
+      "y": 192.359,
+      "rotation": 90,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile2",
+      "tileType": "OP_STAR8",
+      "x": 541.624,
+      "y": 260.644,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile5",
+      "tileType": "OP_RHOMBUS45",
+      "x": 513.34,
+      "y": 55.791,
+      "rotation": -90,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile15",
+      "tileType": "OP_RHOMBUS45",
+      "x": 609.909,
+      "y": 95.791,
+      "rotation": -180,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile1",
+        "tile2",
+        "tile5"
+      ]
+    },
+    {
+      "id": "group5",
+      "children": [
+        "group1",
+        "tile15"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile1",
+        "tile2",
+        "tile5",
+        "tile15"
+      ],
+      "vectorA": {
+        "x": 136.569,
+        "y": -329.706
+      },
+      "vectorB": {
+        "x": -193.137,
+        "y": -273.137
+      }
+    }
+  ]
+}

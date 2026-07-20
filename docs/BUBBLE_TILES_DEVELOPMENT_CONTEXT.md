@@ -8,11 +8,10 @@ Public app: https://johnrchase.github.io/bubble-tiles/
 The repository’s own documentation describes the app as intended for researchers, teachers, students, or makers working with bubble-tile geometry. The mathematical purpose is therefore primarily exploratory and educational rather than a general-purpose drawing application.
 
 ## 2. Current development status
-- The local working tree is the authoritative in-progress implementation for Bubble Tiles v1.4 work.
-- GitHub currently reflects v1.3 at the repository remote.
-- The local working tree already contains modified and untracked files, so it is not safe to assume that the remote version is newer or that local changes can be discarded.
-- The local v1.4 work should not be committed, pushed, published, or deployed unless the user explicitly asks.
-- The visible version label in the current files is v1.4, but that label should not be treated as proof that every v1.4 feature is complete or ready for release.
+- The local working tree is the authoritative in-progress implementation for Bubble Tiles v1.5 work.
+- GitHub currently reflects the public v1.4 release at the repository remote.
+- The local v1.5 work should not be committed, pushed, published, or deployed unless the user explicitly asks.
+- The visible version label in the current files is v1.5, but that label should not be treated as proof that every v1.5 feature is complete or ready for release.
 
 ## 3. Repository map
 ### Top-level files
@@ -61,19 +60,19 @@ No explicit browser requirements were established in the repository files inspec
 - The JavaScript provides the full runtime and rendering engine.
 
 ### State management and persistence
-The app maintains tile state, current selection, viewport state, fill/stroke settings, and history in JavaScript variables within [app.js](../app.js). It also uses browser storage keys for some persisted UI/layout behavior. Export and import are implemented through JSON and share-link flows.
+The app maintains tile state, current selection, viewport state, fill/stroke settings, and history in JavaScript variables within [app.js](../app.js). It also uses browser storage keys for some persisted UI/layout behavior. Export and import are implemented through JSON and share-link flows. Pasted canvas images are stored as embedded image data in layout state, so image-containing JSON files, browser saves, and share links can be substantially larger. Copy Share Link therefore requires explicit confirmation when pasted images are present and recommends JSON export as the more reliable transfer method.
 
 ### Rendering approach
-The app renders geometries as SVG elements. The tile definitions include geometric vertices and SVG path data. The code draws tiles, lattice copies, selection overlays, snap previews, and export previews in SVG layers.
+The app renders geometries as SVG elements. The tile definitions include geometric vertices and SVG path data. Pasted bitmap images are represented as bounded SVG image objects so they can share selection, grouping, layering, and transform workflows while remaining excluded from snapping and Bubble operations. The code draws tiles, lattice copies, selection overlays, snap previews, and export previews in SVG layers.
 
 ### Event handling
-The app relies on DOM event handling for pointer interactions, keyboard shortcuts, menu interactions, modal dialogs, and toolbar actions. The main script wires listeners for selection, dragging, transformations, export, and style UI actions.
+The app relies on DOM event handling for pointer interactions, keyboard shortcuts, menu interactions, modal dialogs, and toolbar actions. The main script wires listeners for selection, dragging, transformations, export, and style UI actions. Ctrl/Cmd+V directly uses the app's internal tile clipboard when it contains a copied selection; with no internal tile selection waiting, the browser paste event remains available for pasted images.
 
 ### Import/export/save/load behavior
-The repository implements JSON export/import, browser-local save/load, share-link generation, and picture export. These flows are present in the HTML and JavaScript UI and are described in the Help dialog.
+The repository implements JSON export/import, browser-local save/load, share-link generation, and picture export. The File menu also caches and lists up to five recently imported or drag-dropped JSON layouts for reopening during the current browser session; it does not retain local file access across sessions. These flows are present in the HTML and JavaScript UI and are described in the Help dialog.
 
 ### Mathematical and geometric systems
-The app is built around bubble-tile geometry, polygon-to-bubble conversions, lattice fills, snapping, overlap detection, edge-decoration profiles, and transformations such as rotation and reflection. The geometry logic is implemented directly in [app.js](../app.js), including specific tile families and profile functions.
+The app is built around bubble-tile geometry, polygon-to-bubble conversions, lattice fills, snapping, overlap detection, edge-decoration profiles, and transformations such as rotation and reflection. The geometry logic is implemented directly in [app.js](../app.js), including specific tile families and profile functions. In addition to equal-length edge matching, snapping recognizes compatible whole-number edge subdivisions: a shorter edge can occupy each exact subdivision of a longer edge whose effective scaled length is an integer multiple, regardless of which tile is being dragged. The Other tray includes exact golden-ratio Penrose Kite and Dart definitions with circular P2 matching-rule arcs. Their long edges use the app's standard unit length and their short edges measure 1/φ, making the long edges compatible with the Penrose rhombs. Both lengths snap to like-length edges; the colored arcs remain a visual matching rule rather than restricting geometrically valid snaps. The green circles and dart's red circle have radius 1/(2φ), while the kite's red circle has radius 1-1/(2φ). Those radii make the red and green circles tangent within each tile and make the kite/dart red arcs meet across a correctly matched unit edge. The Other tray also includes filled regular 5/2, 6/2, and 8/2 stellation outlines scaled so every boundary segment is one unit, a 45-45-90 triangle with sides 1, 1, and √2, the corresponding tangram parallelogram made from two such triangles, and a unit-edged 45-degree rhombus. The regular n-gon feature uses an in-app validated 3-to-120-side chooser instead of the browser's unreliable prompt dialog. These tiles are excluded from Bubble operations. Custom scale input uses a restricted arithmetic parser rather than JavaScript evaluation and reports invalid expressions through native field validation. The Examples tray uses full-width clickable rows with a lazy-rendered square preview and title; descriptions remain hover tooltips. Loading an example leaves the canvas with no tiles selected. Finite-layout thumbnails render the complete saved arrangement, while lattice thumbnails naturally show the saved seed/prototile motif without virtual copies. Thumbnail strokes use a separate thin preview width. Lattice rendering is capped at 2,500 visible ghost tiles to prevent detailed fills from overwhelming the browser. Curved shared-border profiles are measured once per distinct local SVG path and cached; lattice copies transform those cached samples mathematically instead of forcing repeated browser geometry measurements. Picture-export previews and generated SVG/raster exports include visible copies from active lattice fills and apply the selected lattice-copy opacity to each complete ghost tile. The five-entry Recent JSON Files session list includes both imported and exported layouts.
 
 ## 6. Important user-interface systems
 ### Main tools and controls
@@ -83,7 +82,7 @@ The UI includes menus for File, View, Edit, Transform, Bubble, Lattice, Style, a
 Fill styles are selected from a set of pattern options and include solid fills, dotted/crosshatched/striped patterns, and image-based fills such as cookie, Oreo, donut, clouds, marble, and wood. The current interface exposes previews for these options.
 
 ### Border styles
-The app supports stroke color, stroke style (solid, dashed, dotted, or none), and stroke width. These are exposed through the Style UI and preview grids.
+The app supports stroke color, stroke style (solid, dashed, dotted, or none), and stroke width. These are exposed through the Style UI and preview grids. Shared-border suppression compares sampled transformed edge profiles, not just common endpoints, so distinct inward/outward curves that enclose a lens retain both outlines.
 
 ### Visual previews
 Preview-based UI is a major part of the design. The app includes preview grids for fill patterns, stroke styles, and edge decorations, using CSS-based previews and some image-based previews from [assets](../assets).
@@ -92,13 +91,13 @@ Preview-based UI is a major part of the design. The app includes preview grids f
 Buttons and controls use title attributes for tooltips. Some UI elements also update dynamic titles in the JavaScript layer, especially around style-popover availability and tool behavior.
 
 ### Help / Tutorial
-The repository contains a Help modal and a guided tutorial panel. The content is embedded directly in [index.html](../index.html), with the tutorial logic implemented in [app.js](../app.js). Guided Tutorial offers a Quick Tool Tour and an event-driven Explore Bubble Tiles course. The exploration begins with a finite frame-filling investigation, proceeds to infinite periodic tilings, and listens for actual Tiling Fill, Arc Dual, Reverse One Arc, polygon-to-bubble conversion, and sharing actions. It snapshots the current canvas before opening a fresh tutorial workspace and offers to keep the tutorial result or restore the prior canvas on exit. The app also uses local storage to remember whether the guided tutorial has been seen.
+The repository contains a Help modal and a guided tutorial panel. The content is embedded directly in [index.html](../index.html), with the tutorial logic implemented in [app.js](../app.js). Guided Tutorial offers a Quick Tool Tour and an event-driven Explore Bubble Tiles course. The exploration begins with a finite frame-filling investigation, loads a prepared two-triangle workspace for Tiling Fill and its opacity/locate/clear controls, and then listens for actual Arc Dual, Reverse One Arc, and sequential polygon-to-bubble challenge actions. Tutorial targets use pulsing yellow highlights; multi-action steps advance the highlight to the next required control and stop highlighting completed controls. Each task step launches one pointer-transparent, self-removing full-screen confetti burst when its state first changes from incomplete to complete, while preserving the green completion message; reduced-motion preferences suppress both pulse and confetti animation. It snapshots the current canvas before opening a fresh tutorial workspace and offers to keep the tutorial result or restore the prior canvas on exit. The app also uses local storage to remember whether the guided tutorial has been seen.
 
 ### Version label and Version History
-The visible application version is v1.4 in the current files, and Version History is shown in the modal content in [index.html](../index.html). The version display and historical entries are part of the user-facing UI and should be kept consistent when release-version changes are requested.
+The visible application version is v1.5 in the current files, and Version History is shown in the modal content in [index.html](../index.html). The version display and historical entries are part of the user-facing UI and should be kept consistent when release-version changes are requested.
 
 ### Keyboard and pointer behavior
-The Help content and UI indicate support for pointer panning, wheel zooming, keyboard shortcuts, box selection, and nudge operations. These behaviors are implemented in the main JavaScript logic.
+The Help content and UI indicate support for default blank-canvas drag box selection, Space-drag or Ctrl/Cmd-drag panning, wheel zooming, keyboard shortcuts, nudge operations, and double-click activation of Reverse One Arc on eligible bubble tiles. These behaviors are implemented in the main JavaScript logic.
 
 ## 7. Established project decisions supplied by the project owner
 The following project decisions are reflected in the repository and should be honored by future work:

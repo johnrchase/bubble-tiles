@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Bubble Tiles 1.4</title>
+<title>Bubble Tiles 1.5</title>
 <link href="assets/logo-two-tiles-favicon.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -15,7 +15,7 @@
 <div id="toolbar">
 <div class="brand">
 <img alt="" class="brand-logo-image" src="assets/logo-two-tiles.png"/>
-<span class="brand-wordmark">Bubble Tiles 1.4</span>
+<span class="brand-wordmark">Bubble Tiles 1.5</span>
 </div>
 <div class="menu-strip">
 <details class="toolbar-menu" id="fileMenu">
@@ -26,7 +26,12 @@
 <button id="exportJson" title="Download layout JSON file"><span aria-hidden="true" class="menu-item-icon">⬇</span><span>Export JSON</span></button>
 <button id="importJson" title="Import layout JSON file"><span aria-hidden="true" class="menu-item-icon">⬆</span><span>Import JSON</span></button>
 <button id="copyShareLink" title="Copy a URL that reopens this canvas"><span aria-hidden="true" class="menu-item-icon">🔗</span><span>Copy Share Link</span></button>
-<button id="exportPicture" title="Choose an area and export SVG/PNG/JPG/PDF"><span aria-hidden="true" class="menu-item-icon">🖼</span><span>Export Picture…</span></button>
+<button id="exportPicture" title="Choose an area and export SVG/PNG/JPG/PDF"><svg aria-hidden="true" class="menu-svg-icon export-picture-icon" viewbox="0 0 28 28"><rect class="export-picture-frame" height="17" rx="2" width="19" x="3" y="8"></rect><circle class="export-picture-sun" cx="8" cy="13" r="2"></circle><path class="export-picture-landscape" d="M5 22l5-5 3 3 3-4 4 6"></path><path class="export-picture-arrow" d="M16 11l8-8m-6 0h6v6"></path></svg><span>Export Picture…</span></button>
+<div class="menu-separator"></div>
+<div class="recent-json-section">
+<div class="recent-json-heading">Recent JSON Files</div>
+<div id="recentJsonFiles"><div class="recent-json-empty">None opened or exported this session</div></div>
+</div>
 </div>
 </details>
 <details class="toolbar-menu" id="viewMenu">
@@ -97,7 +102,7 @@
 <button data-command="rotateRight" title="Rotate selected clockwise by the degree amount (E)"><span aria-hidden="true" class="menu-item-icon">⟳</span><span class="menu-label">Rotate CW</span><span class="menu-shortcut">E</span></button>
 <button data-command="reflectHorizontal" title="Flip horizontally (H): mirror left/right across a vertical mirror line"><svg aria-hidden="true" class="menu-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M10 12 L24 24 L10 36 Z"></path><line class="reflect-mirror" x1="32" x2="32" y1="8" y2="40"></line><path class="reflect-shape dark" d="M54 12 L40 24 L54 36 Z"></path></svg><span class="menu-label">Flip Horizontal</span><span class="menu-shortcut">H</span></button>
 <button data-command="reflectVertical" title="Flip vertically (V): mirror up/down across a horizontal mirror line"><svg aria-hidden="true" class="menu-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M20 10 L32 22 L44 10 Z"></path><line class="reflect-mirror" x1="8" x2="56" y1="24" y2="24"></line><path class="reflect-shape dark" d="M20 38 L32 26 L44 38 Z"></path></svg><span class="menu-label">Flip Vertical</span><span class="menu-shortcut">V</span></button>
-<label class="menu-control menu-scale-control" id="menuScaleSelected" title="Scale selected tiles. Type a decimal, fraction, percentage, or sqrt() expression, such as sqrt(2)/2.">
+<label class="menu-control menu-scale-control" id="menuScaleSelected" title="Scale selected tiles. Type a decimal, percentage, or expression using +, −, ×, ÷, ^, parentheses, and sqrt(), such as (1+sqrt(5))/2.">
 <span class="menu-scale-heading"><svg aria-hidden="true" class="menu-svg-icon scale-expand-icon" viewbox="0 0 24 24"><path d="M9 5H5v4 M5 5l5.5 5.5 M15 19h4v-4 M19 19l-5.5-5.5"></path></svg><span>Scale</span></span>
 <span class="scale-slider-wrap menu-scale-slider-wrap"><input aria-label="Scale factor slider" id="menuScaleFactorSlider" max="4" min="0.1" step="0.1" type="range" value="1"/><span aria-hidden="true" class="scale-one-marker"></span></span>
 <input aria-label="Custom scale factor" autocomplete="off" class="degree-input compact-degree-input scale-factor-input menu-scale-factor-input" id="menuScaleFactorInput" inputmode="text" spellcheck="false" type="text" value="1"/>
@@ -108,8 +113,8 @@
 <details class="toolbar-menu" id="bubbleMenu">
 <summary title="Bubble tools">Bubble ▾</summary>
 <div class="menu-panel">
-<button data-command="arcDual" title="Arc Dual (A): swap every in arc and out arc for selected bubble/puzzle tiles"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-dual-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.png"/><span class="menu-label">Arc Dual</span><span class="menu-shortcut">A</span></button>
-<button data-command="reverseSingleArc" title="Reverse individual arcs/edge profiles on selected bubble or puzzle-edge tiles. Black dots mark vertices; hover near an edge to see a blue glow, then click to reverse it. Press Enter or click away to finish."><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-reverse-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.png"/><span>Reverse One Arc</span></button>
+<button data-command="arcDual" title="Arc Dual (A): swap every in arc and out arc for selected bubble/puzzle tiles"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-dual-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.svg"/><span class="menu-label">Arc Dual</span><span class="menu-shortcut">A</span></button>
+<button data-command="reverseSingleArc" title="Reverse individual edges on selected bubble or puzzle tiles. Click an edge to reverse it; press Enter or click away to finish."><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-reverse-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.svg"/><span>Reverse One Arc</span></button>
 <button data-command="polygonToBubble" title="Convert selected compatible polygon tiles into all-out-arc bubble tiles; Einstein-family, soft, and lens tiles are excluded"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-bubble-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/><span>To Bubble Tile</span></button>
 <button data-command="bubbleToPolygon" title="Convert selected bubble-edge tiles back to straight polygon edges"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-polygon-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/><span>To Polygon</span></button>
 <div class="menu-separator"></div>
@@ -242,7 +247,7 @@
 <button class="reflect-button" id="reflectVertical" title="Flip vertically (V): mirror up/down across a horizontal mirror line">
 <svg aria-hidden="true" class="toolbar-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M20 10 L32 22 L44 10 Z"></path><line class="reflect-mirror" x1="8" x2="56" y1="24" y2="24"></line><path class="reflect-shape dark" d="M20 38 L32 26 L44 38 Z"></path></svg>
 </button>
-<label class="toolbar-inline-label scale-toolbar-control" id="scaleSelected" title="Scale selected tiles. Type a decimal, fraction, percentage, or sqrt() expression, such as sqrt(2)/2.">
+<label class="toolbar-inline-label scale-toolbar-control" id="scaleSelected" title="Scale selected tiles. Type a decimal, percentage, or expression using +, −, ×, ÷, ^, parentheses, and sqrt(), such as (1+sqrt(5))/2.">
 <svg aria-hidden="true" class="toolbar-svg-icon scale-expand-icon" viewbox="0 0 24 24"><path d="M9 5H5v4 M5 5l5.5 5.5 M15 19h4v-4 M19 19l-5.5-5.5"></path></svg>
 <span class="scale-slider-wrap"><input aria-label="Scale factor slider" id="scaleFactorSlider" max="4" min="0.1" step="0.1" type="range" value="1"/><span aria-hidden="true" class="scale-one-marker"></span></span>
 <input aria-label="Custom scale factor" autocomplete="off" class="degree-input compact-degree-input scale-factor-input" id="scaleFactorInput" inputmode="text" spellcheck="false" type="text" value="1"/>
@@ -250,8 +255,8 @@
 </div>
 <!-- Locked Bubble toolbar icons: do not change these raster icon assets unless John explicitly asks. -->
 <div class="toolbar-section" data-toolbar-section="bubble" id="bubbleToolbar">
-<button aria-label="Arc Dual" class="icon-button arc-dual-tool-button" id="arcDual" title="Arc Dual (A): swap every in arc and out arc for selected bubble/puzzle tiles"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-dual-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.png"/></button>
-<button aria-label="Reverse one arc" class="icon-button arc-reverse-tool-button" id="reverseSingleArc" title="Reverse One Arc: select one or more bubble or puzzle-edge tiles, then click near individual edges. Vertices show as black dots and the hovered edge gets a blue glow. Press Enter or click away to finish."><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-reverse-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.png"/></button>
+<button aria-label="Arc Dual" class="icon-button arc-dual-tool-button" id="arcDual" title="Arc Dual (A): swap every in arc and out arc for selected bubble/puzzle tiles"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-dual-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.svg"/></button>
+<button aria-label="Reverse one arc" class="icon-button arc-reverse-tool-button" id="reverseSingleArc" title="Reverse One Arc: select bubble or puzzle tiles, then click an edge to reverse it. Press Enter or click away to finish."><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-reverse-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.svg"/></button>
 <button aria-label="To Bubble Tile" class="icon-button to-bubble-tool-button" id="polygonToBubble" title="To Bubble Tile: convert selected compatible polygon tiles into all-out-arc bubble tiles; Einstein-family, soft, and lens tiles are excluded"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-bubble-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/></button>
 <button aria-label="To Polygon" class="icon-button to-polygon-tool-button" id="bubbleToPolygon" title="To Polygon: convert selected bubble-edge tiles back to straight polygon edges"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-polygon-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/></button>
 <div class="style-dropdown-wrap">
@@ -383,7 +388,7 @@
 </label>
 </div>
 </div>
-<button aria-label="Format Painter: copy fill and outline styling from the selected tile to another tile" aria-pressed="false" class="office-style-button toolbar-icon-only format-painter-button" id="formatPainterButton" title="Format Painter: select one tile, activate this tool, then click another tile" type="button"><svg aria-hidden="true" class="format-painter-icon" viewBox="0 0 24 24"><rect class="format-painter-roller" height="6" rx="1" width="13" x="2" y="3"></rect><path class="format-painter-frame" d="M15 6h3.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H12v3"></path><rect class="format-painter-handle" height="6" rx="1" width="5" x="9.5" y="15.5"></rect></svg></button>
+<button aria-label="Format Painter: copy fill and outline styling from the selected tile to a tile, group, or dragged selection" aria-pressed="false" class="office-style-button toolbar-icon-only format-painter-button" id="formatPainterButton" title="Format Painter: select one source tile, activate this tool, then click a tile or group, or drag around multiple target tiles" type="button"><svg aria-hidden="true" class="format-painter-icon" viewBox="0 0 24 24"><rect class="format-painter-roller" height="6" rx="1" width="13" x="2" y="3"></rect><path class="format-painter-frame" d="M15 6h3.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H12v3"></path><rect class="format-painter-handle" height="6" rx="1" width="5" x="9.5" y="15.5"></rect></svg></button>
 <label aria-label="Set canvas background color" class="color-control compact-canvas-control toolbar-icon-only" title="Set canvas background color">
 <input id="canvasColorPicker" type="color" value="#fafafa"/>
 </label>
@@ -400,9 +405,9 @@
 </div>
 <div class="toolbar-section help-section" data-toolbar-section="shortcuts" id="shortcutsToolbar">
 <span class="shortcut-help" id="helpText">
-<span>Blank drag / Space-drag / Ctrl-drag = <strong>pan</strong></span>
-<span>Ctrl+select / Shift+select = <strong>multiple select</strong></span>
-<span>Shift-drag = <strong>box select</strong></span>
+<span>Space-drag / Ctrl/Cmd-drag = <strong>pan</strong></span>
+<span>Ctrl/Cmd-select / Shift-select = <strong>multiple select</strong></span>
+<span>Blank drag = <strong>box select</strong></span>
 <span>Mouse wheel = <strong>zoom</strong></span>
 <span>Arrows = <strong>nudge</strong></span>
 <span>Shift+arrows = <strong>big nudge</strong></span>
@@ -419,6 +424,20 @@
 <div class="about-body">
 <p>Bubble Tiles works best on a desktop or laptop computer. You can continue on this phone or tablet, but some tools and precise tile movements may be easier with a larger screen, mouse, and keyboard.</p>
 <div class="device-warning-actions"><button id="continueOnDevice" type="button">Continue anyway</button></div>
+</div>
+</div>
+</div>
+<div class="modal-backdrop" hidden="" id="ngonModal">
+<div aria-labelledby="ngonTitle" aria-modal="true" class="about-dialog ngon-dialog" role="dialog">
+<div class="about-header">
+<h2 id="ngonTitle">Add a regular n-gon</h2>
+<button aria-label="Close n-gon dialog" class="icon-button" id="closeNgon" title="Close">✕</button>
+</div>
+<div class="about-body">
+<label class="ngon-input-label" for="ngonSidesInput">Number of sides</label>
+<input id="ngonSidesInput" inputmode="numeric" max="120" min="3" step="1" type="number" value="10"/>
+<p class="ngon-range-note">Enter a whole number from 3 to 120.</p>
+<div class="ngon-dialog-actions"><button id="cancelNgon" type="button">Cancel</button><button id="confirmNgon" type="button">Add n-gon</button></div>
 </div>
 </div>
 </div>
@@ -459,6 +478,8 @@
 <button class="icon-button" id="closeVersionHistory" title="Close Version History">✕</button>
 </div>
 <div class="about-body">
+<p><strong>Bubble Tiles 1.5</strong></p>
+<p>Version 1.5 adds an expanded hands-on Explore tutorial; default drag-box selection; transformable pasted images; subdivision-aware snapping; faster, layer-preserving lattice fills and lattice-aware picture export; grouped Format Painter targets; refined shared borders and frames; marked Penrose tiles and new unit-edged polygons; recent JSON reopening; a compact example gallery; and double-click access to Reverse One Arc.</p>
 <p><strong>Bubble Tiles 1.4</strong></p>
 <p>Version 1.4 adds an interactive Explore tutorial for finite and infinite tilings; live Scale controls; Format Painter; improved snapping, shared borders, Arc Dual behavior, and style controls; Tile(1,1) and the Stegosaurus Spectre with sourced background notes; Rhombic and Trapezoidal tile families; view-preserving JSON layouts; more reliable image export; and a substantially expanded example gallery featuring bubble, puzzle, soft-tile, Penrose, and image-filled tilings.</p>
 <p><strong>Bubble Tiles 1.3</strong></p>
@@ -505,14 +526,14 @@
 <div class="modal-backdrop" hidden="" id="helpModal">
 <div aria-labelledby="helpTitle" aria-modal="true" class="about-dialog help-dialog" role="dialog">
 <div class="about-header">
-<h2 id="helpTitle">Bubble Tiles 1.4 Help</h2>
+<h2 id="helpTitle">Bubble Tiles 1.5 Help</h2>
 <button class="icon-button" id="closeHelp" title="Close Help">✕</button>
 </div>
 <div class="about-body help-body">
 <div class="help-section-title">Getting around</div>
 <div class="help-tool">
 <span class="help-icon">🧭</span>
-<div><strong>Guided Tutorial.</strong> About → Guided Tutorial offers two paths. Quick Tool Tour spotlights the main controls. Explore Bubble Tiles is an event-driven investigation that begins with a finite frame-filling challenge, moves to infinite periodic tilings with Tiling Fill, and then explores Arc Dual, Reverse One Arc, polygon-to-bubble conversion, and sharing. Action steps unlock when you complete the task, but each can be skipped. The exploration saves your current canvas before opening a fresh workspace; when you leave, choose whether to keep the tutorial work or restore your previous canvas.</div>
+<div><strong>Guided Tutorial.</strong> About → Guided Tutorial offers a Quick Tool Tour and an interactive Explore tour with hands-on tiling challenges. The Explore tour saves your current canvas and lets you keep your tutorial work or restore the previous canvas when you leave.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🖥</span>
@@ -520,7 +541,7 @@
 </div>
 <div class="help-tool">
 <span class="help-icon">🖱</span>
-<div><strong>Pan.</strong> Drag blank canvas, hold Space and drag, or Ctrl/Cmd-drag anywhere. Ctrl/Cmd-drag is useful when the canvas is full of tiles.</div>
+<div><strong>Pan.</strong> Hold Space and drag, or Ctrl/Cmd-drag anywhere. Ctrl/Cmd-drag is useful when the canvas is full of tiles.</div>
 </div>
 <div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon zoom-icon" viewbox="0 0 48 48"><circle cx="21" cy="21" r="13"></circle><line x1="31" x2="42" y1="31" y2="42"></line><line x1="21" x2="21" y1="14" y2="28"></line><line x1="14" x2="28" y1="21" y2="21"></line></svg>
 
@@ -529,7 +550,15 @@
 <div class="help-section-title">Adding and arranging tiles</div>
 <div class="help-tool">
 <span class="help-icon">▣</span>
-<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a family, then click a tile or drag it onto the canvas. “Add all” places a whole family in a reference arrangement. The Examples tab loads or inserts saved canvases, including Heesch Number 1, Small Flower with Triangular Tiles, Infinite Soft Tiling, Soft Tile Tiling SF0/SF3C, Beautiful Penrose Flower, Hexagonal Tiling H2C/H3B/H4B, Bubble Trio Tiling H0/H6/H3C, the updated Square Puzzle Tiling S0/S1, and Square Tooth examples; you can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
+<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a family, then click a tile or drag it onto the canvas. “Add all” places a whole family in a reference arrangement. In the Examples tab, click an example's preview or name to replace the canvas and hover for its description. You can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
+</div>
+<div class="help-tool">
+<span class="help-icon">◆</span>
+<div><strong>Penrose Kite and Dart.</strong> The Other tray includes the marked P2 Penrose prototiles, scaled for compatibility with the Penrose rhombs. Their long edges have length 1, their short edges have length 1/φ, and the green/red circular arcs show the matching rule: continue like-colored arcs across shared edges. Both edge lengths snap to other edges of the same length, and these polygon tiles are excluded from Bubble conversion and editing.</div>
+</div>
+<div class="help-tool">
+<span class="help-icon">★</span>
+<div><strong>Stars and special polygons.</strong> The Other tray includes regular 5/2, 6/2, and 8/2 stellation outlines whose boundary segments all have length 1, a 45-45-90 triangle with side lengths 1, 1, and √2, its two-triangle tangram parallelogram, and a unit-edged 45-degree rhombus. The Regular Polygons tray's n-gon button opens a chooser for regular polygons with 3 to 120 sides.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">💡</span>
@@ -537,7 +566,7 @@
 </div>
 <div class="help-tool">
 <span class="help-icon">🧲</span>
-<div><strong>Snap.</strong> Snap is on by default. Drag or rotate tiles near compatible edges to see a gray preview; release to commit the snap. Snapping checks both the matched edge and which side the tile interior is on, so concave pieces are less likely to snap into overlapping positions. The first 3A or 3A* chiral tile placed in a session shows a reminder that the two are mirror partners.</div>
+<div><strong>Snap.</strong> Snap is on by default. Drag or rotate tiles near compatible edges to see a gray preview; release to commit the snap. Equal edges snap directly, and a shorter edge can snap at each whole subdivision of a compatible longer edge—for example, a length-1 edge has four positions along a length-4 edge. Snapping also checks which side the tile interior is on, so concave pieces are less likely to snap into overlapping positions.</div>
 </div>
 <div class="help-tool"><span aria-hidden="true" class="help-icon help-overlap-icon"><span class="overlap-toolbar-icon"><span class="overlap-box overlap-box-a"></span><span class="overlap-box overlap-box-b"></span></span></span>
 
@@ -546,7 +575,7 @@
 <div class="help-section-title">Selection</div>
 <div class="help-tool">
 <span class="help-icon">☑</span>
-<div><strong>Select.</strong> Click selects one tile or group. Ctrl/Cmd-click or Shift-click toggles multiple selection. Shift-drag draws a box selection. Selection → All or Ctrl/Cmd+A selects all editable tiles.</div>
+<div><strong>Select.</strong> Click selects one tile or group. Ctrl/Cmd-click or Shift-click toggles multiple selection. Drag on blank canvas to draw a box selection; no modifier key is required. Selection → All or Ctrl/Cmd+A selects all editable tiles.</div>
 </div>
 <div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-frame" height="32" rx="3" width="32" x="8" y="8"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="35"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="35"></rect><rect class="group-small" height="11" rx="2" width="17" x="16" y="21"></rect><rect class="group-small" height="11" rx="2" width="17" x="21" y="15"></rect></svg>
 
@@ -559,7 +588,11 @@
 </div>
 <div class="help-tool">
 <span class="help-icon">📋</span>
-<div><strong>Copy / Paste / Duplicate.</strong> Use Edit → Copy/Paste or Ctrl/Cmd+C and Ctrl/Cmd+V. Edit → Duplicate or D makes a nearby copy of the selected object. These commands are also available by right-clicking a selected tile. Copies retain the original tile's scale, geometry, fill, and outline settings.</div>
+<div><strong>Copy / Paste / Duplicate.</strong> Use Edit → Copy/Paste or Ctrl/Cmd+C and Ctrl/Cmd+V. When the app's internal clipboard contains copied tiles, Ctrl/Cmd+V pastes those tiles directly; otherwise it can accept an image from the system clipboard. Edit → Duplicate or D makes a nearby copy of the selected object. A duplicated multi-tile motif retains its internal layer order and is placed as one block above the original motif. These commands are also available by right-clicking a selected tile. Copies retain the original tile's scale, geometry, fill, and outline settings.</div>
+</div>
+<div class="help-tool">
+<span class="help-icon">🖼️</span>
+<div><strong>Paste images.</strong> Copy a PNG, JPEG, WebP, or GIF image in another app, then press Ctrl/Cmd+V to place it at the center of the canvas. Pasted images can be selected, grouped, duplicated, layered, rotated, flipped, and scaled like tiles. They do not snap and cannot be converted or edited with the Bubble tools. Image data is embedded in saved JSON layouts, which can make layout files and share links much larger.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🗑</span>
@@ -576,16 +609,16 @@
 </div>
 <div class="help-tool">
 <span class="help-icon"><svg aria-hidden="true" class="scale-expand-icon" viewbox="0 0 24 24"><path d="M9 5H5v4 M5 5l5.5 5.5 M15 19h4v-4 M19 19l-5.5-5.5"></path></svg></span>
-<div><strong>Scale / Reset Scale.</strong> Select one or more tiles, then use the synchronized slider in either the Transform dropdown or Transform toolbar to set an absolute scale in 0.1 increments; it applies immediately and snaps around the 1× marker, where the moving thumb turns blue. For a custom value, type <code>1.5</code>, <code>150%</code>, <code>3/2</code>, <code>sqrt(2)</code>, or <code>sqrt(2)/2</code>, then press Enter or leave the field. Multiple tiles scale around the selection center. Transform → Reset Scale returns each selected tile to 1×. Snapping requires edges to have the same effective scaled length; Format Painter does not copy scale. When a complete lattice source motif is scaled together, its translation vectors scale with it.</div>
+<div><strong>Scale / Reset Scale.</strong> Select one or more tiles, then use the synchronized slider in either the Transform dropdown or Transform toolbar to set an absolute scale in 0.1 increments; it applies immediately and snaps around the 1× marker, where the moving thumb turns blue. For a custom value, type a decimal, percentage, fraction, or expression such as <code>3/2</code>, <code>sqrt(2)/2</code>, or <code>(1+sqrt(5))/2</code>, then press Enter or leave the field. Expressions support parentheses, <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>, and <code>sqrt()</code>; invalid expressions show a warning. Multiple tiles scale around the selection center. Transform → Reset Scale returns each selected tile to 1×. Snapping uses effective scaled edge lengths and recognizes whole-number subdivisions of compatible longer edges; Format Painter does not copy scale. When a complete lattice source motif is scaled together, its translation vectors scale with it.</div>
 </div>
 <div class="help-section-title">Bubble</div>
 <div class="help-tool">
-<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.png"/>
+<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-arc-dual.svg"/>
 <div><strong>Arc Dual.</strong> Bubble → Arc Dual swaps every inward arc with an outward arc on selected bubble and puzzle-edge tiles. It also works on polygon-to-bubble tiles and custom arc variants.</div>
 </div>
 <div class="help-tool">
-<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.png"/>
-<div><strong>Reverse One Arc.</strong> Select one or more editable bubble or puzzle-edge tiles, click Bubble → Reverse One Arc, then click near any edge to flip that side. Black dots show vertices, the hovered edge glows blue, and matching shared edges in the current selection flip together. Press Enter or click away to finish.</div>
+<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.svg"/>
+<div><strong>Reverse One Arc.</strong> Select bubble or puzzle-edge tiles and choose Bubble → Reverse One Arc, or double-click a single editable bubble tile, then click an edge to reverse it. Matching shared edges in the current selection flip together; press Enter or click away to finish.</div>
 </div>
 <div class="help-tool">
 <img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/>
@@ -602,7 +635,7 @@
 <div class="help-section-title">Arrange / Nudge</div>
 <div class="help-tool">
 <svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 34V14 M30 20l6-6 6 6"></path></svg>
-<div><strong>Layer order.</strong> Use Send to Bottom, Move Down, Move Up, and Bring to Top to control which selected tiles appear above or below others. The same options are available in the right-click menu.</div>
+<div><strong>Layer order.</strong> Use Send to Bottom, Move Down, Move Up, and Bring to Top to control which selected tiles appear above or below others. The same options are available in the right-click menu. Duplicate and Tiling Fill preserve the source tiles' relative layer order.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">⬅</span>
@@ -611,7 +644,7 @@
 <div class="help-section-title">Lattice</div>
 <div class="help-tool">
 <svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon lattice-vectors-icon" viewbox="0 0 48 48"><rect class="lattice-seed" x="9" y="27" width="10" height="10" rx="2"></rect><path class="lattice-vector vector-a" d="M20 32H39 M33 26l6 6-6 6"></path><path class="lattice-vector vector-b" d="M14 26V8 M8 14l6-6 6 6"></path><rect class="lattice-ghost ghost-a" x="32" y="27" width="8" height="8" rx="1.5"></rect><rect class="lattice-ghost ghost-b" x="10" y="7" width="8" height="8" rx="1.5"></rect></svg>
-<div><strong>Tiling Fill.</strong> Select a motif, click Tiling Fill, drag a ghost copy to define vector A, then drag another ghost copy to define vector B. Press Esc to cancel while defining vectors. Copies are virtual and redraw as you pan and zoom. Use the Opacity slider to make virtual copies lighter or darker.</div>
+<div><strong>Tiling Fill.</strong> Select a motif, click Tiling Fill, drag a ghost copy to define vector A, then drag another ghost copy to define vector B. Press Esc to cancel while defining vectors. Copies are virtual, preserve the source motif's layer order across the entire lattice, and redraw as you pan and zoom. Use the Opacity slider to make virtual copies lighter or darker.</div>
 </div>
 <div class="help-tool"><span aria-hidden="true" class="help-icon help-lattice-clear-icon"><span class="lattice-clear-icon"><span class="lattice-mini">▦</span><span class="lattice-x">×</span></span></span>
 
@@ -623,7 +656,7 @@
 </div>
 <div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon eye-icon" viewbox="0 0 28 28"><path d="M3.5 14 C6.2 8.7 10 6 14 6 C18 6 21.8 8.7 24.5 14 C21.8 19.3 18 22 14 22 C10 22 6.2 19.3 3.5 14 Z"></path><circle cx="14" cy="14" r="3.8"></circle></svg>
 
-<div><strong>Lattice opacity.</strong> The editable source motif stays full strength. Use the Opacity slider to control how light or dark the virtual lattice copies appear. Matching shared bubble-tile borders are also deduplicated between visible lattice copies and against the editable source tiles.</div>
+<div><strong>Lattice opacity.</strong> The editable source motif stays full strength. Use the Opacity slider to control how light or dark the virtual lattice copies appear, including in Export Picture previews and exported pictures. Matching shared bubble-tile borders are also deduplicated between visible lattice copies and against the editable source tiles.</div>
 </div>
 <div class="help-section-title">Style</div>
 <div class="help-tool">
@@ -632,11 +665,11 @@
 </div>
 <div class="help-tool">
 <span class="help-icon"><img alt="" aria-hidden="true" class="help-style-tool-image" src="assets/icon-outline-pencil.png"/></span>
-<div><strong>Outline.</strong> Sets the selected tile's border color, width, and line style. When one tile is selected, the controls and highlighted style preview reflect its current outline. Border joins are rounded, and matching shared bubble-tile borders are drawn only once to keep neighboring corners clean, including with thicker outlines. The topmost tile supplies the visible shared border so layer changes cannot hide it. Neighbors with conflicting outline styles retain their separate borders.</div>
+<div><strong>Outline.</strong> Sets the selected tile's border color, width, and line style. When one tile is selected, the controls and highlighted preview reflect its current outline; matching shared borders are drawn cleanly between neighboring tiles.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon"><svg aria-hidden="true" class="help-format-painter-icon" viewBox="0 0 24 24"><rect class="format-painter-roller" height="6" rx="1" width="13" x="2" y="3"></rect><path class="format-painter-frame" d="M15 6h3.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H12v3"></path><rect class="format-painter-handle" height="6" rx="1" width="5" x="9.5" y="15.5"></rect></svg></span>
-<div><strong>Format Painter.</strong> Select one source tile, activate Format Painter, then click another tile to copy the source tile's fill and outline settings. Press Escape or click the active Format Painter button again to cancel.</div>
+<div><strong>Format Painter.</strong> Select one source tile and activate Format Painter. Click a tile or grouped selection to apply the source tile's fill and outline settings to the entire target, or drag a box around multiple target tiles. The tool applies the style once and then turns off. Press Escape or click the active Format Painter button again to cancel.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon"><span aria-hidden="true" class="help-canvas-swatch"></span></span>
@@ -644,16 +677,16 @@
 </div>
 <div class="help-section-title">Export and saving</div>
 <div class="help-tool">
-<span class="help-icon">🖼</span>
-<div><strong>Export Picture.</strong> File → Export Picture lets you drag a custom export rectangle, choose Free/Square/4:3/16:9 proportions, and export SVG, PNG, JPG, or PDF/print.</div>
+<svg aria-hidden="true" class="help-icon help-export-picture-icon export-picture-icon" viewbox="0 0 28 28"><rect class="export-picture-frame" height="17" rx="2" width="19" x="3" y="8"></rect><circle class="export-picture-sun" cx="8" cy="13" r="2"></circle><path class="export-picture-landscape" d="M5 22l5-5 3 3 3-4 4 6"></path><path class="export-picture-arrow" d="M16 11l8-8m-6 0h6v6"></path></svg>
+<div><strong>Export Picture.</strong> File → Export Picture lets you drag a custom export rectangle, choose Free/Square/4:3/16:9 proportions, and export SVG, PNG, JPG, or PDF/print. Active lattice-fill copies visible in the chosen area are included at the selected lattice opacity.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">💾</span>
-<div><strong>Save / Load.</strong> File → Save to Browser stores the current layout locally. File → Load from Browser restores it. JSON export/import is for archiving editable layouts and now preserves the current view/zoom location; you can also drag a layout JSON file directly onto the canvas to open it.</div>
+<div><strong>Save / Load.</strong> File → Save to Browser stores the current layout locally. File → Load from Browser restores it. JSON export/import is for archiving editable layouts and preserves the current view/zoom location; you can also drag a layout JSON file directly onto the canvas to open it. The bottom of the File menu lists the five most recently imported or exported JSON files from the current session; select one to reopen its cached layout.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">🔗</span>
-<div><strong>Share Link.</strong> File → Copy Share Link copies a URL with the current canvas encoded after the <code>#</code>. When someone opens that URL, the app reconstructs the layout. This works best from the hosted GitHub Pages version; very large layouts may make links too long.</div>
+<div><strong>Share Link.</strong> File → Copy Share Link copies a URL with the current canvas encoded after the <code>#</code>. When someone opens that URL, the app reconstructs the layout. This works best from the hosted GitHub Pages version; very large layouts may make links too long. If the canvas contains pasted images, the app warns that their complete data will be embedded in the URL and recommends Export JSON before allowing you to copy the link anyway.</div>
 </div>
 </div></div>
 </div>
@@ -976,14 +1009,22 @@
 </details>
 <details class="tray-section" data-tray-set="otherPolygons">
 <summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN"></span><span>Other</span></summary>
-<button class="add-all-button" data-add-collection="otherPolygons">Add all 16 Other tiles</button>
+<button class="add-all-button" data-add-collection="otherPolygons">Add all 24 Other tiles</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="BVLENS" title="Add arc lens tile"><span class="shape-icon bubble-icon-slot" data-bubble-icon="BVLENS"></span><span class="palette-text"><strong>Arc Lens</strong><small>curved lens tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_RECT" title="Add 2×1 rectangle"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_RECT"></span><span class="palette-text"><strong>2×1 Rectangle</strong><small>unit sides compatible</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_TRAP" title="Add 1-1-1-2 trapezoid"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_TRAP"></span><span class="palette-text"><strong>1-1-1-2 Trapezoid</strong><small>three unit sides</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_RHOMBUS" title="Add 60° rhombus"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_RHOMBUS"></span><span class="palette-text"><strong>60° Rhombus</strong><small>two equilateral triangles</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_RHOMBUS45" title="Add 45° rhombus with unit edges"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_RHOMBUS45"></span><span class="palette-text"><strong>45° Rhombus</strong><small>unit edges</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_STAR5" title="Add regular 5-point star (5/2) with unit boundary edges"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_STAR5"></span><span class="palette-text"><strong>5-Point Star</strong><small>5/2; unit edges</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_STAR6" title="Add regular 6-point star (6/2) with unit boundary edges"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_STAR6"></span><span class="palette-text"><strong>6-Point Star</strong><small>6/2; unit edges</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_STAR8" title="Add regular 8-point star (8/2) with unit boundary edges"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_STAR8"></span><span class="palette-text"><strong>8-Point Star</strong><small>8/2; unit edges</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_RIGHT_ISO_TRI" title="Add 45-45-90 triangle with side lengths 1, 1, and √2"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_RIGHT_ISO_TRI"></span><span class="palette-text"><strong>45-45-90 Triangle</strong><small>1, 1, √2</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="OP_TANGRAM_PARA" title="Add tangram parallelogram made from two 45-45-90 triangles"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_TANGRAM_PARA"></span><span class="palette-text"><strong>Tangram Parallelogram</strong><small>sides 1 and √2</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="PRTHICK" title="Add Penrose thick rhomb"><span class="shape-icon bubble-icon-slot" data-bubble-icon="PRTHICK"></span><span class="palette-text"><strong>Penrose Thick Rhomb</strong><small>72° / 108°</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="PRTHIN" title="Add Penrose thin rhomb"><span class="shape-icon bubble-icon-slot" data-bubble-icon="PRTHIN"></span><span class="palette-text"><strong>Penrose Thin Rhomb</strong><small>36° / 144°</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="PKITE" title="Add Penrose Kite with matching-rule arcs"><span class="shape-icon bubble-icon-slot" data-bubble-icon="PKITE"></span><span class="palette-text"><strong>Penrose Kite</strong><small>marked P2 prototile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="PDART" title="Add Penrose Dart with matching-rule arcs"><span class="shape-icon bubble-icon-slot" data-bubble-icon="PDART"></span><span class="palette-text"><strong>Penrose Dart</strong><small>marked P2 prototile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN" title="Add Pac-Man hexagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN"></span><span class="palette-text"><strong>Pac-Man Hexagon</strong><small>equilateral nonconvex</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN_PENT" title="Add Pac-Man pentagon"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN_PENT"></span><span class="palette-text"><strong>Pac-Man Pentagon</strong><small>regular-pentagon base</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="OP_PACMAN_OCT2" title="Add Pac-Man Octagon 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN_OCT2"></span><span class="palette-text"><strong>Pac-Man Octagon 1</strong><small>two-edge mouth</small></span></button>
@@ -998,8 +1039,7 @@
 </details>
 </div>
 <div aria-labelledby="trayExamplesTab" class="tray-content tray-panel examples-panel" hidden="" id="examplesPanel" role="tabpanel">
-<div class="tray-family-heading tray-family-plain">EXAMPLES</div>
-<p class="examples-intro">Load a complete canvas, or insert the example into your current canvas.</p>
+<p class="examples-intro">Click to load to canvas. Hover for a description.</p>
 <div class="examples-list" id="examplesList"></div>
 </div>
 </aside>

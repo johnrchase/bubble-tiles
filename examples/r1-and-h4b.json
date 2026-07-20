@@ -1,0 +1,155 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "viewBox": {
+    "x": -499.67,
+    "y": -127.085,
+    "width": 1448.486,
+    "height": 1013.94
+  },
+  "tiles": [
+    {
+      "id": "tile97",
+      "tileType": "RB1",
+      "x": 60.538,
+      "y": 215.987,
+      "rotation": 120,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile98",
+      "tileType": "RB1",
+      "x": 60.538,
+      "y": 285.269,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile99",
+      "tileType": "RB1",
+      "x": 120.537,
+      "y": 250.628,
+      "rotation": -120,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile103",
+      "tileType": "B4B",
+      "x": 200.538,
+      "y": 319.91,
+      "rotation": 90,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile104",
+      "tileType": "B4B",
+      "x": 80.538,
+      "y": 389.192,
+      "rotation": 150,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile105",
+      "tileType": "B4B",
+      "x": 200.538,
+      "y": 458.474,
+      "rotation": -150,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile97",
+        "tile98",
+        "tile99",
+        "tile103",
+        "tile104",
+        "tile105"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile97",
+        "tile98",
+        "tile99",
+        "tile103",
+        "tile104",
+        "tile105"
+      ],
+      "vectorA": {
+        "x": 240,
+        "y": 138.564
+      },
+      "vectorB": {
+        "x": 240,
+        "y": -138.564
+      }
+    }
+  ]
+}

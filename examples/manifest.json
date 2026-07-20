@@ -1,321 +1,377 @@
 [
-  {
-    "id": "one-of-each-frame-solution",
-    "title": "One-of-Each Frame Solution",
-    "description": "A one-of-each solution for the 13 Tile Frame. This is one of 1500 solutions.",
-    "file": "one-of-each-frame-solution.json",
-    "tags": [
-      "frames",
-      "hexagonal bubble tiles"
-    ]
-  },
-  {
-    "id": "mixed-bubble-tile-lattice-h4b-t1",
-    "title": "Mixed Bubble Tiling H4B/T1",
-    "description": "A tiling example combining H4B with triangular T1 bubble tiles.",
-    "file": "mixed-bubble-tile-lattice-h4b-t1.json",
-    "tags": [
-      "tiling",
-      "mixed bubble tiles"
-    ]
-  },
-  {
-    "id": "square-bubble-tile-lattice-s3-s0",
-    "title": "Square Puzzle Tiling S0/S1",
-    "description": "A three-tile periodic lattice using yellow and purple square bubble tiles with the Puzzle edge style.",
-    "file": "square-bubble-tile-lattice-s3-s0.json",
-    "tags": [
-      "tiling",
-      "square bubble tiles",
-      "puzzle edge"
-    ]
-  },
-  {
-    "id": "hex-puzzle-spiral-h1-h5",
-    "title": "Hex Puzzle Spiral H1/H5",
-    "description": "A large spiral patch built from hexagonal puzzle tiles H1 and H5.",
-    "file": "hex-puzzle-spiral-h1-h5.json",
-    "tags": [
-      "hexagonal puzzle tiles",
-      "spiral"
-    ]
-  },
-  {
-    "id": "spectre-cluster",
-    "title": "Spectre Cluster",
-    "description": "A starter cluster made with Spectre monotiles.",
-    "file": "spectre-cluster.json",
-    "tags": [
-      "monotiles",
-      "spectre"
-    ]
-  },
-  {
-    "id": "mixed-bubble-tile-lattice-full-set",
-    "title": "Mixed Bubble Tiling Full Set",
-    "description": "A large tiling using the full hexagonal bubble family together with triangular bubble tiles.",
-    "file": "mixed-bubble-tile-lattice-full-set.json",
-    "tags": [
-      "tiling",
-      "mixed bubble tiles"
-    ]
-  },
-  {
-    "id": "hex-bubble-tile-lattice-h0-h4c",
-    "title": "Hex Bubble Tiling H0/H4C",
-    "description": "A four-tile tiling seed using one H0 tile and three H4C tiles.",
-    "file": "hex-bubble-tile-lattice-h0-h4c.json",
-    "tags": [
-      "tiling",
-      "hexagonal bubble tiles"
-    ]
-  },
-  {
-    "id": "hex-bubble-tile-lattice-h1-h5",
-    "title": "Hex Bubble Tiling H1/H5",
-    "description": "A two-tile tiling seed using the dual pair H1 and H5.",
-    "file": "hex-bubble-tile-lattice-h1-h5.json",
-    "tags": [
-      "tiling",
-      "hexagonal bubble tiles"
-    ]
-  },
-  {
-    "id": "regular-polygon-lattice-tri-square-hex",
-    "title": "Regular Polygon Tiling",
-    "description": "A colored tiling made from regular triangles, squares, and hexagons.",
-    "file": "regular-polygon-lattice-tri-square-hex.json",
-    "tags": [
-      "tiling",
-      "regular polygons"
-    ]
-  },
-  {
-    "id": "large-frame-styled-design",
-    "title": "Large Frame Styled Design",
-    "description": "A styled large-frame design with a dark background, thicker strokes, and patterned fills.",
-    "file": "large-frame-styled-design.json",
-    "tags": [
-      "frames",
-      "style",
-      "hexagonal bubble tiles"
-    ]
-  },
-  {
-    "id": "triangular-puzzle-tile-lattice",
-    "title": "Triangular Puzzle Tile Tiling",
-    "description": "A tiling example using all four triangular puzzle tile types.",
-    "file": "triangular-puzzle-tile-lattice.json",
-    "tags": [
-      "tiling",
-      "triangular puzzle tiles"
-    ]
-  },
-  {
-    "id": "soft-sf1-sf3b-lattice",
-    "title": "Soft Tile Tiling SF1/SF3B",
-    "description": "A tiling example using soft tiles SF1 and SF3B.",
-    "file": "soft-sf1-sf3b-lattice.json",
-    "tags": [
-      "tiling",
-      "soft tiles"
-    ]
-  },
-  {
-    "id": "soft-sf0-sf3c-lattice",
-    "title": "Soft Tile Tiling SF0/SF3C",
-    "description": "A periodic tiling using one SF0 and two SF3C soft tiles.",
-    "file": "soft-sf0-sf3c-lattice.json",
-    "tags": [
-      "tiling",
-      "soft tiles",
-      "lattice"
-    ]
-  },
-  {
-    "id": "cloud-soft-sf2b-lattice",
-    "title": "Cloud Soft Tile Tiling SF2B",
-    "description": "A single soft SF2B tile with a cloud texture repeated by tiling fill.",
-    "file": "cloud-soft-sf2b-lattice.json",
-    "tags": [
-      "tiling",
-      "soft tiles",
-      "textures"
-    ]
-  },
-  {
-    "id": "pacman-octagon-tessellation",
-    "title": "Pac-Man Octagon Tiling",
-    "description": "A large tiling patch using the Pac-Man Octagon 1 shape.",
-    "file": "pacman-octagon-tessellation.json",
-    "tags": [
-      "other shapes",
-      "pac-man octagon",
-      "tiling"
-    ]
-  },
-  {
-    "id": "rhombic-bubble-lattice-rb1-rb2-rb3",
-    "title": "Rhombic Bubble Tiling",
-    "description": "A four-tile tiling seed using rhombic bubble tiles RB1, RB2A/RB2B, and RB3A.",
-    "file": "rhombic-bubble-lattice-rb1-rb2-rb3.json",
-    "tags": [
-      "tiling",
-      "rhombic bubble tiles"
-    ]
-  },
-  {
-    "id": "pacman-pentagon-tessellation",
-    "title": "Pac-Man Pentagon Tiling",
-    "description": "A large tiling built from Pac-Man Pentagon tiles.",
-    "file": "pacman-pentagon-tessellation.json",
-    "tags": [
-      "other shapes",
-      "pac-man pentagon",
-      "tiling"
-    ]
-  },
-  {
-    "id": "puzzle-squiggle-octagon-lattice",
-    "title": "Puzzle Squiggle Octagon Tiling",
-    "description": "A three-tile tiling seed using puzzle-styled Squiggle Octagon bubble tiles.",
-    "file": "puzzle-squiggle-octagon-lattice.json",
-    "tags": [
-      "tiling",
-      "squiggle octagon",
-      "puzzle edge"
-    ]
-  },
-  {
-    "id": "arc-squiggle-octagon-lattice",
-    "title": "Arc Squiggle Octagon Tiling",
-    "description": "A three-tile Squiggle Octagon tiling seed using the 60\u00b0 arc Bubble Style.",
-    "file": "arc-squiggle-octagon-lattice.json",
-    "tags": [
-      "tiling",
-      "squiggle octagon",
-      "60\u00b0 arc"
-    ]
-  },
-  {
-    "id": "square-tooth-trapezoid-lattice",
-    "title": "Square Tooth Trapezoid Tiling",
-    "description": "A two-tile five-sided trapezoid tiling seed using the Square Tooth Bubble Style.",
-    "file": "square-tooth-trapezoid-lattice.json",
-    "tags": [
-      "tiling",
-      "five-sided",
-      "Square Tooth"
-    ]
-  },
-  {
-    "id": "spike-bubble-style-lattice",
-    "title": "Spike Style Tiling H3C/H3A",
-    "description": "A tiling example using the compact Spike Bubble Style on H3C/H3A triangular bubble tiles.",
-    "file": "spike-bubble-style-lattice.json",
-    "tags": [
-      "tiling",
-      "bubble style",
-      "spike edge"
-    ]
-  },
-  {
-    "id": "small-flower-frame-triangular-fill",
-    "title": "Small Flower with Triangular Tiles",
-    "description": "A Small flower frame layout filled with triangular bubble tiles.",
-    "file": "small-flower-frame-triangular-fill.json",
-    "tags": [
-      "frames",
-      "triangular bubble tiles"
-    ]
-  },
-  {
-    "id": "heesch-number-1",
-    "title": "Heesch Number 1",
-    "description": "A Heesch-number-one example layout using soft, hexagonal bubble, and five-sided trapezoid-based tiles.",
-    "file": "heesch-number-1.json",
-    "tags": [
-      "Heesch number",
-      "examples",
-      "soft tiles",
-      "five-sided"
-    ]
-  },
-  {
-    "id": "infinite-soft-tiling",
-    "title": "Infinite Soft Tiling",
-    "description": "A large soft-tile periodic lattice using a virtual lattice fill.",
-    "file": "infinite-soft-tiling.json",
-    "tags": [
-      "tiling",
-      "soft tiles",
-      "lattice"
-    ]
-  },
-  {
-    "id": "square-tooth-dodecagon-lattice",
-    "title": "Square Tooth Dodecagon Tiling",
-    "description": "A six-tile lattice using a dodecagon seed with hexagonal and square bubble tiles in the Square Tooth edge style.",
-    "file": "square-tooth-dodecagon-lattice.json",
-    "tags": [
-      "tiling",
-      "dodecagon",
-      "Square Tooth"
-    ]
-  },
-  {
-    "id": "cookie-and-oreo-lattice",
-    "title": "Cookie and Oreo Tiling H4B/H1",
-    "description": "A cookie-and-oreo image-fill lattice using hexagonal bubble tiles.",
-    "file": "cookie-and-oreo-lattice.json",
-    "tags": [
-      "tiling",
-      "food textures",
-      "hexagonal bubble tiles"
-    ]
-  },
-  {
-    "id": "donut-trio-lattice",
-    "title": "Donut Trio Tiling H2B/H4A/3A",
-    "description": "A three-donut image-fill lattice using hexagonal bubble tiles.",
-    "file": "donut-trio-lattice.json",
-    "tags": [
-      "tiling",
-      "food textures",
-      "hexagonal bubble tiles"
-    ]
-  },
-  {
-    "id": "hexagonal-bubble-pinwheel-lattice",
-    "title": "Hexagonal Tiling H2C/H3B/H4B",
-    "description": "A twelve-tile periodic design using H2C, H3B, and H4B hexagonal bubble tiles.",
-    "file": "hexagonal-bubble-pinwheel-lattice.json",
-    "tags": [
-      "tiling",
-      "hexagonal bubble tiles",
-      "lattice"
-    ]
-  },
-  {
-    "id": "hexagonal-bubble-trio-lattice",
-    "title": "Bubble Trio Tiling H0/H6/H3C",
-    "description": "A three-tile periodic design using H0, H3C, and H6 hexagonal bubble tiles.",
-    "file": "hexagonal-bubble-trio-lattice.json",
-    "tags": [
-      "tiling",
-      "hexagonal bubble tiles",
-      "lattice"
-    ]
-  },
-  {
-    "id": "beautiful-penrose-flower",
-    "title": "Beautiful Penrose Flower",
-    "description": "A large flower construction made from bubble-converted thin Penrose rhombs.",
-    "file": "beautiful-penrose-flower.json",
-    "tags": [
-      "Penrose rhombs",
-      "flower",
-      "bubble tiles"
-    ]
-  }
+    {
+        "id":  "one-of-each-frame-solution",
+        "title":  "One-of-Each Frame Solution",
+        "description":  "A one-of-each solution for the 13 Tile Frame. This is one of 1500 solutions.",
+        "file":  "one-of-each-frame-solution.json",
+        "tags":  [
+                     "frames",
+                     "hexagonal bubble tiles"
+                 ]
+    },
+    {
+        "id":  "large-frame-styled-design",
+        "title":  "Large Frame Design",
+        "description":  "A completed Large Frame arrangement using hexagonal bubble tiles.",
+        "file":  "large-frame-styled-design.json",
+        "tags":  [
+                     "frames",
+                     "style",
+                     "hexagonal bubble tiles"
+                 ]
+    },
+    {
+        "id":  "small-flower-frame-triangular-fill",
+        "title":  "Small Flower with Triangular Tiles",
+        "description":  "A Small flower frame layout filled with triangular bubble tiles.",
+        "file":  "small-flower-frame-triangular-fill.json",
+        "tags":  [
+                     "frames",
+                     "triangular bubble tiles"
+                 ]
+    },
+    {
+        "id":  "all-14-hex-tiles",
+        "title":  "All 14 Hex Bubble Tiles",
+        "description":  "An infinite lattice using all 14 hexagonal bubble tile types with no support tiles.",
+        "file":  "all-14-hex-tiles.json",
+        "tags":  [
+                     "tiling",
+                     "hexagonal bubble tiles",
+                     "full set"
+                 ]
+    },
+    {
+        "id":  "all-six-square-bubble-tiles",
+        "title":  "All Six Square Bubble Tiles",
+        "description":  "An infinite lattice using all six square bubble tile types.",
+        "file":  "all-six-square-bubble-tiles.json",
+        "tags":  [
+                     "tiling",
+                     "square bubble tiles",
+                     "full set"
+                 ]
+    },
+    {
+        "id":  "all-ten-rhombic-bubble-tiles",
+        "title":  "All Ten Rhombic Bubble Tiles",
+        "description":  "An infinite lattice using a ten-tile arrangement from the complete rhombic bubble family.",
+        "file":  "all-ten-rhombic-bubble-tiles.json",
+        "tags":  [
+                     "tiling",
+                     "rhombic bubble tiles",
+                     "full set"
+                 ]
+    },
+    {
+        "id":  "octagon-star",
+        "title":  "Octagon Star",
+        "description":  "An eight-point star construction combining the regular 8/2 star with 45-degree rhombs.",
+        "file":  "octagon-star.json",
+        "tags":  [
+                     "stars",
+                     "45-degree geometry",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "tangrams",
+        "title":  "Tangrams",
+        "description":  "A classic seven-piece tangram set using squares, 45-45-90 triangles, and a tangram parallelogram.",
+        "file":  "tangrams.json",
+        "tags":  [
+                     "tangrams",
+                     "45-degree geometry"
+                 ]
+    },
+    {
+        "id":  "mixed-bubble-tile-lattice-h4b-t1",
+        "title":  "Mixed Bubble Tiling H4B/T1",
+        "description":  "A tiling example combining H4B with triangular T1 bubble tiles.",
+        "file":  "mixed-bubble-tile-lattice-h4b-t1.json",
+        "tags":  [
+                     "tiling",
+                     "mixed bubble tiles"
+                 ]
+    },
+    {
+        "id":  "square-bubble-tile-lattice-s3-s0",
+        "title":  "Square Puzzle Tiling S0/S1",
+        "description":  "A three-tile periodic lattice using yellow and purple square bubble tiles with the Puzzle edge style.",
+        "file":  "square-bubble-tile-lattice-s3-s0.json",
+        "tags":  [
+                     "tiling",
+                     "square bubble tiles",
+                     "puzzle edge"
+                 ]
+    },
+    {
+        "id":  "hex-puzzle-spiral-h1-h5",
+        "title":  "Hex Puzzle Spiral H1/H5",
+        "description":  "A large spiral patch built from hexagonal puzzle tiles H1 and H5.",
+        "file":  "hex-puzzle-spiral-h1-h5.json",
+        "tags":  [
+                     "hexagonal puzzle tiles",
+                     "spiral"
+                 ]
+    },
+    {
+        "id":  "spectre-cluster",
+        "title":  "Spectre Cluster",
+        "description":  "A starter cluster made with Spectre monotiles.",
+        "file":  "spectre-cluster.json",
+        "tags":  [
+                     "monotiles",
+                     "spectre"
+                 ]
+    },
+    {
+        "id":  "hex-bubble-tile-lattice-h0-h4c",
+        "title":  "Hex Bubble Tiling H0/H4C",
+        "description":  "A four-tile tiling seed using one H0 tile and three H4C tiles.",
+        "file":  "hex-bubble-tile-lattice-h0-h4c.json",
+        "tags":  [
+                     "tiling",
+                     "hexagonal bubble tiles"
+                 ]
+    },
+    {
+        "id":  "hex-bubble-tile-lattice-h1-h5",
+        "title":  "Hex Bubble Tiling H1/H5",
+        "description":  "A two-tile tiling seed using the dual pair H1 and H5.",
+        "file":  "hex-bubble-tile-lattice-h1-h5.json",
+        "tags":  [
+                     "tiling",
+                     "hexagonal bubble tiles"
+                 ]
+    },
+    {
+        "id":  "regular-polygon-lattice-tri-square-hex",
+        "title":  "Regular Polygon Tiling",
+        "description":  "A colored tiling made from regular triangles, squares, and hexagons.",
+        "file":  "regular-polygon-lattice-tri-square-hex.json",
+        "tags":  [
+                     "tiling",
+                     "regular polygons"
+                 ]
+    },
+    {
+        "id":  "triangular-puzzle-tile-lattice",
+        "title":  "Triangular Puzzle Tile Tiling",
+        "description":  "A tiling example using all four triangular puzzle tile types.",
+        "file":  "triangular-puzzle-tile-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "triangular puzzle tiles"
+                 ]
+    },
+    {
+        "id":  "soft-sf1-sf3b-lattice",
+        "title":  "Soft Tile Tiling SF1/SF3B",
+        "description":  "A tiling example using soft tiles SF1 and SF3B.",
+        "file":  "soft-sf1-sf3b-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles"
+                 ]
+    },
+    {
+        "id":  "soft-sf0-sf3c-lattice",
+        "title":  "Soft Tile Tiling SF0/SF3C",
+        "description":  "A periodic tiling using one SF0 and two SF3C soft tiles.",
+        "file":  "soft-sf0-sf3c-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "cloud-soft-sf2b-lattice",
+        "title":  "Cloud Soft Tile Tiling SF2B",
+        "description":  "A single soft SF2B tile with a cloud texture repeated by tiling fill.",
+        "file":  "cloud-soft-sf2b-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles",
+                     "textures"
+                 ]
+    },
+    {
+        "id":  "pacman-octagon-tessellation",
+        "title":  "Pac-Man Octagon Tiling",
+        "description":  "A large tiling patch using the Pac-Man Octagon 1 shape.",
+        "file":  "pacman-octagon-tessellation.json",
+        "tags":  [
+                     "other shapes",
+                     "pac-man octagon",
+                     "tiling"
+                 ]
+    },
+    {
+        "id":  "rhombic-bubble-lattice-rb1-rb2-rb3",
+        "title":  "Rhombic Bubble Tiling",
+        "description":  "A four-tile tiling seed using rhombic bubble tiles RB1, RB2A/RB2B, and RB3A.",
+        "file":  "rhombic-bubble-lattice-rb1-rb2-rb3.json",
+        "tags":  [
+                     "tiling",
+                     "rhombic bubble tiles"
+                 ]
+    },
+    {
+        "id":  "pacman-pentagon-tessellation",
+        "title":  "Pac-Man Pentagon Tiling",
+        "description":  "A large tiling built from Pac-Man Pentagon tiles.",
+        "file":  "pacman-pentagon-tessellation.json",
+        "tags":  [
+                     "other shapes",
+                     "pac-man pentagon",
+                     "tiling"
+                 ]
+    },
+    {
+        "id":  "puzzle-squiggle-octagon-lattice",
+        "title":  "Puzzle Squiggle Octagon Tiling",
+        "description":  "A three-tile tiling seed using puzzle-styled Squiggle Octagon bubble tiles.",
+        "file":  "puzzle-squiggle-octagon-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "squiggle octagon",
+                     "puzzle edge"
+                 ]
+    },
+    {
+        "id":  "arc-squiggle-octagon-lattice",
+        "title":  "Arc Squiggle Octagon Tiling",
+        "description":  "A three-tile Squiggle Octagon tiling seed using the 60° arc Bubble Style.",
+        "file":  "arc-squiggle-octagon-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "squiggle octagon",
+                     "60° arc"
+                 ]
+    },
+    {
+        "id":  "square-tooth-trapezoid-lattice",
+        "title":  "Square Tooth Trapezoid Tiling",
+        "description":  "A two-tile five-sided trapezoid tiling seed using the Square Tooth Bubble Style.",
+        "file":  "square-tooth-trapezoid-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "five-sided",
+                     "Square Tooth"
+                 ]
+    },
+    {
+        "id":  "spike-bubble-style-lattice",
+        "title":  "Spike Style Tiling H3C/H3A",
+        "description":  "A tiling example using the compact Spike Bubble Style on H3C/H3A triangular bubble tiles.",
+        "file":  "spike-bubble-style-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "bubble style",
+                     "spike edge"
+                 ]
+    },
+    {
+        "id":  "heesch-number-1",
+        "title":  "Heesch Number 1",
+        "description":  "A Heesch-number-one example layout using soft, hexagonal bubble, and five-sided trapezoid-based tiles.",
+        "file":  "heesch-number-1.json",
+        "tags":  [
+                     "Heesch number",
+                     "examples",
+                     "soft tiles",
+                     "five-sided"
+                 ]
+    },
+    {
+        "id":  "infinite-soft-tiling",
+        "title":  "Infinite Soft Tiling",
+        "description":  "A large soft-tile periodic lattice using a virtual lattice fill.",
+        "file":  "infinite-soft-tiling.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "square-tooth-dodecagon-lattice",
+        "title":  "Square Tooth Dodecagon Tiling",
+        "description":  "A six-tile lattice using a dodecagon seed with hexagonal and square bubble tiles in the Square Tooth edge style.",
+        "file":  "square-tooth-dodecagon-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "dodecagon",
+                     "Square Tooth"
+                 ]
+    },
+    {
+        "id":  "cookie-and-oreo-lattice",
+        "title":  "Cookie and Oreo Tiling H4B/H1",
+        "description":  "A cookie-and-oreo image-fill lattice using hexagonal bubble tiles.",
+        "file":  "cookie-and-oreo-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "food textures",
+                     "hexagonal bubble tiles"
+                 ]
+    },
+    {
+        "id":  "donut-trio-lattice",
+        "title":  "Donut Trio Tiling H2B/H4A/3A",
+        "description":  "A three-donut image-fill lattice using hexagonal bubble tiles.",
+        "file":  "donut-trio-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "food textures",
+                     "hexagonal bubble tiles"
+                 ]
+    },
+    {
+        "id":  "hexagonal-bubble-pinwheel-lattice",
+        "title":  "Hexagonal Tiling H2C/H3B/H4B",
+        "description":  "A twelve-tile periodic design using H2C, H3B, and H4B hexagonal bubble tiles.",
+        "file":  "hexagonal-bubble-pinwheel-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "hexagonal bubble tiles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "hexagonal-bubble-trio-lattice",
+        "title":  "Bubble Trio Tiling H0/H6/H3C",
+        "description":  "A three-tile periodic design using H0, H3C, and H6 hexagonal bubble tiles.",
+        "file":  "hexagonal-bubble-trio-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "hexagonal bubble tiles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "beautiful-penrose-flower",
+        "title":  "Beautiful Penrose Flower",
+        "description":  "A large flower construction made from bubble-converted thin Penrose rhombs.",
+        "file":  "beautiful-penrose-flower.json",
+        "tags":  [
+                     "Penrose rhombs",
+                     "flower",
+                     "bubble tiles"
+                 ]
+    },
+    {
+        "id":  "r1-and-h4b",
+        "title":  "R1 and H4B",
+        "description":  "A periodic balance-equation solution combining Rhombic R1 and Hexagonal H4B bubble tiles.",
+        "file":  "r1-and-h4b.json",
+        "tags":  [
+                     "tiling",
+                     "balance equation",
+                     "rhombic bubble tiles",
+                     "hexagonal bubble tiles"
+                 ]
+    }
 ]
