@@ -10,6 +10,17 @@ Bubble Tiles runs directly in a modern web browser. A desktop or laptop provides
 
 Created by John Chase.
 
+## What's new in version 1.5
+
+- An expanded hands-on Explore tutorial for finite and infinite tilings
+- Default drag-box selection and transformable pasted images
+- Subdivision-aware snapping and faster, layer-preserving Tiling Fill
+- Lattice-aware picture export with adjustable lattice opacity
+- Group and multi-tile support for Format Painter
+- Refined shared borders and corrected frame geometry
+- Marked Penrose Kite and Dart tiles, new unit-edged polygons, and more examples
+- Recent JSON reopening and double-click access to Reverse One Arc
+
 ## Features
 
 - Bubble, puzzle, soft, polygonal, frame, and Einstein-family tiles
