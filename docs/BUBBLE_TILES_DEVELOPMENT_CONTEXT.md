@@ -8,10 +8,11 @@ Public app: https://johnrchase.github.io/bubble-tiles/
 The repository’s own documentation describes the app as intended for researchers, teachers, students, or makers working with bubble-tile geometry. The mathematical purpose is therefore primarily exploratory and educational rather than a general-purpose drawing application.
 
 ## 2. Current development status
-- The local working tree is the authoritative in-progress implementation for Bubble Tiles v1.5 work.
-- GitHub currently reflects the public v1.4 release at the repository remote.
-- The local v1.5 work should not be committed, pushed, published, or deployed unless the user explicitly asks.
-- The visible version label in the current files is v1.5, but that label should not be treated as proof that every v1.5 feature is complete or ready for release.
+- The local working tree is the authoritative v1.6 release candidate.
+- GitHub currently reflects the public v1.5 release at the repository remote.
+- The local v1.6 work should not be committed, pushed, published, or deployed unless the user explicitly asks.
+- The visible version label and release documentation in the current files are v1.6; committing or publishing still requires the user's explicit approval.
+- Version 1.6 includes a live bite/bump counter; editable lattice vectors; single-tile custom image fills with upload, clipboard paste, drag-and-drop, anonymous paginated Openverse search and supported media-type filtering; clipped tile text with adjustable font, size, color, bold, and italic styling; corrected view-scaling canvas borders with rounded joins and caps; and an image-filled cloud tiling example. Custom Image and Add Text are available from both the Style toolbar and Style dropdown. New text is screen-horizontal when applied and follows subsequent tile transforms. Image and text styling persist through JSON, duplication, lattice rendering, sharing, and picture export.
 
 ## 3. Repository map
 ### Top-level files
@@ -78,11 +79,15 @@ The app is built around bubble-tile geometry, polygon-to-bubble conversions, lat
 ### Main tools and controls
 The UI includes menus for File, View, Edit, Transform, Bubble, Lattice, Style, and About. The toolbar and menu structure are defined in [index.html](../index.html) and bound to behavior in [app.js](../app.js).
 
+The lower-right status bar reports global bite and bump totals for placed canvas tiles whose definitions contain bubble or puzzle-edge directions. Polygonal tiles, frames, pasted images, and virtual lattice copies do not contribute. The count follows changes such as adding, deleting, loading, Arc Dual, and Reverse One Arc.
+
+Existing lattice fills can be adjusted with Edit Lattice. The tool exposes draggable A and B vector endpoints at the source motif's center, updates valid repeat vectors and virtual copies while dragging, commits both changes when the tool is closed, and restores the entry-state vectors when canceled with Escape. If multiple fills exist, selecting one of a fill's source tiles identifies the fill to edit.
+
 ### Fill styles
 Fill styles are selected from a set of pattern options and include solid fills, dotted/crosshatched/striped patterns, and image-based fills such as cookie, Oreo, donut, clouds, marble, and wood. The current interface exposes previews for these options.
 
 ### Border styles
-The app supports stroke color, stroke style (solid, dashed, dotted, or none), and stroke width. These are exposed through the Style UI and preview grids. Shared-border suppression compares sampled transformed edge profiles, not just common endpoints, so distinct inward/outward curves that enclose a lens retain both outlines.
+The app supports stroke color, stroke style (solid, dashed, dotted, or none), and stroke width. These are exposed through the Style UI and preview grids. Live canvas and lattice strokes scale with the SVG view and tile transforms; tray thumbnails retain their separate compact non-scaling strokes. Rounded joins and per-edge caps avoid miter spikes at curved vertices. Shared-border suppression compares sampled transformed edge profiles, not just common endpoints, so distinct inward/outward curves that enclose a lens retain both outlines.
 
 ### Visual previews
 Preview-based UI is a major part of the design. The app includes preview grids for fill patterns, stroke styles, and edge decorations, using CSS-based previews and some image-based previews from [assets](../assets).
@@ -91,10 +96,10 @@ Preview-based UI is a major part of the design. The app includes preview grids f
 Buttons and controls use title attributes for tooltips. Some UI elements also update dynamic titles in the JavaScript layer, especially around style-popover availability and tool behavior.
 
 ### Help / Tutorial
-The repository contains a Help modal and a guided tutorial panel. The content is embedded directly in [index.html](../index.html), with the tutorial logic implemented in [app.js](../app.js). Guided Tutorial offers a Quick Tool Tour and an event-driven Explore Bubble Tiles course. The exploration begins with a finite frame-filling investigation, loads a prepared two-triangle workspace for Tiling Fill and its opacity/locate/clear controls, and then listens for actual Arc Dual, Reverse One Arc, and sequential polygon-to-bubble challenge actions. Tutorial targets use pulsing yellow highlights; multi-action steps advance the highlight to the next required control and stop highlighting completed controls. Each task step launches one pointer-transparent, self-removing full-screen confetti burst when its state first changes from incomplete to complete, while preserving the green completion message; reduced-motion preferences suppress both pulse and confetti animation. It snapshots the current canvas before opening a fresh tutorial workspace and offers to keep the tutorial result or restore the prior canvas on exit. The app also uses local storage to remember whether the guided tutorial has been seen.
+The repository contains a Help modal and a guided tutorial panel. The content is embedded directly in [index.html](../index.html), with the tutorial logic implemented in [app.js](../app.js). Guided Tutorial offers a Quick Tool Tour and an event-driven Explore Bubble Tiles course. The exploration opens with a complete R3/H2B periodic tiling whose virtual copies fade back to reveal its source motif, then begins a finite frame-filling investigation. It later loads a prepared two-triangle workspace for Tiling Fill and its opacity/locate/clear controls, resets the canvas to one centered, selected H2A tile for Arc Dual, and listens for actual Reverse One Arc and sequential polygon-to-bubble challenge actions. Tutorial targets use pulsing yellow highlights; multi-action steps advance the highlight to the next required control and stop highlighting completed controls. Each task step launches one pointer-transparent, self-removing full-screen confetti burst when its state first changes from incomplete to complete, while preserving the green completion message; reduced-motion preferences suppress both pulse and confetti animation. It snapshots the current canvas before opening a fresh tutorial workspace and offers to keep the tutorial result or restore the prior canvas on exit. The app also uses local storage to remember whether the guided tutorial has been seen.
 
 ### Version label and Version History
-The visible application version is v1.5 in the current files, and Version History is shown in the modal content in [index.html](../index.html). The version display and historical entries are part of the user-facing UI and should be kept consistent when release-version changes are requested.
+The visible application version is v1.6 in the current files, and Version History is shown in the modal content in [index.html](../index.html). The version display and historical entries are part of the user-facing UI and should be kept consistent when release-version changes are requested.
 
 ### Keyboard and pointer behavior
 The Help content and UI indicate support for default blank-canvas drag box selection, Space-drag or Ctrl/Cmd-drag panning, wheel zooming, keyboard shortcuts, nudge operations, and double-click activation of Reverse One Arc on eligible bubble tiles. These behaviors are implemented in the main JavaScript logic.

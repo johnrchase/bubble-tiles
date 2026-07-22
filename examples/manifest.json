@@ -53,6 +53,16 @@
                  ]
     },
     {
+        "id":  "triangular-puzzle-tile-lattice",
+        "title":  "All Four Triangular Tile",
+        "description":  "A tiling example using all four triangular puzzle tile types.",
+        "file":  "triangular-puzzle-tile-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "triangular puzzle tiles"
+                 ]
+    },
+    {
         "id":  "all-ten-rhombic-bubble-tiles",
         "title":  "All Ten Rhombic Bubble Tiles",
         "description":  "An infinite lattice using a ten-tile arrangement from the complete rhombic bubble family.",
@@ -153,16 +163,6 @@
         "tags":  [
                      "tiling",
                      "regular polygons"
-                 ]
-    },
-    {
-        "id":  "triangular-puzzle-tile-lattice",
-        "title":  "Triangular Puzzle Tile Tiling",
-        "description":  "A tiling example using all four triangular puzzle tile types.",
-        "file":  "triangular-puzzle-tile-lattice.json",
-        "tags":  [
-                     "tiling",
-                     "triangular puzzle tiles"
                  ]
     },
     {
@@ -360,6 +360,17 @@
                      "Penrose rhombs",
                      "flower",
                      "bubble tiles"
+                 ]
+    },
+    {
+        "id":  "clouds-dodecagon-hexagon-squares",
+        "title":  "Cloud Dodecagon, Hexagon, and Squares",
+        "description":  "A cloud-image lattice combining a twelve-sided bubble tile, a hexagonal bubble tile, and square bubble tiles.",
+        "file":  "clouds-dodecagon-hexagon-squares.json",
+        "tags":  [
+                     "tiling",
+                     "custom images",
+                     "mixed bubble tiles"
                  ]
     },
     {

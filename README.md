@@ -10,7 +10,17 @@ Bubble Tiles runs directly in a modern web browser. A desktop or laptop provides
 
 Created by John Chase.
 
-## What's new in version 1.5
+## What's new in version 1.6
+
+- A live status-bar count of all bites and bumps on the canvas
+- Editable A and B lattice-vector endpoints for adjusting an existing Tiling Fill
+- Custom image fills with upload, clipboard paste, drag-and-drop, anonymous paginated Openverse search with supported media-type filters, positioning, zoom/cropping, attribution, and export support
+- Initially horizontal text clipped inside a selected tile with adjustable font, size, color, bold, and italic styling
+- Corrected canvas outlines that scale with the view and use clean rounded joins and caps
+- A new cloud-image example combining dodecagonal, hexagonal, and square bubble tiles
+- A more visual Explore tutorial with staged workspaces, pulsing guidance, task celebrations, and a fading periodic-tiling introduction
+
+## Version 1.5 highlights
 
 - An expanded hands-on Explore tutorial for finite and infinite tilings
 - Default drag-box selection and transformable pasted images
@@ -27,7 +37,7 @@ Created by John Chase.
 - Snapping, grouping, reflection, rotation, and uniform scaling
 - Arc Dual, Reverse One Arc, polygon conversion, and multiple Bubble Styles
 - Tiling Fill tools for testing periodic extensions
-- Fill patterns, image textures, outlines, and Format Painter
+- Fill patterns, custom image fills, image textures, outlines, and Format Painter
 - Guided tours for finite and infinite tiling investigations
 - Built-in examples and mathematical challenges
 - Browser save/load, editable JSON layouts, picture export, and share links
