@@ -10,6 +10,11 @@ Bubble Tiles runs directly in a modern web browser. A desktop or laptop provides
 
 Created by John Chase.
 
+## Version 1.6.1 patch
+
+- Tiling Fill now edits an existing lattice when the same complete source-tile set is selected, preventing duplicate lattices for one source set
+- Restored chocolate- and glazed-donut fills and added the Bubble Bubble Tiles example
+
 ## What's new in version 1.6
 
 - A live status-bar count of all bites and bumps on the canvas

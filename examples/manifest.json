@@ -363,6 +363,17 @@
                  ]
     },
     {
+        "id":  "bubble-bubble-tiles",
+        "title":  "Bubble Bubble Tiles",
+        "description":  "A periodic bubble-tile design filled with a photograph of soap bubbles.",
+        "file":  "bubble-bubble-tiles.json",
+        "tags":  [
+                     "tiling",
+                     "custom image",
+                     "hexagonal bubble tiles"
+                 ]
+    },
+    {
         "id":  "clouds-dodecagon-hexagon-squares",
         "title":  "Cloud Dodecagon, Hexagon, and Squares",
         "description":  "A cloud-image lattice combining a twelve-sided bubble tile, a hexagonal bubble tile, and square bubble tiles.",

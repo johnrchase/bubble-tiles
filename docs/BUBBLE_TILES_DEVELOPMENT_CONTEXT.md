@@ -8,10 +8,10 @@ Public app: https://johnrchase.github.io/bubble-tiles/
 The repository’s own documentation describes the app as intended for researchers, teachers, students, or makers working with bubble-tile geometry. The mathematical purpose is therefore primarily exploratory and educational rather than a general-purpose drawing application.
 
 ## 2. Current development status
-- The local working tree is the authoritative v1.6 release candidate.
-- GitHub currently reflects the public v1.5 release at the repository remote.
-- The local v1.6 work should not be committed, pushed, published, or deployed unless the user explicitly asks.
-- The visible version label and release documentation in the current files are v1.6; committing or publishing still requires the user's explicit approval.
+- The local working tree is the authoritative v1.6.1 patch candidate.
+- GitHub currently reflects the public v1.6 release at the repository remote.
+- The local v1.6.1 work should not be committed, pushed, published, or deployed unless the user explicitly asks.
+- The visible application title remains v1.6; README and Version History identify the current patch work as v1.6.1. Committing or publishing still requires the user's explicit approval.
 - Version 1.6 includes a live bite/bump counter; editable lattice vectors; single-tile custom image fills with upload, clipboard paste, drag-and-drop, anonymous paginated Openverse search and supported media-type filtering; clipped tile text with adjustable font, size, color, bold, and italic styling; corrected view-scaling canvas borders with rounded joins and caps; and an image-filled cloud tiling example. Custom Image and Add Text are available from both the Style toolbar and Style dropdown. New text is screen-horizontal when applied and follows subsequent tile transforms. Image and text styling persist through JSON, duplication, lattice rendering, sharing, and picture export.
 
 ## 3. Repository map
@@ -81,7 +81,7 @@ The UI includes menus for File, View, Edit, Transform, Bubble, Lattice, Style, a
 
 The lower-right status bar reports global bite and bump totals for placed canvas tiles whose definitions contain bubble or puzzle-edge directions. Polygonal tiles, frames, pasted images, and virtual lattice copies do not contribute. The count follows changes such as adding, deleting, loading, Arc Dual, and Reverse One Arc.
 
-Existing lattice fills can be adjusted with Edit Lattice. The tool exposes draggable A and B vector endpoints at the source motif's center, updates valid repeat vectors and virtual copies while dragging, commits both changes when the tool is closed, and restores the entry-state vectors when canceled with Escape. If multiple fills exist, selecting one of a fill's source tiles identifies the fill to edit.
+Tiling Fill combines lattice creation and editing. A complete source-tile set can own only one lattice fill: selecting that same set and choosing Tiling Fill again exposes draggable A and B vector endpoints rather than creating a duplicate fill. The tool updates valid repeat vectors and virtual copies while dragging, commits both changes when the tool is closed, and restores the entry-state vectors when canceled with Escape.
 
 ### Fill styles
 Fill styles are selected from a set of pattern options and include solid fills, dotted/crosshatched/striped patterns, and image-based fills such as cookie, Oreo, donut, clouds, marble, and wood. The current interface exposes previews for these options.
@@ -133,6 +133,7 @@ Use this checklist for practical verification in this repository:
 6. If Help / Tutorial content changed, verify that the modal text still matches the actual controls and behavior.
 7. If a version label or release-related change is made, verify both the visible label and the Version History content consistently.
 8. Review the final diff for unintended or unrelated modifications.
+9. Load the Donut Trio example and verify that sprinkle, chocolate, and glazed donut images all render on the canvas and in an exported PNG.
 
 ## 10. Current concerns and technical debt
 ### Definite observations

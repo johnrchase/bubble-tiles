@@ -1312,8 +1312,8 @@ body.ctrl-pan-mode svg.panning {
   stroke-width: 1.8;
 }
 
-.edit-lattice-button.is-active,
-[data-command="editLattice"].is-active {
+#latticeFill.is-active,
+[data-command="latticeFill"].is-active {
   border-color: #1f75cb;
   background: #dceeff;
   box-shadow: 0 0 0 2px rgba(31, 117, 203, 0.2);
