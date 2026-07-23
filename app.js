@@ -2754,6 +2754,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let customImageSearchPageCount = 1;
   let sharedBorderRefreshRequest = null;
   let hasShown13FrameHint = false;
+  let hasShownSmallFrameHint = false;
   let hasShown3AHint = false;
   let hasShownOverlapHint = false;
   const shownMonotileHints = new Set();
@@ -2825,7 +2826,29 @@ window.addEventListener("DOMContentLoaded", () => {
 
   async function imageFillExportHref(pattern) {
     const href = imageFillHref(pattern);
-    return href || "";
+    if (!href || href.startsWith("data:")) return href || "";
+    if (IMAGE_FILL_EXPORT_CACHE.has(href)) return IMAGE_FILL_EXPORT_CACHE.get(href);
+
+    const embeddedHref = (async () => {
+      try {
+        const response = await fetch(href);
+        if (!response.ok) throw new Error("Could not fetch image asset: " + href);
+        return await blobToDataUri(await response.blob());
+      } catch (fetchError) {
+        // Direct file previews may not permit fetch(), even though the browser
+        // can display the same local image. Rasterize that loaded image into a
+        // data URI so PNG/JPG export remains self-contained.
+        try {
+          return await imageElementToDataUri(href, pattern);
+        } catch (imageError) {
+          console.warn("Could not embed image fill for export.", fetchError, imageError);
+          return href;
+        }
+      }
+    })();
+
+    IMAGE_FILL_EXPORT_CACHE.set(href, embeddedHref);
+    return embeddedHref;
   }
 
   async function imageFillExportHrefOverrides(patterns = Object.keys(IMAGE_FILL_ASSETS)) {
@@ -3759,6 +3782,12 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (tileType === "FMINI" && !hasShownSmallFrameHint) {
+      hasShownSmallFrameHint = true;
+      showTemporaryHint("This frame is special because it tiles the plane. Once you fill this small frame, remove the frame and use the lattice tool to extend your design in all directions!", 18000);
+      return;
+    }
+
     if (tileType === "FFLOWWIDE") {
       showTemporaryHint("Challenge: Can you fill this frame with the Triangular, Rhombic, and Trapezoidal bubble tiles, using exactly ONE of every tile?", 10000);
       return;
@@ -3787,7 +3816,10 @@ window.addEventListener("DOMContentLoaded", () => {
       if (!definition || definition.isFrame || !Array.isArray(definition.bites)) return;
 
       definition.bites.forEach(edge => {
-        if (edge === 1) bites += 1;
+        // A Soft Tile is counted as an H0 tile with a T3 tile attached at
+        // each point: every point exposes two bites, while each remaining
+        // circular side contributes one bump.
+        if (edge === 1) bites += definition.isSoftTile ? 2 : 1;
         else if (edge === 0) bumps += 1;
       });
     });
@@ -8607,6 +8639,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function renderExportPicturePreview() {
     exportAreaPreview.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
+    // The preview viewport can be wider or taller than its SVG viewBox.
+    // Match any resulting letterbox area to the actual canvas background.
+    exportAreaPreview.style.backgroundColor = canvasBackgroundColor;
     exportPreviewContent.innerHTML = "";
 
     const background = document.createElementNS(SVG_NS, "rect");
@@ -10966,8 +11001,37 @@ ${svgString}
     });
 
     if (fillPatternPreviewGrid) {
+      const ids = selectedIds();
+      const framesOnly = ids.length > 0 && ids.every(id => {
+        const state = tiles[id];
+        const definition = state ? tileDefinitions[state.tileType] : null;
+        return !!(definition && definition.isFrame);
+      });
       fillPatternPreviewGrid.querySelectorAll("[data-fill-pattern]").forEach(button => {
         button.classList.toggle("is-active", button.dataset.fillPattern === fillPattern);
+        button.disabled = framesOnly;
+      });
+      if (buttons.fillPatternPicker) buttons.fillPatternPicker.disabled = framesOnly;
+      if (buttons.menuFillPatternPicker) buttons.menuFillPatternPicker.disabled = framesOnly;
+      if (buttons.customStyleButton) {
+        buttons.customStyleButton.disabled = framesOnly;
+        buttons.customStyleButton.title = framesOnly
+          ? "Frames support solid fill colors only."
+          : "Custom image fill: select one tile, then upload, crop, and resize an image inside it";
+      }
+      if (tileTextButton) {
+        tileTextButton.disabled = framesOnly;
+        tileTextButton.title = framesOnly
+          ? "Frames support solid fill colors only."
+          : "Add text: place styled text inside one selected tile";
+      }
+      document.querySelectorAll('[data-command="openCustomImage"], [data-command="openTileText"]').forEach(control => {
+        control.disabled = framesOnly;
+        control.title = framesOnly
+          ? "Frames support solid fill colors only."
+          : (control.dataset.command === "openCustomImage"
+            ? "Choose, paste, drop, or search for an image to place inside one selected tile"
+            : "Add styled text inside one selected tile");
       });
     }
 
@@ -11421,6 +11485,10 @@ ${svgString}
     const tileId = ids[0];
     const state = tiles[tileId];
     const baseDefinition = state ? tileDefinitions[state.tileType] : null;
+    if (baseDefinition && baseDefinition.isFrame) {
+      setStatus("Frames support solid fill colors only; text cannot be added.");
+      return;
+    }
     if (!state || !baseDefinition || baseDefinition.isCanvasImage) {
       setStatus("Add Text works on tile shapes, not pasted canvas images.");
       return;
@@ -11483,6 +11551,10 @@ ${svgString}
     const state = tiles[tileId];
     const definition = state ? tileDefinitions[state.tileType] : null;
     if (!state || !definition) return;
+    if (definition.isFrame) {
+      setStatus("Frames support solid fill colors only; images cannot be added.");
+      return;
+    }
     if (definition.isCanvasImage) {
       setStatus("Custom Image Fill works on tile shapes, not pasted canvas images.");
       return;
@@ -11647,15 +11719,16 @@ ${svgString}
     const style = formatPainterStyle;
     targetIds.forEach(tileId => {
       const state = tiles[tileId];
+      const definition = tileDefinitions[state.tileType];
       state.fillColor = style.fillColor;
-      state.fillPattern = style.fillPattern;
-      state.fillPatternAngle = defaultFillPatternAngleForTile(state, style.fillPattern);
+      state.fillPattern = definition && definition.isFrame ? "solid" : style.fillPattern;
+      state.fillPatternAngle = definition && definition.isFrame ? 0 : defaultFillPatternAngleForTile(state, style.fillPattern);
       state.fillOpacity = style.fillOpacity;
       state.strokeColor = style.strokeColor;
       state.strokeStyle = style.strokeStyle;
       state.strokeWidth = style.strokeWidth;
-      state.customImage = cloneCustomImage(style.customImage);
-      state.tileText = cloneTileText(style.tileText);
+      state.customImage = definition && definition.isFrame ? null : cloneCustomImage(style.customImage);
+      state.tileText = definition && definition.isFrame ? null : cloneTileText(style.tileText);
       updateTileAppearance(tileId);
       updateTileTransform(tileId);
     });
@@ -12152,6 +12225,13 @@ ${svgString}
 
     ids.forEach(id => {
       tiles[id].fillColor = buttons.fillColorPicker.value;
+      const definition = tileDefinitions[tiles[id].tileType];
+      if (definition && definition.isFrame) {
+        tiles[id].fillPattern = "solid";
+        tiles[id].fillPatternAngle = 0;
+        tiles[id].customImage = null;
+        tiles[id].tileText = null;
+      }
       updateTileAppearance(id);
       updateTileTransform(id);
     });
@@ -12175,8 +12255,13 @@ ${svgString}
     }
 
     const selectedPattern = buttons.fillPatternPicker.value;
+    const editableIds = ids.filter(id => {
+      const state = tiles[id];
+      const definition = state ? tileDefinitions[state.tileType] : null;
+      return !(definition && definition.isFrame);
+    });
 
-    ids.forEach(id => {
+    editableIds.forEach(id => {
       tiles[id].fillPattern = selectedPattern;
       tiles[id].fillPatternAngle = defaultFillPatternAngleForTile(tiles[id], selectedPattern);
       tiles[id].customImage = null;
@@ -12187,10 +12272,12 @@ ${svgString}
     renderLatticeFills();
 
     if (shouldRecord) {
-      recordHistory();
-      setStatus("Updated fill pattern.");
+      if (editableIds.length > 0) recordHistory();
+      setStatus(editableIds.length === 0
+        ? "Frames support solid fill colors only."
+        : (editableIds.length < ids.length ? "Updated fill pattern; frames remained solid." : "Updated fill pattern."));
     } else {
-      setStatus("Previewing fill pattern.");
+      setStatus(editableIds.length === 0 ? "Frames support solid fill colors only." : "Previewing fill pattern.");
     }
   }
 
@@ -12460,6 +12547,18 @@ ${svgString}
     };
     customStylePreview.addEventListener("pointerup", finishCustomStyleDrag);
     customStylePreview.addEventListener("pointercancel", finishCustomStyleDrag);
+    customStylePreview.addEventListener("wheel", event => {
+      if (!customStyleEditor || !customStyleEditor.draft || !customImageZoom) return;
+      event.preventDefault();
+      const minimum = Number(customImageZoom.min) || 0.25;
+      const maximum = Number(customImageZoom.max) || 4;
+      const current = Number(customImageZoom.value) || 1;
+      const factor = event.deltaY < 0 ? 1.08 : 1 / 1.08;
+      const zoom = Math.max(minimum, Math.min(maximum, current * factor));
+      customImageZoom.value = String(zoom);
+      customStyleEditor.draft.scale = customStyleEditor.fitScale * zoom;
+      renderCustomStylePreview();
+    }, { passive: false });
   }
 
   if (customStyleDropZone) {

@@ -13,7 +13,9 @@ Created by John Chase.
 ## Version 1.6.1 patch
 
 - Tiling Fill now edits an existing lattice when the same complete source-tile set is selected, preventing duplicate lattices for one source set
-- Restored chocolate- and glazed-donut fills and added the Bubble Bubble Tiles example
+- Restored reliable donut previews and picture exports and added the Bubble Bubble Tiles example
+- Custom Image Fill supports mouse-wheel resizing; the Small frame explains its periodic use; frames accept solid colors but not decorative fills
+- Soft Tiles contribute to the live totals as an H0 tile with attached T3 tiles: two bites per point and one bump per non-point
 
 ## What's new in version 1.6
 
