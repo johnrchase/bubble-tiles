@@ -47,7 +47,7 @@
     },
     {
       "id": "tile24",
-      "tileType": "B3C",
+      "tileType": "B3B",
       "x": 150,
       "y": 423.923,
       "rotation": 90,
@@ -101,7 +101,7 @@
     },
     {
       "id": "tile27",
-      "tileType": "B3B",
+      "tileType": "B3C",
       "x": 630,
       "y": 423.923,
       "rotation": 30,

@@ -74,27 +74,6 @@
                  ]
     },
     {
-        "id":  "octagon-star",
-        "title":  "Octagon Star",
-        "description":  "An eight-point star construction combining the regular 8/2 star with 45-degree rhombs.",
-        "file":  "octagon-star.json",
-        "tags":  [
-                     "stars",
-                     "45-degree geometry",
-                     "lattice"
-                 ]
-    },
-    {
-        "id":  "tangrams",
-        "title":  "Tangrams",
-        "description":  "A classic seven-piece tangram set using squares, 45-45-90 triangles, and a tangram parallelogram.",
-        "file":  "tangrams.json",
-        "tags":  [
-                     "tangrams",
-                     "45-degree geometry"
-                 ]
-    },
-    {
         "id":  "mixed-bubble-tile-lattice-h4b-t1",
         "title":  "Mixed Bubble Tiling H4B/T1",
         "description":  "A tiling example combining H4B with triangular T1 bubble tiles.",
@@ -113,26 +92,6 @@
                      "tiling",
                      "square bubble tiles",
                      "puzzle edge"
-                 ]
-    },
-    {
-        "id":  "hex-puzzle-spiral-h1-h5",
-        "title":  "Hex Puzzle Spiral H1/H5",
-        "description":  "A large spiral patch built from hexagonal puzzle tiles H1 and H5.",
-        "file":  "hex-puzzle-spiral-h1-h5.json",
-        "tags":  [
-                     "hexagonal puzzle tiles",
-                     "spiral"
-                 ]
-    },
-    {
-        "id":  "spectre-cluster",
-        "title":  "Spectre Cluster",
-        "description":  "A starter cluster made with Spectre monotiles.",
-        "file":  "spectre-cluster.json",
-        "tags":  [
-                     "monotiles",
-                     "spectre"
                  ]
     },
     {
@@ -156,56 +115,15 @@
                  ]
     },
     {
-        "id":  "regular-polygon-lattice-tri-square-hex",
-        "title":  "Regular Polygon Tiling",
-        "description":  "A colored tiling made from regular triangles, squares, and hexagons.",
-        "file":  "regular-polygon-lattice-tri-square-hex.json",
+        "id":  "small-frame-lattice",
+        "title":  "Small Frame Lattice H1/H4B/H6",
+        "description":  "A periodic extension of a seven-tile Small frame solution using H1, H4B, and H6 hexagonal bubble tiles.",
+        "file":  "small-frame-lattice.json",
         "tags":  [
                      "tiling",
-                     "regular polygons"
-                 ]
-    },
-    {
-        "id":  "soft-sf1-sf3b-lattice",
-        "title":  "Soft Tile Tiling SF1/SF3B",
-        "description":  "A tiling example using soft tiles SF1 and SF3B.",
-        "file":  "soft-sf1-sf3b-lattice.json",
-        "tags":  [
-                     "tiling",
-                     "soft tiles"
-                 ]
-    },
-    {
-        "id":  "soft-sf0-sf3c-lattice",
-        "title":  "Soft Tile Tiling SF0/SF3C",
-        "description":  "A periodic tiling using one SF0 and two SF3C soft tiles.",
-        "file":  "soft-sf0-sf3c-lattice.json",
-        "tags":  [
-                     "tiling",
-                     "soft tiles",
+                     "frames",
+                     "hexagonal bubble tiles",
                      "lattice"
-                 ]
-    },
-    {
-        "id":  "cloud-soft-sf2b-lattice",
-        "title":  "Cloud Soft Tile Tiling SF2B",
-        "description":  "A single soft SF2B tile with a cloud texture repeated by tiling fill.",
-        "file":  "cloud-soft-sf2b-lattice.json",
-        "tags":  [
-                     "tiling",
-                     "soft tiles",
-                     "textures"
-                 ]
-    },
-    {
-        "id":  "pacman-octagon-tessellation",
-        "title":  "Pac-Man Octagon Tiling",
-        "description":  "A large tiling patch using the Pac-Man Octagon 1 shape.",
-        "file":  "pacman-octagon-tessellation.json",
-        "tags":  [
-                     "other shapes",
-                     "pac-man octagon",
-                     "tiling"
                  ]
     },
     {
@@ -216,39 +134,6 @@
         "tags":  [
                      "tiling",
                      "rhombic bubble tiles"
-                 ]
-    },
-    {
-        "id":  "pacman-pentagon-tessellation",
-        "title":  "Pac-Man Pentagon Tiling",
-        "description":  "A large tiling built from Pac-Man Pentagon tiles.",
-        "file":  "pacman-pentagon-tessellation.json",
-        "tags":  [
-                     "other shapes",
-                     "pac-man pentagon",
-                     "tiling"
-                 ]
-    },
-    {
-        "id":  "puzzle-squiggle-octagon-lattice",
-        "title":  "Puzzle Squiggle Octagon Tiling",
-        "description":  "A three-tile tiling seed using puzzle-styled Squiggle Octagon bubble tiles.",
-        "file":  "puzzle-squiggle-octagon-lattice.json",
-        "tags":  [
-                     "tiling",
-                     "squiggle octagon",
-                     "puzzle edge"
-                 ]
-    },
-    {
-        "id":  "arc-squiggle-octagon-lattice",
-        "title":  "Arc Squiggle Octagon Tiling",
-        "description":  "A three-tile Squiggle Octagon tiling seed using the 60° arc Bubble Style.",
-        "file":  "arc-squiggle-octagon-lattice.json",
-        "tags":  [
-                     "tiling",
-                     "squiggle octagon",
-                     "60° arc"
                  ]
     },
     {
@@ -264,36 +149,13 @@
     },
     {
         "id":  "spike-bubble-style-lattice",
-        "title":  "Spike Style Tiling H3C/H3A",
-        "description":  "A tiling example using the compact Spike Bubble Style on H3C/H3A triangular bubble tiles.",
+        "title":  "Spike Style Tiling H3B/H3A",
+        "description":  "A tiling example using the compact Spike Bubble Style on H3B/H3A hexagonal bubble tiles.",
         "file":  "spike-bubble-style-lattice.json",
         "tags":  [
                      "tiling",
                      "bubble style",
                      "spike edge"
-                 ]
-    },
-    {
-        "id":  "heesch-number-1",
-        "title":  "Heesch Number 1",
-        "description":  "A Heesch-number-one example layout using soft, hexagonal bubble, and five-sided trapezoid-based tiles.",
-        "file":  "heesch-number-1.json",
-        "tags":  [
-                     "Heesch number",
-                     "examples",
-                     "soft tiles",
-                     "five-sided"
-                 ]
-    },
-    {
-        "id":  "infinite-soft-tiling",
-        "title":  "Infinite Soft Tiling",
-        "description":  "A large soft-tile periodic lattice using a virtual lattice fill.",
-        "file":  "infinite-soft-tiling.json",
-        "tags":  [
-                     "tiling",
-                     "soft tiles",
-                     "lattice"
                  ]
     },
     {
@@ -305,6 +167,19 @@
                      "tiling",
                      "dodecagon",
                      "Square Tooth"
+                 ]
+    },
+    {
+        "id":  "six-point-star-puzzle-tiling",
+        "title":  "Six-Point Star Puzzle Tiling",
+        "description":  "A four-tile periodic design combining a bubble-converted six-point star with three T0 triangular bubble tiles.",
+        "file":  "six-point-star-puzzle-tiling.json",
+        "tags":  [
+                     "tiling",
+                     "star",
+                     "puzzle style",
+                     "triangular bubble tiles",
+                     "lattice"
                  ]
     },
     {
@@ -331,8 +206,8 @@
     },
     {
         "id":  "hexagonal-bubble-pinwheel-lattice",
-        "title":  "Hexagonal Tiling H2C/H3B/H4B",
-        "description":  "A twelve-tile periodic design using H2C, H3B, and H4B hexagonal bubble tiles.",
+        "title":  "Hexagonal Tiling H2C/H3C/H4B",
+        "description":  "A twelve-tile periodic design using H2C, H3C, and H4B hexagonal bubble tiles.",
         "file":  "hexagonal-bubble-pinwheel-lattice.json",
         "tags":  [
                      "tiling",
@@ -342,24 +217,13 @@
     },
     {
         "id":  "hexagonal-bubble-trio-lattice",
-        "title":  "Bubble Trio Tiling H0/H6/H3C",
-        "description":  "A three-tile periodic design using H0, H3C, and H6 hexagonal bubble tiles.",
+        "title":  "Bubble Trio Tiling H0/H6/H3B",
+        "description":  "A three-tile periodic design using H0, H3B, and H6 hexagonal bubble tiles.",
         "file":  "hexagonal-bubble-trio-lattice.json",
         "tags":  [
                      "tiling",
                      "hexagonal bubble tiles",
                      "lattice"
-                 ]
-    },
-    {
-        "id":  "beautiful-penrose-flower",
-        "title":  "Beautiful Penrose Flower",
-        "description":  "A large flower construction made from bubble-converted thin Penrose rhombs.",
-        "file":  "beautiful-penrose-flower.json",
-        "tags":  [
-                     "Penrose rhombs",
-                     "flower",
-                     "bubble tiles"
                  ]
     },
     {
@@ -394,6 +258,191 @@
                      "balance equation",
                      "rhombic bubble tiles",
                      "hexagonal bubble tiles"
+                 ]
+    },
+    {
+        "id":  "soft-sf1-sf3b-lattice",
+        "title":  "Soft Tile Tiling SF1/SF3B",
+        "description":  "A tiling example using soft tiles SF1 and SF3B.",
+        "file":  "soft-sf1-sf3b-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles"
+                 ]
+    },
+    {
+        "id":  "soft-sf0-sf3c-lattice",
+        "title":  "Soft Tile Tiling SF0/SF3C",
+        "description":  "A periodic tiling using one SF0 and two SF3C soft tiles.",
+        "file":  "soft-sf0-sf3c-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "soft-sf0-sf3a-lattice",
+        "title":  "Soft Tile Tiling SF0/SF3A",
+        "description":  "A periodic tiling using one SF0 and two SF3A soft tiles.",
+        "file":  "soft-sf0-sf3a-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "cloud-soft-sf2b-lattice",
+        "title":  "Cloud Soft Tile Tiling SF2B",
+        "description":  "A single soft SF2B tile with a cloud texture repeated by tiling fill.",
+        "file":  "cloud-soft-sf2b-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles",
+                     "textures"
+                 ]
+    },
+    {
+        "id":  "infinite-soft-tiling",
+        "title":  "Infinite Soft Tiling",
+        "description":  "A large soft-tile periodic lattice using a virtual lattice fill.",
+        "file":  "infinite-soft-tiling.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "soft-rhombic-triangular-tiling",
+        "title":  "Soft, Rhombic, and Triangular Tiling",
+        "description":  "A periodic mixed-family design combining Soft Tile S6, Rhombic R2B, and Triangular T0, T2, and T3 tiles.",
+        "file":  "soft-rhombic-triangular-tiling.json",
+        "tags":  [
+                     "tiling",
+                     "soft tiles",
+                     "rhombic bubble tiles",
+                     "triangular bubble tiles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "octagon-star",
+        "title":  "Octagon Star",
+        "description":  "An eight-point star construction combining the regular 8/2 star with 45-degree rhombs.",
+        "file":  "octagon-star.json",
+        "tags":  [
+                     "stars",
+                     "45-degree geometry",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "regular-polygon-lattice-tri-square-hex",
+        "title":  "Rhombi-tri-hexagonal Tiling (3.4.6.4)",
+        "description":  "The semiregular 3.4.6.4 tiling built from regular triangles, squares, and hexagons.",
+        "file":  "regular-polygon-lattice-tri-square-hex.json",
+        "tags":  [
+                     "tiling",
+                     "regular polygons"
+                 ]
+    },
+    {
+        "id":  "puzzle-squiggle-octagon-lattice",
+        "title":  "Puzzle Squiggle Octagon Tiling",
+        "description":  "A three-tile tiling seed using puzzle-styled Squiggle Octagon bubble tiles.",
+        "file":  "puzzle-squiggle-octagon-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "squiggle octagon",
+                     "puzzle edge"
+                 ]
+    },
+    {
+        "id":  "arc-squiggle-octagon-lattice",
+        "title":  "Arc Squiggle Octagon Tiling",
+        "description":  "A three-tile Squiggle Octagon tiling seed using the 60Â° arc Bubble Style.",
+        "file":  "arc-squiggle-octagon-lattice.json",
+        "tags":  [
+                     "tiling",
+                     "squiggle octagon",
+                     "60Â° arc"
+                 ]
+    },
+    {
+        "id":  "hex-puzzle-spiral-h1-h5",
+        "title":  "Hex Puzzle Spiral H1/H5",
+        "description":  "A large spiral patch built from hexagonal puzzle tiles H1 and H5.",
+        "file":  "hex-puzzle-spiral-h1-h5.json",
+        "tags":  [
+                     "hexagonal puzzle tiles",
+                     "spiral"
+                 ]
+    },
+    {
+        "id":  "pacman-octagon-tessellation",
+        "title":  "Pac-Man Octagon Tiling",
+        "description":  "A large tiling patch using the Pac-Man Octagon 1 shape.",
+        "file":  "pacman-octagon-tessellation.json",
+        "tags":  [
+                     "other shapes",
+                     "pac-man octagon",
+                     "tiling"
+                 ]
+    },
+    {
+        "id":  "pacman-pentagon-tessellation",
+        "title":  "Pac-Man Pentagon Tiling",
+        "description":  "A large tiling built from Pac-Man Pentagon tiles.",
+        "file":  "pacman-pentagon-tessellation.json",
+        "tags":  [
+                     "other shapes",
+                     "pac-man pentagon",
+                     "tiling"
+                 ]
+    },
+    {
+        "id":  "spectre-cluster",
+        "title":  "Spectre Cluster",
+        "description":  "A starter cluster made with Spectre monotiles.",
+        "file":  "spectre-cluster.json",
+        "tags":  [
+                     "monotiles",
+                     "spectre"
+                 ]
+    },
+    {
+        "id":  "tangrams",
+        "title":  "Tangrams",
+        "description":  "A classic seven-piece tangram set using squares, 45-45-90 triangles, and a tangram parallelogram.",
+        "file":  "tangrams.json",
+        "tags":  [
+                     "tangrams",
+                     "45-degree geometry"
+                 ]
+    },
+    {
+        "id":  "beautiful-penrose-flower",
+        "title":  "Beautiful Penrose Flower",
+        "description":  "A large flower construction made from bubble-converted thin Penrose rhombs.",
+        "file":  "beautiful-penrose-flower.json",
+        "tags":  [
+                     "Penrose rhombs",
+                     "flower",
+                     "bubble tiles"
+                 ]
+    },
+    {
+        "id":  "heesch-number-1",
+        "title":  "Heesch Number 1",
+        "description":  "A Heesch-number-one example layout using soft, hexagonal bubble, and five-sided trapezoid-based tiles.",
+        "file":  "heesch-number-1.json",
+        "tags":  [
+                     "Heesch number",
+                     "examples",
+                     "soft tiles",
+                     "five-sided"
                  ]
     }
 ]

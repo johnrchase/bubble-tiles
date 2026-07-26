@@ -11,7 +11,7 @@
   "tiles": [
     {
       "id": "tile17",
-      "tileType": "B3B",
+      "tileType": "B3C",
       "x": 464.142,
       "y": 779.295,
       "rotation": -90,
@@ -47,7 +47,7 @@
     },
     {
       "id": "tile19",
-      "tileType": "B3B",
+      "tileType": "B3C",
       "x": 464.142,
       "y": 917.859,
       "rotation": -30,
@@ -119,7 +119,7 @@
     },
     {
       "id": "tile23",
-      "tileType": "B3B",
+      "tileType": "B3C",
       "x": 824.142,
       "y": 710.013,
       "rotation": 30,
@@ -155,7 +155,7 @@
     },
     {
       "id": "tile25",
-      "tileType": "B3B",
+      "tileType": "B3C",
       "x": 824.142,
       "y": 571.449,
       "rotation": 90,

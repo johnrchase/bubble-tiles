@@ -1,0 +1,115 @@
+{
+  "version": 4,
+  "canvasBackgroundColor": "#fafafa",
+  "latticeCopyOpacity": 1,
+  "viewBox": {
+    "x": -452.627,
+    "y": -27.387,
+    "width": 859.192,
+    "height": 601.434
+  },
+  "tiles": [
+    {
+      "id": "tile9",
+      "tileType": "ARCV_BUBBLE_OP_STAR6_111011101110",
+      "x": -22.273,
+      "y": 287.462,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "puzzle"
+    },
+    {
+      "id": "tile15",
+      "tileType": "T0",
+      "x": -102.273,
+      "y": 195.086,
+      "rotation": 0,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "puzzle"
+    },
+    {
+      "id": "tile16",
+      "tileType": "T0",
+      "x": 17.727,
+      "y": 171.992,
+      "rotation": -60,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "puzzle"
+    },
+    {
+      "id": "tile17",
+      "tileType": "T0",
+      "x": -142.273,
+      "y": 310.556,
+      "rotation": 60,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "puzzle"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group1",
+      "children": [
+        "tile9",
+        "tile15",
+        "tile16",
+        "tile17"
+      ]
+    }
+  ],
+  "latticeFills": [
+    {
+      "id": "lattice1",
+      "sourceIds": [
+        "tile9",
+        "tile15",
+        "tile16",
+        "tile17"
+      ],
+      "vectorA": {
+        "x": -40,
+        "y": -207.846
+      },
+      "vectorB": {
+        "x": -200,
+        "y": -69.282
+      }
+    }
+  ]
+}

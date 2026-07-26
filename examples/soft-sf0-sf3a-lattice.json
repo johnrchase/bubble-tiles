@@ -1,19 +1,37 @@
 {
   "version": 4,
   "canvasBackgroundColor": "#fafafa",
-  "latticeCopyOpacity": 1,
+  "latticeCopyOpacity": 0.6,
   "viewBox": {
-    "x": 56.875,
-    "y": 31.354,
-    "width": 900,
-    "height": 630
+    "x": -453.897,
+    "y": -163.281,
+    "width": 1950.047,
+    "height": 1365.032
   },
   "tiles": [
     {
       "id": "tile1",
-      "tileType": "B3B",
-      "x": 473.106,
-      "y": 412.085,
+      "tileType": "SF0",
+      "x": 315.12,
+      "y": 477.841,
+      "rotation": 30,
+      "flipX": 1,
+      "flipY": 1,
+      "scale": 1,
+      "fillColor": null,
+      "fillPattern": "solid",
+      "fillPatternAngle": 0,
+      "fillOpacity": 1,
+      "strokeColor": null,
+      "strokeStyle": "solid",
+      "strokeWidth": 3,
+      "edgeDecoration": "none"
+    },
+    {
+      "id": "tile2",
+      "tileType": "SF3A",
+      "x": 475.12,
+      "y": 477.841,
       "rotation": 90,
       "flipX": 1,
       "flipY": 1,
@@ -23,34 +41,16 @@
       "fillPatternAngle": 0,
       "fillOpacity": 1,
       "strokeColor": null,
-      "strokeStyle": "none",
-      "strokeWidth": 3,
-      "edgeDecoration": "none"
-    },
-    {
-      "id": "tile2",
-      "tileType": "B0",
-      "x": 473.106,
-      "y": 273.521,
-      "rotation": 30,
-      "flipX": 1,
-      "flipY": 1,
-      "scale": 1,
-      "fillColor": null,
-      "fillPattern": "solid",
-      "fillPatternAngle": 0,
-      "fillOpacity": 1,
-      "strokeColor": null,
-      "strokeStyle": "none",
+      "strokeStyle": "solid",
       "strokeWidth": 3,
       "edgeDecoration": "none"
     },
     {
       "id": "tile3",
-      "tileType": "B6",
-      "x": 593.106,
-      "y": 342.803,
-      "rotation": 30,
+      "tileType": "SF3A",
+      "x": 155.12,
+      "y": 477.841,
+      "rotation": -90,
       "flipX": 1,
       "flipY": 1,
       "scale": 1,
@@ -59,7 +59,7 @@
       "fillPatternAngle": 0,
       "fillOpacity": 1,
       "strokeColor": null,
-      "strokeStyle": "none",
+      "strokeStyle": "solid",
       "strokeWidth": 3,
       "edgeDecoration": "none"
     }
@@ -83,12 +83,12 @@
         "tile3"
       ],
       "vectorA": {
-        "x": 120,
-        "y": 207.846
+        "x": 480,
+        "y": 0
       },
       "vectorB": {
-        "x": 120,
-        "y": -207.846
+        "x": 240,
+        "y": 138.564
       }
     }
   ]

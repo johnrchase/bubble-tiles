@@ -137,7 +137,7 @@
     },
     {
       "id": "tile3",
-      "tileType": "B3C",
+      "tileType": "B3B",
       "x": 370,
       "y": -27.846,
       "rotation": 30,
@@ -155,7 +155,7 @@
     },
     {
       "id": "tile18",
-      "tileType": "B3C",
+      "tileType": "B3B",
       "x": 490,
       "y": 180,
       "rotation": 90,
@@ -173,7 +173,7 @@
     },
     {
       "id": "tile19",
-      "tileType": "B3C",
+      "tileType": "B3B",
       "x": 370,
       "y": 387.846,
       "rotation": 150,
@@ -191,7 +191,7 @@
     },
     {
       "id": "tile20",
-      "tileType": "B3C",
+      "tileType": "B3B",
       "x": 130,
       "y": 387.846,
       "rotation": -150,
@@ -209,7 +209,7 @@
     },
     {
       "id": "tile21",
-      "tileType": "B3C",
+      "tileType": "B3B",
       "x": 10,
       "y": 180,
       "rotation": -90,
@@ -227,7 +227,7 @@
     },
     {
       "id": "tile4",
-      "tileType": "B3C",
+      "tileType": "B3B",
       "x": 130,
       "y": -27.846,
       "rotation": 90,

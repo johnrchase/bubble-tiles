@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Bubble Tiles 1.6</title>
+<title>Bubble Tiles 1.7</title>
 <link href="assets/logo-two-tiles-favicon.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -15,7 +15,7 @@
 <div id="toolbar">
 <div class="brand">
 <img alt="" class="brand-logo-image" src="assets/logo-two-tiles.png"/>
-<span class="brand-wordmark">Bubble Tiles 1.6</span>
+<span class="brand-wordmark">Bubble Tiles 1.7</span>
 </div>
 <div class="menu-strip">
 <details class="toolbar-menu" id="fileMenu">
@@ -543,8 +543,10 @@
 <button class="icon-button" id="closeVersionHistory" title="Close Version History">✕</button>
 </div>
 <div class="about-body">
+<p><strong>Bubble Tiles 1.7</strong></p>
+<p>Version 1.7 corrects the H3B/H3C identities and colors; improves complex lattice rendering near source motifs; adds tile-family and tray-tab hover guidance; organizes the expanded Examples gallery into collapsible thematic sections; and adds four periodic examples.</p>
 <p><strong>Bubble Tiles 1.6.1</strong></p>
-<p>Version 1.6.1 combines lattice creation and editing in Tiling Fill, prevents duplicate lattices for the same source set, restores reliable donut previews and picture exports, adds the Bubble Bubble Tiles example, supports mouse-wheel image resizing, keeps frames limited to solid-color fills, and includes Soft Tiles in bite-and-bump totals.</p>
+<p>Version 1.6.1 combines lattice creation and editing in Tiling Fill, prevents duplicate lattices for the same source set, restores reliable donut previews and picture exports, adds the Bubble Bubble Tiles example, supports mouse-wheel image resizing, limits frames to solid-color fills, and includes Soft Tiles in bite-and-bump totals.</p>
 <p><strong>Bubble Tiles 1.6</strong></p>
 <p>Version 1.6 adds a live bite-and-bump count; editable lattice vectors; custom image fills with upload, paste, drag-and-drop, paginated Openverse search, positioning, and cropping; styled text clipped inside tiles; a new image-filled example; corrected view-scaling canvas borders; and a more visual, staged Explore tutorial.</p>
 <p><strong>Bubble Tiles 1.5</strong></p>
@@ -595,7 +597,7 @@
 <div class="modal-backdrop" hidden="" id="helpModal">
 <div aria-labelledby="helpTitle" aria-modal="true" class="about-dialog help-dialog" role="dialog">
 <div class="about-header">
-<h2 id="helpTitle">Bubble Tiles 1.6 Help</h2>
+<h2 id="helpTitle">Bubble Tiles 1.7 Help</h2>
 <button class="icon-button" id="closeHelp" title="Close Help">✕</button>
 </div>
 <div class="about-body help-body">
@@ -623,7 +625,7 @@
 <div class="help-section-title">Adding and arranging tiles</div>
 <div class="help-tool">
 <span class="help-icon">▣</span>
-<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Open a family, then click a tile or drag it onto the canvas. “Add all” places a whole family in a reference arrangement. In the Examples tab, click an example's preview or name to replace the canvas and hover for its description. You can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
+<div><strong>Tiles and Examples.</strong> Use the Tiles tab to add tiles. Hover over a family heading for a brief description, then open it and click a tile or drag it onto the canvas. “Add all” places a whole family in a reference arrangement. In the Examples tab, hover over and open a thematic section, then click an example's preview or name to replace the canvas; hover over an example for its description. You can also drag a Bubble Tiles JSON file directly onto the app to open it.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">◆</span>
@@ -717,7 +719,7 @@
 <div class="help-section-title">Lattice</div>
 <div class="help-tool">
 <svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon lattice-vectors-icon" viewbox="0 0 48 48"><rect class="lattice-seed" x="9" y="27" width="10" height="10" rx="2"></rect><path class="lattice-vector vector-a" d="M20 32H39 M33 26l6 6-6 6"></path><path class="lattice-vector vector-b" d="M14 26V8 M8 14l6-6 6 6"></path><rect class="lattice-ghost ghost-a" x="32" y="27" width="8" height="8" rx="1.5"></rect><rect class="lattice-ghost ghost-b" x="10" y="7" width="8" height="8" rx="1.5"></rect></svg>
-<div><strong>Tiling Fill.</strong> Select a motif, click Tiling Fill, drag a ghost copy to define vector A, then drag another ghost copy to define vector B. A source set can have only one lattice: select that same complete source set and choose Tiling Fill again to drag and readjust its A and B endpoints. Press Esc to cancel. Copies are virtual, preserve source layer order, and redraw as you pan and zoom.</div>
+<div><strong>Tiling Fill.</strong> Select a motif, click Tiling Fill, drag a ghost copy to define vector A, then drag another ghost copy to define vector B. A source set can have only one lattice: select that same complete source set and choose Tiling Fill again to drag and readjust its A and B endpoints. Press Esc to cancel. Copies are virtual, preserve source layer order, and redraw as you pan and zoom. For complex motifs, complete copies nearest the source and viewport center are rendered first.</div>
 </div>
 <div class="help-tool"><span aria-hidden="true" class="help-icon help-lattice-clear-icon"><span class="lattice-clear-icon"><span class="lattice-mini">▦</span><span class="lattice-x">×</span></span></span>
 
@@ -811,8 +813,8 @@
 <aside id="tileTray">
 <div class="tray-header">
 <div aria-label="Tile tray tabs" class="tray-tabs tray-header-tabs" role="tablist">
-<button aria-controls="tilesPanel" aria-selected="true" class="tray-tab active" id="trayTilesTab" role="tab" type="button">Tiles</button>
-<button aria-controls="examplesPanel" aria-selected="false" class="tray-tab" id="trayExamplesTab" role="tab" type="button">Examples</button>
+<button aria-controls="tilesPanel" aria-selected="true" class="tray-tab active" id="trayTilesTab" role="tab" title="Browse tile families. Open a set, then click a tile or drag it onto the canvas." type="button">Tiles</button>
+<button aria-controls="examplesPanel" aria-selected="false" class="tray-tab" id="trayExamplesTab" role="tab" title="Open an example set, then click an example to load it. Hover over headings and examples for descriptions." type="button">Examples</button>
 </div>
 <button class="icon-button tray-toggle" id="toggleTray" title="Collapse tile tray">◀</button>
 </div>
@@ -820,7 +822,7 @@
 <div aria-labelledby="trayTilesTab" class="tray-content tray-panel active" id="tilesPanel" role="tabpanel">
 <div class="tray-family-heading tray-family-plain">BUBBLE TILES</div>
 <details class="tray-section" data-tray-set="hex">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="B3C"></span><span>Hexagonal</span></summary>
+<summary title="Regular hexagons with 60-degree circular arc decorations on their six equal sides."><span class="summary-icon bubble-icon-slot" data-bubble-icon="B3C"></span><span>Hexagonal</span></summary>
 <button class="add-all-button" data-add-collection="hex">Add all 14 Hexagonal</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="B0" title="Add bubble tile 0">
@@ -924,7 +926,7 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="tri">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="T2"></span><span>Triangular</span></summary>
+<summary title="Equilateral triangles with circular arc decorations on their three equal sides."><span class="summary-icon bubble-icon-slot" data-bubble-icon="T2"></span><span>Triangular</span></summary>
 <button class="add-all-button" data-add-collection="tri">Add all 4 Triangular</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="T0" title="Add triangular bubble tile 0">
@@ -946,7 +948,7 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="square">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="Q2A"></span><span>Square</span></summary>
+<summary title="Squares with circular arc decorations on their four equal sides."><span class="summary-icon bubble-icon-slot" data-bubble-icon="Q2A"></span><span>Square</span></summary>
 <button class="add-all-button" data-add-collection="square">Add all 6 Square</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="Q0" title="Add square bubble tile 0">
@@ -976,7 +978,7 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="fiveSided">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="FV3D"></span><span>Pentagonal</span></summary>
+<summary title="Regular pentagons with circular arc decorations on their five equal sides."><span class="summary-icon bubble-icon-slot" data-bubble-icon="FV3D"></span><span>Pentagonal</span></summary>
 <button class="add-all-button" data-add-collection="fiveSided">Add all 8 Pentagonal</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="FV0" title="Add pentagonal bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="FV0"></span><span class="palette-text"><strong>0</strong><small>pentagonal bubble tile</small></span></button>
@@ -990,7 +992,7 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="fourSided">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span>Rhombic</span></summary>
+<summary title="Equilateral 60-degree rhombi with circular arc decorations, including chiral arrangements."><span class="summary-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span>Rhombic</span></summary>
 <button class="add-all-button" data-add-collection="fourSided">Add all 7 Rhombic</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB0" title="Add four-sided bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB0"></span><span class="palette-text"><strong>0</strong><small>rhombic bubble tile</small></span></button>
@@ -1003,7 +1005,7 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="fiveSidedTrapezoid">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11111"></span><span>Trapezoidal</span></summary>
+<summary title="1-1-1-2 trapezoids whose long side is divided into two unit circular arc decorations."><span class="summary-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11111"></span><span>Trapezoidal</span></summary>
 <button class="add-all-button" data-add-collection="fiveSidedTrapezoid">Add all 20 Trapezoidal</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="ARCV_BUBBLE_OP_TRAP_11111" title="Add five-sided trapezoid bubble tile 11111"><span class="shape-icon bubble-icon-slot" data-bubble-icon="ARCV_BUBBLE_OP_TRAP_11111"></span><span class="palette-text"><strong>11111</strong><small>five-sided trapezoid bubble tile</small></span></button>
@@ -1029,7 +1031,7 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="frames">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="FMINI"></span><span>Frames</span></summary>
+<summary title="Bounded regions for finite tiling challenges; fill a frame without gaps or overlaps."><span class="summary-icon bubble-icon-slot" data-bubble-icon="FMINI"></span><span>Frames</span></summary>
 <div class="frame-list">
 <button class="palette-tile" data-tile-type="F13" title="Add One-of-each">
 <span class="shape-icon frame-icon-slot" data-bubble-icon="F13"></span>
@@ -1059,7 +1061,7 @@
 </details>
 <div class="tray-family-heading tray-family-plain">OTHER TILES</div>
 <details class="tray-section" data-tray-set="soft">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="SF3B"></span><span>Soft Tiles</span></summary>
+<summary title="Hexagon-based soft tiles combining circular sides with equilateral triangular points."><span class="summary-icon bubble-icon-slot" data-bubble-icon="SF3B"></span><span>Soft Tiles</span></summary>
 <button class="add-all-button" data-add-collection="soft">Add all 14 Soft tiles</button>
 <div class="bubble-grid soft-bubble-grid"><button class="palette-tile bubble-palette-tile" data-tile-type="SF0" title="Add soft bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF0"></span><span class="palette-text"><strong>0</strong><small>soft bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="SF1" title="Add soft bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF1"></span><span class="palette-text"><strong>1</strong><small>soft bubble tile</small></span></button>
@@ -1077,7 +1079,7 @@
 <button class="palette-tile bubble-palette-tile" data-tile-type="SF6" title="Add soft bubble tile 6"><span class="shape-icon bubble-icon-slot" data-bubble-icon="SF6"></span><span class="palette-text"><strong>6</strong><small>soft bubble tile</small></span></button></div>
 </details>
 <details class="tray-section" data-tray-set="regular">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="PENT"></span><span>Regular polygons</span></summary>
+<summary title="Plain regular polygons with equal sides and equal angles, plus a custom regular n-gon tool."><span class="summary-icon bubble-icon-slot" data-bubble-icon="PENT"></span><span>Regular polygons</span></summary>
 <button class="add-all-button" data-add-collection="regular">Add all 6 regular polygons</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="TRI" title="Add triangle"><span class="shape-icon bubble-icon-slot" data-bubble-icon="TRI"></span><span class="palette-text"><strong>Triangle</strong><small>3 sides</small></span></button>
@@ -1089,7 +1091,7 @@
 </div>
 </details>
 <details class="tray-section" data-tray-set="otherPolygons">
-<summary><span class="summary-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN"></span><span>Other</span></summary>
+<summary title="Special polygons, Penrose tiles, stars, monotiles, and other mathematical shapes."><span class="summary-icon bubble-icon-slot" data-bubble-icon="OP_PACMAN"></span><span>Other</span></summary>
 <button class="add-all-button" data-add-collection="otherPolygons">Add all 24 Other tiles</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="BVLENS" title="Add arc lens tile"><span class="shape-icon bubble-icon-slot" data-bubble-icon="BVLENS"></span><span class="palette-text"><strong>Arc Lens</strong><small>curved lens tile</small></span></button>
@@ -1120,7 +1122,6 @@
 </details>
 </div>
 <div aria-labelledby="trayExamplesTab" class="tray-content tray-panel examples-panel" hidden="" id="examplesPanel" role="tabpanel">
-<p class="examples-intro">Click to load to canvas. Hover for a description.</p>
 <div class="examples-list" id="examplesList"></div>
 </div>
 </aside>

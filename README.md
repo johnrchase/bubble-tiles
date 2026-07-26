@@ -10,6 +10,14 @@ Bubble Tiles runs directly in a modern web browser. A desktop or laptop provides
 
 Created by John Chase.
 
+## What's new in version 1.7
+
+- Corrected H3B/H3C identities and colors across the Hexagonal and puzzle-style families while preserving the established Soft Tile labels and geometry
+- Added hover guidance to tile-family headings and the Tiles and Examples tabs
+- Organized the Examples gallery into collapsible thematic sections
+- Added Small Frame, six-point star puzzle, SF0/SF3A Soft Tile, and mixed Soft/Rhombic/Triangular periodic tilings
+- Improved complex lattice fills so complete motifs near the source tiles and viewport center render before distant copies
+
 ## Version 1.6.1 patch
 
 - Tiling Fill now edits an existing lattice when the same complete source-tile set is selected, preventing duplicate lattices for one source set
