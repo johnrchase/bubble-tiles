@@ -10,6 +10,17 @@ Bubble Tiles runs directly in a modern web browser. A desktop or laptop provides
 
 Created by John Chase.
 
+## What's new in version 1.8
+
+- Improved periodic lattice coverage in normal loaded and panned views
+- Kept Bubble Style, Fill, Outline, Vertices, and Decompose popovers within narrow browser windows
+- Added optional per-tile vertex points with adjustable color and size, plus integral decomposition marks at unit intervals along whole-number edge lengths
+- Added a Decompose tool for splitting compatible hexagonal, trapezoidal, rhombic, and Soft Tiles into styled, grouped subtiles while preserving outer arcs
+- Refined the Outline button icon and dropdown spacing
+- Made new canvas backgrounds pure white by default while preserving saved custom colors
+- Added a 4:1 picture-export proportion and an About link to the feedback survey
+- Added Hex Pac-Man/triangle and trapezoidal Spike-style periodic examples
+
 ## What's new in version 1.7
 
 - Corrected H3B/H3C identities and colors across the Hexagonal and puzzle-style families while preserving the established Soft Tile labels and geometry
@@ -50,7 +61,7 @@ Created by John Chase.
 
 - Bubble, puzzle, soft, polygonal, frame, and Einstein-family tiles
 - Snapping, grouping, reflection, rotation, and uniform scaling
-- Arc Dual, Reverse One Arc, polygon conversion, and multiple Bubble Styles
+- Arc Dual, Reverse One Arc, polygon conversion, compatible tile decomposition, and multiple Bubble Styles
 - Tiling Fill tools for testing periodic extensions
 - Fill patterns, custom image fills, image textures, outlines, and Format Painter
 - Guided tours for finite and infinite tiling investigations

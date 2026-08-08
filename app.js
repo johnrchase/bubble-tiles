@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const biteBumpTotals = document.getElementById("biteBumpTotals");
   const canvasColorIconSwatch = document.getElementById("canvasColorIconSwatch");
   const latticeHint = document.getElementById("latticeHint");
+  const copyConfirmationToast = document.getElementById("copyConfirmationToast");
   const snapToggle = document.getElementById("snapToggle");
   const overlapToggle = document.getElementById("overlapToggle");
   const importJsonFile = document.getElementById("importJsonFile");
@@ -131,6 +132,11 @@ window.addEventListener("DOMContentLoaded", () => {
     arcDual: document.getElementById("arcDual"),
     polygonToBubble: document.getElementById("polygonToBubble"),
     bubbleToPolygon: document.getElementById("bubbleToPolygon"),
+    decomposeButton: document.getElementById("decomposeButton"),
+    decomposePanel: document.getElementById("decomposePanel"),
+    decomposeTarget: document.getElementById("decomposeTarget"),
+    decomposeArcDirection: document.getElementById("decomposeArcDirection"),
+    applyDecompose: document.getElementById("applyDecompose"),
     reverseSingleArc: document.getElementById("reverseSingleArc"),
     rotateDegrees: document.getElementById("rotateDegrees"),
     selectAll: document.getElementById("selectAll"),
@@ -162,6 +168,8 @@ window.addEventListener("DOMContentLoaded", () => {
     shapeFillPanel: document.getElementById("shapeFillPanel"),
     shapeOutlineButton: document.getElementById("shapeOutlineButton"),
     shapeOutlinePanel: document.getElementById("shapeOutlinePanel"),
+    verticesButton: document.getElementById("verticesButton"),
+    verticesPanel: document.getElementById("verticesPanel"),
     formatPainterButton: document.getElementById("formatPainterButton"),
     customStyleButton: document.getElementById("customStyleButton"),
     edgeDecorationButton: document.getElementById("edgeDecorationButton"),
@@ -172,6 +180,10 @@ window.addEventListener("DOMContentLoaded", () => {
     strokeColorPicker: document.getElementById("strokeColorPicker"),
     strokeStylePicker: document.getElementById("strokeStylePicker"),
     strokeWidthPicker: document.getElementById("strokeWidthPicker"),
+    vertexStylePicker: document.getElementById("vertexStylePicker"),
+    integralVertexDecomposition: document.getElementById("integralVertexDecomposition"),
+    vertexColorPicker: document.getElementById("vertexColorPicker"),
+    vertexSizePicker: document.getElementById("vertexSizePicker"),
     canvasColorPicker: document.getElementById("canvasColorPicker"),
     latticeOpacity: document.getElementById("latticeOpacity"),
     trayTilesTab: document.getElementById("trayTilesTab"),
@@ -187,6 +199,10 @@ window.addEventListener("DOMContentLoaded", () => {
     menuStrokeColorPicker: document.getElementById("menuStrokeColorPicker"),
     menuStrokeStylePicker: document.getElementById("menuStrokeStylePicker"),
     menuStrokeWidthPicker: document.getElementById("menuStrokeWidthPicker"),
+    menuVertexStylePicker: document.getElementById("menuVertexStylePicker"),
+    menuIntegralVertexDecomposition: document.getElementById("menuIntegralVertexDecomposition"),
+    menuVertexColorPicker: document.getElementById("menuVertexColorPicker"),
+    menuVertexSizePicker: document.getElementById("menuVertexSizePicker"),
     menuCanvasColorPicker: document.getElementById("menuCanvasColorPicker"),
     menuSnapToggle: document.getElementById("menuSnapToggle"),
     menuOverlapToggle: document.getElementById("menuOverlapToggle")
@@ -2738,7 +2754,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let latticeEditDrag = null;
   let latticeEditRenderRequest = null;
 
-  let canvasBackgroundColor = "#fafafa";
+  let canvasBackgroundColor = "#ffffff";
   let latticeCopyOpacity = 0.62;
   let exportArea = { x: 0, y: 0, width: 1000, height: 700 };
   let exportAreaDrag = null;
@@ -2896,9 +2912,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   builtinExamples.push({ id: "soft-sf0-sf3a-lattice", title: "Soft Tile Tiling SF0/SF3A", description: "A periodic tiling using one SF0 and two SF3A soft tiles.", tags: ["tiling", "soft tiles", "lattice"], layout: {"version":4,"canvasBackgroundColor":"#fafafa","latticeCopyOpacity":0.6,"viewBox":{"x":-453.897,"y":-163.281,"width":1950.047,"height":1365.032},"tiles":[{"id":"tile1","tileType":"SF0","x":315.12,"y":477.841,"rotation":30,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile2","tileType":"SF3A","x":475.12,"y":477.841,"rotation":90,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile3","tileType":"SF3A","x":155.12,"y":477.841,"rotation":-90,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"}],"groups":[{"id":"group1","children":["tile1","tile2","tile3"]}],"latticeFills":[{"id":"lattice1","sourceIds":["tile1","tile2","tile3"],"vectorA":{"x":480,"y":0},"vectorB":{"x":240,"y":138.564}}]} });
 
+  builtinExamples.push({ id: "hex-pac-man-and-triangles", title: "Hex Pac-Man and Triangle Tiling", description: "A periodic tiling combining six Hex Pac-Man tiles with four regular triangles.", tags: ["tiling", "hex pac-man", "regular triangles", "lattice"], layout: {"version":4,"canvasBackgroundColor":"#ffffff","latticeCopyOpacity":1,"viewBox":{"x":-1548.469,"y":-525.189,"width":1782.645,"height":1247.858},"tiles":[{"id":"tile23","tileType":"TRI","x":-738.681,"y":156.887,"rotation":120,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile29","tileType":"TRI","x":-818.681,"y":64.511,"rotation":-60,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile32","tileType":"OP_PACMAN","x":-812.014,"y":122.246,"rotation":-90,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile33","tileType":"OP_PACMAN","x":-772.015,"y":29.87,"rotation":150,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile35","tileType":"OP_PACMAN","x":-872.015,"y":41.417,"rotation":30,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile36","tileType":"TRI","x":-698.682,"y":-4.771,"rotation":-60,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile37","tileType":"TRI","x":-618.681,"y":87.605,"rotation":120,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile38","tileType":"OP_PACMAN","x":-625.348,"y":29.87,"rotation":90,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile39","tileType":"OP_PACMAN","x":-665.348,"y":122.246,"rotation":-30,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile40","tileType":"OP_PACMAN","x":-565.347,"y":110.699,"rotation":-150,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"}],"groups":[{"id":"group1","children":["tile23","tile29","tile32","tile33","tile35","tile36","tile37","tile38","tile39","tile40"]}],"latticeFills":[{"id":"lattice1","sourceIds":["tile23","tile29","tile32","tile33","tile35","tile36","tile37","tile38","tile39","tile40"],"vectorA":{"x":360,"y":-69.282},"vectorB":{"x":400.001,"y":138.564}}]} });
+
+  builtinExamples.push({ id: "trapezoidal-spike-tiling", title: "Trapezoidal Spike Tiling", description: "A periodic six-tile seed using complementary trapezoidal bubble tiles with the Spike Bubble Style.", tags: ["tiling", "trapezoidal bubble tiles", "spike style", "lattice"], layout: {"version":4,"canvasBackgroundColor":"#fafafa","latticeCopyOpacity":1,"viewBox":{"x":20.767,"y":-74.744,"width":984.21,"height":688.947},"tiles":[{"id":"tile1","tileType":"ARCV_BUBBLE_OP_TRAP_00010","x":312.594,"y":194.513,"rotation":-120,"flipX":1,"flipY":1,"scale":1,"fillColor":"#69ab6a","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile2","tileType":"ARCV_BUBBLE_OP_TRAP_00010","x":240.594,"y":263.795,"rotation":120,"flipX":1,"flipY":1,"scale":1,"fillColor":"#69ab6a","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile3","tileType":"ARCV_BUBBLE_OP_TRAP_00010","x":336.594,"y":291.508,"rotation":0,"flipX":1,"flipY":1,"scale":1,"fillColor":"#69ab6a","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile23","tileType":"ARCV_BUBBLE_OP_TRAP_11101","x":400.594,"y":236.082,"rotation":60,"flipX":1,"flipY":1,"scale":1,"fillColor":"#62a8f4","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile24","tileType":"ARCV_BUBBLE_OP_TRAP_11101","x":472.594,"y":166.8,"rotation":-60,"flipX":1,"flipY":1,"scale":1,"fillColor":"#62a8f4","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile25","tileType":"ARCV_BUBBLE_OP_TRAP_11101","x":376.594,"y":139.087,"rotation":-180,"flipX":1,"flipY":1,"scale":1,"fillColor":"#62a8f4","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"}],"groups":[],"latticeFills":[{"id":"lattice1","sourceIds":["tile1","tile2","tile3","tile23","tile24","tile25"],"vectorA":{"x":240,"y":0},"vectorB":{"x":-120,"y":207.846}}]} });
+
   const rhombitrihexagonalExample = builtinExamples.find(example => example.id === "regular-polygon-lattice-tri-square-hex");
   if (rhombitrihexagonalExample) {
     rhombitrihexagonalExample.title = "Rhombi-tri-hexagonal Tiling (3.4.6.4)";
+  }
+  const donutTrioExample = builtinExamples.find(example => example.id === "donut-trio-lattice");
+  if (donutTrioExample) {
+    donutTrioExample.title = "Donut Trio Tiling H2B/H4A/H3A";
   }
 
   const exampleCategories = [
@@ -2918,7 +2942,7 @@ window.addEventListener("DOMContentLoaded", () => {
       id: "infinite-bubble-tilings",
       title: "Infinite Bubble Tilings",
       description: "Periodic lattices made from bubble or puzzle-edge tiles, without Soft Tiles.",
-      exampleIds: ["mixed-bubble-tile-lattice-h4b-t1", "square-bubble-tile-lattice-s3-s0", "hex-bubble-tile-lattice-h0-h4c", "hex-bubble-tile-lattice-h1-h5", "small-frame-lattice", "rhombic-bubble-lattice-rb1-rb2-rb3", "square-tooth-trapezoid-lattice", "spike-bubble-style-lattice", "square-tooth-dodecagon-lattice", "six-point-star-puzzle-tiling", "cookie-and-oreo-lattice", "donut-trio-lattice", "hexagonal-bubble-pinwheel-lattice", "hexagonal-bubble-trio-lattice", "bubble-bubble-tiles", "clouds-dodecagon-hexagon-squares", "r1-and-h4b"]
+      exampleIds: ["mixed-bubble-tile-lattice-h4b-t1", "square-bubble-tile-lattice-s3-s0", "hex-bubble-tile-lattice-h0-h4c", "hex-bubble-tile-lattice-h1-h5", "small-frame-lattice", "rhombic-bubble-lattice-rb1-rb2-rb3", "square-tooth-trapezoid-lattice", "spike-bubble-style-lattice", "trapezoidal-spike-tiling", "square-tooth-dodecagon-lattice", "six-point-star-puzzle-tiling", "puzzle-squiggle-octagon-lattice", "arc-squiggle-octagon-lattice", "cookie-and-oreo-lattice", "donut-trio-lattice", "hexagonal-bubble-pinwheel-lattice", "hexagonal-bubble-trio-lattice", "bubble-bubble-tiles", "clouds-dodecagon-hexagon-squares", "r1-and-h4b"]
     },
     {
       id: "infinite-soft-tilings",
@@ -2929,8 +2953,8 @@ window.addEventListener("DOMContentLoaded", () => {
     {
       id: "other-infinite-tilings",
       title: "Other Infinite Tilings",
-      description: "Periodic star, semiregular polygon, and squiggle constructions.",
-      exampleIds: ["octagon-star", "regular-polygon-lattice-tri-square-hex", "puzzle-squiggle-octagon-lattice", "arc-squiggle-octagon-lattice"]
+      description: "Periodic star, semiregular polygon, and related non-bubble constructions.",
+      exampleIds: ["octagon-star", "regular-polygon-lattice-tri-square-hex", "hex-pac-man-and-triangles"]
     },
     {
       id: "other",
@@ -3025,6 +3049,42 @@ window.addEventListener("DOMContentLoaded", () => {
   function tileStrokeWidth(tileState) {
     const width = tileState && Number.isFinite(Number(tileState.strokeWidth)) ? Number(tileState.strokeWidth) : defaultStrokeWidth();
     return Math.max(0, width);
+  }
+
+  function tileVertexStyle(tileState) {
+    return tileState && tileState.vertexStyle === "points" ? "points" : "none";
+  }
+
+  function tileVertexColor(tileState) {
+    const color = tileState && typeof tileState.vertexColor === "string" ? tileState.vertexColor : "";
+    return /^#[0-9a-f]{6}$/i.test(color) ? color : "#1565c0";
+  }
+
+  function tileIntegralVertexDecomposition(tileState) {
+    return !!(tileState && tileState.integralVertexDecomposition);
+  }
+
+  function tileVertexSize(tileState) {
+    const size = tileState && Number.isFinite(Number(tileState.vertexSize)) ? Number(tileState.vertexSize) : 5;
+    return Math.max(1, Math.min(20, size));
+  }
+
+  function vertexPointsForDefinition(definition, tileState) {
+    if (!definition || !Array.isArray(definition.vertices)) return [];
+    if (!tileIntegralVertexDecomposition(tileState)) return definition.vertices;
+
+    const points = [];
+    definition.vertices.forEach((start, edgeIndex) => {
+      const end = definition.vertices[(edgeIndex + 1) % definition.vertices.length];
+      points.push(start);
+      const unitRatio = Math.hypot(end.x - start.x, end.y - start.y) / SIDE_LENGTH;
+      const segmentCount = Math.round(unitRatio);
+      if (segmentCount < 2 || Math.abs(unitRatio - segmentCount) > 0.001) return;
+      for (let segmentIndex = 1; segmentIndex < segmentCount; segmentIndex += 1) {
+        points.push(lerpPoint(start, end, segmentIndex / segmentCount));
+      }
+    });
+    return points;
   }
 
   function tileFillOpacity(tileState) {
@@ -3186,6 +3246,23 @@ window.addEventListener("DOMContentLoaded", () => {
       if (decoration.strokeWidth) path.style.strokeWidth = String(decoration.strokeWidth);
       parent.appendChild(path);
     });
+  }
+
+  function appendTileVertices(parent, definition, tileState) {
+    if (!definition || !Array.isArray(definition.vertices) || tileVertexStyle(tileState) !== "points") return;
+
+    const layer = document.createElementNS(SVG_NS, "g");
+    layer.setAttribute("class", "tile-vertices");
+    vertexPointsForDefinition(definition, tileState).forEach(vertex => {
+      const point = document.createElementNS(SVG_NS, "circle");
+      point.setAttribute("class", "tile-vertex");
+      point.setAttribute("cx", String(vertex.x));
+      point.setAttribute("cy", String(vertex.y));
+      point.setAttribute("r", String(tileVertexSize(tileState)));
+      point.setAttribute("fill", tileVertexColor(tileState));
+      layer.appendChild(point);
+    });
+    parent.appendChild(layer);
   }
 
 
@@ -3858,6 +3935,29 @@ window.addEventListener("DOMContentLoaded", () => {
     status.textContent = message;
   }
 
+  let copyConfirmationTimer = null;
+
+  function showCopyConfirmation() {
+    if (!copyConfirmationToast) return;
+
+    if (copyConfirmationTimer) {
+      clearTimeout(copyConfirmationTimer);
+    }
+
+    copyConfirmationToast.hidden = false;
+    window.requestAnimationFrame(() => {
+      copyConfirmationToast.classList.add("is-visible");
+    });
+
+    copyConfirmationTimer = setTimeout(() => {
+      copyConfirmationToast.classList.remove("is-visible");
+      copyConfirmationTimer = setTimeout(() => {
+        copyConfirmationToast.hidden = true;
+        copyConfirmationTimer = null;
+      }, 180);
+    }, 2200);
+  }
+
   let biteBumpTotalsUpdateScheduled = false;
 
   function updateBiteBumpTotals() {
@@ -4451,6 +4551,10 @@ window.addEventListener("DOMContentLoaded", () => {
         tiles[newId].strokeColor = typeof tile.strokeColor === "string" ? tile.strokeColor : null;
         tiles[newId].strokeStyle = typeof tile.strokeStyle === "string" ? tile.strokeStyle : "solid";
         tiles[newId].strokeWidth = Number.isFinite(Number(tile.strokeWidth)) ? Number(tile.strokeWidth) : defaultStrokeWidth();
+        tiles[newId].vertexStyle = tile.vertexStyle === "points" ? "points" : "none";
+        tiles[newId].integralVertexDecomposition = !!tile.integralVertexDecomposition;
+        tiles[newId].vertexColor = /^#[0-9a-f]{6}$/i.test(tile.vertexColor || "") ? tile.vertexColor : "#1565c0";
+        tiles[newId].vertexSize = Number.isFinite(Number(tile.vertexSize)) ? Math.max(1, Math.min(20, Number(tile.vertexSize))) : 5;
         tiles[newId].edgeDecoration = typeof tile.edgeDecoration === "string" ? tile.edgeDecoration : "none";
 
         updateTileAppearance(newId);
@@ -4552,7 +4656,7 @@ window.addEventListener("DOMContentLoaded", () => {
     background.setAttribute("y", bounds.minY - padding);
     background.setAttribute("width", width + 2 * padding);
     background.setAttribute("height", height + 2 * padding);
-    background.setAttribute("fill", example.layout.canvasBackgroundColor || "#fafafa");
+    background.setAttribute("fill", example.layout.canvasBackgroundColor || "#ffffff");
     svg.appendChild(background);
 
     const allTiles = Array.isArray(example.layout.tiles) ? example.layout.tiles : [];
@@ -6307,6 +6411,7 @@ window.addEventListener("DOMContentLoaded", () => {
       appendTileText(group, displayDefinition, state, group.getAttribute("id") || "tile");
       appendPerEdgeBorders(group, definition, state);
       appendTileDecorations(group, definition);
+      appendTileVertices(group, definition, state);
     }
 
     if (definition.label) {
@@ -6354,6 +6459,7 @@ window.addEventListener("DOMContentLoaded", () => {
       appendTileText(group, displayDefinition, state, group.getAttribute("id") || "tile");
       appendPerEdgeBorders(group, definition, state);
       appendTileDecorations(group, definition);
+      appendTileVertices(group, definition, state);
     }
 
     if (definition.label) {
@@ -6380,7 +6486,7 @@ window.addEventListener("DOMContentLoaded", () => {
       nextTileNumber += 1;
     }
 
-    tiles[id] = { tileType, x, y, rotation: tileRotation, flipX: 1, flipY: 1, scale: 1, fillColor: null, fillPattern: "solid", fillPatternAngle: 0, fillOpacity: 1, customImage: null, tileText: null, strokeColor: null, strokeStyle: "solid", strokeWidth: defaultStrokeWidth(), edgeDecoration: "none", parent: null };
+    tiles[id] = { tileType, x, y, rotation: tileRotation, flipX: 1, flipY: 1, scale: 1, fillColor: null, fillPattern: "solid", fillPatternAngle: 0, fillOpacity: 1, customImage: null, tileText: null, strokeColor: null, strokeStyle: "solid", strokeWidth: defaultStrokeWidth(), vertexStyle: "none", integralVertexDecomposition: false, vertexColor: "#1565c0", vertexSize: 5, edgeDecoration: "none", parent: null };
     creationOrder.push(id);
 
     const tile = createTileElement(id, tileType);
@@ -7109,6 +7215,10 @@ window.addEventListener("DOMContentLoaded", () => {
         strokeColor: state.strokeColor || null,
         strokeStyle: state.strokeStyle || "solid",
         strokeWidth: tileStrokeWidth(state),
+        vertexStyle: tileVertexStyle(state),
+        integralVertexDecomposition: tileIntegralVertexDecomposition(state),
+        vertexColor: tileVertexColor(state),
+        vertexSize: tileVertexSize(state),
         edgeDecoration: tileEdgeDecoration(state),
         ...canvasImageFields(state.tileType)
       };
@@ -7150,6 +7260,10 @@ window.addEventListener("DOMContentLoaded", () => {
       tiles[newTileId].strokeColor = snapshot.strokeColor || null;
       tiles[newTileId].strokeStyle = snapshot.strokeStyle || "solid";
       tiles[newTileId].strokeWidth = Number.isFinite(Number(snapshot.strokeWidth)) ? Number(snapshot.strokeWidth) : defaultStrokeWidth();
+      tiles[newTileId].vertexStyle = snapshot.vertexStyle === "points" ? "points" : "none";
+      tiles[newTileId].integralVertexDecomposition = !!snapshot.integralVertexDecomposition;
+      tiles[newTileId].vertexColor = /^#[0-9a-f]{6}$/i.test(snapshot.vertexColor || "") ? snapshot.vertexColor : "#1565c0";
+      tiles[newTileId].vertexSize = Number.isFinite(Number(snapshot.vertexSize)) ? Math.max(1, Math.min(20, Number(snapshot.vertexSize))) : 5;
       tiles[newTileId].edgeDecoration = typeof snapshot.edgeDecoration === "string" ? snapshot.edgeDecoration : "none";
       updateTileAppearance(newTileId);
       updateTileTransform(newTileId);
@@ -7311,6 +7425,10 @@ window.addEventListener("DOMContentLoaded", () => {
       tiles[newId].strokeColor = state.strokeColor || null;
       tiles[newId].strokeStyle = state.strokeStyle || "solid";
       tiles[newId].strokeWidth = tileStrokeWidth(state);
+      tiles[newId].vertexStyle = tileVertexStyle(state);
+      tiles[newId].integralVertexDecomposition = tileIntegralVertexDecomposition(state);
+      tiles[newId].vertexColor = tileVertexColor(state);
+      tiles[newId].vertexSize = tileVertexSize(state);
       tiles[newId].edgeDecoration = tileEdgeDecoration(state);
       updateTileAppearance(newId);
       updateTileTransform(newId);
@@ -7595,6 +7713,397 @@ window.addEventListener("DOMContentLoaded", () => {
     hideSnapPreview();
     recordHistory();
     setStatus("Applied Arc Dual to " + changedCount + " tile" + (changedCount === 1 ? "" : "s") + ".");
+  }
+
+  function approximately(value, target, tolerance = 0.02) {
+    return Math.abs(value - target) <= tolerance;
+  }
+
+  function decompositionFamilyForTile(tileId) {
+    const state = tiles[tileId];
+    const definition = state ? tileDefinitions[state.tileType] : null;
+    if (!definition || !Array.isArray(definition.vertices) || !Array.isArray(definition.bites)) return null;
+    if (definition.vertices.length !== definition.bites.length || definition.isFrame || definition.isArcLensTile) return null;
+    if (definition.isSoftTile && definition.vertices.length === 6) return "soft";
+
+    const vertices = definition.vertices;
+    const edgeLengths = vertices.map((vertex, index) => distance(vertex, vertices[(index + 1) % vertices.length]));
+    const hasOnlyUnitEdges = edgeLengths.every(length => approximately(length, SIDE_LENGTH));
+    if (!hasOnlyUnitEdges) return null;
+
+    if (vertices.length === 6) {
+      const radii = vertices.map(vertex => Math.hypot(vertex.x, vertex.y));
+      if (radii.every(radius => approximately(radius, SIDE_LENGTH))) return "hexagon";
+    }
+
+    if (vertices.length === 5) {
+      const hasStraightSplit = vertices.some((vertex, index) => {
+        const previous = vertices[(index - 1 + vertices.length) % vertices.length];
+        const next = vertices[(index + 1) % vertices.length];
+        const a = { x: previous.x - vertex.x, y: previous.y - vertex.y };
+        const b = { x: next.x - vertex.x, y: next.y - vertex.y };
+        return Math.abs(a.x * b.y - a.y * b.x) < 0.02 && a.x * b.x + a.y * b.y < 0;
+      });
+      if (hasStraightSplit) return "trapezoid";
+    }
+
+    if (vertices.length === 4) {
+      const diagonals = [distance(vertices[0], vertices[2]), distance(vertices[1], vertices[3])];
+      if (diagonals.some(length => approximately(length, SIDE_LENGTH))) return "rhombus";
+    }
+
+    return null;
+  }
+
+  function decompositionTargetsForFamily(family) {
+    if (family === "hexagon") return ["triangles", "rhombuses", "trapezoids"];
+    if (family === "trapezoid") return ["triangles", "rhombuses"];
+    if (family === "rhombus") return ["triangles"];
+    if (family === "soft") return ["circle", "triangles", "rhombuses", "trapezoids"];
+    return [];
+  }
+
+  function updateDecomposeOptions() {
+    if (!buttons.decomposeTarget) return [];
+    const ids = selectedIds();
+    const families = ids.map(decompositionFamilyForTile);
+    let allowed = ids.length > 0 && families.every(Boolean)
+      ? decompositionTargetsForFamily(families[0])
+      : [];
+    families.slice(1).forEach(family => {
+      allowed = allowed.filter(target => decompositionTargetsForFamily(family).includes(target));
+    });
+    [...buttons.decomposeTarget.options].forEach(option => {
+      option.disabled = !allowed.includes(option.value);
+      if (option.value === "circle") option.textContent = "H0 + T3 triangles";
+      if (option.value === "triangles") option.textContent = families.length > 0 && families.every(family => family === "soft") ? "all triangles" : "triangles";
+      if (option.value === "rhombuses") {
+        option.textContent = families.includes("soft")
+          ? "triangles + rhombuses"
+          : (families.length > 0 && families.every(family => family === "trapezoid")
+          ? "rhombus + triangle"
+          : (families.includes("trapezoid") ? "rhombuses / rhombus + triangle" : "rhombuses"));
+      }
+      if (option.value === "trapezoids") option.textContent = families.includes("soft") ? "triangles + trapezoids" : "trapezoids";
+    });
+    if (!allowed.includes(buttons.decomposeTarget.value) && allowed.length > 0) {
+      buttons.decomposeTarget.value = allowed[0];
+    }
+    if (buttons.decomposeArcDirection) {
+      const usesInternalArcs = !(families.length > 0 && families.every(family => family === "soft") && buttons.decomposeTarget.value === "circle");
+      buttons.decomposeArcDirection.disabled = !usesInternalArcs;
+      buttons.decomposeArcDirection.title = usesInternalArcs ? "Choose the direction of new shared internal arcs" : "The H0 + T3 decomposition introduces no new directional choice";
+    }
+    if (buttons.applyDecompose) buttons.applyDecompose.disabled = allowed.length === 0;
+    return allowed;
+  }
+
+  function openDecomposePanel() {
+    const allowed = updateDecomposeOptions();
+    if (allowed.length === 0) {
+      setStatus("Select compatible hexagonal, trapezoidal, rhombic, or Soft Tiles to decompose.");
+      return;
+    }
+    toggleStylePopover(buttons.decomposePanel);
+  }
+
+  function rotatedArray(values, startIndex) {
+    return values.map((_value, index) => values[(startIndex + index) % values.length]);
+  }
+
+  function decompositionPiecesForTile(tileId, target, internalBite) {
+    const state = tiles[tileId];
+    const definition = state && tileDefinitions[state.tileType];
+    const family = decompositionFamilyForTile(tileId);
+    if (!definition || !family) return [];
+    const vertices = definition.vertices;
+    const bites = definition.bites.map(value => value === 1 ? 1 : 0);
+    const pieces = [];
+
+    const appendHexagonalCorePieces = (coreTarget, outerBites) => {
+      if (coreTarget === "circle") {
+        pieces.push({ family: "hexagon", vertices: vertices.map(vertex => ({ ...vertex })), bites: new Array(6).fill(0) });
+        return;
+      }
+      const center = { x: 0, y: 0 };
+      const groupSize = coreTarget === "triangles" ? 1 : (coreTarget === "rhombuses" ? 2 : 3);
+      for (let start = 0; start < 6; start += groupSize) {
+        const pieceVertices = [center];
+        const pieceBites = [1 - internalBite];
+        for (let offset = 0; offset <= groupSize; offset += 1) {
+          pieceVertices.push(vertices[(start + offset) % 6]);
+          if (offset < groupSize) pieceBites.push(outerBites[(start + offset) % 6]);
+        }
+        pieceBites.push(internalBite);
+        const pieceFamily = coreTarget === "triangles" ? "triangle" : (coreTarget === "rhombuses" ? "rhombus" : "trapezoid");
+        pieces.push({ family: pieceFamily, vertices: pieceVertices, bites: pieceBites });
+      }
+    };
+
+    if (family === "hexagon") {
+      appendHexagonalCorePieces(target, bites);
+      return pieces;
+    }
+
+    if (family === "soft") {
+      appendHexagonalCorePieces(target, new Array(6).fill(0));
+      bites.forEach((hasPoint, index) => {
+        if (!hasPoint) return;
+        const start = vertices[index];
+        const end = vertices[(index + 1) % vertices.length];
+        const edgeMidpoint = midpoint(start, end);
+        const radialLength = Math.hypot(edgeMidpoint.x, edgeMidpoint.y) || 1;
+        const apex = {
+          x: edgeMidpoint.x + edgeMidpoint.x / radialLength * SIDE_LENGTH * Math.sqrt(3) / 2,
+          y: edgeMidpoint.y + edgeMidpoint.y / radialLength * SIDE_LENGTH * Math.sqrt(3) / 2
+        };
+        pieces.push({ family: "triangle", vertices: [start, apex, end], bites: [1, 1, 1] });
+      });
+      return pieces;
+    }
+
+    if (family === "trapezoid") {
+      const midpointIndex = vertices.findIndex((vertex, index) => {
+        const previous = vertices[(index - 1 + vertices.length) % vertices.length];
+        const next = vertices[(index + 1) % vertices.length];
+        const a = { x: previous.x - vertex.x, y: previous.y - vertex.y };
+        const b = { x: next.x - vertex.x, y: next.y - vertex.y };
+        return Math.abs(a.x * b.y - a.y * b.x) < 0.02 && a.x * b.x + a.y * b.y < 0;
+      });
+      if (midpointIndex < 0) return [];
+      const orderedVertices = rotatedArray(vertices, midpointIndex);
+      const orderedBites = rotatedArray(bites, midpointIndex);
+      const [m, a, b, c, d] = orderedVertices;
+      if (target === "triangles") {
+        return [
+          { family: "triangle", vertices: [m, a, b], bites: [orderedBites[0], orderedBites[1], internalBite] },
+          { family: "triangle", vertices: [m, b, c], bites: [1 - internalBite, orderedBites[2], internalBite] },
+          { family: "triangle", vertices: [m, c, d], bites: [1 - internalBite, orderedBites[3], orderedBites[4]] }
+        ];
+      }
+      return [
+        { family: "rhombus", vertices: [m, a, b, c], bites: [orderedBites[0], orderedBites[1], orderedBites[2], internalBite] },
+        { family: "triangle", vertices: [m, c, d], bites: [1 - internalBite, orderedBites[3], orderedBites[4]] }
+      ];
+    }
+
+    if (family === "rhombus") {
+      let diagonalStart = -1;
+      for (let index = 0; index < 2; index += 1) {
+        if (approximately(distance(vertices[index], vertices[index + 2]), SIDE_LENGTH)) diagonalStart = index;
+      }
+      if (diagonalStart < 0) return [];
+      const a = diagonalStart;
+      const b = (a + 2) % 4;
+      return [
+        { family: "triangle", vertices: [vertices[a], vertices[(a + 1) % 4], vertices[b]], bites: [bites[a], bites[(a + 1) % 4], internalBite] },
+        { family: "triangle", vertices: [vertices[a], vertices[b], vertices[(a + 3) % 4]], bites: [1 - internalBite, bites[(a + 2) % 4], bites[(a + 3) % 4]] }
+      ];
+    }
+
+    return [];
+  }
+
+  function inverseMatrix2(matrix) {
+    const determinant = matrix.a * matrix.d - matrix.b * matrix.c;
+    if (Math.abs(determinant) < 1e-8) return null;
+    return { a: matrix.d / determinant, b: -matrix.b / determinant, c: -matrix.c / determinant, d: matrix.a / determinant };
+  }
+
+  function multiplyMatrix2(left, right) {
+    return {
+      a: left.a * right.a + left.b * right.c,
+      b: left.a * right.b + left.b * right.d,
+      c: left.c * right.a + left.d * right.c,
+      d: left.c * right.b + left.d * right.d
+    };
+  }
+
+  function applyMatrix2(matrix, point) {
+    return { x: matrix.a * point.x + matrix.b * point.y, y: matrix.c * point.x + matrix.d * point.y };
+  }
+
+  function centeredPointSet(vertices) {
+    const center = vertices.reduce((sum, point) => ({ x: sum.x + point.x / vertices.length, y: sum.y + point.y / vertices.length }), { x: 0, y: 0 });
+    return { center, vertices: vertices.map(point => ({ x: point.x - center.x, y: point.y - center.y })) };
+  }
+
+  function decompositionBaseType(family) {
+    if (family === "hexagon") return "B0";
+    const polygonType = family === "triangle" ? "TRI" : (family === "rhombus" ? "OP_RHOMBUS" : "OP_TRAP");
+    return ensureConvertedBubbleTileDefinition(polygonType);
+  }
+
+  function fitDecompositionPiece(piece) {
+    const baseType = decompositionBaseType(piece.family);
+    const baseDefinition = baseType && tileDefinitions[baseType];
+    if (!baseDefinition || baseDefinition.vertices.length !== piece.vertices.length) return null;
+    const source = centeredPointSet(piece.vertices);
+    const canonical = centeredPointSet(baseDefinition.vertices);
+    const count = piece.vertices.length;
+
+    for (const direction of [1, -1]) {
+      for (let start = 0; start < count; start += 1) {
+        const mapping = Array.from({ length: count }, (_value, index) => (start + direction * index + count * 4) % count);
+        const c0 = canonical.vertices[mapping[0]];
+        const c1 = canonical.vertices[mapping[1]];
+        const p0 = source.vertices[0];
+        const p1 = source.vertices[1];
+        const canonicalBasis = { a: c0.x, b: c1.x, c: c0.y, d: c1.y };
+        const pieceBasis = { a: p0.x, b: p1.x, c: p0.y, d: p1.y };
+        const inverse = inverseMatrix2(canonicalBasis);
+        if (!inverse) continue;
+        const matrix = multiplyMatrix2(pieceBasis, inverse);
+        const firstAxisLength = Math.hypot(matrix.a, matrix.c);
+        const secondAxisLength = Math.hypot(matrix.b, matrix.d);
+        const axisDotProduct = matrix.a * matrix.b + matrix.c * matrix.d;
+        const isRigidSymmetry = approximately(firstAxisLength, 1, 0.001)
+          && approximately(secondAxisLength, 1, 0.001)
+          && Math.abs(axisDotProduct) < 0.001;
+        if (!isRigidSymmetry) continue;
+        const matches = source.vertices.every((point, index) => distance(point, applyMatrix2(matrix, canonical.vertices[mapping[index]])) < 0.05);
+        if (!matches) continue;
+
+        const canonicalBites = new Array(count).fill(0);
+        piece.bites.forEach((bite, index) => {
+          const from = mapping[index];
+          const to = mapping[(index + 1) % count];
+          const edgeIndex = to === (from + 1) % count ? from : to;
+          canonicalBites[edgeIndex] = bite;
+        });
+        let tileType = null;
+        if (piece.family === "hexagon" && canonicalBites.every(bite => bite === 0)) tileType = "B0";
+        else if (piece.family === "triangle" && canonicalBites.every(bite => bite === 1)) tileType = "T3";
+        else if (piece.family === "triangle" && canonicalBites.every(bite => bite === 0)) tileType = "T0";
+        else tileType = ensureArcVariantTileDefinition(baseType, canonicalBites);
+        return { tileType, center: source.center, matrix };
+      }
+    }
+    return null;
+  }
+
+  function sourceStateMatrix(state) {
+    const radians = state.rotation * Math.PI / 180;
+    const cosine = Math.cos(radians);
+    const sine = Math.sin(radians);
+    return {
+      a: cosine * (state.flipX || 1), b: -sine * (state.flipY || 1),
+      c: sine * (state.flipX || 1), d: cosine * (state.flipY || 1)
+    };
+  }
+
+  function decompositionPlacement(sourceId, fit) {
+    const state = tiles[sourceId];
+    const matrix = multiplyMatrix2(sourceStateMatrix(state), fit.matrix);
+    const determinant = matrix.a * matrix.d - matrix.b * matrix.c;
+    return {
+      center: localPointToWorld(sourceId, fit.center),
+      rotation: normalizeAngle(Math.atan2(matrix.c, matrix.a) * 180 / Math.PI),
+      flipX: 1,
+      flipY: determinant < 0 ? -1 : 1,
+      scale: tileScale(state)
+    };
+  }
+
+  function copyDecompositionStyle(sourceState, sourceDefinition, targetState) {
+    targetState.fillColor = sourceState.fillColor || sourceDefinition.color;
+    targetState.fillPattern = tileFillPattern(sourceState);
+    targetState.fillPatternAngle = tileFillPatternAngle(sourceState);
+    targetState.fillOpacity = tileFillOpacity(sourceState);
+    targetState.customImage = cloneCustomImage(sourceState.customImage);
+    targetState.tileText = cloneTileText(sourceState.tileText);
+    targetState.strokeColor = sourceState.strokeColor || null;
+    targetState.strokeStyle = tileStrokeStyle(sourceState);
+    targetState.strokeWidth = tileStrokeWidth(sourceState);
+    targetState.vertexStyle = tileVertexStyle(sourceState);
+    targetState.integralVertexDecomposition = tileIntegralVertexDecomposition(sourceState);
+    targetState.vertexColor = tileVertexColor(sourceState);
+    targetState.vertexSize = tileVertexSize(sourceState);
+    targetState.edgeDecoration = sourceDefinition.isPuzzleTile && tileEdgeDecoration(sourceState) === "none"
+      ? "puzzle"
+      : tileEdgeDecoration(sourceState);
+  }
+
+  function applyDecomposition() {
+    const ids = selectedIdsInLayerOrder();
+    const allowed = updateDecomposeOptions();
+    const target = buttons.decomposeTarget ? buttons.decomposeTarget.value : "triangles";
+    const internalBite = buttons.decomposeArcDirection && buttons.decomposeArcDirection.value === "1" ? 1 : 0;
+    if (ids.length === 0 || !allowed.includes(target)) {
+      setStatus("Select compatible hexagonal, trapezoidal, rhombic, or Soft Tiles to decompose.");
+      return;
+    }
+
+    const plans = ids.map(sourceId => ({
+      sourceId,
+      pieces: decompositionPiecesForTile(sourceId, target, internalBite).map(piece => ({ piece, fit: fitDecompositionPiece(piece) }))
+    }));
+    if (plans.some(plan => plan.pieces.length === 0 || plan.pieces.some(entry => !entry.fit || !entry.fit.tileType))) {
+      setStatus("Could not match the selected tile geometry to the requested decomposition.");
+      return;
+    }
+
+    if (activeLatticeEditor) finishLatticeEdit(true, "Finished editing lattice vectors.");
+    const originalOrder = [...creationOrder];
+    const replacements = new Map();
+    const allNewIds = [];
+    const affectedLattices = latticeFills.filter(fill => fill.sourceIds.some(sourceId => ids.includes(sourceId))).length;
+    latticeFills = latticeFills.filter(fill => !fill.sourceIds.some(sourceId => ids.includes(sourceId)));
+
+    plans.forEach(plan => {
+      const sourceState = tiles[plan.sourceId];
+      const sourceDefinition = tileDefinitions[sourceState.tileType];
+      const parentId = sourceState.parent;
+      const parentIndex = parentId && groups[parentId] ? groups[parentId].children.indexOf(plan.sourceId) : -1;
+      const newIds = plan.pieces.map(({ fit }) => {
+        const placement = decompositionPlacement(plan.sourceId, fit);
+        const newId = addPlacedTile(fit.tileType, placement.center.x, placement.center.y, placement.rotation);
+        const newState = tiles[newId];
+        newState.flipX = placement.flipX;
+        newState.flipY = placement.flipY;
+        newState.scale = placement.scale;
+        copyDecompositionStyle(sourceState, sourceDefinition, newState);
+        updateTileAppearance(newId);
+        updateTileTransform(newId);
+        return newId;
+      });
+      deleteEntity(plan.sourceId);
+      const groupId = createGroupFromEntities(newIds);
+      if (parentId && groups[parentId] && groupId) {
+        removeEntityFromParent(groupId);
+        groups[parentId].children.splice(Math.max(0, parentIndex), 0, groupId);
+        setEntityParent(groupId, parentId);
+      }
+      replacements.set(plan.sourceId, newIds);
+      allNewIds.push(...newIds);
+    });
+
+    const included = new Set();
+    creationOrder = originalOrder.flatMap(id => {
+      const replacement = replacements.get(id);
+      if (replacement) {
+        replacement.forEach(newId => included.add(newId));
+        return replacement;
+      }
+      if (tiles[id]) {
+        included.add(id);
+        return [id];
+      }
+      return [];
+    });
+    Object.keys(tiles).forEach(id => {
+      if (!included.has(id)) creationOrder.push(id);
+    });
+    groupCreationOrder = groupCreationOrder.filter(id => groups[id]);
+    syncTileLayerOrder();
+    renderLatticeFills();
+    selectMany(allNewIds);
+    closeStylePopovers();
+    scheduleSharedBorderRefresh();
+    scheduleBiteBumpTotalsUpdate();
+    hideSnapPreview();
+    recordHistory();
+    setStatus("Decomposed " + ids.length + " tile" + (ids.length === 1 ? "" : "s") + " into " + allNewIds.length + " pieces." + (affectedLattices ? " Removed the affected lattice fill." : ""));
   }
 
   function groupSelected() {
@@ -8200,6 +8709,10 @@ window.addEventListener("DOMContentLoaded", () => {
         strokeColor: tiles[id].strokeColor || null,
         strokeStyle: tiles[id].strokeStyle || "solid",
         strokeWidth: Number(tileStrokeWidth(tiles[id]).toFixed(2)),
+        vertexStyle: tileVertexStyle(tiles[id]),
+        integralVertexDecomposition: tileIntegralVertexDecomposition(tiles[id]),
+        vertexColor: tileVertexColor(tiles[id]),
+        vertexSize: Number(tileVertexSize(tiles[id]).toFixed(2)),
         edgeDecoration: tileEdgeDecoration(tiles[id]),
         ...canvasImageFields(tiles[id].tileType)
       })),
@@ -8257,7 +8770,7 @@ window.addEventListener("DOMContentLoaded", () => {
     nextTileNumber = 1;
     nextGroupNumber = 1;
     nextNewTileOffset = 0;
-    canvasBackgroundColor = typeof data.canvasBackgroundColor === "string" ? data.canvasBackgroundColor : "#fafafa";
+    canvasBackgroundColor = typeof data.canvasBackgroundColor === "string" ? data.canvasBackgroundColor : "#ffffff";
     applyCanvasBackground();
 
     latticeCopyOpacity = Number.isFinite(Number(data.latticeCopyOpacity)) ? Number(data.latticeCopyOpacity) : 0.62;
@@ -8302,6 +8815,10 @@ window.addEventListener("DOMContentLoaded", () => {
       tiles[addedTileId].strokeColor = typeof tile.strokeColor === "string" ? tile.strokeColor : null;
       tiles[addedTileId].strokeStyle = typeof tile.strokeStyle === "string" ? tile.strokeStyle : "solid";
       tiles[addedTileId].strokeWidth = Number.isFinite(Number(tile.strokeWidth)) ? Number(tile.strokeWidth) : defaultStrokeWidth();
+      tiles[addedTileId].vertexStyle = tile.vertexStyle === "points" ? "points" : "none";
+      tiles[addedTileId].integralVertexDecomposition = !!tile.integralVertexDecomposition;
+      tiles[addedTileId].vertexColor = /^#[0-9a-f]{6}$/i.test(tile.vertexColor || "") ? tile.vertexColor : "#1565c0";
+      tiles[addedTileId].vertexSize = Number.isFinite(Number(tile.vertexSize)) ? Math.max(1, Math.min(20, Number(tile.vertexSize))) : 5;
       tiles[addedTileId].edgeDecoration = typeof tile.edgeDecoration === "string" ? tile.edgeDecoration : "none";
       updateTileAppearance(addedTileId);
       updateTileTransform(addedTileId);
@@ -8613,6 +9130,12 @@ window.addEventListener("DOMContentLoaded", () => {
           const decorationStroke = decoration.stroke || "#222222";
           const decorationStrokeWidth = decoration.strokeWidth || 3.2;
           lines.push(`    <path d="${escapeXml(decoration.d)}" fill="none" stroke="${escapeXml(decorationStroke)}" stroke-width="${decorationStrokeWidth}" stroke-linecap="round" stroke-linejoin="round"/>`);
+        });
+      }
+
+      if (tileVertexStyle(tile) === "points" && Array.isArray(definition.vertices)) {
+        vertexPointsForDefinition(definition, tile).forEach(vertex => {
+          lines.push(`    <circle cx="${vertex.x}" cy="${vertex.y}" r="${tileVertexSize(tile)}" fill="${escapeXml(tileVertexColor(tile))}"/>`);
         });
       }
 
@@ -9052,6 +9575,8 @@ ${svgString}
 
     copyTextToClipboard(shareUrl)
       .then(() => {
+        showCopyConfirmation();
+
         if (shareUrl.length > 7000) {
           setStatus("Copied share link, but it is very long. JSON export may be safer for this layout.");
           return;
@@ -9193,6 +9718,7 @@ ${svgString}
       appendTileText(group, displayDefinition, tileState, group.getAttribute("id") || "tile");
       if (usePerEdgeBorders) appendPerEdgeBorders(group, definition, tileState);
       appendTileDecorations(group, definition);
+      appendTileVertices(group, definition, tileState);
     }
 
     if (definition.label) {
@@ -9270,6 +9796,10 @@ ${svgString}
       strokeColor: state.strokeColor || null,
       strokeStyle: state.strokeStyle || "solid",
       strokeWidth: tileStrokeWidth(state),
+      vertexStyle: tileVertexStyle(state),
+      integralVertexDecomposition: tileIntegralVertexDecomposition(state),
+      vertexColor: tileVertexColor(state),
+      vertexSize: tileVertexSize(state),
       edgeDecoration: tileEdgeDecoration(state)
     };
   }
@@ -9328,11 +9858,36 @@ ${svgString}
         maxX: -Infinity,
         maxY: -Infinity
       });
+      const viewOffsetFromSource = {
+        x: viewCenter.x - sourceCenter.x,
+        y: viewCenter.y - sourceCenter.y
+      };
+      let centerIndexA = (
+        (viewOffsetFromSource.x * a.x + viewOffsetFromSource.y * a.y) /
+        Math.max(lenA * lenA, 1)
+      );
+      let centerIndexB = 0;
+
+      if (b) {
+        const determinant = vectorCross(a, b);
+
+        if (Math.abs(determinant) > 0.0001) {
+          centerIndexA = (
+            viewOffsetFromSource.x * b.y - viewOffsetFromSource.y * b.x
+          ) / determinant;
+          centerIndexB = (
+            a.x * viewOffsetFromSource.y - a.y * viewOffsetFromSource.x
+          ) / determinant;
+        }
+      }
+
+      const centerA = Math.round(centerIndexA);
+      const centerB = Math.round(centerIndexB);
       const visibleMotifs = [];
 
-      for (let i = -rangeA; i <= rangeA; i += 1) {
-        const jMin = b ? -rangeB : 0;
-        const jMax = b ? rangeB : 0;
+      for (let i = centerA - rangeA; i <= centerA + rangeA; i += 1) {
+        const jMin = b ? centerB - rangeB : 0;
+        const jMax = b ? centerB + rangeB : 0;
 
         for (let j = jMin; j <= jMax; j += 1) {
           if (i === 0 && j === 0) continue;
@@ -10226,7 +10781,7 @@ ${svgString}
     nextTileNumber = 1;
     nextGroupNumber = 1;
     nextNewTileOffset = 0;
-    canvasBackgroundColor = "#fafafa";
+    canvasBackgroundColor = "#ffffff";
     applyCanvasBackground();
 
     latticeCopyOpacity = 0.62;
@@ -10446,11 +11001,30 @@ ${svgString}
   });
 
   function closeStylePopovers(exceptPanel = null) {
-    [buttons.shapeFillPanel, buttons.shapeOutlinePanel, buttons.edgeDecorationPanel].forEach(panel => {
+    [buttons.shapeFillPanel, buttons.shapeOutlinePanel, buttons.verticesPanel, buttons.decomposePanel, buttons.edgeDecorationPanel].forEach(panel => {
       if (panel && panel !== exceptPanel) {
         panel.hidden = true;
       }
     });
+  }
+
+  function fitStylePopoverToViewport(panel) {
+    if (!panel || panel.hidden) return;
+
+    panel.classList.remove("style-popover-align-right");
+    const viewportPadding = 8;
+    let panelBounds = panel.getBoundingClientRect();
+
+    if (panelBounds.right > window.innerWidth - viewportPadding) {
+      panel.classList.add("style-popover-align-right");
+      panelBounds = panel.getBoundingClientRect();
+    }
+
+    const availableHeight = Math.max(
+      120,
+      window.innerHeight - panelBounds.top - viewportPadding
+    );
+    panel.style.maxHeight = availableHeight + "px";
   }
 
   function toggleStylePopover(panel) {
@@ -10458,7 +11032,14 @@ ${svgString}
     const shouldOpen = panel.hidden;
     closeStylePopovers(shouldOpen ? panel : null);
     panel.hidden = !shouldOpen;
+    if (shouldOpen) fitStylePopoverToViewport(panel);
   }
+
+  window.addEventListener("resize", () => {
+    [buttons.shapeFillPanel, buttons.shapeOutlinePanel, buttons.verticesPanel, buttons.decomposePanel, buttons.edgeDecorationPanel].forEach(panel => {
+      fitStylePopoverToViewport(panel);
+    });
+  });
 
   const guidedTutorialStorageKey = "bubbleTilesGuidedTutorialSeen";
   const guidedExploreOpeningLayout = {"version":4,"canvasBackgroundColor":"#fafafa","latticeCopyOpacity":1,"viewBox":{"x":-499.67,"y":-127.085,"width":1448.486,"height":1013.94},"tiles":[{"id":"tile97","tileType":"ARCV_RB1_0111","x":60.538,"y":215.987,"rotation":120,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile98","tileType":"ARCV_RB1_0111","x":60.538,"y":285.269,"rotation":0,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile99","tileType":"ARCV_RB1_0111","x":120.537,"y":250.628,"rotation":-120,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile103","tileType":"B2B","x":200.538,"y":319.91,"rotation":30,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile104","tileType":"B2B","x":80.538,"y":389.192,"rotation":90,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"},{"id":"tile105","tileType":"B2B","x":200.538,"y":458.474,"rotation":150,"flipX":1,"flipY":1,"scale":1,"fillColor":null,"fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"none"}],"groups":[{"id":"group1","children":["tile97","tile98","tile99","tile103","tile104","tile105"]}],"latticeFills":[{"id":"lattice1","sourceIds":["tile97","tile98","tile99","tile103","tile104","tile105"],"vectorA":{"x":240,"y":138.564},"vectorB":{"x":240,"y":-138.564}}]};
@@ -10498,7 +11079,7 @@ ${svgString}
     },
     {
       title: "4. Bubble tools",
-      text: "Use the Bubble menu or Bubble toolbar for Arc Dual (A), Reverse One Arc, To Bubble Tile, To Polygon, and Bubble Style edge profiles including 60° Arc, Puzzle, Spike, and Square Tooth.",
+      text: "Use the Bubble menu or Bubble toolbar for Arc Dual (A), Reverse One Arc, To Bubble Tile, To Polygon, Decompose, and Bubble Style edge profiles including 60° Arc, Puzzle, Spike, and Square Tooth.",
       target: "#bubbleToolbar",
       fallbackTarget: "#bubbleMenu > summary"
     },
@@ -10544,7 +11125,7 @@ ${svgString}
       event: "frame-added",
       waiting: "Waiting for you to place a frame.",
       onEnter: () => {
-        loadLayoutData({ version: 4, tiles: [], groups: [], latticeFills: [], canvasBackgroundColor: "#fafafa", latticeCopyOpacity: 0.62, viewBox: { x: 0, y: 0, width: 1000, height: 700 } });
+        loadLayoutData({ version: 4, tiles: [], groups: [], latticeFills: [], canvasBackgroundColor: "#ffffff", latticeCopyOpacity: 0.62, viewBox: { x: 0, y: 0, width: 1000, height: 700 } });
         clearSelection();
         recordHistory();
       }
@@ -10609,7 +11190,7 @@ ${svgString}
       onEnter: () => {
         loadLayoutData({
           version: 4,
-          canvasBackgroundColor: "#fafafa",
+          canvasBackgroundColor: "#ffffff",
           latticeCopyOpacity: 0.62,
           viewBox: { x: 0, y: 0, width: 1000, height: 700 },
           tiles: [{ id: "tile1", tileType: "B2A", x: 500, y: 350, rotation: 0, flipX: 1, flipY: 1, scale: 1, fillColor: null, fillPattern: "solid", fillPatternAngle: 0, fillOpacity: 1, strokeColor: null, strokeStyle: "solid", strokeWidth: 3, edgeDecoration: "none" }],
@@ -10657,7 +11238,7 @@ ${svgString}
       onEnter: () => {
         loadLayoutData({
           version: 4,
-          canvasBackgroundColor: "#fafafa",
+          canvasBackgroundColor: "#ffffff",
           latticeCopyOpacity: 0.6,
           viewBox: { x: 179.643, y: 165.095, width: 656.1, height: 459.27 },
           tiles: [
@@ -11116,6 +11697,7 @@ ${svgString}
   function updateStylePreviewSelections() {
     const fillPattern = buttons.fillPatternPicker ? buttons.fillPatternPicker.value : "solid";
     const strokeStyle = buttons.strokeStylePicker ? buttons.strokeStylePicker.value : "solid";
+    const vertexStyle = buttons.vertexStylePicker ? buttons.vertexStylePicker.value : "none";
     const fillColor = buttons.fillColorPicker ? buttons.fillColorPicker.value : "#f5eecf";
     const strokeColor = buttons.strokeColorPicker ? buttons.strokeColorPicker.value : "#222222";
 
@@ -11166,6 +11748,10 @@ ${svgString}
       });
     }
 
+    [buttons.vertexColorPicker, buttons.vertexSizePicker, buttons.menuVertexColorPicker, buttons.menuVertexSizePicker].forEach(control => {
+      if (control) control.disabled = vertexStyle === "none";
+    });
+
     if (edgeDecorationPreviewGrid) {
       const ids = selectedIds();
       const hasDecoratableSelection = ids.some(id => {
@@ -11200,6 +11786,10 @@ ${svgString}
         if (buttons.strokeColorPicker) buttons.strokeColorPicker.value = tileStrokeColor(state);
         if (buttons.strokeStylePicker) buttons.strokeStylePicker.value = tileStrokeStyle(state);
         if (buttons.strokeWidthPicker) buttons.strokeWidthPicker.value = tileStrokeWidth(state);
+        if (buttons.vertexStylePicker) buttons.vertexStylePicker.value = tileVertexStyle(state);
+        if (buttons.integralVertexDecomposition) buttons.integralVertexDecomposition.checked = tileIntegralVertexDecomposition(state);
+        if (buttons.vertexColorPicker) buttons.vertexColorPicker.value = tileVertexColor(state);
+        if (buttons.vertexSizePicker) buttons.vertexSizePicker.value = tileVertexSize(state);
       }
     }
 
@@ -11598,6 +12188,7 @@ ${svgString}
     appendFillPattern(group, definition, previewState, "text-preview-pattern");
     appendTileText(group, definition, previewState, "text-preview");
     appendTileDecorations(group, tileDefinitions[previewState.tileType]);
+    appendTileVertices(group, tileDefinitions[previewState.tileType], previewState);
     tileTextPreview.appendChild(group);
   }
 
@@ -11829,12 +12420,16 @@ ${svgString}
       strokeColor: tileStrokeColor(state),
       strokeStyle: tileStrokeStyle(state),
       strokeWidth: tileStrokeWidth(state),
+      vertexStyle: tileVertexStyle(state),
+      integralVertexDecomposition: tileIntegralVertexDecomposition(state),
+      vertexColor: tileVertexColor(state),
+      vertexSize: tileVertexSize(state),
       customImage: cloneCustomImage(state.customImage),
       tileText: cloneTileText(state.tileText)
     };
     setFormatPainterActive(true);
     closeStylePopovers();
-    setStatus("Format Painter active. Click a tile or group, or drag around multiple tiles, to apply the selected tile's fill, custom image, text, and outline style. Press Escape to cancel.");
+    setStatus("Format Painter active. Click a tile or group, or drag around multiple tiles, to apply the selected tile's fill, custom image, text, outline, and vertex style. Press Escape to cancel.");
   }
 
   function applyFormatPainterToTiles(tileIds) {
@@ -11852,6 +12447,10 @@ ${svgString}
       state.strokeColor = style.strokeColor;
       state.strokeStyle = style.strokeStyle;
       state.strokeWidth = style.strokeWidth;
+      state.vertexStyle = style.vertexStyle;
+      state.integralVertexDecomposition = style.integralVertexDecomposition;
+      state.vertexColor = style.vertexColor;
+      state.vertexSize = style.vertexSize;
       state.customImage = definition && definition.isFrame ? null : cloneCustomImage(style.customImage);
       state.tileText = definition && definition.isFrame ? null : cloneTileText(style.tileText);
       updateTileAppearance(tileId);
@@ -11877,6 +12476,10 @@ ${svgString}
     if (buttons.menuStrokeColorPicker && buttons.strokeColorPicker) buttons.menuStrokeColorPicker.value = buttons.strokeColorPicker.value;
     if (buttons.menuStrokeStylePicker && buttons.strokeStylePicker) buttons.menuStrokeStylePicker.value = buttons.strokeStylePicker.value;
     if (buttons.menuStrokeWidthPicker && buttons.strokeWidthPicker) buttons.menuStrokeWidthPicker.value = buttons.strokeWidthPicker.value;
+    if (buttons.menuVertexStylePicker && buttons.vertexStylePicker) buttons.menuVertexStylePicker.value = buttons.vertexStylePicker.value;
+    if (buttons.menuIntegralVertexDecomposition && buttons.integralVertexDecomposition) buttons.menuIntegralVertexDecomposition.checked = buttons.integralVertexDecomposition.checked;
+    if (buttons.menuVertexColorPicker && buttons.vertexColorPicker) buttons.menuVertexColorPicker.value = buttons.vertexColorPicker.value;
+    if (buttons.menuVertexSizePicker && buttons.vertexSizePicker) buttons.menuVertexSizePicker.value = buttons.vertexSizePicker.value;
     if (buttons.menuCanvasColorPicker && buttons.canvasColorPicker) buttons.menuCanvasColorPicker.value = buttons.canvasColorPicker.value;
     if (buttons.menuSnapToggle && snapToggle) buttons.menuSnapToggle.checked = snapToggle.checked;
     if (buttons.menuOverlapToggle && overlapToggle) buttons.menuOverlapToggle.checked = overlapToggle.checked;
@@ -11922,6 +12525,7 @@ ${svgString}
       scaleSelected: focusScaleControls,
       resetScale: resetSelectedScale,
       arcDual: applyArcDualToSelection,
+      openDecompose: openDecomposePanel,
       polygonToBubble: convertSelectedPolygonsToBubbleTiles,
       bubbleToPolygon: convertSelectedBubbleTilesToPolygons,
       reverseSingleArc: startReverseSingleArcEditor,
@@ -12054,6 +12658,13 @@ ${svgString}
     });
   }
 
+  if (buttons.verticesButton) {
+    buttons.verticesButton.addEventListener("click", event => {
+      event.stopPropagation();
+      toggleStylePopover(buttons.verticesPanel);
+    });
+  }
+
   if (buttons.formatPainterButton) {
     buttons.formatPainterButton.addEventListener("click", startFormatPainter);
   }
@@ -12146,6 +12757,14 @@ ${svgString}
   bindScaleControls(buttons.scaleFactorSlider, buttons.scaleFactorInput);
   bindScaleControls(buttons.menuScaleFactorSlider, buttons.menuScaleFactorInput);
   if (buttons.arcDual) buttons.arcDual.addEventListener("click", applyArcDualToSelection);
+  if (buttons.decomposeButton) {
+    buttons.decomposeButton.addEventListener("click", event => {
+      event.stopPropagation();
+      openDecomposePanel();
+    });
+  }
+  if (buttons.applyDecompose) buttons.applyDecompose.addEventListener("click", applyDecomposition);
+  if (buttons.decomposeTarget) buttons.decomposeTarget.addEventListener("change", updateDecomposeOptions);
   if (buttons.polygonToBubble) buttons.polygonToBubble.addEventListener("click", convertSelectedPolygonsToBubbleTiles);
   if (buttons.bubbleToPolygon) buttons.bubbleToPolygon.addEventListener("click", convertSelectedBubbleTilesToPolygons);
   if (buttons.reverseSingleArc) buttons.reverseSingleArc.addEventListener("click", startReverseSingleArcEditor);
@@ -12507,6 +13126,88 @@ ${svgString}
     }
   }
 
+  function applyVertexStyleToSelection(shouldRecord = true) {
+    const ids = selectedIds();
+    if (ids.length === 0) {
+      if (shouldRecord) setStatus("Select a tile before changing vertices.");
+      return;
+    }
+
+    const vertexStyle = buttons.vertexStylePicker.value === "points" ? "points" : "none";
+    ids.forEach(id => {
+      tiles[id].vertexStyle = vertexStyle;
+      updateTileAppearance(id);
+      updateTileTransform(id);
+    });
+    renderLatticeFills();
+    if (shouldRecord) {
+      recordHistory();
+      setStatus(vertexStyle === "points" ? "Turned on tile vertices." : "Turned off tile vertices.");
+    }
+  }
+
+  function applyIntegralVertexDecompositionToSelection(shouldRecord = true) {
+    const ids = selectedIds();
+    if (ids.length === 0) {
+      if (shouldRecord) setStatus("Select a tile before changing integral decomposition.");
+      return;
+    }
+
+    const enabled = !!buttons.integralVertexDecomposition.checked;
+    ids.forEach(id => {
+      tiles[id].integralVertexDecomposition = enabled;
+      if (enabled) tiles[id].vertexStyle = "points";
+      updateTileAppearance(id);
+      updateTileTransform(id);
+    });
+    if (enabled && buttons.vertexStylePicker) buttons.vertexStylePicker.value = "points";
+    renderLatticeFills();
+    if (shouldRecord) {
+      recordHistory();
+      setStatus(enabled ? "Added unit-interval vertices along integer-length edges." : "Removed integral edge decomposition.");
+    }
+  }
+
+  function applyVertexColorToSelection(shouldRecord = true) {
+    const ids = selectedIds();
+    if (ids.length === 0) {
+      if (shouldRecord) setStatus("Select a tile before changing vertex color.");
+      return;
+    }
+
+    ids.forEach(id => {
+      tiles[id].vertexColor = buttons.vertexColorPicker.value;
+      updateTileAppearance(id);
+      updateTileTransform(id);
+    });
+    renderLatticeFills();
+    if (shouldRecord) {
+      recordHistory();
+      setStatus("Updated vertex color.");
+    }
+  }
+
+  function applyVertexSizeToSelection(shouldRecord = true) {
+    const ids = selectedIds();
+    if (ids.length === 0) {
+      if (shouldRecord) setStatus("Select a tile before changing vertex size.");
+      return;
+    }
+
+    const size = Math.max(1, Math.min(20, Number(buttons.vertexSizePicker.value) || 5));
+    buttons.vertexSizePicker.value = String(size);
+    ids.forEach(id => {
+      tiles[id].vertexSize = size;
+      updateTileAppearance(id);
+      updateTileTransform(id);
+    });
+    renderLatticeFills();
+    if (shouldRecord) {
+      recordHistory();
+      setStatus("Updated vertex size.");
+    }
+  }
+
 
 
   function applyEdgeDecorationToSelection(decorationType, shouldRecord = true) {
@@ -12768,11 +13469,17 @@ ${svgString}
   buttons.strokeStylePicker.addEventListener("input", () => { applyStrokeStyleToSelection(false); syncMenuControlsFromToolbar(); });
   buttons.strokeStylePicker.addEventListener("change", () => { applyStrokeStyleToSelection(true); syncMenuControlsFromToolbar(); });
   buttons.strokeWidthPicker.addEventListener("input", () => { applyStrokeWidthToSelection(false); syncMenuControlsFromToolbar(); });
+  buttons.vertexStylePicker.addEventListener("change", () => { applyVertexStyleToSelection(true); syncMenuControlsFromToolbar(); });
+  buttons.integralVertexDecomposition.addEventListener("change", () => { applyIntegralVertexDecompositionToSelection(true); syncMenuControlsFromToolbar(); });
+  buttons.vertexColorPicker.addEventListener("input", () => { applyVertexColorToSelection(false); syncMenuControlsFromToolbar(); });
+  buttons.vertexSizePicker.addEventListener("input", () => { applyVertexSizeToSelection(false); syncMenuControlsFromToolbar(); });
   buttons.canvasColorPicker.addEventListener("input", () => { applyCanvasBackgroundFromPicker(false); syncMenuControlsFromToolbar(); });
 
   buttons.fillColorPicker.addEventListener("change", () => { applyFillColorToSelection(true); syncMenuControlsFromToolbar(); });
   buttons.strokeColorPicker.addEventListener("change", () => { applyStrokeColorToSelection(true); syncMenuControlsFromToolbar(); });
   buttons.strokeWidthPicker.addEventListener("change", () => { applyStrokeWidthToSelection(true); syncMenuControlsFromToolbar(); });
+  buttons.vertexColorPicker.addEventListener("change", () => { applyVertexColorToSelection(true); syncMenuControlsFromToolbar(); });
+  buttons.vertexSizePicker.addEventListener("change", () => { applyVertexSizeToSelection(true); syncMenuControlsFromToolbar(); });
   buttons.canvasColorPicker.addEventListener("change", () => { applyCanvasBackgroundFromPicker(true); syncMenuControlsFromToolbar(); });
 
 
@@ -12888,6 +13595,44 @@ ${svgString}
     buttons.menuStrokeWidthPicker.addEventListener("change", () => {
       buttons.strokeWidthPicker.value = buttons.menuStrokeWidthPicker.value;
       applyStrokeWidthToSelection(true);
+    });
+  }
+
+  if (buttons.menuVertexStylePicker && buttons.vertexStylePicker) {
+    buttons.menuVertexStylePicker.addEventListener("change", () => {
+      buttons.vertexStylePicker.value = buttons.menuVertexStylePicker.value;
+      applyVertexStyleToSelection(true);
+      syncMenuControlsFromToolbar();
+    });
+  }
+
+  if (buttons.menuIntegralVertexDecomposition && buttons.integralVertexDecomposition) {
+    buttons.menuIntegralVertexDecomposition.addEventListener("change", () => {
+      buttons.integralVertexDecomposition.checked = buttons.menuIntegralVertexDecomposition.checked;
+      applyIntegralVertexDecompositionToSelection(true);
+      syncMenuControlsFromToolbar();
+    });
+  }
+
+  if (buttons.menuVertexColorPicker && buttons.vertexColorPicker) {
+    buttons.menuVertexColorPicker.addEventListener("input", () => {
+      buttons.vertexColorPicker.value = buttons.menuVertexColorPicker.value;
+      applyVertexColorToSelection(false);
+    });
+    buttons.menuVertexColorPicker.addEventListener("change", () => {
+      buttons.vertexColorPicker.value = buttons.menuVertexColorPicker.value;
+      applyVertexColorToSelection(true);
+    });
+  }
+
+  if (buttons.menuVertexSizePicker && buttons.vertexSizePicker) {
+    buttons.menuVertexSizePicker.addEventListener("input", () => {
+      buttons.vertexSizePicker.value = buttons.menuVertexSizePicker.value;
+      applyVertexSizeToSelection(false);
+    });
+    buttons.menuVertexSizePicker.addEventListener("change", () => {
+      buttons.vertexSizePicker.value = buttons.menuVertexSizePicker.value;
+      applyVertexSizeToSelection(true);
     });
   }
 

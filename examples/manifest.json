@@ -195,7 +195,7 @@
     },
     {
         "id":  "donut-trio-lattice",
-        "title":  "Donut Trio Tiling H2B/H4A/3A",
+        "title":  "Donut Trio Tiling H2B/H4A/H3A",
         "description":  "A three-donut image-fill lattice using hexagonal bubble tiles.",
         "file":  "donut-trio-lattice.json",
         "tags":  [
@@ -368,6 +368,30 @@
                      "tiling",
                      "squiggle octagon",
                      "60Â° arc"
+                 ]
+    },
+    {
+        "id":  "hex-pac-man-and-triangles",
+        "title":  "Hex Pac-Man and Triangle Tiling",
+        "description":  "A periodic tiling combining six Hex Pac-Man tiles with four regular triangles.",
+        "file":  "hex-pac-man-and-triangles.json",
+        "tags":  [
+                     "tiling",
+                     "hex pac-man",
+                     "regular triangles",
+                     "lattice"
+                 ]
+    },
+    {
+        "id":  "trapezoidal-spike-tiling",
+        "title":  "Trapezoidal Spike Tiling",
+        "description":  "A periodic six-tile seed using complementary trapezoidal bubble tiles with the Spike Bubble Style.",
+        "file":  "trapezoidal-tiling.json",
+        "tags":  [
+                     "tiling",
+                     "trapezoidal bubble tiles",
+                     "spike style",
+                     "lattice"
                  ]
     },
     {

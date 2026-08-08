@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Bubble Tiles 1.7</title>
+<title>Bubble Tiles 1.8</title>
 <link href="assets/logo-two-tiles-favicon.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -15,7 +15,7 @@
 <div id="toolbar">
 <div class="brand">
 <img alt="" class="brand-logo-image" src="assets/logo-two-tiles.png"/>
-<span class="brand-wordmark">Bubble Tiles 1.7</span>
+<span class="brand-wordmark">Bubble Tiles 1.8</span>
 </div>
 <div class="menu-strip">
 <details class="toolbar-menu" id="fileMenu">
@@ -82,7 +82,7 @@
 <button class="icon-button" id="pasteClipboard" title="Paste copied tiles or group (Ctrl/Cmd+V)"><svg aria-hidden="true" class="toolbar-svg-icon office-paste-icon" viewbox="0 0 48 48"><path class="office-clipboard" d="M11 12h26v29H11z"></path><path class="office-paper" d="M17 18h17v18H17z"></path><rect class="office-clip" x="17" y="7" width="14" height="8" rx="3"></rect><path class="office-page-line" d="M21 24h9 M21 29h9"></path></svg><span class="menu-label">Paste</span><span class="menu-shortcut">Ctrl/Cmd+V</span></button>
 <button class="icon-button" id="duplicate" title="Duplicate selected (D)"><span aria-hidden="true" class="menu-item-icon">⧉</span><span class="menu-label">Duplicate</span><span class="menu-shortcut">D</span></button>
 <button class="icon-button danger-button" id="deleteSelected" title="Delete selected (Delete/Backspace)"><svg aria-hidden="true" class="toolbar-svg-icon trash-icon" viewbox="0 0 48 48"><path d="M16 15 H32 L30.4 39 H17.6 Z"></path><path d="M18 12 H30"></path><path d="M21 9 H27"></path><path d="M21 20 V33"></path><path d="M27 20 V33"></path></svg><span class="menu-label">Delete</span><span class="menu-shortcut">Delete</span></button>
-<button class="icon-button danger-button" id="reset" title="Clear canvas"><span aria-hidden="true" class="menu-item-icon">🧹</span><span>Clear Canvas</span></button>
+<button class="icon-button danger-button" id="reset" title="Clear canvas"><svg aria-hidden="true" class="toolbar-svg-icon broom-icon" viewBox="0 0 48 48"><path class="broom-handle" d="M34 6L21 29"></path><path class="broom-collar" d="M18 26l8 5"></path><path class="broom-head" d="M18 27c-2 5-5 8-10 11 8 4 17 4 25 0l-7-8z"></path><path class="broom-bristle" d="M14 34l-3 4M20 34l-1 6M26 35l2 4"></path></svg><span>Clear Canvas</span></button>
 <div class="menu-separator"></div>
 <button data-command="selectAll" title="Select all tiles (Ctrl/Cmd+A)"><span aria-hidden="true" class="menu-item-icon">☑</span><span class="menu-label">Select All</span><span class="menu-shortcut">Ctrl/Cmd+A</span></button>
 <button data-command="groupSelected" title="Group selected tiles (G)"><svg aria-hidden="true" class="menu-svg-icon group-icon" viewbox="0 0 48 48"><rect class="group-frame" height="32" rx="3" width="32" x="8" y="8"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="5"></rect><rect class="group-node" height="8" rx="2" width="8" x="5" y="35"></rect><rect class="group-node" height="8" rx="2" width="8" x="35" y="35"></rect><rect class="group-small" height="11" rx="2" width="17" x="16" y="21"></rect><rect class="group-small" height="11" rx="2" width="17" x="21" y="15"></rect></svg><span class="menu-label">Group</span><span class="menu-shortcut">G</span></button>
@@ -122,6 +122,7 @@
 <button data-command="bubbleStylePuzzle" title="Bubble Style: puzzle edge profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-puzzle.png"/><span>Bubble Style: Puzzle</span></button>
 <button data-command="bubbleStyleSpike" title="Bubble Style: compact triangular spike edge profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-spike.png"/><span>Bubble Style: Spike</span></button>
 <button data-command="bubbleStyleZigzag" title="Bubble Style: square-tooth edge profile"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon menu-bubble-raster-icon bubble-style-raster-icon" src="assets/bubble-icons/bubble-style-zigzag.png"/><span>Bubble Style: Square Tooth</span></button>
+<button data-command="openDecompose" title="Decompose selected hexagonal, trapezoidal, rhombic, or Soft Tiles"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon decompose-tool-icon menu-bubble-raster-icon" src="assets/bubble-icons/decompose.svg"/><span>Decompose...</span></button>
 </div>
 </details>
 <details class="toolbar-menu" id="latticeMenu">
@@ -160,7 +161,7 @@
 </select>
 </label>
 <label class="menu-control" title="Set selected tile opacity"><span><svg aria-hidden="true" class="menu-svg-icon eye-icon" viewbox="0 0 28 28"><path d="M3.5 14 C6.2 8.7 10 6 14 6 C18 6 21.8 8.7 24.5 14 C21.8 19.3 18 22 14 22 C10 22 6.2 19.3 3.5 14 Z"></path><circle cx="14" cy="14" r="3.8"></circle></svg><span>Opacity</span></span><input id="menuFillOpacityPicker" max="1" min="0.05" step="0.05" type="range" value="1"/></label>
-<label class="menu-control" title="Set selected tile stroke color"><span><img alt="" class="menu-icon-image outline-menu-image" src="assets/icon-outline-pencil.png"><span>Outline</span></img></span><input id="menuStrokeColorPicker" type="color" value="#222222"/></label>
+<label class="menu-control" title="Set selected tile stroke color"><span><svg aria-hidden="true" class="outline-pencil-icon outline-menu-image" viewBox="0 0 24 24"><path class="outline-pencil-line" d="M3 18.5h10.5"></path><path class="outline-pencil-body" d="M8.5 16.5l1-4 7.8-7.8 3 3-7.8 7.8z"></path><path class="outline-pencil-tip" d="M8.5 16.5l4-1-3-3z"></path><path class="outline-pencil-band" d="M15.7 6.3l3 3"></path></svg><span>Outline</span></span><input id="menuStrokeColorPicker" type="color" value="#222222"/></label>
 <label class="menu-control" title="Set selected tile stroke style"><span><span class="menu-item-icon">┄</span>Stroke style</span>
 <select id="menuStrokeStylePicker">
 <option value="solid">solid</option>
@@ -170,7 +171,11 @@
 </select>
 </label>
 <label class="menu-control" title="Set selected tile stroke thickness"><span><span class="menu-item-icon">↕</span>Width</span><input id="menuStrokeWidthPicker" max="14" min="0" step="0.5" type="number" value="3"/></label>
-<label class="menu-control" title="Set canvas background color"><span><svg aria-hidden="true" class="canvas-color-icon menu-svg-icon" viewBox="0 0 24 24"><path class="canvas-icon-surface" d="M4 3h11l5 5v13H4z"></path><path class="canvas-icon-fold" d="M15 3v5h5z"></path></svg><span>Canvas</span></span><input id="menuCanvasColorPicker" type="color" value="#fafafa"/></label>
+<label class="menu-control" title="Show or hide vertices on selected tiles"><span><svg aria-hidden="true" class="menu-svg-icon vertices-tool-icon" viewBox="0 0 24 24"><path d="M5 18L12 5l7 13z"></path><circle cx="5" cy="18" r="2.2"></circle><circle cx="12" cy="5" r="2.2"></circle><circle cx="19" cy="18" r="2.2"></circle></svg><span>Vertices</span></span><select id="menuVertexStylePicker"><option value="none">none</option><option value="points">points</option></select></label>
+<label class="menu-check" title="Add points at unit intervals along integer-length edges"><input id="menuIntegralVertexDecomposition" type="checkbox"/><span class="menu-item-icon">&#8942;</span><span>Integral decomposition</span></label>
+<label class="menu-control" title="Set selected tile vertex color"><span><span class="vertex-menu-dot"></span>Point color</span><input id="menuVertexColorPicker" type="color" value="#1565c0"/></label>
+<label class="menu-control" title="Set selected tile vertex point size"><span><span class="menu-item-icon">&bull;</span>Point size</span><input id="menuVertexSizePicker" max="20" min="1" step="0.5" type="number" value="5"/></label>
+<label class="menu-control" title="Set canvas background color"><span><svg aria-hidden="true" class="canvas-color-icon menu-svg-icon" viewBox="0 0 24 24"><path class="canvas-icon-surface" d="M4 3h11l5 5v13H4z"></path><path class="canvas-icon-fold" d="M15 3v5h5z"></path></svg><span>Canvas</span></span><input id="menuCanvasColorPicker" type="color" value="#ffffff"/></label>
 <div class="menu-separator"></div>
 <button data-command="openCustomImage" title="Choose, paste, drop, or search for an image to place inside one selected tile"><svg aria-hidden="true" class="menu-svg-icon custom-style-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="8" cy="9" r="2"></circle><path d="M5 18l5-5 3 3 2-2 4 4"></path></svg><span>Custom Image</span></button>
 <button data-command="openTileText" title="Add styled text inside one selected tile"><svg aria-hidden="true" class="menu-svg-icon serif-text-icon" viewBox="0 0 24 24"><path d="M5 4.5h14M5 4.5v3M19 4.5v3M12 4.5v15M9.5 19.5h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span>Add Text</span></button>
@@ -211,7 +216,7 @@
 <button aria-label="Delete" class="icon-button neutral-delete-button" data-command="deleteSelected" title="Delete selected (Delete/Backspace)">
 <svg aria-hidden="true" class="toolbar-svg-icon trash-icon" viewbox="0 0 48 48"><path d="M16 15 H32 L30.4 39 H17.6 Z"></path><path d="M18 12 H30"></path><path d="M21 9 H27"></path><path d="M21 20 V33"></path><path d="M27 20 V33"></path></svg>
 </button>
-<button aria-label="Clear Canvas" class="icon-button danger-button" data-command="clearCanvas" title="Clear canvas">🧹</button>
+<button aria-label="Clear Canvas" class="icon-button danger-button" data-command="clearCanvas" title="Clear canvas"><svg aria-hidden="true" class="toolbar-svg-icon broom-icon" viewBox="0 0 48 48"><path class="broom-handle" d="M34 6L21 29"></path><path class="broom-collar" d="M18 26l8 5"></path><path class="broom-head" d="M18 27c-2 5-5 8-10 11 8 4 17 4 25 0l-7-8z"></path><path class="broom-bristle" d="M14 34l-3 4M20 34l-1 6M26 35l2 4"></path></svg></button>
 </div>
 <div class="toolbar-section" data-toolbar-section="selection" id="selectionToolbar">
 <button aria-label="Select all tiles" class="icon-button" id="selectAll" title="Select all tiles (Ctrl/Cmd+A)">☑</button>
@@ -262,6 +267,22 @@
 <button aria-label="Reverse one arc" class="icon-button arc-reverse-tool-button" id="reverseSingleArc" title="Reverse One Arc: select bubble or puzzle tiles, then click an edge to reverse it. Press Enter or click away to finish."><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon arc-reverse-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-reverse-one-arc.svg"/></button>
 <button aria-label="To Bubble Tile" class="icon-button to-bubble-tool-button" id="polygonToBubble" title="To Bubble Tile: convert selected compatible polygon tiles into all-out-arc bubble tiles; Einstein-family, soft, and lens tiles are excluded"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-bubble-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-to-bubble.png"/></button>
 <button aria-label="To Polygon" class="icon-button to-polygon-tool-button" id="bubbleToPolygon" title="To Polygon: convert selected bubble-edge tiles back to straight polygon edges"><img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon to-polygon-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/></button>
+<div class="style-dropdown-wrap">
+<button aria-label="Decompose selected bubble tiles" class="office-style-button toolbar-icon-only" id="decomposeButton" title="Decompose selected hexagons, trapezoids, rhombuses, or Soft Tiles" type="button">
+<img alt="" aria-hidden="true" class="bubble-toolbar-raster-icon decompose-tool-icon toolbar-bubble-raster-icon" src="assets/bubble-icons/decompose.svg"/><span class="dropdown-caret">&#9662;</span>
+</button>
+<div class="style-popover decompose-popover" hidden="" id="decomposePanel">
+<label class="style-popover-control" title="Choose the smaller tile family">
+<span>Decompose into</span>
+<select id="decomposeTarget"><option value="circle">H0 + T3 triangles</option><option value="triangles">triangles</option><option value="rhombuses">rhombuses</option><option value="trapezoids">trapezoids</option></select>
+</label>
+<label class="style-popover-control" title="Choose the direction of every new shared internal arc">
+<span>Internal arcs</span>
+<select id="decomposeArcDirection"><option value="0">clockwise</option><option value="1">counterclockwise</option></select>
+</label>
+<button class="primary-action decompose-apply-button" id="applyDecompose" type="button">Decompose</button>
+</div>
+</div>
 <div class="style-dropdown-wrap">
 <button aria-label="Bubble Style: change selected bubble-tile edge profiles" class="office-style-button toolbar-icon-only" data-bubble-style-button="true" id="edgeDecorationButton" title="Bubble Style: choose 60-degree arc, puzzle-piece, compact spike, or square-tooth edge profile for selected bubble tiles" type="button">
 <img alt="" aria-hidden="true" class="office-style-icon edge-decoration-tool-icon bubble-style-menu-icon" src="assets/bubble-icons/bubble-style-menu.png"/>
@@ -362,9 +383,9 @@
 </div>
 <div class="style-dropdown-wrap">
 <button aria-label="Outline: set selected tile stroke color, style, and width" class="office-style-button toolbar-icon-only" id="shapeOutlineButton" title="Outline: set selected tile stroke color, style, and width" type="button">
-<img alt="" class="office-style-icon outline-tool-image" src="assets/icon-outline-pencil.png">
+<svg aria-hidden="true" class="office-style-icon outline-pencil-icon outline-tool-image" viewBox="0 0 24 24"><path class="outline-pencil-line" d="M3 18.5h10.5"></path><path class="outline-pencil-body" d="M8.5 16.5l1-4 7.8-7.8 3 3-7.8 7.8z"></path><path class="outline-pencil-tip" d="M8.5 16.5l4-1-3-3z"></path><path class="outline-pencil-band" d="M15.7 6.3l3 3"></path></svg>
 <span class="dropdown-caret">▾</span>
-</img></button>
+</button>
 <div class="style-popover" hidden="" id="shapeOutlinePanel">
 <label class="style-popover-control" title="Set selected tile stroke color">
 <span>Stroke color</span>
@@ -391,12 +412,36 @@
 </label>
 </div>
 </div>
-<button aria-label="Format Painter: copy fill, custom image, text, and outline styling from the selected tile to a tile, group, or dragged selection" aria-pressed="false" class="office-style-button toolbar-icon-only format-painter-button" id="formatPainterButton" title="Format Painter: select one source tile, activate this tool, then click a tile or group, or drag around multiple target tiles" type="button"><svg aria-hidden="true" class="format-painter-icon" viewBox="0 0 24 24"><rect class="format-painter-roller" height="6" rx="1" width="13" x="2" y="3"></rect><path class="format-painter-frame" d="M15 6h3.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H12v3"></path><rect class="format-painter-handle" height="6" rx="1" width="5" x="9.5" y="15.5"></rect></svg></button>
+<div class="style-dropdown-wrap">
+<button aria-label="Vertices: show points at tile vertices and set their color and size" class="office-style-button toolbar-icon-only" id="verticesButton" title="Vertices: show or hide points at selected tile vertices" type="button">
+<svg aria-hidden="true" class="vertices-tool-icon" viewBox="0 0 24 24"><path d="M5 18L12 5l7 13z"></path><circle cx="5" cy="18" r="2.2"></circle><circle cx="12" cy="5" r="2.2"></circle><circle cx="19" cy="18" r="2.2"></circle></svg>
+<span class="dropdown-caret">&#9662;</span>
+</button>
+<div class="style-popover vertices-popover" hidden="" id="verticesPanel">
+<label class="style-popover-control" title="Show or hide points at selected tile vertices">
+<span>Vertices</span>
+<select id="vertexStylePicker"><option value="none">none</option><option value="points">points</option></select>
+</label>
+<label class="style-popover-control vertex-decomposition-control" title="Add points at unit intervals along integer-length edges">
+<span>Integral decomposition</span>
+<input id="integralVertexDecomposition" type="checkbox"/>
+</label>
+<label class="style-popover-control" title="Set selected tile vertex color">
+<span>Point color</span>
+<input id="vertexColorPicker" type="color" value="#1565c0"/>
+</label>
+<label class="style-popover-control" title="Set selected tile vertex point size">
+<span>Point size</span>
+<input class="degree-input vertex-size-input" id="vertexSizePicker" max="20" min="1" step="0.5" type="number" value="5"/>
+</label>
+</div>
+</div>
+<button aria-label="Format Painter: copy fill, custom image, text, outline, and vertex styling from the selected tile to a tile, group, or dragged selection" aria-pressed="false" class="office-style-button toolbar-icon-only format-painter-button" id="formatPainterButton" title="Format Painter: select one source tile, activate this tool, then click a tile or group, or drag around multiple target tiles" type="button"><svg aria-hidden="true" class="format-painter-icon" viewBox="0 0 24 24"><rect class="format-painter-roller" height="6" rx="1" width="13" x="2" y="3"></rect><path class="format-painter-frame" d="M15 6h3.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H12v3"></path><rect class="format-painter-handle" height="6" rx="1" width="5" x="9.5" y="15.5"></rect></svg></button>
 <button aria-label="Custom image fill: upload and position an image inside one selected tile" class="office-style-button toolbar-icon-only custom-style-button" id="customStyleButton" title="Custom image fill: select one tile, then upload, crop, and resize an image inside it" type="button"><svg aria-hidden="true" class="custom-style-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="8" cy="9" r="2"></circle><path d="M5 18l5-5 3 3 2-2 4 4"></path></svg></button>
 <button aria-label="Add text to one selected tile" class="office-style-button toolbar-icon-only tile-text-button" id="tileTextButton" title="Add text: place styled text inside one selected tile" type="button"><svg aria-hidden="true" class="serif-text-icon" viewBox="0 0 24 24"><path d="M5 4.5h14M5 4.5v3M19 4.5v3M12 4.5v15M9.5 19.5h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
 <label aria-label="Set canvas background color" class="color-control compact-canvas-control toolbar-icon-only" title="Set canvas background color">
 <svg aria-hidden="true" class="canvas-color-icon" viewBox="0 0 24 24"><path class="canvas-icon-surface" id="canvasColorIconSwatch" d="M4 3h11l5 5v13H4z"></path><path class="canvas-icon-fold" d="M15 3v5h5z"></path></svg>
-<input id="canvasColorPicker" type="color" value="#fafafa"/>
+<input id="canvasColorPicker" type="color" value="#ffffff"/>
 </label>
 </div>
 <div class="toolbar-section quick-toggles" data-toolbar-section="toggles" id="togglesToolbar">
@@ -509,7 +554,7 @@
 <div class="modal-backdrop" hidden="" id="aboutModal">
 <div aria-labelledby="aboutTitle" aria-modal="true" class="about-dialog" role="dialog">
 <div class="about-header">
-<h2 id="aboutTitle">About Bubble Tiles</h2>
+<h2 id="aboutTitle">About Bubble Tiles 1.8</h2>
 <button class="icon-button" id="closeAbout" title="Close About">✕</button>
 </div>
 <div class="about-body">
@@ -525,6 +570,12 @@
         </p>
 <p>
           Open the public app at <a href="https://johnrchase.github.io/bubble-tiles/" rel="noopener" target="_blank">johnrchase.github.io/bubble-tiles</a>.
+        </p>
+<p>
+          View the source code and project repository at <a href="https://github.com/johnrchase/bubble-tiles" rel="noopener" target="_blank">github.com/johnrchase/bubble-tiles</a>.
+        </p>
+<p>
+          Share feedback through the <a href="https://forms.gle/huCRv1v1UBzbD3Z66" rel="noopener" target="_blank">Bubble Tiles feedback survey</a>.
         </p>
 <p>
           Physical bubble-tile materials and outreach inspiration are credited to Lauren Siegel and MathHappens Foundation.
@@ -543,6 +594,8 @@
 <button class="icon-button" id="closeVersionHistory" title="Close Version History">✕</button>
 </div>
 <div class="about-body">
+<p><strong>Bubble Tiles 1.8</strong></p>
+<p>Version 1.8 adds customizable tile vertices with optional unit-interval decomposition and a style-preserving Decompose tool for compatible hexagonal, trapezoidal, rhombic, and Soft Tiles. It also improves periodic lattice coverage, keeps toolbar popovers accessible in narrow windows, adds a 4:1 picture-export proportion, refines style controls, makes new canvas backgrounds pure white, and expands the periodic examples.</p>
 <p><strong>Bubble Tiles 1.7</strong></p>
 <p>Version 1.7 corrects the H3B/H3C identities and colors; improves complex lattice rendering near source motifs; adds tile-family and tray-tab hover guidance; organizes the expanded Examples gallery into collapsible thematic sections; and adds four periodic examples.</p>
 <p><strong>Bubble Tiles 1.6.1</strong></p>
@@ -597,7 +650,7 @@
 <div class="modal-backdrop" hidden="" id="helpModal">
 <div aria-labelledby="helpTitle" aria-modal="true" class="about-dialog help-dialog" role="dialog">
 <div class="about-header">
-<h2 id="helpTitle">Bubble Tiles 1.7 Help</h2>
+<h2 id="helpTitle">Bubble Tiles 1.8 Help</h2>
 <button class="icon-button" id="closeHelp" title="Close Help">✕</button>
 </div>
 <div class="about-body help-body">
@@ -703,6 +756,10 @@
 <img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon" src="assets/bubble-icons/bubble-to-polygon.png"/>
 <div><strong>To Polygon.</strong> Bubble → To Polygon returns selected converted bubble or puzzle-edge tiles to straight polygon edges when possible.</div>
 </div>
+<div class="help-tool">
+<img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon decompose-tool-icon" src="assets/bubble-icons/decompose.svg"/>
+<div><strong>Decompose.</strong> Select compatible bubble tiles and choose the new pieces and internal-arc direction. Hexagons can become triangles, rhombuses, or trapezoids; trapezoids can become triangles or a rhombus with a triangle; and rhombuses can become triangles. Soft Tiles can become their H0 core with attached T3 triangles, all triangles, triangles with rhombuses, or triangles with trapezoids. The grouped pieces preserve the original outer arcs and styling. If a selected source belongs to a lattice fill, that lattice is removed before the source is replaced.</div>
+</div>
 <div class="help-tool"><img alt="" aria-hidden="true" class="help-icon help-bubble-raster-icon help-bubble-style-menu-icon" src="assets/bubble-icons/bubble-style-menu.png"/>
 
 <div><strong>Bubble Style.</strong> Choose 60° arc, puzzle, spike, or square-tooth edge profiles from Bubble → Bubble Style or the Bubble toolbar dropdown. It works on compatible bubble tiles; convert normal polygons first with To Bubble Tile. Arc Lens, soft tiles, and the Einstein-family monotiles are excluded. Reverse One Arc can flip individual styled edges inward or outward.</div>
@@ -739,12 +796,16 @@
 <div><strong>Fill.</strong> Sets the selected tile's fill color, opacity, and pattern. Frames accept solid fill colors and opacity but not patterns. When one tile is selected, the controls and highlighted pattern preview reflect its current fill.</div>
 </div>
 <div class="help-tool">
-<span class="help-icon"><img alt="" aria-hidden="true" class="help-style-tool-image" src="assets/icon-outline-pencil.png"/></span>
+<span class="help-icon"><svg aria-hidden="true" class="help-style-tool-image outline-pencil-icon" viewBox="0 0 24 24"><path class="outline-pencil-line" d="M3 18.5h10.5"></path><path class="outline-pencil-body" d="M8.5 16.5l1-4 7.8-7.8 3 3-7.8 7.8z"></path><path class="outline-pencil-tip" d="M8.5 16.5l4-1-3-3z"></path><path class="outline-pencil-band" d="M15.7 6.3l3 3"></path></svg></span>
 <div><strong>Outline.</strong> Sets the selected tile's border color, width, and line style. Canvas outlines scale naturally as the view or tile is scaled, use rounded joins, and deduplicate matching shared borders between neighboring tiles.</div>
 </div>
 <div class="help-tool">
+<span class="help-icon"><svg aria-hidden="true" class="vertices-tool-icon" viewBox="0 0 24 24"><path d="M5 18L12 5l7 13z"></path><circle cx="5" cy="18" r="2.2"></circle><circle cx="12" cy="5" r="2.2"></circle><circle cx="19" cy="18" r="2.2"></circle></svg></span>
+<div><strong>Vertices.</strong> Shows points at the selected tiles' vertices and sets their color and size. Integral decomposition also marks every unit interval along edges whose lengths are whole numbers, such as the midpoint of a length-2 edge. Vertices are off by default and are preserved in copies, saved layouts, lattices, and exports.</div>
+</div>
+<div class="help-tool">
 <span class="help-icon"><svg aria-hidden="true" class="help-format-painter-icon" viewBox="0 0 24 24"><rect class="format-painter-roller" height="6" rx="1" width="13" x="2" y="3"></rect><path class="format-painter-frame" d="M15 6h3.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H12v3"></path><rect class="format-painter-handle" height="6" rx="1" width="5" x="9.5" y="15.5"></rect></svg></span>
-<div><strong>Format Painter.</strong> Select one source tile and activate Format Painter. Click a tile, group, or dragged selection to copy its style. Frame targets receive the permitted solid color, opacity, and outline settings without patterns, images, or text. The tool applies once and then turns off; press Escape to cancel.</div>
+<div><strong>Format Painter.</strong> Select one source tile and activate Format Painter. Click a tile, group, or dragged selection to copy its fill, outline, vertex, image, and text styling. Frame targets receive the permitted solid color, opacity, outline, and vertex settings without patterns, images, or text. The tool applies once and then turns off; press Escape to cancel.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon"><svg aria-hidden="true" class="custom-style-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="8" cy="9" r="2"></circle><path d="M5 18l5-5 3 3 2-2 4 4"></path></svg></span>
@@ -756,12 +817,12 @@
 </div>
 <div class="help-tool">
 <span class="help-icon"><svg aria-hidden="true" class="canvas-color-icon" viewBox="0 0 24 24"><path class="canvas-icon-surface" d="M4 3h11l5 5v13H4z"></path><path class="canvas-icon-fold" d="M15 3v5h5z"></path></svg></span>
-<div><strong>Canvas.</strong> Changes the canvas background color. Fill, Outline, and Canvas changes update immediately while preserving selection and overlap highlights.</div>
+<div><strong>Canvas.</strong> Changes the canvas background color, which is pure white by default. Fill, Outline, and Canvas changes update immediately while preserving selection and overlap highlights.</div>
 </div>
 <div class="help-section-title">Export and saving</div>
 <div class="help-tool">
 <svg aria-hidden="true" class="help-icon help-export-picture-icon export-picture-icon" viewbox="0 0 28 28"><rect class="export-picture-frame" height="17" rx="2" width="19" x="3" y="8"></rect><circle class="export-picture-sun" cx="8" cy="13" r="2"></circle><path class="export-picture-landscape" d="M5 22l5-5 3 3 3-4 4 6"></path><path class="export-picture-arrow" d="M16 11l8-8m-6 0h6v6"></path></svg>
-<div><strong>Export Picture.</strong> File → Export Picture lets you drag a custom export rectangle, choose Free/Square/4:3/16:9 proportions, and export SVG, PNG, JPG, or PDF/print. Active lattice-fill copies visible in the chosen area are included at the selected lattice opacity.</div>
+<div><strong>Export Picture.</strong> File → Export Picture lets you drag a custom export rectangle, choose Free/Square/4:3/16:9/4:1 proportions, and export SVG, PNG, JPG, or PDF/print. Active lattice-fill copies visible in the chosen area are included at the selected lattice opacity.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon">💾</span>
@@ -794,6 +855,7 @@
 <option value="1:1">Square</option>
 <option value="4:3">4:3</option>
 <option value="16:9">16:9</option>
+<option value="4:1">4:1</option>
 </select>
 </label>
 <label>Format
@@ -1127,6 +1189,7 @@
 </aside>
 <main id="workspace">
 <div aria-live="polite" class="lattice-hint" hidden="" id="latticeHint" role="note"></div>
+<div aria-live="polite" class="copy-confirmation-toast" hidden="" id="copyConfirmationToast" role="status">Link copied to clipboard.</div>
 <svg id="canvas" viewbox="0 0 1000 700">
 <g class="lattice-layer" id="latticeLayer"></g>
 <g class="lattice-preview" id="latticePreview"></g>
