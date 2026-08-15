@@ -71,6 +71,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const collapsedTrayIcons = document.getElementById("collapsedTrayIcons");
   const trayDragGhost = document.getElementById("trayDragGhost");
   const contextMenu = document.getElementById("contextMenu");
+  const paperExampleContextMenu = document.getElementById("paperExampleContextMenu");
   const deviceWarningModal = document.getElementById("deviceWarningModal");
   const closeDeviceWarningButton = document.getElementById("closeDeviceWarning");
   const continueOnDeviceButton = document.getElementById("continueOnDevice");
@@ -1484,11 +1485,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Four-sided rhombic bubble tiles.
     RB0: makeRhombicBubbleTile("0", "#f4efe1", [0, 0, 0, 0]),
-    RB1: makeRhombicBubbleTile("1", "#d6a522", [1, 0, 0, 0]),
-    RB2A: makeRhombicBubbleTile("2B", "#8da83b", [1, 1, 0, 0]),
-    RB2B: makeRhombicBubbleTile("2C", "#37b9a4", [1, 0, 1, 0]),
-    RB3A: makeRhombicBubbleTile("3", "#4ec4ea", [1, 1, 1, 0]),
-    RB3B: makeRhombicBubbleTile("2A", "#7f90d5", [1, 0, 0, 1]),
+    RB1: makeRhombicBubbleTile("1*", "#977b02", [1, 0, 0, 0]),
+    RB1STAR: makeRhombicBubbleTile("1", "#fed000", [0, 1, 0, 0]),
+    RB2A: makeRhombicBubbleTile("2B", "#ff8f17", [1, 1, 0, 0]),
+    RB2B: makeRhombicBubbleTile("2A", "#fe3028", [1, 0, 1, 0]),
+    RB2BSTAR: makeRhombicBubbleTile("2A*", "#791915", [0, 1, 0, 1]),
+    RB3A: makeRhombicBubbleTile("3", "#768fcf", [1, 1, 1, 0]),
+    RB3ASTAR: makeRhombicBubbleTile("3*", "#4d5c80", [1, 1, 0, 1]),
+    RB3B: makeRhombicBubbleTile("2C", "#91bd0d", [1, 0, 0, 1]),
     RB4: makeRhombicBubbleTile("4", "#9b6a86", [1, 1, 1, 1]),
 
     // Five-sided bubble tiles.
@@ -2916,6 +2920,153 @@ window.addEventListener("DOMContentLoaded", () => {
 
   builtinExamples.push({ id: "trapezoidal-spike-tiling", title: "Trapezoidal Spike Tiling", description: "A periodic six-tile seed using complementary trapezoidal bubble tiles with the Spike Bubble Style.", tags: ["tiling", "trapezoidal bubble tiles", "spike style", "lattice"], layout: {"version":4,"canvasBackgroundColor":"#fafafa","latticeCopyOpacity":1,"viewBox":{"x":20.767,"y":-74.744,"width":984.21,"height":688.947},"tiles":[{"id":"tile1","tileType":"ARCV_BUBBLE_OP_TRAP_00010","x":312.594,"y":194.513,"rotation":-120,"flipX":1,"flipY":1,"scale":1,"fillColor":"#69ab6a","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile2","tileType":"ARCV_BUBBLE_OP_TRAP_00010","x":240.594,"y":263.795,"rotation":120,"flipX":1,"flipY":1,"scale":1,"fillColor":"#69ab6a","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile3","tileType":"ARCV_BUBBLE_OP_TRAP_00010","x":336.594,"y":291.508,"rotation":0,"flipX":1,"flipY":1,"scale":1,"fillColor":"#69ab6a","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile23","tileType":"ARCV_BUBBLE_OP_TRAP_11101","x":400.594,"y":236.082,"rotation":60,"flipX":1,"flipY":1,"scale":1,"fillColor":"#62a8f4","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile24","tileType":"ARCV_BUBBLE_OP_TRAP_11101","x":472.594,"y":166.8,"rotation":-60,"flipX":1,"flipY":1,"scale":1,"fillColor":"#62a8f4","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"},{"id":"tile25","tileType":"ARCV_BUBBLE_OP_TRAP_11101","x":376.594,"y":139.087,"rotation":-180,"flipX":1,"flipY":1,"scale":1,"fillColor":"#62a8f4","fillPattern":"solid","fillPatternAngle":0,"fillOpacity":1,"customImage":null,"tileText":null,"strokeColor":null,"strokeStyle":"solid","strokeWidth":3,"edgeDecoration":"spike"}],"groups":[],"latticeFills":[{"id":"lattice1","sourceIds":["tile1","tile2","tile3","tile23","tile24","tile25"],"vectorA":{"x":240,"y":0},"vectorB":{"x":-120,"y":207.846}}]} });
 
+  const paperFigures = Array.isArray(window.BUBBLE_TILES_PAPER_FIGURES) ? window.BUBBLE_TILES_PAPER_FIGURES : [];
+  const paperFigureDisplaySlugs = [
+    "s1-and-s4-puzzle-pieces",
+    "all-14-hex-tiles",
+    "h1-h4b-and-h6-infinite-tiling",
+    "hexagonal-bubble-tiles",
+    "triangular-bubble-tiles",
+    "square-bubble-tiles",
+    "h0-and-h6-nonconvex",
+    "h0-and-h6-weakly-convex",
+    "supertile-exploded",
+    "supertile",
+    "h3a",
+    "h3a-star",
+    "h3b",
+    "h3c",
+    "h3b-and-h3c",
+    "h3b-and-h3a",
+    "h3b-and-h3a-star",
+    "h3a-and-h3a-star",
+    "h3c-and-h3a-star",
+    "h2a-and-h4a",
+    "h2b-and-h4b",
+    "h2c-and-h4c",
+    "h2a-and-h4b",
+    "h2a-and-h4c",
+    "h2b-and-h4c",
+    "h2b-and-h4a",
+    "h2c-and-h4a",
+    "h2c-and-h4b",
+    "h4a-and-h1",
+    "h4b-and-h1",
+    "h4c-and-h1",
+    "h2a-and-h5",
+    "h2b-and-h5",
+    "h2c-and-h5",
+    "h0-and-h4b",
+    "h0-and-h4c",
+    "h1-and-h5",
+    "h6-and-h2b",
+    "h6-and-h2c",
+    "h3b-and-h3a-1-to-3",
+    "h3b-and-h3a-1-to-2",
+    "h3b-and-h3a-1-to-1",
+    "h3b-and-h3a-5-to-3",
+    "h3b-and-h3a-2-to-1",
+    "h3b-and-h3a-3-to-1",
+    "arc-dual",
+    "all-four-triangular-tiles",
+    "all-four-square-tiles",
+    "h6-and-football-new",
+    "soft-tile-design",
+    "hexagon-decomposition",
+    "substrate-proof-v2",
+    "the-rhombic-tiles-and-chiral-partners",
+    "r2a",
+    "r2a-star",
+    "r2b",
+    "r2c",
+    "r1-and-r3",
+    "r1-and-r3-star",
+    "r1-star-and-r3",
+    "r1-star-and-r3-star",
+    "r0-and-r3-1-to-2",
+    "r4-and-r1-1-to-2",
+    "r0-and-r3-star-1-to-2",
+    "r4-and-r1-star-1-to-2",
+    "2a-and-2b",
+    "2a-star-and-2b",
+    "r2a-and-r2c",
+    "r2a-star-and-r2c",
+    "r0-and-r4",
+    "2b-and-2c",
+    "all-10-rhombic-tiles",
+    "t0-and-r3",
+    "t3-and-r1",
+    "t0-and-r3-star",
+    "t3-and-r1-star",
+    "t2-and-r0-4-to-1",
+    "t1-and-r4-4-to-1",
+    "r0-and-h4c-1-to-2",
+    "r4-and-h2c-1-to-2",
+    "r0-and-h5",
+    "r4-and-h1",
+    "r1-and-h4a",
+    "r3-and-h2a",
+    "r1-and-h6-flowers-3-to-1",
+    "r3-and-h0-3-to-1",
+    "r1-star-and-h6-flowers-3-to-1",
+    "r3-star-and-h0-3-to-1",
+    "r1-star-and-h4a",
+    "r3-star-and-h2a",
+    "r1-star-and-h4b",
+    "r3-star-and-h2b",
+    "r1-star-and-h4c",
+    "r3-star-and-h2c",
+    "r1-and-h5-irregular-2-to-1",
+    "r3-and-h1-irregular-2-to-1",
+    "r2a-and-h3a",
+    "r2a-star-and-h3a-star",
+    "r2a-and-h3a-star",
+    "r2a-star-and-h3a",
+    "r2c-and-h3a-1-to-1",
+    "r2c-and-h3a-star-1-to-1",
+    "r2a-and-h3b",
+    "r2a-star-and-h3b",
+    "r2a-and-h3c",
+    "r2a-star-and-h3c",
+    "r2b-and-h3b",
+    "r2b-and-h3c",
+    "r2c-and-h3c",
+    "r1-and-h4b",
+    "r3-and-h2b",
+    "r1-and-h4c",
+    "r3-and-h2c",
+    "h4-and-r1-irregular-1-to-1",
+    "r2-star-and-h3a",
+    "r2a-and-h3a-3-to-1",
+    "r2a-and-h3b-3-to-1",
+    "r2a-and-h3c-1-to-1",
+    "r2a-and-h3c-3-to-1",
+    "r2a-star-and-h3-star",
+    "r2a-star-and-h3a-star-3-to-1",
+    "r2b-and-h3a-3-to-1",
+    "r2b-and-h3a-star-3-to-1",
+    "r2b-and-h3b-2-to-1",
+    "r2b-and-h3c-3-to-1",
+    "r2c-and-h3a-3-to-1",
+    "r2c-and-h3a-star-3-to-1",
+    "r2c-and-h3b-3-to-1",
+    "r2c-and-h3c-1-to-1",
+    "r2c-and-h3c-3-to-1",
+    "the-10-rhombic-tiles"
+  ];
+  paperFigures.forEach(figure => {
+    builtinExamples.push({
+      id: "paper-" + figure.slug,
+      title: figure.title,
+      titleSubscript: figure.titleSubscript || null,
+      description: figure.description,
+      tags: ["paper figure"],
+      paperSlug: figure.slug,
+      omitPreview: true,
+      layout: figure.layout
+    });
+  });
+
   const rhombitrihexagonalExample = builtinExamples.find(example => example.id === "regular-polygon-lattice-tri-square-hex");
   if (rhombitrihexagonalExample) {
     rhombitrihexagonalExample.title = "Rhombi-tri-hexagonal Tiling (3.4.6.4)";
@@ -2961,6 +3112,12 @@ window.addEventListener("DOMContentLoaded", () => {
       title: "Other",
       description: "Finite spirals, Pac-Man arrangements, Spectres, tangrams, Penrose patterns, and Heesch-number investigations.",
       exampleIds: ["hex-puzzle-spiral-h1-h5", "pacman-octagon-tessellation", "pacman-pentagon-tessellation", "spectre-cluster", "tangrams", "beautiful-penrose-flower", "heesch-number-1"]
+    },
+    {
+      id: "paper-figures",
+      title: "Paper Figures",
+      description: "Interactive diagrams from the Bubble Tiles paper. Click to load; right-click to copy a short direct link.",
+      exampleIds: paperFigureDisplaySlugs.map(slug => "paper-" + slug)
     }
   ];
   const exampleDisplayOrder = exampleCategories.flatMap(category => category.exampleIds);
@@ -4701,10 +4858,22 @@ window.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("button");
       card.type = "button";
       card.className = "example-card";
-      card.title = example.description || example.title;
+      card.title = (example.description || example.title) + (example.paperSlug ? " Right-click to copy a direct share link." : "");
       card.setAttribute("aria-label", "Load " + example.title + ". " + (example.description || ""));
       card.addEventListener("click", () => loadExample(example.id));
-      card.appendChild(createExamplePreview(example, previewObserver));
+      if (example.omitPreview) {
+        card.classList.add("paper-example-card");
+      } else {
+        card.appendChild(createExamplePreview(example, previewObserver));
+      }
+      if (example.paperSlug) {
+        card.dataset.paperSlug = example.paperSlug;
+        card.addEventListener("contextmenu", event => {
+          event.preventDefault();
+          event.stopPropagation();
+          showPaperExampleContextMenu(event.clientX, event.clientY, example.paperSlug);
+        });
+      }
 
       const title = document.createElement("div");
       title.className = "example-card-title";
@@ -4714,7 +4883,15 @@ window.addEventListener("DOMContentLoaded", () => {
       icon.textContent = "▦";
 
       const titleText = document.createElement("span");
-      titleText.textContent = example.title;
+      if (example.titleSubscript && example.title.endsWith(example.titleSubscript)) {
+        const baseTitle = example.title.slice(0, -example.titleSubscript.length).trimEnd();
+        titleText.appendChild(document.createTextNode(baseTitle));
+        const subscript = document.createElement("sub");
+        subscript.textContent = example.titleSubscript;
+        titleText.appendChild(subscript);
+      } else {
+        titleText.textContent = example.title;
+      }
 
       title.appendChild(titleText);
 
@@ -5774,6 +5951,42 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function hideContextMenu() {
     if (contextMenu) contextMenu.hidden = true;
+  }
+
+  let activePaperExampleSlug = null;
+
+  function paperFigureShareUrl(slug) {
+    const url = new URL("https://johnrchase.github.io/bubble-tiles/");
+    url.searchParams.set("paper", slug);
+    return url.href;
+  }
+
+  function showPaperExampleContextMenu(x, y, slug) {
+    if (!paperExampleContextMenu) return;
+    hideContextMenu();
+    activePaperExampleSlug = slug;
+    paperExampleContextMenu.hidden = false;
+    const width = paperExampleContextMenu.offsetWidth || 178;
+    const height = paperExampleContextMenu.offsetHeight || 44;
+    const margin = 8;
+    paperExampleContextMenu.style.left = Math.max(margin, Math.min(x, window.innerWidth - width - margin)) + "px";
+    paperExampleContextMenu.style.top = Math.max(margin, Math.min(y, window.innerHeight - height - margin)) + "px";
+  }
+
+  function hidePaperExampleContextMenu() {
+    if (paperExampleContextMenu) paperExampleContextMenu.hidden = true;
+    activePaperExampleSlug = null;
+  }
+
+  function copyPaperFigureShareLink() {
+    if (!activePaperExampleSlug) return;
+    const slug = activePaperExampleSlug;
+    copyTextToClipboard(paperFigureShareUrl(slug))
+      .then(() => {
+        showCopyConfirmation();
+        setStatus("Copied Paper Figure share link: " + slug + ".");
+      })
+      .catch(() => setStatus("Could not copy the Paper Figure share link."));
   }
 
   function handleContextAction(action) {
@@ -7124,6 +7337,37 @@ window.addEventListener("DOMContentLoaded", () => {
     const ids = selectedIds();
     if (ids.length === 0) return;
 
+    const chiralReflectionPartners = {
+      B3A: { tileType: "B3ASTAR", partnerReflectionRotation: 120 },
+      B3ASTAR: { tileType: "B3A", partnerReflectionRotation: 120 },
+      PH3A: { tileType: "PH3ASTAR", partnerReflectionRotation: 120 },
+      PH3ASTAR: { tileType: "PH3A", partnerReflectionRotation: 120 },
+      RB1: { tileType: "RB1STAR", partnerReflectionRotation: 60 },
+      RB1STAR: { tileType: "RB1", partnerReflectionRotation: 60 },
+      RB2B: { tileType: "RB2BSTAR", partnerReflectionRotation: 60 },
+      RB2BSTAR: { tileType: "RB2B", partnerReflectionRotation: 60 },
+      RB3A: { tileType: "RB3ASTAR", partnerReflectionRotation: 60 },
+      RB3ASTAR: { tileType: "RB3A", partnerReflectionRotation: 60 }
+    };
+
+    const multiplyLinearTransforms = (left, right) => ({
+      a: left.a * right.a + left.c * right.b,
+      b: left.b * right.a + left.d * right.b,
+      c: left.a * right.c + left.c * right.d,
+      d: left.b * right.c + left.d * right.d
+    });
+
+    const rotationLinearTransform = degrees => {
+      const radians = degrees * Math.PI / 180;
+      const cosine = Math.cos(radians);
+      const sine = Math.sin(radians);
+      return { a: cosine, b: sine, c: -sine, d: cosine };
+    };
+
+    const reflectionLinearTransform = axis === "horizontal"
+      ? { a: -1, b: 0, c: 0, d: 1 }
+      : { a: 1, b: 0, c: 0, d: -1 };
+
     /*
       Reflect the selected object as a single unit.
 
@@ -7137,30 +7381,63 @@ window.addEventListener("DOMContentLoaded", () => {
 
     ids.forEach(id => {
       const state = tiles[id];
-      const wasChiralThree = state.tileType === "B3A" || state.tileType === "B3ASTAR";
+      const definition = tileDefinitions[state.tileType];
+      const chiralIdentityType = definition && definition.isArcVariant && (definition.chiralIdentityType || definition.arcSourceType)
+        ? (definition.chiralIdentityType || definition.arcSourceType)
+        : state.tileType;
+      const partner = chiralReflectionPartners[chiralIdentityType];
+      const isChiralArcVariant = chiralIdentityType !== state.tileType;
 
       if (axis === "horizontal") {
         state.x = center.x - (state.x - center.x);
-
-        if (wasChiralThree) {
-          state.tileType = state.tileType === "B3A" ? "B3ASTAR" : "B3A";
-          state.rotation = normalizeAngle(-state.rotation + 120);
-          updateTileAppearance(id);
-        } else {
-          state.rotation = normalizeAngle(-state.rotation);
-          state.flipX = -(state.flipX || 1);
-        }
       } else {
         state.y = center.y - (state.y - center.y);
+      }
 
-        if (wasChiralThree) {
-          state.tileType = state.tileType === "B3A" ? "B3ASTAR" : "B3A";
-          state.rotation = normalizeAngle(-state.rotation - 60);
-          updateTileAppearance(id);
-        } else {
-          state.rotation = normalizeAngle(-state.rotation);
-          state.flipY = -(state.flipY || 1);
-        }
+      if (partner && isChiralArcVariant) {
+        const preserveFillColor = shouldArcDualPreserveColor(state);
+        const partnerVariantType = ensureArcVariantTileDefinition(partner.tileType, definition.bites);
+        const partnerVariantDefinition = partnerVariantType ? tileDefinitions[partnerVariantType] : null;
+
+        if (!partnerVariantDefinition) return;
+
+        partnerVariantDefinition.chiralIdentityType = partner.tileType;
+        partnerVariantDefinition.color = tileDefinitions[partner.tileType].color;
+        state.tileType = partnerVariantType;
+        state.rotation = normalizeAngle(-state.rotation);
+        if (axis === "horizontal") state.flipX = -(state.flipX || 1);
+        else state.flipY = -(state.flipY || 1);
+        if (!preserveFillColor) state.fillColor = null;
+        updateTileAppearance(id);
+      } else if (partner) {
+        const flipX = state.flipX || 1;
+        const flipY = state.flipY || 1;
+        const chiralPartnerTransform = multiplyLinearTransforms(
+          rotationLinearTransform(partner.partnerReflectionRotation),
+          { a: -1, b: 0, c: 0, d: 1 }
+        );
+        const currentTransform = multiplyLinearTransforms(
+          rotationLinearTransform(state.rotation),
+          { a: flipX, b: 0, c: 0, d: flipY }
+        );
+        const reflectedPartnerTransform = multiplyLinearTransforms(
+          multiplyLinearTransforms(reflectionLinearTransform, currentTransform),
+          chiralPartnerTransform
+        );
+        const rotationTransform = multiplyLinearTransforms(
+          reflectedPartnerTransform,
+          { a: flipX, b: 0, c: 0, d: flipY }
+        );
+        const preserveFillColor = shouldArcDualPreserveColor(state);
+
+        state.tileType = partner.tileType;
+        state.rotation = normalizeAngle(Math.atan2(rotationTransform.b, rotationTransform.a) * 180 / Math.PI);
+        if (!preserveFillColor) state.fillColor = null;
+        updateTileAppearance(id);
+      } else {
+        state.rotation = normalizeAngle(-state.rotation);
+        if (axis === "horizontal") state.flipX = -(state.flipX || 1);
+        else state.flipY = -(state.flipY || 1);
       }
 
       updateTileTransform(id);
@@ -7602,15 +7879,29 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!baseDefinition || !Array.isArray(baseDefinition.bites)) return null;
 
     const returnsToBase = rotatedBitesMatch(targetBites, baseDefinition.bites, 0);
-    const dualType = returnsToBase ? baseType : ensureArcVariantTileDefinition(baseType, targetBites);
-    if (!dualType || !tileDefinitions[dualType]) return null;
-
     let colorType = baseType;
     if (baseType === "RB0") colorType = returnsToBase ? "RB0" : "RB4";
     if (baseType === "RB4") colorType = returnsToBase ? "RB4" : "RB0";
-    if (baseType === "RB1") colorType = returnsToBase ? "RB1" : "RB3A";
-    if (baseType === "RB3A") colorType = returnsToBase ? "RB3A" : "RB1";
+    if (baseType === "RB1") colorType = returnsToBase ? "RB1" : "RB3ASTAR";
+    if (baseType === "RB3ASTAR") colorType = returnsToBase ? "RB3ASTAR" : "RB1";
+    if (baseType === "RB1STAR") colorType = returnsToBase ? "RB1STAR" : "RB3A";
+    if (baseType === "RB3A") colorType = returnsToBase ? "RB3A" : "RB1STAR";
+    if (baseType === "RB2B") colorType = returnsToBase ? "RB2B" : "RB2BSTAR";
+    if (baseType === "RB2BSTAR") colorType = returnsToBase ? "RB2BSTAR" : "RB2B";
+    const chiralTypes = ["RB1", "RB1STAR", "RB2B", "RB2BSTAR", "RB3A", "RB3ASTAR"];
+    const usesChiralIdentity = colorType !== baseType && chiralTypes.includes(colorType);
+    const colorDefinition = tileDefinitions[colorType];
+    const matchesCanonicalChiralType = usesChiralIdentity && colorDefinition && Array.isArray(colorDefinition.bites)
+      && rotatedBitesMatch(targetBites, colorDefinition.bites, 0);
+    const dualType = returnsToBase
+      ? baseType
+      : (matchesCanonicalChiralType ? colorType : ensureArcVariantTileDefinition(usesChiralIdentity ? colorType : baseType, targetBites));
+    if (!dualType || !tileDefinitions[dualType]) return null;
+
     tileDefinitions[dualType].color = tileDefinitions[colorType].color;
+    if (usesChiralIdentity && tileDefinitions[dualType].isArcVariant) {
+      tileDefinitions[dualType].chiralIdentityType = colorType;
+    }
 
     return { tileType: dualType, rotationDelta: 0 };
   }
@@ -8671,14 +8962,30 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (paperExampleContextMenu) {
+    paperExampleContextMenu.addEventListener("click", event => {
+      const button = event.target.closest ? event.target.closest("button[data-paper-context-action]") : null;
+
+      if (!button) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      if (button.dataset.paperContextAction === "copy-link") copyPaperFigureShareLink();
+      hidePaperExampleContextMenu();
+    });
+  }
+
   document.addEventListener("click", event => {
     if (contextMenu && !contextMenu.hidden && !contextMenu.contains(event.target)) {
       hideContextMenu();
     }
+    if (paperExampleContextMenu && !paperExampleContextMenu.hidden && !paperExampleContextMenu.contains(event.target)) {
+      hidePaperExampleContextMenu();
+    }
   });
 
-  document.addEventListener("scroll", hideContextMenu, true);
-  window.addEventListener("blur", hideContextMenu);
+  document.addEventListener("scroll", () => { hideContextMenu(); hidePaperExampleContextMenu(); }, true);
+  window.addEventListener("blur", () => { hideContextMenu(); hidePaperExampleContextMenu(); });
 
   function serializeLayout() {
     return {
@@ -9615,6 +9922,24 @@ ${svgString}
     }
   }
 
+  function loadPaperFigureFromQuery() {
+    const slug = new URLSearchParams(window.location.search).get("paper");
+
+    if (!slug) return false;
+
+    const example = builtinExamples.find(item => item.paperSlug === slug);
+
+    if (!example) {
+      initializeBoard(true);
+      setStatus("Paper Figure not found: " + slug + ".");
+      return true;
+    }
+
+    loadExample(example.id);
+    setStatus("Loaded Paper Figure: " + example.title + ".");
+    return true;
+  }
+
   function downloadTextFile(filename, content, mimeType) {
     const blob = new Blob([content], { type: mimeType });
     const url = URL.createObjectURL(blob);
@@ -10387,7 +10712,7 @@ ${svgString}
     triPuzzle: ["PT0", "PT1", "PT2", "PT3"],
     squarePuzzle: ["PQ0", "PQ1", "PQ2A", "PQ2B", "PQ3", "PQ4"],
     bubbleVariants: [],
-    fourSided: ["RB0", "RB1", "RB3B", "RB2A", "RB2B", "RB3A", "RB4"],
+    fourSided: ["RB0", "RB1STAR", "RB1", "RB2B", "RB2BSTAR", "RB2A", "RB3B", "RB3A", "RB3ASTAR", "RB4"],
     fiveSidedTrapezoid: ["ARCV_BUBBLE_OP_TRAP_11111", "ARCV_BUBBLE_OP_TRAP_11011", "ARCV_BUBBLE_OP_TRAP_01111", "ARCV_BUBBLE_OP_TRAP_11101", "ARCV_BUBBLE_OP_TRAP_11010", "ARCV_BUBBLE_OP_TRAP_11001", "ARCV_BUBBLE_OP_TRAP_01011", "ARCV_BUBBLE_OP_TRAP_10011", "ARCV_BUBBLE_OP_TRAP_10101", "ARCV_BUBBLE_OP_TRAP_00111", "ARCV_BUBBLE_OP_TRAP_00000", "ARCV_BUBBLE_OP_TRAP_00100", "ARCV_BUBBLE_OP_TRAP_10000", "ARCV_BUBBLE_OP_TRAP_00010", "ARCV_BUBBLE_OP_TRAP_00101", "ARCV_BUBBLE_OP_TRAP_00110", "ARCV_BUBBLE_OP_TRAP_10100", "ARCV_BUBBLE_OP_TRAP_01100", "ARCV_BUBBLE_OP_TRAP_01010", "ARCV_BUBBLE_OP_TRAP_11000"],
     fiveSided: ["FV0", "FV1", "FV2A", "FV2B", "FV2C", "FV3A", "FV3B", "FV3C", "FV3D", "FV3E", "FV4A", "FV4B", "FV4C", "FV5", "ARCV_FV2B_01011"],
     soft: ["SF0", "SF1", "SF2A", "SF2B", "SF2C", "SF3A", "SF3ASTAR", "SF3B", "SF3C", "SF4A", "SF4B", "SF4C", "SF5", "SF6"],
@@ -10621,13 +10946,16 @@ ${svgString}
         { tileType: "BVLENS", x: 0, y: 0, rotation: 0 }
       ],
       fourSided: [
-        { tileType: "RB2B", x: 0, y: -250 },
-        { tileType: "RB2A", x: 0, y: -125 },
-        { tileType: "RB0", x: -390, y: 40 },
-        { tileType: "RB1", x: -210, y: 40 },
-        { tileType: "RB3B", x: 0, y: 40 },
-        { tileType: "RB3A", x: 210, y: 40 },
-        { tileType: "RB4", x: 410, y: 40 }
+        { tileType: "RB0", x: -325, y: 0, rotation: 0 },
+        { tileType: "RB1", x: -160, y: 144.282, rotation: 0 },
+        { tileType: "RB1STAR", x: -160, y: 0, rotation: -60 },
+        { tileType: "RB2A", x: 0, y: -138.564, rotation: 0 },
+        { tileType: "RB2B", x: 0, y: 0, rotation: 0 },
+        { tileType: "RB3A", x: 175, y: 0, rotation: 0 },
+        { tileType: "RB3ASTAR", x: 180, y: 144.282, rotation: -60 },
+        { tileType: "RB4", x: 335, y: 0, rotation: 0 },
+        { tileType: "RB3B", x: 0, y: -278.103, rotation: 0 },
+        { tileType: "RB2BSTAR", x: 0, y: 144.282, rotation: -60 }
       ],
       fiveSidedTrapezoid: [
         { tileType: "ARCV_BUBBLE_OP_TRAP_11111", x: 515.064, y: 319.647, rotation: 0.000, flipX: -1, flipY: 1 },
@@ -10763,7 +11091,9 @@ ${svgString}
     recordHistory();
     recordRecentTraySet(collectionName);
 
-    if (collectionName === "fourSided" || collectionName === "fiveSidedTrapezoid") {
+    if (collectionName === "fourSided") {
+      showTemporaryHint("Some Rhombic tiles are chiral. The 1/1*, 2A/2A*, and 3/3* partner pairs are included in this collection.", 9000);
+    } else if (collectionName === "fiveSidedTrapezoid") {
       showTemporaryHint("Some tiles in this family are chiral. Their reflected versions were omitted from the collection; use Flip H or Flip V if you need the mirror image.", 9000);
     }
 
@@ -13909,13 +14239,13 @@ ${svgString}
 
   updateViewBox();
 
-  if (!loadLayoutFromShareHash()) {
+  if (!loadLayoutFromShareHash() && !loadPaperFigureFromQuery()) {
     initializeBoard(true);
   }
 
   updateOverlapWarnings();
   updateHistoryButtons();
-  if (!showDeviceWarningIfNeeded()) {
+  if (!showDeviceWarningIfNeeded() && !new URLSearchParams(window.location.search).has("paper")) {
     maybeStartFirstRunGuidedTutorial();
   }
 });

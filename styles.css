@@ -2331,6 +2331,17 @@ body.guided-lattice-intro-fade .lattice-copy {
   box-shadow: 0 2px 7px rgba(20, 70, 115, 0.14);
 }
 
+.example-card.paper-example-card {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 42px;
+  padding: 9px 10px;
+}
+
+.paper-example-context-menu {
+  width: max-content;
+  min-width: 0;
+}
+
 .example-card-title {
   display: flex;
   gap: 7px;
@@ -2340,6 +2351,12 @@ body.guided-lattice-intro-fade .lattice-copy {
   font-weight: 850;
   font-size: 12px;
   line-height: 1.2;
+}
+
+.example-card-title sub {
+  font-size: 0.76em;
+  line-height: 0;
+  vertical-align: -0.32em;
 }
 
 .example-preview {

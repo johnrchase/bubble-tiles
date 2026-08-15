@@ -10,6 +10,12 @@ Bubble Tiles runs directly in a modern web browser. A desktop or laptop provides
 
 Created by John Chase.
 
+## What's new in version 1.8.1
+
+- Added a preview-free Paper Figures gallery with short slug-based direct links available from each figure's right-click menu
+- Expanded and relabeled the Rhombic family, including corrected colors and the 1*, 2A*, and 3* chiral partners
+- Corrected H/V reflection so Hexagonal and Rhombic chiral pairs—including edge-preserving Arc-Dual results—switch identity and default color while preserving the reflected geometry
+
 ## What's new in version 1.8
 
 - Improved periodic lattice coverage in normal loaded and panned views

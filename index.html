@@ -3,12 +3,13 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Bubble Tiles 1.8</title>
+<title>Bubble Tiles 1.8.1</title>
 <link href="assets/logo-two-tiles-favicon.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&amp;display=swap" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
+<script defer="" src="examples/paper-figures.js"></script>
 <script defer="" src="app.js"></script>
 </link></head>
 <body>
@@ -554,7 +555,7 @@
 <div class="modal-backdrop" hidden="" id="aboutModal">
 <div aria-labelledby="aboutTitle" aria-modal="true" class="about-dialog" role="dialog">
 <div class="about-header">
-<h2 id="aboutTitle">About Bubble Tiles 1.8</h2>
+<h2 id="aboutTitle">About Bubble Tiles 1.8.1</h2>
 <button class="icon-button" id="closeAbout" title="Close About">✕</button>
 </div>
 <div class="about-body">
@@ -573,6 +574,9 @@
         </p>
 <p>
           View the source code and project repository at <a href="https://github.com/johnrchase/bubble-tiles" rel="noopener" target="_blank">github.com/johnrchase/bubble-tiles</a>.
+        </p>
+<p>
+          Read the current working draft, <a href="https://drive.google.com/open?id=1MXTOW1Dxo75Rx-P_TUmHgrgKx9ztcyBQ&amp;usp=drive_fs" rel="noopener" target="_blank"><em>Puzzle Pieces and Bubble Tiles</em></a>, by John Chase, Will Field, and Alex McCluer.
         </p>
 <p>
           Share feedback through the <a href="https://forms.gle/huCRv1v1UBzbD3Z66" rel="noopener" target="_blank">Bubble Tiles feedback survey</a>.
@@ -594,8 +598,10 @@
 <button class="icon-button" id="closeVersionHistory" title="Close Version History">✕</button>
 </div>
 <div class="about-body">
+<p><strong>Bubble Tiles 1.8.1</strong></p>
+<p>Version 1.8.1 adds interactive, directly linkable Paper Figures; expands and relabels the Rhombic family with corrected colors and chiral partners; and makes H/V reflections switch the identities and default colors of the Hexagonal and Rhombic chiral pairs, including edge-preserving Arc-Dual results.</p>
 <p><strong>Bubble Tiles 1.8</strong></p>
-<p>Version 1.8 adds customizable tile vertices with optional unit-interval decomposition and a style-preserving Decompose tool for compatible hexagonal, trapezoidal, rhombic, and Soft Tiles. It also improves periodic lattice coverage, keeps toolbar popovers accessible in narrow windows, adds a 4:1 picture-export proportion, refines style controls, makes new canvas backgrounds pure white, and expands the periodic examples.</p>
+<p>Version 1.8 adds customizable tile vertices with optional unit-interval decomposition and a style-preserving Decompose tool. It also improves periodic lattice coverage, keeps toolbar popovers accessible in narrow windows, adds a 4:1 picture-export proportion, refines style controls, makes new canvas backgrounds pure white, and expands the periodic examples.</p>
 <p><strong>Bubble Tiles 1.7</strong></p>
 <p>Version 1.7 corrects the H3B/H3C identities and colors; improves complex lattice rendering near source motifs; adds tile-family and tray-tab hover guidance; organizes the expanded Examples gallery into collapsible thematic sections; and adds four periodic examples.</p>
 <p><strong>Bubble Tiles 1.6.1</strong></p>
@@ -650,7 +656,7 @@
 <div class="modal-backdrop" hidden="" id="helpModal">
 <div aria-labelledby="helpTitle" aria-modal="true" class="about-dialog help-dialog" role="dialog">
 <div class="about-header">
-<h2 id="helpTitle">Bubble Tiles 1.8 Help</h2>
+<h2 id="helpTitle">Bubble Tiles 1.8.1 Help</h2>
 <button class="icon-button" id="closeHelp" title="Close Help">✕</button>
 </div>
 <div class="about-body help-body">
@@ -733,7 +739,7 @@
 </div>
 <div class="help-tool"><svg aria-hidden="true" class="help-icon help-toolbar-svg-icon toolbar-svg-icon reflect-icon" viewbox="0 0 64 48"><path class="reflect-shape light" d="M10 12 L24 24 L10 36 Z"></path><line class="reflect-mirror" x1="32" x2="32" y1="8" y2="40"></line><path class="reflect-shape dark" d="M54 12 L40 24 L54 36 Z"></path></svg>
 
-<div><strong>Flip.</strong> Press H to flip horizontally or V to flip vertically. Flip H mirrors left/right across a vertical mirror line; Flip V mirrors up/down across a horizontal mirror line. These work on selected tiles, groups, and motifs.</div>
+<div><strong>Flip.</strong> Press H to flip horizontally or V to flip vertically. Flip H mirrors left/right across a vertical mirror line; Flip V mirrors up/down across a horizontal mirror line. These work on selected tiles, groups, and motifs; displayed chiral partners switch identity and default color when reflected, including after Arc Dual.</div>
 </div>
 <div class="help-tool">
 <span class="help-icon"><svg aria-hidden="true" class="scale-expand-icon" viewbox="0 0 24 24"><path d="M9 5H5v4 M5 5l5.5 5.5 M15 19h4v-4 M19 19l-5.5-5.5"></path></svg></span>
@@ -831,6 +837,10 @@
 <div class="help-tool">
 <span class="help-icon">🔗</span>
 <div><strong>Share Link.</strong> File → Copy Share Link copies a URL with the current canvas encoded after the <code>#</code>. When someone opens that URL, the app reconstructs the layout. This works best from the hosted GitHub Pages version; very large layouts may make links too long. If the canvas contains pasted images or custom image fills, the app warns that their complete data will be embedded in the URL and recommends Export JSON before allowing you to copy the link anyway.</div>
+</div>
+<div class="help-tool">
+<span class="help-icon">§</span>
+<div><strong>Paper Figures.</strong> The final Examples section contains interactive diagrams from the Bubble Tiles paper without tray previews. Click a figure to load it, or right-click it and choose Copy Share Link to copy a short, stable URL using its descriptive slug.</div>
 </div>
 </div></div>
 </div>
@@ -1055,14 +1065,17 @@
 </details>
 <details class="tray-section" data-tray-set="fourSided">
 <summary title="Equilateral 60-degree rhombi with circular arc decorations, including chiral arrangements."><span class="summary-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span>Rhombic</span></summary>
-<button class="add-all-button" data-add-collection="fourSided">Add all 7 Rhombic</button>
+<button class="add-all-button" data-add-collection="fourSided">Add all 10 Rhombic</button>
 <div class="bubble-grid">
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB0" title="Add four-sided bubble tile 0"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB0"></span><span class="palette-text"><strong>0</strong><small>rhombic bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="RB1" title="Add four-sided bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB1"></span><span class="palette-text"><strong>1</strong><small>rhombic bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="RB3B" title="Add four-sided bubble tile 2A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3B"></span><span class="palette-text"><strong>2A</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB1STAR" title="Add four-sided bubble tile 1"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB1STAR"></span><span class="palette-text"><strong>1</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB1" title="Add four-sided bubble tile 1*"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB1"></span><span class="palette-text"><strong>1*</strong><small>chiral partner</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB2B" title="Add four-sided bubble tile 2A"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2B"></span><span class="palette-text"><strong>2A</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB2BSTAR" title="Add four-sided bubble tile 2A*"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2BSTAR"></span><span class="palette-text"><strong>2A*</strong><small>chiral partner</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB2A" title="Add four-sided bubble tile 2B"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2A"></span><span class="palette-text"><strong>2B</strong><small>rhombic bubble tile</small></span></button>
-<button class="palette-tile bubble-palette-tile" data-tile-type="RB2B" title="Add four-sided bubble tile 2C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB2B"></span><span class="palette-text"><strong>2C</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB3B" title="Add four-sided bubble tile 2C"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3B"></span><span class="palette-text"><strong>2C</strong><small>rhombic bubble tile</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB3A" title="Add four-sided bubble tile 3"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3A"></span><span class="palette-text"><strong>3</strong><small>rhombic bubble tile</small></span></button>
+<button class="palette-tile bubble-palette-tile" data-tile-type="RB3ASTAR" title="Add four-sided bubble tile 3*"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB3ASTAR"></span><span class="palette-text"><strong>3*</strong><small>chiral partner</small></span></button>
 <button class="palette-tile bubble-palette-tile" data-tile-type="RB4" title="Add four-sided bubble tile 4"><span class="shape-icon bubble-icon-slot" data-bubble-icon="RB4"></span><span class="palette-text"><strong>4</strong><small>rhombic bubble tile</small></span></button>
 </div>
 </details>
@@ -1214,6 +1227,9 @@
 <button data-context-action="moveUp" type="button"><svg aria-hidden="true" class="context-menu-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 34V16 M30 22l6-6 6 6"></path></svg><span>Move Up</span></button>
 <button data-context-action="moveDown" type="button"><svg aria-hidden="true" class="context-menu-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 14v18 M30 26l6 6 6-6"></path></svg><span>Move Down</span></button>
 <button data-context-action="sendToBottom" type="button"><svg aria-hidden="true" class="context-menu-icon layer-stack-icon" viewbox="0 0 48 48"><path class="layer-sheet layer-sheet-back" d="M6 29l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-mid" d="M6 22l13-7 13 7-13 7z"></path><path class="layer-sheet layer-sheet-front" d="M6 15l13-7 13 7-13 7z"></path><path class="layer-arrow" d="M36 13v20 M30 27l6 6 6-6"></path><path class="layer-stop" d="M29 37h14"></path></svg><span>Send to Bottom</span></button>
+</div>
+<div class="context-menu paper-example-context-menu" hidden="" id="paperExampleContextMenu">
+<button data-paper-context-action="copy-link" type="button"><span aria-hidden="true" class="context-menu-icon">🔗</span><span>Copy Share Link</span></button>
 </div>
 <div id="statusBar">
 <span id="copyrightNotice">Copyright © John Chase 2026</span>
