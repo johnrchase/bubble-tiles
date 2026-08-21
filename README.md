@@ -10,6 +10,19 @@ Bubble Tiles runs directly in a modern web browser. A desktop or laptop provides
 
 Created by John Chase.
 
+## What's new in version 1.9
+
+- Added a warning before closing, reloading, or navigating away when the current editable layout has unsaved changes
+- Added concise mathematical names in the status bar when one recognized tile is selected, including H, P, R, S, and T family prefixes
+- Kept the visible tile color unchanged when Reverse One Arc generates a new arc variant
+- Reorganized the About dialog and added related research, puzzle, and iOS beta resources
+- Updated Paper Figures 3 and 26 and the Hexagonal, Triangular, Square, Soft Tile, and Rhombic Add All reference arrangements from revised source layouts
+- Substantially expanded the directly linkable Paper Figures gallery with additional layouts from the working paper
+- Increased lattice overscan so ordinary zooming and panning is less likely to expose narrow gaps at viewport edges
+- Copy retains editable tiles while also placing a transparent PNG on the system clipboard; Ctrl/Cmd+V prioritizes newer clipboard content copied from other apps
+- One or more selected H3A/H3A* tiles can toggle scalable connected-arrow decorations from the right-click menu
+- Tiles can use vivid rainbow orientation coloring from the Fill controls, with clearly distinct hues at 60-degree turns
+
 ## What's new in version 1.8.1
 
 - Added a preview-free Paper Figures gallery with short slug-based direct links available from each figure's right-click menu

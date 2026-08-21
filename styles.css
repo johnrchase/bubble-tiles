@@ -885,6 +885,21 @@ text {
   font-weight: 700;
 }
 
+.about-body h3 {
+  margin: 16px 0 7px;
+  color: #294f78;
+  font-size: 14px;
+}
+
+.about-resource-list {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.about-resource-list li {
+  margin: 0 0 7px;
+}
+
 .device-warning-dialog {
   width: min(480px, 100%);
 }
@@ -1576,6 +1591,28 @@ body.ctrl-pan-mode svg.panning {
   stroke-linecap: round;
   stroke-linejoin: round;
   pointer-events: none;
+}
+
+.h3-tile-markings {
+  fill: none;
+  stroke: #111111;
+  stroke-width: 5;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.h3-tile-marking-arrow {
+  fill: #111111;
+  stroke: none;
+}
+
+.h3-marking-menu-icon {
+  fill: #111111;
+  stroke: #111111;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .lattice-copy .penrose-decoration {
@@ -2505,7 +2542,7 @@ body.guided-lattice-intro-fade .lattice-copy {
 .context-menu {
   position: fixed;
   z-index: 2000;
-  width: 166px;
+  width: 158px;
   min-width: 0;
   max-width: calc(100vw - 16px);
   box-sizing: border-box;
@@ -2529,6 +2566,14 @@ body.guided-lattice-intro-fade .lattice-copy {
   text-align: left;
   gap: 8px;
   white-space: nowrap;
+}
+
+.context-menu button[hidden] {
+  display: none !important;
+}
+
+.context-menu button > span:last-child {
+  min-width: 0;
 }
 
 .context-menu-icon {
