@@ -1,4 +1,4 @@
-window.BUBBLE_TILES_FIGURE_20B = [{"slug":"h4a-heesch-number","title":"Fig 20(b) H4A Heesch Number 1","description":"The H4A bubble tile with its complete first corona; a second corona is impossible.","layout":{
+window.BUBBLE_TILES_FIGURE_20B = [{"slug":"h4a-heesch-number","title":"Fig 21(b) H4A Heesch Number 1","description":"The H4A bubble tile with its complete first corona; a second corona is impossible.","layout":{
   "version": 4,
   "canvasBackgroundColor": "#ffffff",
   "latticeCopyOpacity": 0.6,

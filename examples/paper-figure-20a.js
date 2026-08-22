@@ -1,4 +1,4 @@
-window.BUBBLE_TILES_FIGURE_20A = [{"slug":"h2a-heesch-number","title":"Fig 20(a) H2A Heesch Number 1","description":"The H2A bubble tile with its complete first corona; a second corona is impossible.","layout":{
+window.BUBBLE_TILES_FIGURE_20A = [{"slug":"h2a-heesch-number","title":"Fig 21(a) H2A Heesch Number 1","description":"The H2A bubble tile with its complete first corona; a second corona is impossible.","layout":{
   "version": 4,
   "canvasBackgroundColor": "#ffffff",
   "latticeCopyOpacity": 0.6,

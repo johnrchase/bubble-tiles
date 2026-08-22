@@ -10,6 +10,13 @@ Bubble Tiles runs directly in a modern web browser. A desktop or laptop provides
 
 Created by John Chase.
 
+## What's new in version 1.9.1
+
+- Preserved H3A/H3A* arrow decorations in downloaded SVG and raster picture exports
+
+- Added further interactive paper figures, updated subsequent figure labels to match the revised paper order, and refreshed the complete Paper Figure URL manifest
+- Grouped Paper Figures into expandable sections matching the current paper structure
+
 ## What's new in version 1.9
 
 - Added a warning before closing, reloading, or navigating away when the current editable layout has unsaved changes

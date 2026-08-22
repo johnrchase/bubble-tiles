@@ -1,231 +1,194 @@
-﻿# Paper Figure URLs
+# Paper Figure URLs
 
-These direct links follow the current Paper Figures order in Bubble Tiles. Figure labels are display metadata only; the stable descriptive slug remains in each URL.
+These direct links follow the Paper Figures order in Bubble Tiles 1.9.1. Figure labels are display metadata only; the stable descriptive slug remains in each URL.
 
-1. **Fig 1 S{1, 4} Puzzle Pieces**  
-   https://johnrchase.github.io/bubble-tiles/?paper=s1-and-s4-puzzle-pieces
-2. **Fig 2(b) All 14 Hexagonal Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=all-14-hex-tiles
-3. **Fig 2(c) H{1, 4B, 6} (3:3:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h1-h4b-and-h6-infinite-tiling
-4. **Fig 3(a) The 14 Hexagonal Bubble Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=hexagonal-bubble-tiles
-5. **Fig 3(b) The Four Triangular Bubble Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=triangular-bubble-tiles
-6. **Fig 3(c) The Six Square Bubble Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=square-bubble-tiles
-7. **Fig 4(b) H{0, 6} Nonconvex**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h6-nonconvex
-8. **Fig 4(c) H{0, 6} Weakly Convex**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h6-weakly-convex
-9. **Fig 5(a) Supertile with Three Distinct Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=supertile-exploded
-10. **Fig 5(b) Supertile Covering the Plane**  
-   https://johnrchase.github.io/bubble-tiles/?paper=supertile
-11. **Fig 6(a) H{3A}**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3a
-12. **Fig 6(b) H{3A*}**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3a-star
-13. **Fig 6(c) H{3B}**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b
-14. **Fig 6(d) H{3C}**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3c
-15. **Fig 7(a) H{3B, 3C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3c
-16. **Fig 7(b) H{3B, 3A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a
-17. **Fig 7(c) H{3B, 3A*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-star
-18. **Fig 7(d) H{3A, 3A*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3a-and-h3a-star
-19. **Fig 7(f) H{3C, 3A*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3c-and-h3a-star
-20. **Fig 7(g) H{2A, 4A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4a
-21. **Fig 7(h) H{2B, 4B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2b-and-h4b
-22. **Fig 7(i) H{2C, 4C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2c-and-h4c
-23. **Fig 7(j) H{2A, 4B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4b
-24. **Fig 7(k) H{2A, 4C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4c
-25. **Fig 7(l) H{2B, 4C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2b-and-h4c
-26. **Fig 7(m) H{2B, 4A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2b-and-h4a
-27. **Fig 7(n) H{2C, 4A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2c-and-h4a
-28. **Fig 7(o) H{2C, 4B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2c-and-h4b
-29. **Fig 8(a) H{4A, 1} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h4a-and-h1
-30. **Fig 8(b) H{4B, 1} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h4b-and-h1
-31. **Fig 8(c) H{4C, 1} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h4c-and-h1
-32. **Fig 8(d) H{2A, 5} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h5
-33. **Fig 8(e) H{2B, 5} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2b-and-h5
-34. **Fig 8(f) H{2C, 5} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h2c-and-h5
-35. **Fig 8(g) H{0, 4B} (1:3)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h4b
-36. **Fig 8(h) H{0, 4C} (1:3)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h4c
-37. **Fig 8(i) H{1, 5} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h1-and-h5
-38. **Fig 8(j) H{6, 2B} (1:3)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h6-and-h2b
-39. **Fig 8(k) H{6, 2C} (1:3)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h6-and-h2c
-40. **Fig 9(a) H{3B, 3A} (1:3)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-1-to-3
-41. **Fig 9(b) H{3B, 3A} (1:2)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-1-to-2
-42. **Fig 9(c) H{3B, 3A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-1-to-1
-43. **Fig 9(d) H{3B, 3A} (5:3)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-5-to-3
-44. **Fig 9(e) H{3B, 3A} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-2-to-1
-45. **Fig 9(f) H{3B, 3A} (3:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-3-to-1
-46. **Fig 12 Arc Dual and Arc Self-Duality**  
-   https://johnrchase.github.io/bubble-tiles/?paper=arc-dual
-47. **Fig 16(b) All Four Triangular Bubble Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=all-four-triangular-tiles
-48. **Fig 16(c) All Six Square Bubble Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=all-four-square-tiles
-49. **Fig 23(a) H6 and Football Tile**  
-   https://johnrchase.github.io/bubble-tiles/?paper=h6-and-football-new
-50. **Fig 23(b) Soft Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=soft-tile-design
-51. **Fig 24 Hexagonal Block Decompositions**  
-   https://johnrchase.github.io/bubble-tiles/?paper=hexagon-decomposition
-52. **Fig 25 Substrate Ratio Construction (3:2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=substrate-proof-v2
-53. **Fig 26 Rhombic Bubble Tiles and Chiral Partners**  
-   https://johnrchase.github.io/bubble-tiles/?paper=the-rhombic-tiles-and-chiral-partners
-54. **Fig 27(a) R{2A}**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a
-55. **Fig 27(b) R{2A*}**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-star
-56. **Fig 27(c) R{2B}**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2b
-57. **Fig 27(d) R{2C}**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2c
-58. **Fig 28(a) R{1, 3} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-and-r3
-59. **Fig 28(b) R{1, 3*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-and-r3-star
-60. **Fig 28(c) R{1*, 3} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-r3
-61. **Fig 28(d) R{1*, 3*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-r3-star
-62. **Fig 28(e) R{0, 3} (1:2)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r0-and-r3-1-to-2
-63. **Fig 28(f) R{4, 1} (1:2)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r4-and-r1-1-to-2
-64. **Fig 28(g) R{0, 3*} (1:2)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r0-and-r3-star-1-to-2
-65. **Fig 28(h) R{4, 1*} (1:2)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r4-and-r1-star-1-to-2
-66. **Fig 28(i) R{2A, 2B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=2a-and-2b
-67. **Fig 28(j) R{2A*, 2B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=2a-star-and-2b
-68. **Fig 28(k) R{2A, 2C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-r2c
-69. **Fig 28(l) R{2A*, 2C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-r2c
-70. **Fig 28(m) R{0, 4} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r0-and-r4
-71. **Fig 28(n) R{2B, 2C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=2b-and-2c
-72. **Fig 28(o) All Ten Rhombic Tiles**  
-   https://johnrchase.github.io/bubble-tiles/?paper=all-10-rhombic-tiles
-73. **Fig 29(a) {T0, R3} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=t0-and-r3
-74. **Fig 29(b) {T3, R1} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=t3-and-r1
-75. **Fig 29(c) {T0, R3*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=t0-and-r3-star
-76. **Fig 29(d) {T3, R1*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=t3-and-r1-star
-77. **Fig 29(e) {T2, R0} (4:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=t2-and-r0-4-to-1
-78. **Fig 29(f) {T1, R4} (4:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=t1-and-r4-4-to-1
-79. **Fig 30(a) {R0, H4C} (1:2)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r0-and-h4c-1-to-2
-80. **Fig 30(b) {R4, H2C} (1:2)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r4-and-h2c-1-to-2
-81. **Fig 30(c) {R0, H5} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r0-and-h5
-82. **Fig 30(d) {R4, H1} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r4-and-h1
-83. **Fig 30(e) {R1, H4A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h4a
-84. **Fig 30(f) {R3, H2A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h2a
-85. **Fig 30(g) {R1, H6} (3:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h6-flowers-3-to-1
-86. **Fig 30(h) {R3, H0} (3:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h0-3-to-1
-87. **Fig 30(i) {R1*, H6} (3:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-h6-flowers-3-to-1
-88. **Fig 30(j) {R3*, H0} (3:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-star-and-h0-3-to-1
-89. **Fig 30(k) {R1*, H4A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-h4a
-90. **Fig 30(l) {R3*, H2A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-star-and-h2a
-91. **Fig 30(m) {R1*, H4B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-h4b
-92. **Fig 30(n) {R3*, H2B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-star-and-h2b
-93. **Fig 30(o) {R1*, H4C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-h4c
-94. **Fig 30(p) {R3*, H2C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-star-and-h2c
-95. **Fig 30(q) {R1, H5} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h5-irregular-2-to-1
-96. **Fig 30(r) {R3, H1} (2:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h1-irregular-2-to-1
-97. **Fig 30(s) {R2A, H3A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3a
-98. **Fig 30(t) {R2A*, H3A*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3a-star
-99. **Fig 30(u) {R2A, H3A*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3a-star
-100. **Fig 30(v) {R2A*, H3A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3a
-101. **Fig 30(w) {R2C, H3A} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3a-1-to-1
-102. **Fig 30(x) {R2C, H3A*} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3a-star-1-to-1
-103. **Fig 30(y) {R2A, H3B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3b
-104. **Fig 30(z) {R2A*, H3B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3b
-105. **Fig 30(aa) {R2A, H3C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3c
-106. **Fig 30(ab) {R2A*, H3C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3c
-107. **Fig 30(ac) {R2B, H3B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2b-and-h3b
-108. **Fig 30(ae) {R2B, H3C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2b-and-h3c
-109. **Fig 30(af) {R2C, H3C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3c
-110. **Fig 30(ag) {R1, H4B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h4b
-111. **Fig 30(ah) {R3, H2B} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h2b
-112. **Fig 30(ai) {R1, H4C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h4c
-113. **Fig 30(aj) {R3, H2C} (1:1)**  
-   https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h2c
-
+1. **Fig 1 S{1, 4} Puzzle Pieces** — https://johnrchase.github.io/bubble-tiles/?paper=s1-and-s4-puzzle-pieces
+2. **Fig 2(b) All 14 Hexagonal Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=all-14-hex-tiles
+3. **Fig 2(c) H{1, 4B, 6} (3:3:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h1-h4b-and-h6-infinite-tiling
+4. **Fig 3(a) The 14 Hexagonal Bubble Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=hexagonal-bubble-tiles
+5. **Fig 3(b) The Four Triangular Bubble Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=triangular-bubble-tiles
+6. **Fig 3(c) The Six Square Bubble Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=square-bubble-tiles
+7. **Fig 4(a) H{0, 6} Failure** — https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h6-failure
+8. **Fig 4(b) H{0, 6} Nonconvex** — https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h6-nonconvex
+9. **Fig 4(c) H{0, 6} Weakly Convex** — https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h6-weakly-convex
+10. **Fig 5(a) Supertile with Three Distinct Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=supertile-exploded
+11. **Fig 5(b) Supertile Covering the Plane** — https://johnrchase.github.io/bubble-tiles/?paper=supertile
+12. **Fig 6(a) H{3A}** — https://johnrchase.github.io/bubble-tiles/?paper=h3a
+13. **Fig 6(b) H{3A*}** — https://johnrchase.github.io/bubble-tiles/?paper=h3a-star
+14. **Fig 6(c) H{3B}** — https://johnrchase.github.io/bubble-tiles/?paper=h3b
+15. **Fig 6(d) H{3C}** — https://johnrchase.github.io/bubble-tiles/?paper=h3c
+16. **Fig 7(a) H{3B, 3C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3c
+17. **Fig 7(b) H{3B, 3A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a
+18. **Fig 7(c) H{3B, 3A*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-star
+19. **Fig 7(d) H{3A, 3A*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3a-and-h3a-star
+20. **Fig 7(e) H{3C, 3A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3c-and-h3a
+21. **Fig 7(f) H{3C, 3A*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3c-and-h3a-star
+22. **Fig 7(g) H{2A, 4A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4a
+23. **Fig 7(h) H{2B, 4B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2b-and-h4b
+24. **Fig 7(i) H{2C, 4C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2c-and-h4c
+25. **Fig 7(j) H{2A, 4B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4b
+26. **Fig 7(k) H{2A, 4C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4c
+27. **Fig 7(l) H{2B, 4C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2b-and-h4c
+28. **Fig 7(m) H{2B, 4A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2b-and-h4a
+29. **Fig 7(n) H{2C, 4A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2c-and-h4a
+30. **Fig 7(o) H{2C, 4B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2c-and-h4b
+31. **Fig 8(a) H{4A, 1} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h4a-and-h1
+32. **Fig 8(b) H{4B, 1} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h4b-and-h1
+33. **Fig 8(c) H{4C, 1} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h4c-and-h1
+34. **Fig 8(d) H{2A, 5} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h5
+35. **Fig 8(e) H{2B, 5} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2b-and-h5
+36. **Fig 8(f) H{2C, 5} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h2c-and-h5
+37. **Fig 8(g) H{0, 4B} (1:3)** — https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h4b
+38. **Fig 8(h) H{0, 4C} (1:3)** — https://johnrchase.github.io/bubble-tiles/?paper=h0-and-h4c
+39. **Fig 8(i) H{1, 5} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h1-and-h5
+40. **Fig 8(j) H{6, 2B} (1:3)** — https://johnrchase.github.io/bubble-tiles/?paper=h6-and-h2b
+41. **Fig 8(k) H{6, 2C} (1:3)** — https://johnrchase.github.io/bubble-tiles/?paper=h6-and-h2c
+42. **Fig 9(a) H{3B, 3A} (1:3)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-1-to-3
+43. **Fig 9(b) H{3B, 3A} (1:2)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-1-to-2
+44. **Fig 9(c) H{3B, 3A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-1-to-1
+45. **Fig 9(d) H{3B, 3A} (5:3)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-5-to-3
+46. **Fig 9(e) H{3B, 3A} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-2-to-1
+47. **Fig 9(f) H{3B, 3A} (3:1)** — https://johnrchase.github.io/bubble-tiles/?paper=h3b-and-h3a-3-to-1
+48. **Fig 10(a) H{2B, 4A, 3A} v1** — https://johnrchase.github.io/bubble-tiles/?paper=h2b-h4a-h3a-v1
+49. **Fig 10(b) H{2B, 4A, 3A} v2** — https://johnrchase.github.io/bubble-tiles/?paper=h2b-h4a-h3a-v2
+50. **Fig 11(a) H3C v1** — https://johnrchase.github.io/bubble-tiles/?paper=h3c-v1
+51. **Fig 11(b) H3C v2** — https://johnrchase.github.io/bubble-tiles/?paper=h3c-v2
+52. **Fig 11(c) H{1, 5} v1** — https://johnrchase.github.io/bubble-tiles/?paper=h1-and-h5-v1
+53. **Fig 11(d) H{1, 5} v2** — https://johnrchase.github.io/bubble-tiles/?paper=h1-and-h5-v2
+54. **Fig 11(e) H{2A, 4A} v1** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4a-v1
+55. **Fig 11(f) H{2A, 4A} v2** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4a-v2
+56. **Fig 11(g) H{2A, 4A} v3** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4a-v3
+57. **Fig 11(h) H{2A, 4A} v4** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-and-h4a-v4
+58. **Fig 12 Arc Dual and Arc Self-Duality** — https://johnrchase.github.io/bubble-tiles/?paper=arc-dual
+59. **Fig 13(a) T{0, 3} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t0-and-t3
+60. **Fig 13(b) T{1, 2} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-t2
+61. **Fig 13(c) T{1, 3} (3:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-t3-3-to-1
+62. **Fig 13(d) T{2, 0} (3:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t2-and-t0-3-to-1
+63. **Fig 14(a) S{2A}** — https://johnrchase.github.io/bubble-tiles/?paper=s2a
+64. **Fig 14(b) S{0, 4} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=s0-and-s4
+65. **Fig 14(c) S{1, 3} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=s1-and-s3
+66. **Fig 14(d) S{2A, 2B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=s2a-and-s2b
+67. **Fig 14(e) S{2B}** — https://johnrchase.github.io/bubble-tiles/?paper=s2b
+68. **Fig 14(f) S{1, 4} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=s1-and-s4-2-to-1
+69. **Fig 14(g) S{3, 0} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=s3-and-s0-2-to-1
+70. **Fig 15(a) {T1, S3} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-s3-2-to-1
+71. **Fig 15(b) {T1, H6} (6:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-h6-6-to-1
+72. **Fig 15(c) {T1, H5} (4:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-h5-4-to-1
+73. **Fig 15(d) {T2, S1} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t2-and-s1-2-to-1
+74. **Fig 15(e) {T2, H0} (6:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t2-and-h0-6-to-1
+75. **Fig 15(f) {T2, H1} (4:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t2-and-h1-4-to-1
+76. **Fig 15(g) {T2, H2A} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t2-and-h2a-2-to-1
+77. **Fig 15(h) {T2, H2B} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t2-and-h2b-2-to-1
+78. **Fig 15(i) {T2, H2C} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t2-and-h2c-2-to-1
+79. **Fig 15(j) {T1, H4A} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-h4a-2-to-1
+80. **Fig 15(k) {T1, H4B} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-h4b-2-to-1
+81. **Fig 15(l) {T1, H4C} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-h4c-2-to-1
+82. **Fig 16(b) All Four Triangular Bubble Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=all-four-triangular-tiles
+83. **Fig 16(c) All Six Square Bubble Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=all-four-square-tiles
+84. **Fig 17(a) H4B Surrounded by H3C** — https://johnrchase.github.io/bubble-tiles/?paper=4b-with-infinite-3c
+85. **Fig 17(b) H1 Surrounded by H3A** — https://johnrchase.github.io/bubble-tiles/?paper=h1-with-infinite-h3a
+86. **Fig 17(c) Seven H4A Surrounded by H3C** — https://johnrchase.github.io/bubble-tiles/?paper=4a-heesch-with-infinite-3c
+87. **Fig 18(a) T{1, 2} Spiral** — https://johnrchase.github.io/bubble-tiles/?paper=t1-t2-spiral
+88. **Fig 18(b) S{1, 3} Spiral** — https://johnrchase.github.io/bubble-tiles/?paper=s1-s3-spiral
+89. **Fig 18(c) H{1, 5} Spiral** — https://johnrchase.github.io/bubble-tiles/?paper=h1-h5-spiral
+90. **Fig 19(a) Nonperiodic Tiling with H3A** — https://johnrchase.github.io/bubble-tiles/?paper=h3a-nonperiodic
+91. **Fig 20(a) Marked H3A** — https://johnrchase.github.io/bubble-tiles/?paper=marked-h3a
+92. **Fig 20(b) Nonperiodic Marked H3A Triangles** — https://johnrchase.github.io/bubble-tiles/?paper=aperiodic-marked-h3a-triangles
+93. **Fig 21(a) H2A Heesch Number 1** — https://johnrchase.github.io/bubble-tiles/?paper=h2a-heesch-number
+94. **Fig 21(b) H4A Heesch Number 1** — https://johnrchase.github.io/bubble-tiles/?paper=h4a-heesch-number
+95. **Fig 22(a) Four-Bite Octagon Tiling** — https://johnrchase.github.io/bubble-tiles/?paper=4-bite-octagon-puzzle-tiles-1
+96. **Fig 22(b) Second Four-Bite Octagon Tiling** — https://johnrchase.github.io/bubble-tiles/?paper=4-bite-octagon-puzzle-tiles-2
+97. **Fig 22(c) Six- and Two-Bite Octagons** — https://johnrchase.github.io/bubble-tiles/?paper=6-and-2-bite-octagon-straight-tiling
+98. **Fig 22(d) Six- and Two-Bite Octagon Spiral** — https://johnrchase.github.io/bubble-tiles/?paper=6-and-2-bite-octagon-spiral-tiling
+99. **Fig 23(a) Donut Motifs** — https://johnrchase.github.io/bubble-tiles/?paper=donuts
+100. **Fig 23(b) Cookie Motifs H4B/H1** — https://johnrchase.github.io/bubble-tiles/?paper=cookies-h4b-and-h1
+101. **Fig 23(d) Square-Tooth Dodecagon** — https://johnrchase.github.io/bubble-tiles/?paper=square-tooth-dodecagon
+102. **Fig 23(e) Square Puzzle Tiling** — https://johnrchase.github.io/bubble-tiles/?paper=s3-s0-puzzle
+103. **Fig 24(a) H6 and Football Tile** — https://johnrchase.github.io/bubble-tiles/?paper=h6-and-football-new
+104. **Fig 24(b) Soft Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=soft-tile-design
+105. **Fig 25 Hexagonal Block Decompositions** — https://johnrchase.github.io/bubble-tiles/?paper=hexagon-decomposition
+106. **Fig 26 Substrate Ratio Construction (3:2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=substrate-proof-v2
+107. **Fig 27 Rhombic Bubble Tiles and Chiral Partners** — https://johnrchase.github.io/bubble-tiles/?paper=the-rhombic-tiles-and-chiral-partners
+108. **Fig 28(a) R{2A}** — https://johnrchase.github.io/bubble-tiles/?paper=r2a
+109. **Fig 28(b) R{2A*}** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-star
+110. **Fig 28(c) R{2B}** — https://johnrchase.github.io/bubble-tiles/?paper=r2b
+111. **Fig 28(d) R{2C}** — https://johnrchase.github.io/bubble-tiles/?paper=r2c
+112. **Fig 29(a) R{1, 3} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-and-r3
+113. **Fig 29(b) R{1, 3*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-and-r3-star
+114. **Fig 29(c) R{1*, 3} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-r3
+115. **Fig 29(d) R{1*, 3*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-r3-star
+116. **Fig 29(e) R{0, 3} (1:2)** — https://johnrchase.github.io/bubble-tiles/?paper=r0-and-r3-1-to-2
+117. **Fig 29(f) R{4, 1} (1:2)** — https://johnrchase.github.io/bubble-tiles/?paper=r4-and-r1-1-to-2
+118. **Fig 29(g) R{0, 3*} (1:2)** — https://johnrchase.github.io/bubble-tiles/?paper=r0-and-r3-star-1-to-2
+119. **Fig 29(h) R{4, 1*} (1:2)** — https://johnrchase.github.io/bubble-tiles/?paper=r4-and-r1-star-1-to-2
+120. **Fig 29(i) R{2A, 2B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=2a-and-2b
+121. **Fig 29(j) R{2A*, 2B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=2a-star-and-2b
+122. **Fig 29(k) R{2A, 2C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-r2c
+123. **Fig 29(l) R{2A*, 2C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-r2c
+124. **Fig 29(m) R{0, 4} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r0-and-r4
+125. **Fig 29(n) R{2B, 2C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=2b-and-2c
+126. **Fig 29(o) All Ten Rhombic Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=all-10-rhombic-tiles
+127. **Fig 30(a) {T0, R3} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t0-and-r3
+128. **Fig 30(b) {T3, R1} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t3-and-r1
+129. **Fig 30(c) {T0, R3*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t0-and-r3-star
+130. **Fig 30(d) {T3, R1*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t3-and-r1-star
+131. **Fig 30(e) {T2, R0} (4:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t2-and-r0-4-to-1
+132. **Fig 30(f) {T1, R4} (4:1)** — https://johnrchase.github.io/bubble-tiles/?paper=t1-and-r4-4-to-1
+133. **Fig 31(a) {R0, H4C} (1:2)** — https://johnrchase.github.io/bubble-tiles/?paper=r0-and-h4c-1-to-2
+134. **Fig 31(b) {R4, H2C} (1:2)** — https://johnrchase.github.io/bubble-tiles/?paper=r4-and-h2c-1-to-2
+135. **Fig 31(c) {R0, H5} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r0-and-h5
+136. **Fig 31(d) {R4, H1} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r4-and-h1
+137. **Fig 31(e) {R1, H4A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h4a
+138. **Fig 31(f) {R3, H2A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h2a
+139. **Fig 31(g) {R1, H6} (3:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h6-flowers-3-to-1
+140. **Fig 31(h) {R3, H0} (3:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h0-3-to-1
+141. **Fig 31(i) {R1*, H6} (3:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-h6-flowers-3-to-1
+142. **Fig 31(j) {R3*, H0} (3:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-star-and-h0-3-to-1
+143. **Fig 31(k) {R1*, H4A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-h4a
+144. **Fig 31(l) {R3*, H2A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-star-and-h2a
+145. **Fig 31(m) {R1*, H4B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-h4b
+146. **Fig 31(n) {R3*, H2B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-star-and-h2b
+147. **Fig 31(o) {R1*, H4C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-star-and-h4c
+148. **Fig 31(p) {R3*, H2C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-star-and-h2c
+149. **Fig 31(q) {R1, H5} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h5-irregular-2-to-1
+150. **Fig 31(r) {R3, H1} (2:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h1-irregular-2-to-1
+151. **Fig 31(s) {R2A, H3A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3a
+152. **Fig 31(t) {R2A*, H3A*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3a-star
+153. **Fig 31(u) {R2A, H3A*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3a-star
+154. **Fig 31(v) {R2A*, H3A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3a
+155. **Fig 31(w) {R2C, H3A} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3a-1-to-1
+156. **Fig 31(x) {R2C, H3A*} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3a-star-1-to-1
+157. **Fig 31(y) {R2A, H3B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3b
+158. **Fig 31(z) {R2A*, H3B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3b
+159. **Fig 31(aa) {R2A, H3C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3c
+160. **Fig 31(ab) {R2A*, H3C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3c
+161. **Fig 31(ac) {R2B, H3B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2b-and-h3b
+162. **Fig 31(ad) R{2C}, H{3B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3b-1-to-1
+163. **Fig 31(ae) {R2B, H3C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2b-and-h3c
+164. **Fig 31(af) {R2C, H3C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3c
+165. **Fig 31(ag) {R1, H4B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h4b
+166. **Fig 31(ah) {R3, H2B} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h2b
+167. **Fig 31(ai) {R1, H4C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r1-and-h4c
+168. **Fig 31(aj) {R3, H2C} (1:1)** — https://johnrchase.github.io/bubble-tiles/?paper=r3-and-h2c
+169. **Fig 32 Trapezoidal Bubble Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=trapezoidal-tiles
+170. **Fig 33(a) Trapezoidal Tiling** — https://johnrchase.github.io/bubble-tiles/?paper=trap-tiling-example
+171. **Fig 33(b) Hexagonal, Triangular, and Trapezoidal Tiling** — https://johnrchase.github.io/bubble-tiles/?paper=hex-tri-trap-example
+172. **Fig 33(c) Rhombic and Trapezoidal Tiling** — https://johnrchase.github.io/bubble-tiles/?paper=rhomb-trap-example
+173. **Fig 34 Heesch Number for Trapezoidal Tiles** — https://johnrchase.github.io/bubble-tiles/?paper=heesch-number-for-traps
+174. **H4 and R1 irregular (1 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=h4-and-r1-irregular-1-to-1
+175. **R2 star and H3A** — https://johnrchase.github.io/bubble-tiles/?paper=r2-star-and-h3a
+176. **R2A and H3A (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3a-3-to-1
+177. **R2A and H3B (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3b-3-to-1
+178. **R2A and H3C (1 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3c-1-to-1
+179. **R2A and H3C (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-and-h3c-3-to-1
+180. **R2A star and H3 star** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3-star
+181. **R2A star and H3A star (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2a-star-and-h3a-star-3-to-1
+182. **R2B and H3A (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2b-and-h3a-3-to-1
+183. **R2B and H3A star (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2b-and-h3a-star-3-to-1
+184. **R2B and H3B (2 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2b-and-h3b-2-to-1
+185. **R2B and H3C (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2b-and-h3c-3-to-1
+186. **R2C and H3A (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3a-3-to-1
+187. **R2C and H3A star (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3a-star-3-to-1
+188. **R2C and H3B (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3b-3-to-1
+189. **R2C and H3C (1 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3c-1-to-1
+190. **R2C and H3C (3 to 1)** — https://johnrchase.github.io/bubble-tiles/?paper=r2c-and-h3c-3-to-1

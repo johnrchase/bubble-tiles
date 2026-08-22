@@ -2345,6 +2345,64 @@ body.guided-lattice-intro-fade .lattice-copy {
   border-top: 1px solid #e1e8f0;
 }
 
+.example-subcategory {
+  min-width: 0;
+  border: 1px solid #dce5ef;
+  border-radius: 9px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.example-subcategory > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 6px 8px;
+  background: #f9fbfd;
+  color: #36566f;
+  cursor: pointer;
+  list-style: none;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.example-subcategory > summary::-webkit-details-marker {
+  display: none;
+}
+
+.example-subcategory > summary::before {
+  content: "\25B8";
+  color: #5d819c;
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.example-subcategory[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.example-subcategory > summary:hover,
+.example-subcategory > summary:focus-visible {
+  background: #eef6fd;
+  color: #173f62;
+  outline: none;
+}
+
+.example-subcategory-title {
+  min-width: 0;
+  flex: 1;
+}
+
+.example-subcategory-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 7px;
+  padding: 7px;
+  border-top: 1px solid #e5ebf2;
+}
+
 .example-card {
   display: grid;
   grid-template-columns: 60px minmax(0, 1fr);

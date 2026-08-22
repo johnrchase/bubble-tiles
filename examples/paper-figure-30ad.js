@@ -1,4 +1,4 @@
-window.BUBBLE_TILES_FIGURE_30AD = [{"slug":"r2c-and-h3b-1-to-1","title":"Fig 30(ad) R{2C}, H{3B} (1:1)","description":"A periodic balance-equation solution combining R2C and H3B in a 1:1 ratio.","layout":{
+window.BUBBLE_TILES_FIGURE_30AD = [{"slug":"r2c-and-h3b-1-to-1","title":"Fig 31(ad) R{2C}, H{3B} (1:1)","description":"A periodic balance-equation solution combining R2C and H3B in a 1:1 ratio.","layout":{
   "version": 4,
   "canvasBackgroundColor": "#fafafa",
   "latticeCopyOpacity": 1,
